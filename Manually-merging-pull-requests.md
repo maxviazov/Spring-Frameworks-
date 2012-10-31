@@ -1,6 +1,6 @@
-_This page serves as a simple "how to" for Spring committers when manually merging pull requests from contributors._
+_This page serves as a simple "how to" for Spring committers when manually merging pull requests from contributors.
 
-NOTE: Committers using Chrome or Firefox will want to install Phil Webb's handy [user scripts](https://github.com/philwebb/spring-userscripts) that turn all SPR-1234 style JIRA ID's into a link and embed a div into the GitHub UI for all spring-framework pull requests containing the commands below, customized to the specific pull request in question. Nice!
+NOTE: Committers using Chrome or Firefox will want to install Phil Webb's handy [user scripts](https://github.com/philwebb/spring-userscripts) that turn all SPR-1234 style JIRA ID's into a link and embed a div into the GitHub UI for all spring-framework pull requests containing the commands below, customized to the specific pull request in question._
 
 # Placeholders
 

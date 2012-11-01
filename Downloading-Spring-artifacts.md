@@ -57,7 +57,7 @@ The good news is that _all_ projects in the Spring family adhere to this version
 ## Resolving Spring artifacts
 
 ### Via Maven Central
-As mentioned above, all GA (_RELEASE_) versions of Spring Framework artifacts are published to Maven Central. For example, [here](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context%22) is the listing from the Maven Central search of all GA releases of the `spring-context` module.
+As mentioned above, all GA versions of Spring Framework artifacts are published to Maven Central. For example, [here](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context%22) is the listing from the Maven Central search of all GA releases of the `spring-context` module.
 
 If you are using Maven, the Central repository is always automatically searched, so you need only to add a `<dependency>` entry to your project's POM:
 ```xml

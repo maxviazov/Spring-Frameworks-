@@ -230,6 +230,8 @@ At this point, the release is complete and successful, so the release branch sho
     $ git fetch --all                  # to fetch the branch created during the release
     $ git merge springsource/master    # make sure you're up to date
     $ git merge springsource/3.1.0.M1  # assuming your remote is named 'springsource'
+    $ vi gradle.properties             # bump the version to 3.1.0.BUILD-SNAPSHOT
+    $ git ci -am"Increment version to 3.2.0.BUILD-SNAPSHOT"
     $ git push springsource master:master
 
 ### 5. Announce the release!

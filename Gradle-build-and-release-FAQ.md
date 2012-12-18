@@ -20,7 +20,7 @@ release-related
 ***
 <a name="wiki-check_out_and_build"/>
 # How do I check out and build the Framework?
-See "Building from source" in the README in root of the 3.2.x (master) source tree.  This also includes information on importing projects into Eclipse/STS/IDEA.
+See [building from source](https://github.com/SpringSource/spring-framework#building-from-source) in the README.  This also includes information on importing projects into Eclipse/STS/IDEA.
 
 ***
 <a name="wiki-build_duration"/>
@@ -38,11 +38,6 @@ Also, consider running with the `-a` flag to avoid evaluating other subprojects 
 Finally, the Gradle daemon helps greatly in eliminating startup overhead.  This feature will soon be 'on by default', but in the meantime  you need to run gradle with the `--daemon` flag, or alternatively, export your `GRADLE_OPTS` environment variable to include `-Dorg.gradle.daemon=true`
 
 ***
-<a name="wiki-javadoc_warnings"/>
-# Why are there so many Javadoc warnings?
-When running `./gradlew build` for the first time (or any time one runs `./gradlew clean build`), you will notice that most subprojects have emit many warnings during the `javadoc` task.  This is simply because, over time, many warnings have accumulated.  Committers are encouraged to fix these proactively, and pull requests are welcome from the community.  It's a general goal to get these cleaned up as quickly as possible.
-
-***
 <a name="wiki-compilation_warnings"/>
 # Why are compile-time warnings suppressed?
 You'll notice that `build.gradle` includes the following line:
@@ -54,9 +49,6 @@ This tells Gradle to suppress all warnings during compilation.  The reason for t
 ***
 <a name="wiki-gradle_tips"/>
 # What are the most important tips for Gradle newbies?
-
-## Use the Gradle daemon
-As mentioned above, the daemon greatly speeds up Gradle by eliminating startup overhead.  Run with `--daemon` or set `GRADLE_OPTS=-Dorg.gradle.daemon=true`.  Very occasionally, you may need or want to run `./gradlew --stop` to kill the daemon process.
 
 ## Stop typing `clean` unless you really need it
 As mentioned above, Gradle has excellent _incremental build_ capabilities, meaning that it will only compile, run tests, generate javadoc, etc. if content has actually changed.  However, telling gradle to `clean` everything eliminates this benefit.  It is a common practice -- particularly for longtime Maven users -- to type 'clean' with every build as a matter of course.  Break yourself of this habit and you'll find builds running much faster.
@@ -148,7 +140,7 @@ See https://github.com/SpringSource/gradle-init-scripts#readme for simple instru
 ***
 <a name="wiki-snapshot_publication"/>
 # How and where are snapshots published?
-The [3.2.x CI build plan](https://build.springsource.org/browse/SPR-B32X) is configured to use the [Artifactory Bamboo plugin](http://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plug-in). Each time commits are pushed to [SpringSource/master](https://github.com/SpringSource/spring-framework/tree/master), this build plan
+The [primary CI build plan](https://build.springsource.org/browse/SPR-B40X) is configured to use the [Artifactory Bamboo plugin](http://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plug-in). Each time commits are pushed to [SpringSource/master](https://github.com/SpringSource/spring-framework/tree/master), this build plan
 
 1. executes `./gradlew build`, producing jars and distribution zip files
 2. publishes these artifacts to http://repo.springsource.org/libs-snapshot-local ([browse in Artifactory tree view](http://repo.springsource.org/webapp/browserepo.html?pathId=libs-snapshot-local%3Aorg%2Fspringframework))

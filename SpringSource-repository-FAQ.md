@@ -48,7 +48,7 @@ Three additional important repositories are [libs-snapshot-s3-cache](http://repo
 
 * [snapshot](http://repo.springsource.org/snapshot) (aggregates _libs-snapshot-local_ and _libs-snapshot-s3-cache_)
 * [milestone](http://repo.springsource.org/milestone) (aggregates _libs-milestone-local_ and _libs-milestone-s3-cache_)
-* [release](http://repo.springsource.org/release) (aggregates _libs-milestone-local_ and _libs-milestone-s3-cache_)
+* [release](http://repo.springsource.org/release) (aggregates _libs-release-local_ and _libs-release-s3-cache_)
 
 Therefore, adding http://repo.springsource.org/release as a repository within your build will ensure that you have seamless access to all SpringSource GA release artifacts, whether they were originally deployed against our older S3 repository or directly against repo.springsource.org.
 

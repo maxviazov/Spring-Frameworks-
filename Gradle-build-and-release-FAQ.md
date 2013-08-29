@@ -208,7 +208,7 @@ In the example above, clicking the 'Download' button will open the API javadocs 
 You may also wish to have internal team members 'smoke test' the release, e.g. change their sample projects and dependent framework builds to point to http://repo.springsource.org/libs-staging-local and compile/test/run against the staged artifacts.
 
 ### 3. Promote the release
-When verification is complete, return to the build in Bamboo from which you staged the release and click 'Artifactory'. Make sure you have the side-bar shown in order to see this. You'll now see 'Promotion' options as follows:
+When verification is complete, return to the build in Bamboo from which you staged the release and click 'Default Job' and 'Artifactory' at the top, below the Job status bar. Make sure you have the side-bar shown in order to see this. You'll now see 'Promotion' options as follows:
 
 [[build-promotion.png]]
 

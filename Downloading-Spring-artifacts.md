@@ -21,7 +21,7 @@ For these reasons we strongly recommend that all users take advantage of the _tr
 
 Most folks today choose either [Maven](http://maven.apache.org), [Gradle](http://gradle.org), or [Ant/Ivy](http://ant.apache.org/ivy) as a build system.  The good news here is that each of these respects the Maven POM (project object model) dependency descriptor format as well as the metadata and directory structure that all "Maven-compatible" repositories must implement.
 
-Spring Framework (and all Spring-* projects, for that matter), publish their individual module jars with Maven metadata both to both the [Maven Central](http://search.maven.org) and [SpringSource](http://repo.springsource.org/) repositories.  We'll talk more about accessing these repositories in a moment, but let's first understand Spring artifact versioning.
+Spring Framework (and all Spring-* projects, for that matter), publish their individual module jars with Maven metadata both to both the [Maven Central](http://search.maven.org) and [Spring](http://repo.spring.io/) repositories.  We'll talk more about accessing these repositories in a moment, but let's first understand Spring artifact versioning.
 
 <a name="wiki-artifact_versioning"/>
 ### Spring artifact versioning
@@ -70,16 +70,16 @@ If you are using Maven, the Central repository is always automatically searched,
 
 Notice that the `groupId` value is `org.springframework`. This is true for all Spring Framework modules.  Other Spring projects such as Spring Batch may further qualify the groupId, e.g. `org.springframework.batch`.
 
-### Via the SpringSource repository
-RC, Milestone and Snapshot versions are published to the [SpringSource repository](http://repo.springsource.org). In addition to being published to Maven Central, GA releases are published to the SpringSource repository as well. _See also the [[SpringSource repository FAQ]]._
+### Via the Spring repository
+RC, Milestone and Snapshot versions are published to the [Spring repository](http://repo.spring.io). In addition to being published to Maven Central, GA releases are published to the Spring repository as well. _See also the [[Spring repository FAQ]]._
 
 #### Snapshots
 The following configuration will resolve the latest `spring-context` 3.1.0.BUILD-SNAPSHOT:
 ```xml
 <repository>
-    <id>repository.springsource.snapshot</id>
-    <name>SpringSource Snapshot Repository</name>
-    <url>http://repo.springsource.org/snapshot</url>
+    <id>repository.spring.snapshot</id>
+    <name>Spring Snapshot Repository</name>
+    <url>http://repo.spring.io/snapshot</url>
 </repository>
 ...
 <dependency>
@@ -93,9 +93,9 @@ The following configuration will resolve the latest `spring-context` 3.1.0.BUILD
 The following configuration will resolve `spring-context` 3.1.0.M2:
 ```xml
 <repository>
-    <id>repository.springsource.milestone</id>
-    <name>SpringSource Milestone Repository</name>
-    <url>http://repo.springsource.org/milestone</url>
+    <id>repository.spring.milestone</id>
+    <name>Spring Milestone Repository</name>
+    <url>http://repo.spring.io/milestone</url>
 </repository>
 ...
 <dependency>
@@ -108,9 +108,9 @@ The following configuration will resolve `spring-context` 3.1.0.M2:
 And the following will resolve `spring-context` 3.1.0.RC1:
 ```xml
 <repository>
-    <id>repository.springsource.milestone</id>
-    <name>SpringSource Milestone Repository</name>
-    <url>http://repo.springsource.org/milestone</url>
+    <id>repository.spring.milestone</id>
+    <name>Spring Milestone Repository</name>
+    <url>http://repo.spring.io/milestone</url>
 </repository>
 ...
 <dependency>
@@ -123,9 +123,9 @@ And the following will resolve `spring-context` 3.1.0.RC1:
 The following configuration will resolve `spring-context` 3.1.0.RELEASE:
 ```xml
 <repository>
-    <id>repository.springsource.release</id>
-    <name>SpringSource GA Repository</name>
-    <url>http://repo.springsource.org/release</url>
+    <id>repository.spring.release</id>
+    <name>Spring GA Repository</name>
+    <url>http://repo.spring.io/release</url>
 </repository>
 ...
 <dependency>
@@ -136,4 +136,4 @@ The following configuration will resolve `spring-context` 3.1.0.RELEASE:
 ```
 
 ## Manually downloading Spring distributions
-If for whatever reason you are not using a build system with dependency management capabilities, you can download Spring Framework _distribution zips_ from the SpringSource [community download page](http://www.springsource.com/download/community?project=Spring%20Framework). These distributions contain all source and binary jar files, as well as Javadoc and reference documentation, but _do not_ contain external dependencies!  However, if you build from source you can create a distribution with all dependencies locally. See [[building a distribution with dependencies]] for details.
+If for whatever reason you are not using a build system with dependency management capabilities, you can download Spring Framework _distribution zips_ from the Spring repository at <http://repo.spring.io>. These distributions contain all source and binary jar files, as well as Javadoc and reference documentation, but _do not_ contain external dependencies!  However, if you build from source you can create a distribution with all dependencies locally. See [[building a distribution with dependencies]] for details.

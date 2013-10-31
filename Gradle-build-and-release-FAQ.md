@@ -1,4 +1,4 @@
-_This FAQ has been written with building and releasing the Spring Framework in mind, but is also general enough to serve as a guide for any Spring project that publishes to http://repo.springsource.org.  The audience is primarily geared for project leads and committers, but should be valuable for anyone building from source or wanting to understand better how Spring is published, etc.  The focus is on Gradle-based builds, but keep in mind that Maven-based Spring projects can take advantage of the same general steps, e.g. using the [Artifactory Maven 3 Task](http://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plug-in) instead of the Artifactory Gradle Task, etc.  Note that if you're unfamiliar with the benefits of Artifactory and repo.springsource.org in general, you may want to check out the [[SpringSource repository FAQ]]._
+_This FAQ has been written with building and releasing the Spring Framework in mind, but is also general enough to serve as a guide for any Spring project that publishes to http://repo.spring.io.  The audience is primarily geared for project leads and committers, but should be valuable for anyone building from source or wanting to understand better how Spring is published, etc.  The focus is on Gradle-based builds, but keep in mind that Maven-based Spring projects can take advantage of the same general steps, e.g. using the [Artifactory Maven 3 Task](http://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plug-in) instead of the Artifactory Gradle Task, etc.  Note that if you're unfamiliar with the benefits of Artifactory and repo.spring.io in general, you may want to check out the [[Spring repository FAQ]]._
 
 ### Table of Contents
 build-related
@@ -20,7 +20,7 @@ release-related
 ***
 <a name="wiki-check_out_and_build"/>
 # How do I check out and build the Framework?
-See [building from source](https://github.com/SpringSource/spring-framework#building-from-source) in the README.  This also includes information on importing projects into Eclipse/STS/IDEA.
+See [building from source](https://github.com/spring-projects/spring-framework#building-from-source) in the README.  This also includes information on importing projects into Eclipse/STS/IDEA.
 
 ***
 <a name="wiki-build_duration"/>
@@ -99,9 +99,9 @@ See the `import-into-eclipse.sh` and `import-into-idea.md` files in the root of 
 Note that both IDEA and STS are hard at work on even more advanced Gradle tooling from the IDE side.  At the time of this writing, neither one is quite capable of meeting all the needs of a build as complex as Spring's, but they'll get there soon.  In the meantime, Gradle's built-in support works quite well.
 
 ## Understand handling of 'optional' and 'provided' dependencies.
-[This commit](https://github.com/SpringSource/spring-framework/commit/b6cb514d383dcef52ba6c609a863f19e1a4c1faf) provides all the detail you'll ever want on how we manage optional and provided dependencies with regard to our generated Maven poms.
+[This commit](https://github.com/spring-projects/spring-framework/commit/b6cb514d383dcef52ba6c609a863f19e1a4c1faf) provides all the detail you'll ever want on how we manage optional and provided dependencies with regard to our generated Maven poms.
 
-## Use the `init.gradle` init script to configure repo.springsource.org authentication
+## Use the `init.gradle` init script to configure repo.spring.io authentication
 See the FAQ item on [authentication](#wiki-authentication) below.
 
 ## Use `mavenLocal()` to resolve dependencies from your Maven cache
@@ -111,7 +111,7 @@ This can be done directly in your build script by adding `mavenLocal()` as follo
 
     repositories {
         mavenLocal()
-        maven { url "http://repo.springsource.org/libs-release" }
+        maven { url "http://repo.spring.io/libs-release" }
     }
 
 However, it's recommended that you do this via an init script, to avoid accidentally checking in the `mavenLocal()` entry.  If you're already using the authentication init script described above, you can append the following to it, or if not, just create a new file in `$HOME/.gradle` named `init.gradle` with the following:
@@ -131,19 +131,19 @@ The Gradle wrapper is a big help, but it can be cumbersome to have to use relati
 ***
 <a name="wiki-authentication"/>
 # Why do I get 401/403 errors when downloading dependencies?
-Our Artifactory instance at http://repo.springsource.org is configured such that requesting and caching external dependencies, e.g. junit or cglib from Maven Central) can only be performed by authenticated users, i.e. SpringSource employees.  Once such a dependency has been successfully cached in the repository, then even anonymous/unauthenticated users may download them.  This configuration helps ensure that repo.springsource.org contains only Spring project artifacts and their transitive dependencies, and that we don't act as a kind of 'open proxy'.
+Our Artifactory instance at http://repo.spring.io is configured such that requesting and caching external dependencies, e.g. junit or cglib from Maven Central) can only be performed by authenticated users, i.e. Spring team employees.  Once such a dependency has been successfully cached in the repository, then even anonymous/unauthenticated users may download them.  This configuration helps ensure that repo.spring.io contains only Spring project artifacts and their transitive dependencies, and that we don't act as a kind of 'open proxy'.
 
 This means that if you are not authenticated, you will not receive 401/403 unless _you're downloading a new dependency for the first time._  A typical example might be when upgrading to a newly-released version of JUnit or Hibernate.  The solution to this problem is to provide your Artifactory authentication credentials to Gradle, such that it can successfully respond to 401 challenges when Artifactory issues them.  The best way to do this is with a Gradle _init script_, which keeps your username and password separate from your build script.
 
-See https://github.com/SpringSource/gradle-init-scripts#readme for simple instructions on how to dowload and install an init script that does just this.  This is recommended for all committers.
+See https://github.com/spring-projects/gradle-init-scripts#readme for simple instructions on how to dowload and install an init script that does just this.  This is recommended for all committers.
 
 ***
 <a name="wiki-snapshot_publication"/>
 # How and where are snapshots published?
-The [primary CI build plan](https://build.springsource.org/browse/SPR-B40X) is configured to use the [Artifactory Bamboo plugin](http://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plug-in). Each time commits are pushed to [SpringSource/master](https://github.com/SpringSource/spring-framework/tree/master), this build plan
+The [primary CI build plan](https://build.springsource.org/browse/SPR-B40X) is configured to use the [Artifactory Bamboo plugin](http://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plug-in). Each time commits are pushed to [spring-projects/master](https://github.com/spring-projects/spring-framework/tree/master), this build plan
 
 1. executes `./gradlew build`, producing jars and distribution zip files
-2. publishes these artifacts to http://repo.springsource.org/libs-snapshot-local ([browse in Artifactory tree view](http://repo.springsource.org/webapp/browserepo.html?pathId=libs-snapshot-local%3Aorg%2Fspringframework))
+2. publishes these artifacts to http://repo.spring.io/libs-snapshot-local ([browse in Artifactory tree view](http://repo.spring.io/webapp/browserepo.html?pathId=libs-snapshot-local%3Aorg%2Fspringframework))
 
 Along with individual artifacts, [build metadata](http://wiki.jfrog.org/confluence/display/RTF/Build+Integration) is also published to Artifactory, including information about the environment and principal involved in the build, as well as allowing for bi-directional links between Bamboo and Artifactory. Click on the 'Artifactory' tab for any successful CI build to navigate to the associated Artifactory build.
 
@@ -153,7 +153,7 @@ Likewise, click on "Show in CI Server" from any individual Artifactory build to 
 
 ![Artifactory->Bamboo](http://wiki.jfrog.org/confluence/download/attachments/12157118/builds.by.name.03.05.11.png?version=1&modificationDate=1304430459000)
 
-Users wishing to consume snapshot builds may add http://repo.springsource.org/snapshot to the list of repositories in their build script. See [[Downloading Spring artifacts]] for more details.
+Users wishing to consume snapshot builds may add http://repo.spring.io/snapshot to the list of repositories in their build script. See [[Downloading Spring artifacts]] for more details.
 
 ***
 <a name="wiki-release_process"/>
@@ -205,7 +205,7 @@ Note that in the Artifactory tree view, you can easily drill into jars and zips 
 
 In the example above, clicking the 'Download' button will open the API javadocs in the browser -- a nice convenience.
 
-You may also wish to have internal team members 'smoke test' the release, e.g. change their sample projects and dependent framework builds to point to http://repo.springsource.org/libs-staging-local and compile/test/run against the staged artifacts.
+You may also wish to have internal team members 'smoke test' the release, e.g. change their sample projects and dependent framework builds to point to http://repo.spring.io/libs-staging-local and compile/test/run against the staged artifacts.
 
 ### 3. Promote the release
 When verification is complete, return to the build in Bamboo from which you staged the release and click 'Default Job' and 'Artifactory' at the top, below the Job status bar. Make sure you have the side-bar shown in order to see this. You'll now see 'Promotion' options as follows:
@@ -227,17 +227,17 @@ At this point, the release is complete and successful, so the release branch sho
     $ git push springsource master:master
 
 ### 5. Announce the release!
-At this point, announcements may be made and users may consume the released artifacts by adding http://repo.springsource.org/libs-milestone-local to their build scripts.
+At this point, announcements may be made and users may consume the released artifacts by adding http://repo.spring.io/libs-milestone-local to their build scripts.
 
 ***
 <a name="wiki-maven_central"/>
 # What about publishing artifacts to Maven Central?
 
-GA releases of Spring Framework are published not only to http://repo.springsource.org/libs-release-local, but also to Maven Central at http://repo1.maven.org.  This allows for maximum convenience for the majority of Spring users, given that most users have Maven-based builds and Maven resolves artifacts by default from Maven Central.
+GA releases of Spring Framework are published not only to http://repo.spring.io/libs-release-local, but also to Maven Central at http://repo1.maven.org.  This allows for maximum convenience for the majority of Spring users, given that most users have Maven-based builds and Maven resolves artifacts by default from Maven Central.
 
 The preferred way of releasing artifacts to Maven Central is via Sonatype's Nexus server at oss.sonatype.org (OSO). This is explained in detail in [Sonatype's OSS usage guide](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide).
 
-The SpringSource Artifactory repository has been customized with a "[nexus-push](https://github.com/JFrogDev/artifactory-user-plugins/tree/master/nexus-push)" plugin that allows for automatic propagation of builds from Artifactory to the Nexus server at OSO for publication into Maven Central.
+The Spring Artifactory repository has been customized with a "[nexus-push](https://github.com/JFrogDev/artifactory-user-plugins/tree/master/nexus-push)" plugin that allows for automatic propagation of builds from Artifactory to the Nexus server at OSO for publication into Maven Central.
 
 All Spring projects -- that is, all projects having groupid `org.springframework` -- can publish to OSO under the shared 'springsource' account.  This has already been set up in the nexus-push plugin, so there's no additional setup necessary at OSO, even for new projects.
 
@@ -247,7 +247,7 @@ The Artifactory Bamboo plugin supports use of the nexus-push plugin through it's
 
 Choosing this option means that the build will first be published into a staging repository at OSO and 'closed' in Nexus terminology.  The 'closing' process will check your build artifacts to ensure they meet the [requirements for publication into Maven Central](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-6.CentralSyncRequirement), e.g. that POMs are properly formed, that all artifacts have checksums, PGP signatures, etc.  If there are any errors in the repository closing process, they will be displayed in the Bamboo UI and the promotion process will fail.  At this point you'll need to correct the issues and walk through the release staging process described above once again.
 
-Note that with regard to requirements for OSO onboarding, Artifactory automatically generates sha1 and md5 checksums for all artifacts, so you don't need to worry about this. Furthermore, a [custom plugin](https://github.com/JFrogDev/artifactory-user-plugins/blob/master/pgp-sign/pgpSign.groovy) has been developed for repo.springsource.org that adds PGP signatures (.asc files) on the fly during upload using the buildmaster@springframework.org PGP key.  You simply need to make sure that your build produces jars (including -sources and -javadoc jars) and well-formed poms.  Any zip files such as distribution or doc zips are excluded from the promotion process to OSO.
+Note that with regard to requirements for OSO onboarding, Artifactory automatically generates sha1 and md5 checksums for all artifacts, so you don't need to worry about this. Furthermore, a [custom plugin](https://github.com/JFrogDev/artifactory-user-plugins/blob/master/pgp-sign/pgpSign.groovy) has been developed for repo.spring.io that adds PGP signatures (.asc files) on the fly during upload using the buildmaster@springframework.org PGP key.  You simply need to make sure that your build produces jars (including -sources and -javadoc jars) and well-formed poms.  Any zip files such as distribution or doc zips are excluded from the promotion process to OSO.
 
 When the promotion process is complete, i.e. closing the staging repository at OSO succeeds, there is one additional step - you must log into http://oss.sonatype.org with the 'springsource' account and manually 'release' to Maven Central.
 
@@ -296,7 +296,7 @@ _Note: Full documentation for this feature can be found in the [Artifactory Grad
 
 The `zip.type` property tells autorepo that the artifact is a 'docs', 'schema', or 'dist'.  The `zip.deployed` property tells autorepo whether it has already uploaded and unpacked this artifact.  When autorepo detects a new docs or schema zip (zip.deployed == false), it performs the uploading and unpacking, and then sets the `zip.deployed` property to `true`.
 
-The dist zip, on the other hand, remains within Artifactory and the SpringSource [community download page](http://www.springsource.org/download/community) queries repo.springsource.org to provide the list of dist zip downloads for each project.  It uses the same metadata mentioned above to perform the search.
+The dist zip, on the other hand, remains within Artifactory.
 
 The `zip.displayname` value is used by autorepo to determine where in the community download page the artifact should show up.  So this value should match whatever name your project already has on the community download page.
 

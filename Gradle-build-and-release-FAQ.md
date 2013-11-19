@@ -147,11 +147,11 @@ The [primary CI build plan](https://build.springsource.org/browse/SPR-B40X) is c
 
 Along with individual artifacts, [build metadata](http://wiki.jfrog.org/confluence/display/RTF/Build+Integration) is also published to Artifactory, including information about the environment and principal involved in the build, as well as allowing for bi-directional links between Bamboo and Artifactory. Click on the 'Artifactory' tab for any successful CI build to navigate to the associated Artifactory build.
 
-![Bamboo->Artifactory](http://wiki.jfrog.org/confluence/download/attachments/14811516/bamboo.build.result.14.07.11.png?version=1&modificationDate=1310671106000)
+![Bamboo->Artifactory](http://www.jfrog.com/confluence/download/attachments/25067566/bamboo.build.result.14.07.11.png?version=1&modificationDate=1310681906000&api=v2)
 
 Likewise, click on "Show in CI Server" from any individual Artifactory build to navigate back to the CI build that published it.
 
-![Artifactory->Bamboo](http://wiki.jfrog.org/confluence/download/attachments/12157118/builds.by.name.03.05.11.png?version=1&modificationDate=1304430459000)
+![Artifactory->Bamboo](http://www.jfrog.com/confluence/download/attachments/25067551/builds.by.name.03.05.11.png?version=1&modificationDate=1304441259000&api=v2)
 
 Users wishing to consume snapshot builds may add http://repo.spring.io/snapshot to the list of repositories in their build script. See [[Downloading Spring artifacts]] for more details.
 

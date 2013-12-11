@@ -9,4 +9,4 @@
 * [[Spring repository FAQ]]
 * [[The lifecycle of an issue]]
 * [[Manually merging pull requests]]
-* [[Migrating Earlier Versions of the Spring Framework]]
+* [[Migrating from earlier versions of the Spring Framework]]

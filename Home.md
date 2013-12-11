@@ -9,3 +9,4 @@
 * [[Spring repository FAQ]]
 * [[The lifecycle of an issue]]
 * [[Manually merging pull requests]]
+* [[Upgrade Guide]]

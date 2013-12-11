@@ -9,3 +9,4 @@ The migration guide for upgrading to Spring 3.1 is available as [Appendix C in t
 The migration guide for upgrading to Spring 3.2 is available as [Appendix D in the Spring 3.2 reference documentation](http://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/htmlsingle/#migration-3.2).
 
 ## Migrating to Spring Framework 4.0
+In this section we discuss what users will want to know when upgrading to Spring Framework 4.0. For a general overview of features, please see Chapter 4, New Features and Enhancements in Spring Framework 4.0

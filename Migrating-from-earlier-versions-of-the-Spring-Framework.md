@@ -19,7 +19,7 @@ The default `KeyGenerator` used by Spring's cache abstraction has changed from `
 The Spring MVC namespace XSD had been updated to correct the casing used for a couple of attributes. When upgrading to spring-mvc-4.0.xsd, you should replace `enableMatrixVariables` and `ignoreDefaultModelOnRedirect` with `enable-matrix-variables` and `ignore-default-model-on-redirect` respectively.
 
 ### Dependency Updates
-The following minimum dependencies are required for Spring Framework 4.0:
+The following minimum (optional) dependencies are required for Spring Framework 4.0:
 
 #### Specifications
 * Servlet 3.0 (2.5 supported for deployment)
@@ -29,16 +29,20 @@ The following minimum dependencies are required for Spring Framework 4.0:
 * JCache 1.0 PFD
 * JDO 3.0
 
-#### Application Servers
-* IBM WebSphere 7 (with JPA 2.0 feature pack installed)
+#### Servers
+* Tomcat 6
+* Jetty 7
+* JBoss AS 6
+* GlassFish 3
 * Oracle WebLogic 10.3 (with JPA 2.0 patch applied)
+* IBM WebSphere 7 (with JPA 2.0 feature pack installed)
 
 #### Libraries
 * Hibernate Validator 4.3
-* Hibernate 3.6 (4.2+ recommended)
+* Hibernate 3.6 (4.2 recommended)
 * EhCache 2.1 (2.5+ recommended)
-* Quartz 1.8 (2.2+ recommended)
-* Jackson 1.8 (2.2+ recommended)
+* Quartz 1.8 (2.2 recommended)
+* Jackson 1.8 (2.2 recommended)
 * Groovy 1.8 (2.2 recommended)
 * Joda-Time 2.0 (2.3 recommended)
 * Hessian 4.0
@@ -46,7 +50,7 @@ The following minimum dependencies are required for Spring Framework 4.0:
 * Apache POI 3.5
 
 ### Deprecated code
-The following classes and methods have been deprecated in Spring Framework 4.0. These will be removed at a future date so please check the Javadoc and migrate to the suggested alternatives:
+The following classes and methods have been deprecated in Spring Framework 4.0. These will be removed at a future date, so please check the javadoc and migrate to the suggested alternatives:
 
 #### Jackson v1
 All Jackson v1 support is deprecated in favor of Jackson v2:

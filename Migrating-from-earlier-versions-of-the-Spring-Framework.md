@@ -30,12 +30,12 @@ The following minimum (optional) dependencies are required for Spring Framework 
 * JDO 3.0
 
 #### Servers
-* Tomcat 6
-* Jetty 7
-* JBoss AS 6
-* GlassFish 3
-* Oracle WebLogic 10.3 (with JPA 2.0 patch applied)
-* IBM WebSphere 7 (with JPA 2.0 feature pack installed)
+* Tomcat 6.0.30
+* Jetty 7.3
+* JBoss AS 6.0
+* GlassFish 3.1
+* Oracle WebLogic 10.3.4 (with JPA 2.0 patch applied)
+* IBM WebSphere 7.0.0.9 (with JPA 2.0 feature pack installed)
 
 #### Libraries
 * Hibernate Validator 4.3

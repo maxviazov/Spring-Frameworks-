@@ -19,29 +19,30 @@ The default `KeyGenerator` used by Spring's cache abstraction has changed from `
 The Spring MVC namespace XSD had been updated to correct the casing used for a couple of attributes. When upgrading you should replace `enableMatrixVariables` and `ignoreDefaultModelOnRedirect` with `enable-matrix-variables` and `ignore-default-model-on-redirect` respectively.
 
 ### Dependency Updates
-The following dependencies updates are required for Spring Framework 4.0:
-
-#### Containers
-* Oracle WebLogic 7+ (up to and including v10)
-* AOP weaving is now supported for Glassfish 3 & 4
-* `TomcatInstrumentableClassLoader` requires Tomcat 6.0+
+The following minimum dependencies are required for Spring Framework 4.0:
 
 #### Specifications
-* JPA 2.0
 * Servlet 3.0 (2.5 supported for deployment)
+* JPA 2.0
+* Bean Validation 1.0
 * JSF 2.0
+* JCache 1.0 PFD
+* JDO 3.0
+
+#### Application Servers
+* IBM WebSphere 7 (with JPA 2.0 feature pack installed)
+* Oracle WebLogic 10.3 (with JPA 2.0 patch applied)
 
 #### Libraries
-* Joda Time 2.0 or above
-* Bean Validation 1.0 (with 1.1 required for some features and special support for Hibernate Validator 4.3 and 5.0)
-* EhCache 2.1 (with 2.5+ recommended)
-* JCache 0.11 is now supported
-* Quartx v1.8 - v2.2 is now supported (2.2+ recommended)
-* Jackson 1.8 (2.0 recommended)
-* Hibernate 3.6 (4.6 recommended)
-* JDO 3.0
-* XStream 1.4
+* Hibernate Validator 4.3
+* Hibernate 3.6 (4.2+ recommended)
+* EhCache 2.1 (2.5+ recommended)
+* Quartz 1.8 (2.2+ recommended)
+* Jackson 1.8 (2.2+ recommended)
+* Groovy 1.8 (2.2 recommended)
+* Joda-Time 2.0 (2.3 recommended)
 * Hessian 4.0
+* XStream 1.4
 * Apache POI 3.5
 
 ### Deprecated code

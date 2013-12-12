@@ -7,16 +7,10 @@ If you find any issues that are not covered by this guide please raise a [JIRA](
 In this section we discuss what users will want to know when upgrading to Spring Framework 4.0. For a general overview of features, please read [New Features and Enhancements in Spring Framework 4.0](http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#new-in-4.0) from the reference documentation.
 
 ### JDK 6
-Spring Framework 4.0 requires Java SE 6 or above. If you are migrating from an older version of Java, you will need to update your JDK. Java 7 and 8 are recommended for use with Spring 4, with Java 8 support in developer preview state until OpenJDK 8 goes final in March 2014.
+Spring Framework 4.0 requires Java SE 6 or above (specifically, a minimum level equivalent to JDK 6 update 10, as released in late 2008). If you are migrating from an older version of Java, you will need to update your installation to a recent version of JDK 6 at least. Java 7 and 8 are recommended for use with Spring 4, with Java 8 support in stable developer preview state until OpenJDK 8 goes final in March 2014.
 
 ### Java EE 6
-If you deploy your Spring application to a Java EE server, you should ensure that it is certified for Java EE 6 or above. Specifically the JPA 2.0+ and Servlet 3.0+ specifications should be used if possible. It is still possible to deploy a Spring Framework 4.0 application to a Servlet 2.5 container, however, some features may not be available.
-
-### Default cache key generator
-The default `KeyGenerator` used by Spring's cache abstraction has changed from `DefaultKeyGenerator` to `SimpleKeyGenerator`. The new generator does not suffer from key collisions and less likely to cause a cached method to return incorrect results. You will need to configure the deprecated `DefaultKeyGenerator` if you prefer the previous key strategy, or create a custom 'KeyGenerator' implementation yourself.
-
-### MVC Namespace
-The Spring MVC namespace XSD had been updated to correct the casing used for a couple of attributes. When upgrading to spring-mvc-4.0.xsd, you should replace `enableMatrixVariables` and `ignoreDefaultModelOnRedirect` with `enable-matrix-variables` and `ignore-default-model-on-redirect` respectively.
+If you deploy your Spring application to a Java EE server, you should ensure that it is certified for Java EE 6 or above. Of particular importance are the JPA 2.0 and Servlet 3.0 specifications. That said, it is still possible to deploy a Spring Framework 4.0 application to a Servlet 2.5 container (e.g. Google App Engine, WebSphere 7, WebLogic 10.3); however, some Servlet 3.0 based Spring features won't be available.
 
 ### Dependency Updates
 The following minimum (optional) dependencies are required for Spring Framework 4.0:
@@ -80,6 +74,12 @@ The following classes are deprecated since there no longer work with current JBo
 #### Miscellaneous deprecations 
 * `AbstractJaxWsServiceExporter.setWebServiceFeatures(Object[] webServiceFeatures)`
 * `JaxWsPortClientInterceptor.setWebServiceFeatures(Object[] webServiceFeatures)`
+
+### Default cache key generator
+The default `KeyGenerator` used by Spring's cache abstraction has changed from `DefaultKeyGenerator` to `SimpleKeyGenerator`. The new generator does not suffer from key collisions and less likely to cause a cached method to return incorrect results. You will need to configure the deprecated `DefaultKeyGenerator` if you prefer the previous key strategy, or create a custom 'KeyGenerator' implementation yourself.
+
+### MVC namespace
+The Spring MVC namespace XSD had been updated to correct the casing used for a couple of attributes. When upgrading to spring-mvc-4.0.xsd, you should replace `enableMatrixVariables` and `ignoreDefaultModelOnRedirect` with `enable-matrix-variables` and `ignore-default-model-on-redirect` respectively.
 
 
 ## Migrating to Spring Framework 3.2

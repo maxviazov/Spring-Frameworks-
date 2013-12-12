@@ -74,9 +74,10 @@ The following classes are deprecated since there no longer work with current JBo
 #### Miscellaneous deprecations 
 * `AbstractJaxWsServiceExporter.setWebServiceFeatures(Object[] webServiceFeatures)`
 * `JaxWsPortClientInterceptor.setWebServiceFeatures(Object[] webServiceFeatures)`
+* `DefaultKeyGenerator`
 
 ### Default cache key generator
-The default `KeyGenerator` used by Spring's cache abstraction has changed from `DefaultKeyGenerator` to `SimpleKeyGenerator`. The new generator does not suffer from key collisions and less likely to cause a cached method to return incorrect results. You will need to configure the deprecated `DefaultKeyGenerator` if you prefer the previous key strategy, or create a custom 'KeyGenerator' implementation yourself.
+The default `KeyGenerator` used by Spring's cache abstraction has changed from `DefaultKeyGenerator` to `SimpleKeyGenerator`. The new generator does not suffer from key collisions and less likely to cause a cached method to return incorrect results. You will need to configure the deprecated `DefaultKeyGenerator` if you prefer the previous key strategy, or create a custom `KeyGenerator` implementation yourself.
 
 ### MVC namespace
 The Spring MVC namespace XSD had been updated to correct the casing used for a couple of attributes. When upgrading to spring-mvc-4.0.xsd, you should replace `enableMatrixVariables` and `ignoreDefaultModelOnRedirect` with `enable-matrix-variables` and `ignore-default-model-on-redirect` respectively.

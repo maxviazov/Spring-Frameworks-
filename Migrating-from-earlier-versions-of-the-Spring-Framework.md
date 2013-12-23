@@ -40,6 +40,8 @@ Spring Framework 4.0 declares the following minimum (optional) dependencies:
 * Hessian 4.0
 * XStream 1.4
 * Apache POI 3.5
+* Apache Velocity 1.7
+* Apache Derby 10.6
 
 ### Deprecated code
 The following classes and methods have been deprecated in Spring Framework 4.0. These will be removed at a future date, so please check the javadoc and migrate to the suggested alternatives:

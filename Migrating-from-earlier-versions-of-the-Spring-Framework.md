@@ -82,6 +82,8 @@ The default `KeyGenerator` used by Spring's cache abstraction has changed from `
 ### MVC namespace
 The Spring MVC namespace XSD had been updated to correct the casing used for a couple of attributes. When upgrading to `spring-mvc-4.0.xsd`, you should replace `enableMatrixVariables` and `ignoreDefaultModelOnRedirect` with `enable-matrix-variables` and `ignore-default-model-on-redirect` respectively.
 
+### Spring MVC Test and Java 6
+An issue with compiling Spring MVC Test framework tests with JDK 1.6 has been [identified and fixed](https://jira.springsource.org/browse/SPR-11238) for version 4.0.1.
 
 ## Migrating to Spring Framework 3.2
 The migration guide for upgrading to Spring 3.2 is available as [Appendix D in the Spring 3.2 reference documentation](http://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/htmlsingle/#migration-3.2).

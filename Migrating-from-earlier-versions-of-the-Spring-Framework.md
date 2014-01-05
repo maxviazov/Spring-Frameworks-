@@ -18,7 +18,7 @@ Spring Framework 4.0 declares the following minimum (optional) dependencies:
 * JPA 2.0
 * Bean Validation 1.0
 * JSF 2.0
-* JCache 1.0 PFD
+* JCache 1.0 RC1
 * JDO 3.0
 
 #### Servers

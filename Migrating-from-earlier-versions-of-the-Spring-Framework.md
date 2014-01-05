@@ -41,6 +41,7 @@ Spring Framework 4.0 declares the following minimum (optional) dependencies:
 * XStream 1.4
 * Apache POI 3.5
 * Apache Velocity 1.7
+* Apache Tiles 2.2
 * Apache Derby 10.6
 
 ### Deprecated code

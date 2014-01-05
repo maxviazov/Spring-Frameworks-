@@ -46,17 +46,15 @@ Spring Framework 4.0 declares the following minimum (optional) dependencies:
 ### Deprecated code
 The following classes and methods have been deprecated in Spring Framework 4.0. These will be removed at a future date, so please check the javadoc and migrate to the suggested alternatives:
 
-#### Jackson v1
-All Jackson v1 support is deprecated in favor of Jackson v2:
-* `MappingJacksonMessageConverter`
+#### Quartz 1.x
+Quartz 1.x support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.0+ from then onwards.
+
+#### Jackson 1.x
+All Jackson v1 support is deprecated in favor of Jackson v2, and will be removed in Spring Framework 4.1:
 * `JacksonObjectMapperFactoryBean`
 * `MappingJacksonHttpMessageConverter`
-
-#### Generic Types
-Several methods from the `GenericTypeResolver` have been deprecated. For new code the `ResolvableType` class provides a good alternative to `GenericTypeResolver` & `GenericCollectionTypeResolver`:
-* `GenericTypeResolver.getTargetType(MethodParameter methodParam)`
-* `GenericTypeResolver.resolveType(Type genericType, Map<TypeVariable, Type> map)`
-* `GenericTypeResolver.getTypeVariableMap(Class<?> clazz)`
+* `MappingJacksonJsonView`
+* `MappingJacksonMessageConverter` for JMS
 
 #### Burlap
 Burlap is no longer under active development and support will be dropped entirely in the future:
@@ -66,15 +64,20 @@ Burlap is no longer under active development and support will be dropped entirel
 * `BurlapServiceExporter`
 * `SimpleBurlapServiceExporter`
 
-#### Outdated JBoss Classes
-The following classes are deprecated since there no longer work with current JBoss releases:
+#### Outdated JBoss classes
+The following classes are deprecated since they no longer work with current JBoss releases:
 * `JBossWorkManagerTaskExecutor`
 * `JBossWorkManagerUtils`
 
-#### Miscellaneous deprecations 
+#### JAX-WS feature configuration
 * `AbstractJaxWsServiceExporter.setWebServiceFeatures(Object[] webServiceFeatures)`
 * `JaxWsPortClientInterceptor.setWebServiceFeatures(Object[] webServiceFeatures)`
-* `DefaultKeyGenerator`
+
+#### Generic type resolution
+Several methods from the `GenericTypeResolver` have been deprecated. For new code the `ResolvableType` class provides a good alternative to `GenericTypeResolver` & `GenericCollectionTypeResolver`:
+* `GenericTypeResolver.getTargetType(MethodParameter methodParam)`
+* `GenericTypeResolver.resolveType(Type genericType, Map<TypeVariable, Type> map)`
+* `GenericTypeResolver.getTypeVariableMap(Class<?> clazz)`
 
 ### Default cache key generator
 The default `KeyGenerator` used by Spring's cache abstraction has changed from `DefaultKeyGenerator` to `SimpleKeyGenerator`. The new generator does not suffer from key collisions and less likely to cause a cached method to return incorrect results. You will need to configure the deprecated `DefaultKeyGenerator` if you prefer the previous key strategy, or create a custom `KeyGenerator` implementation yourself.

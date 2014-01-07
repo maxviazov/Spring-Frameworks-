@@ -1,4 +1,3 @@
-
 _This document explains the purpose, nature, and best practices for use of the Spring repository at  http://repo.spring.io (formerly at http://repo.springsource.org). For basic instructions on downloading Spring artifacts manually or using Maven and other build systems, see [[downloading Spring artifacts]]._
 
 ### Table of Contents
@@ -9,6 +8,7 @@ _This document explains the purpose, nature, and best practices for use of the S
 * [Will artifacts still be published to Maven Central?](#wiki-maven_central)
 * [What about existing artifacts published to S3 / maven.springsource.org?](#wiki-s3)
 * [The artifact(s) I need are not available via the Spring repository. How do I get them added?](#wiki-add_repository)
+* [Why do I get 401/403 errors when downloading dependencies?](#wiki-401-403-errors)
 * [What are the benefits of the Spring repository?](#wiki-benefits)
 
 ***
@@ -101,6 +101,12 @@ If you are a project lead or committer and notice that an artifact is not availa
 ## A note on jars unavailable in any Maven repository
 
 Occasionally a dependency will be unavailable in any Maven repository and must be downloaded manually or built from source.  In such cases, you may upload these artifacts directly into the `ext-snapshot-local` or `ext-release-local` repositories using the "Deploy" tab available from the homepage at http://repo.spring.io.  The wizard there will walk you through POM generation, specifying GAVC coordinates, etc.  IMPORTANT: Take care to understand the license of any artifacts you upload in this fashion.  If the license does not permit distribution, you cannot use these repositories.  `ext-private-local` exists for this purpose, and makes these artifacts available to internal users only.  Direct any questions about this process to buildmaster@springframework.org. 
+
+***
+<a name="wiki-401-403-errors"/>
+# Why do I get 401/403 errors when downloading dependencies?
+
+Please see the same question under [[Gradle-build-and-release-FAQ]].
 
 ***
 <a name="wiki-benefits"/>

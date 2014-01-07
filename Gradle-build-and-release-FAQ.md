@@ -131,9 +131,13 @@ The Gradle wrapper is a big help, but it can be cumbersome to have to use relati
 ***
 <a name="wiki-authentication"/>
 # Why do I get 401/403 errors when downloading dependencies?
-Our Artifactory instance at http://repo.spring.io is configured such that requesting and caching external dependencies, e.g. junit or cglib from Maven Central) can only be performed by authenticated users, i.e. Spring team employees.  Once such a dependency has been successfully cached in the repository, then even anonymous/unauthenticated users may download them.  This configuration helps ensure that repo.spring.io contains only Spring project artifacts and their transitive dependencies, and that we don't act as a kind of 'open proxy'.
+Our Artifactory instance at http://repo.spring.io is configured such that requesting and caching external dependencies, e.g. junit or cglib from Maven Central) can only be performed by authenticated users, i.e. Spring team members.  Once such a dependency has been successfully cached in the repository, then even anonymous/unauthenticated users may download them.  This configuration helps ensure that repo.spring.io contains only Spring project artifacts and their transitive dependencies, and that we don't act as a kind of 'open proxy'.
 
-This means that if you are not authenticated, you will not receive 401/403 unless _you're downloading a new dependency for the first time._  A typical example might be when upgrading to a newly-released version of JUnit or Hibernate.  The solution to this problem is to provide your Artifactory authentication credentials to Gradle, such that it can successfully respond to 401 challenges when Artifactory issues them.  The best way to do this is with a Gradle _init script_, which keeps your username and password separate from your build script.
+This means you can receive a 401/403 while downloading a dependency, possibly because it's being downloaded for the first time and you're not authenticated. A typical example might be when upgrading to a newly-released version of JUnit or Hibernate. Occasionally this can happen also in error. Here is what to do about it.
+
+If you get a 401/403 and _you are not_ a Spring team member, you can add the Maven central repository to your build as a temporary workaround. Meanwhile do report the issue by sending an email to buildmaster@springframework.org.
+
+If _you are_ a Spring team member, the solution to this problem is to provide your Artifactory authentication credentials to Gradle, such that it can successfully respond to 401 challenges when Artifactory issues them.  The best way to do this is with a Gradle _init script_, which keeps your username and password separate from your build script.
 
 See https://github.com/spring-projects/gradle-init-scripts#readme for simple instructions on how to dowload and install an init script that does just this.  This is recommended for all committers.
 

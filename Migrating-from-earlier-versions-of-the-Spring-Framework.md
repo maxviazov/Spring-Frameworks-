@@ -11,7 +11,7 @@ Spring Framework 4.0 requires Java SE 6 or above (specifically, a minimum level 
 If you deploy your Spring application to a Java EE server, you should ensure that it is certified for Java EE 6 or above. Of particular importance are the JPA 2.0 and Servlet 3.0 specifications. That said, it is still possible to deploy a Spring Framework 4.0 application to a Servlet 2.5 container (e.g. Google App Engine, WebSphere 7, WebLogic 10.3); however, some Servlet 3.0 based Spring features won't be available.
 
 ### Dependency Updates
-Spring Framework 4.0 declares the following minimum (optional) dependencies:
+Spring Framework 4.0 declares the following minimum (optional) dependencies as supported:
 
 #### Specifications
 * Servlet 3.0 (2.5 supported for deployment)
@@ -22,9 +22,9 @@ Spring Framework 4.0 declares the following minimum (optional) dependencies:
 * JDO 3.0
 
 #### Servers
-* Tomcat 6.0.30
-* Jetty 7.3
-* JBoss AS 6.0
+* Tomcat 6.0.33
+* Jetty 7.5
+* JBoss AS 6.1
 * GlassFish 3.1
 * Oracle WebLogic 10.3.4 (with JPA 2.0 patch applied)
 * IBM WebSphere 7.0.0.9 (with JPA 2.0 feature pack installed)

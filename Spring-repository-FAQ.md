@@ -7,7 +7,7 @@ _This document explains the purpose, nature, and best practices for use of the S
 * [Can I resolve EBR artifacts via repo.spring.io?](#wiki-ebr)
 * [Will artifacts still be published to Maven Central?](#wiki-maven_central)
 * [What about existing artifacts published to S3 / maven.springsource.org?](#wiki-s3)
-* [The artifact(s) I need are not available via the Spring repository. How do I get them added?](#wiki-add_repository)
+* [How to add an additional Maven repository for artifacts hosted elsewhere?](#wiki-add_repository)
 * [Why do I get 401/403 errors when downloading dependencies?](#wiki-401-403-errors)
 * [What are the benefits of the Spring repository?](#wiki-benefits)
 
@@ -90,8 +90,8 @@ maven.springframework.org DNS now points to repo.spring.io.  /snapshot, /milesto
 
 ***
 <a name="wiki-add_repository"/>
-# The artifact(s) I need are not available via the Spring repository. How do I get them added?
-If you are a project lead or committer and notice that an artifact is not available via repo.spring.io/libs-release, /libs-snapshot, etc, you may need to request that a new repository be added to the Artifactory configuration.  Do the following:
+# How to add an additional Maven repository for artifacts hosted elsewhere?
+As explained earlier in ["What repositories are available?"](#wiki-available_repositories), **remote repositories** serve as caches for artifacts hosted elsewhere. If you would like to have a new repository added to the Artifactory configuration (for example because an artifact is not available anywhere else), as an alternative to adding it to their own build, a project lead or committer can do as follows:
 
 1. First, determine that the artifact is actually missing.  Go to http://repo.spring.io and perform various searches to ensure that the artifact definitely does not exist in any repository.
 2. Determine the 'canonical home' of the artifact in question. For example, `cascading:cascading-core` lives at http://clojars.org/repo.  If you cannot find the jar in any Maven repository, and must download it manually or build from source, see the note that follows these steps.

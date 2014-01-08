@@ -5,7 +5,7 @@ This page provides information when upgrading to newer versions of the Spring Fr
 For a general overview of new features, refer to [New Features and Enhancements in Spring Framework 4.0](http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#new-in-4.0) in the reference documentation.
 
 ### JDK 6
-Spring Framework 4.0 requires Java SE 6 or above (specifically, a minimum level equivalent to JDK 6 update 10, as released in late 2008). If you are migrating from an older version of Java, you will need to update your installation to a recent version of JDK 6 at least. Java 7 and 8 are recommended for use with Spring Framework 4.0, with Java 8 support in stable developer preview state until OpenJDK 8 goes final in March 2014.
+Spring Framework 4.0 requires Java SE 6 or above (specifically, a minimum API level equivalent to JDK 6 update 10, as released in late 2008). If you are migrating from an older version of Java, you will need to update your installation to a recent version of JDK 6 at least. Java 7 and 8 are recommended for use with Spring Framework 4.0, with Java 8 support in stable developer preview state until OpenJDK 8 goes final in March 2014.
 
 ### Java EE 6
 If you deploy your Spring application to a Java EE server, you should ensure that it is certified for Java EE 6 or above. Of particular importance are the JPA 2.0 and Servlet 3.0 specifications. That said, it is still possible to deploy a Spring Framework 4.0 application to a Servlet 2.5 container (e.g. Google App Engine, WebSphere 7, WebLogic 10.3); however, some Servlet 3.0 based Spring features won't be available.

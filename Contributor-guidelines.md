@@ -1,1 +1,1 @@
-This document has moved, see [CONTRIBUTING](https://github.com/SpringSource/spring-framework/blob/master/CONTRIBUTING.md)
+This document has moved, see [CONTRIBUTING](https://github.com/SpringSource/spring-framework/blob/master/CONTRIBUTING.md) and [CONTRIBUTING-DOCUMENTATION](https://github.com/spring-projects/spring-framework/blob/master/CONTRIBUTING-DOCUMENTATION.adoc).

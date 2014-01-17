@@ -22,7 +22,7 @@ Spring Framework 4.0 declares the following minimum (optional) dependencies as s
 * JDO 3.0
 
 #### Servers
-* Tomcat 6.0.33
+* Tomcat 6.0.33 / 7.0.20
 * Jetty 7.5
 * JBoss AS 6.1
 * GlassFish 3.1

@@ -32,10 +32,10 @@ As of Spring Framework 4.0.1, we declare the following minimum (optional) depend
 #### Libraries
 * Joda-Time 2.0
 * Hibernate Validator 4.3
-* Hibernate 3.6.1 (3.6.6 as of Spring Framework 4.1)
-* EhCache 2.4 (2.5 as of Spring Framework 4.1)
-* Quartz 1.8.5 (2.1 as of Spring Framework 4.1)
-* Jackson 1.8 (2.0 as of Spring Framework 4.1)
+* Hibernate ORM 3.6.6
+* EhCache 2.4 (note: 2.5 as of Spring Framework 4.1)
+* Quartz 1.8.5 (note: 2.1 as of Spring Framework 4.1)
+* Jackson 1.8 (note: 2.0 as of Spring Framework 4.1)
 * Groovy 1.8
 * Hessian 4.0
 * XStream 1.4
@@ -48,7 +48,7 @@ As of Spring Framework 4.0.1, we declare the following minimum (optional) depend
 The following classes and methods have been deprecated in Spring Framework 4.0. These will be removed at a future date, so please check the javadoc and migrate to the suggested alternatives:
 
 #### Quartz 1.x
-Quartz 1.x support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.0+ from then onwards.
+Quartz 1.x support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.1+ from then onwards.
 
 #### Jackson 1.x
 All Jackson v1 support is deprecated in favor of Jackson v2, and will be removed in Spring Framework 4.1:

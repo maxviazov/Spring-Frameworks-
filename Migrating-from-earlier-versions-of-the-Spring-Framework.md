@@ -31,9 +31,9 @@ Spring Framework 4.0 declares the following minimum (optional) dependencies as s
 
 #### Libraries
 * Hibernate Validator 4.3
-* Hibernate 3.6 (4.2 recommended)
-* EhCache 2.1 (2.5+ recommended)
-* Quartz 1.8 (2.2 recommended)
+* Hibernate 3.6.1 (4.2 recommended)
+* EhCache 2.4 (2.5+ recommended)
+* Quartz 1.8.5 (2.1+ recommended)
 * Jackson 1.8 (2.2 recommended)
 * Groovy 1.8 (2.2 recommended)
 * Joda-Time 2.0 (2.3 recommended)
@@ -41,7 +41,7 @@ Spring Framework 4.0 declares the following minimum (optional) dependencies as s
 * XStream 1.4
 * Apache POI 3.5
 * Apache Velocity 1.7
-* Apache Tiles 2.2
+* Apache Tiles 2.2.2
 * Apache Derby 10.6
 
 ### Deprecated code

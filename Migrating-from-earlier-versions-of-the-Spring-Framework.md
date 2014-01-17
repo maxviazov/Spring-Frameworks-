@@ -30,13 +30,13 @@ As of Spring Framework 4.0.1, we declare the following minimum (optional) depend
 * IBM WebSphere 7.0.0.9 (with JPA 2.0 feature pack installed)
 
 #### Libraries
+* Joda-Time 2.0
 * Hibernate Validator 4.3
-* Hibernate 3.6.1 (4.2 recommended)
-* EhCache 2.4 (2.5+ recommended)
-* Quartz 1.8.5 (2.1+ recommended)
-* Jackson 1.8 (2.2 recommended)
-* Groovy 1.8 (2.2 recommended)
-* Joda-Time 2.0 (2.3 recommended)
+* Hibernate 3.6.1 (3.6.6 as of Spring Framework 4.1)
+* EhCache 2.4 (2.5 as of Spring Framework 4.1)
+* Quartz 1.8.5 (2.1 as of Spring Framework 4.1)
+* Jackson 1.8 (2.0 as of Spring Framework 4.1)
+* Groovy 1.8
 * Hessian 4.0
 * XStream 1.4
 * Apache POI 3.5

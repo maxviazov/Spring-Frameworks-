@@ -7,8 +7,14 @@ For a general overview of new features, refer to [New Features and Enhancements 
 ### JDK 6
 Spring Framework 4.0 requires Java SE 6 or above (specifically, a minimum API level equivalent to JDK 6 update 18, a.k.a. 1.6.0_18, as released in January 2010). If you are migrating from an older version of Java, you have to update to a recent version of JDK 6 at least: From a support perspective, we require JDK 6 update 25 or higher. Java 7 and 8 are recommended for use with Spring Framework 4.0, with Java 8 support in stable developer preview state until OpenJDK 8 becomes generally available in March 2014.
 
+#### A note on the IBM JDK
+Spring generally supports equivalent generations of the IBM JDK and JRE, in particular as shipped with the WebSphere application server. Since not only WebSphere 7 but also WebSphere 8 and 8.5 have been shipping with IBM JDK 6 as the default JDK up until 2013, we intend to retain our JDK 6 support for the entire Spring Framework 4.x line, as long as those generations of WebSphere are supported by IBM themselves. At the same time, if you can, we recommend IBM JDK 7 (optionally supported as of WebSphere 8.5).
+
 ### Java EE 6
-If you deploy your Spring application to a Java EE server, you should ensure that it is certified for Java EE 6 or above. Of particular importance are the JPA 2.0 and Servlet 3.0 specifications. That said, it is still possible to deploy a Spring Framework 4.0 application to a Servlet 2.5 container (e.g. Google App Engine, WebSphere 7, WebLogic 10.3); however, some Servlet 3.0 based Spring features won't be available.
+If you deploy your Spring applications to Java EE servers, we recommend server generations certified for Java EE 6. Of particular importance are the JPA 2.0 and Servlet 3.0 specifications. That said, it is still possible to deploy Spring 4 applications to servers with a Servlet 2.5 container (e.g. Google App Engine, WebSphere 7, WebLogic 10.3); however, some Servlet 3.0 based Spring features won't be available then. For Tomcat, the same rules apply: We recommend Tomcat 7 or 8 but still support Tomcat 6 as well.
+
+#### A note on Java EE levels
+The Spring Framework generally doesn't require a specific level of Java EE overall but rather specific levels of individual specifications, such as JPA 2.0. This approach allows for running on "intermediate" server generations which selectively introduce new specifications while being based on an older EE platform level: e.g. WebSphere 7.0.0.9 with its JPA 2.0 feature pack, WebLogic 10.3.4 with its JPA 2.0 patch, or now the upcoming WebLogic 12.1.3 with its JPA 2.1 support on an EE 6 baseline.
 
 ### Dependency Updates
 As of Spring Framework 4.0.1, we declare the following minimum (optional) dependencies as officially supported. Those versions and later are what the Spring team recommends, in particular with respect to providing support for Spring applications that interact with those servers and libaries. Note that earlier versions may still work with Spring to some degree, as long as the fundamental system requirements are met; however, when using older versions, you are on your own from a support perspective.

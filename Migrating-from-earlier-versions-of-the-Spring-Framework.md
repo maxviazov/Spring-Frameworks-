@@ -37,12 +37,12 @@ As of Spring Framework 4.0.1, we declare the following minimum (optional) depend
 * Quartz 1.8.5 (note: 2.1 as of Spring Framework 4.1)
 * Jackson 1.8 (note: 2.0 as of Spring Framework 4.1)
 * Groovy 1.8
-* Hessian 4.0
+* Hessian 4.0.7
 * XStream 1.4
-* Apache POI 3.5
+* Apache POI 3.7
 * Apache Velocity 1.7
 * Apache Tiles 2.2.2
-* Apache Derby 10.6
+* Apache Derby 10.8
 
 ### Deprecated code
 The following classes and methods have been deprecated in Spring Framework 4.0. These will be removed at a future date, so please check the javadoc and migrate to the suggested alternatives:

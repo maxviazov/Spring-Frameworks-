@@ -38,20 +38,26 @@ As of Spring Framework 4.0.1, we declare the following minimum (optional) depend
 #### Libraries
 * Joda-Time 2.0
 * Hibernate Validator 4.3
-* Hibernate ORM 3.6.6
+* Hibernate ORM 3.6.6 (note: to be deprecated as of Spring Framework 4.1, with Hibernate 4.2/4.3 recommended)
 * EhCache 2.3.2 (note: 2.5 as of Spring Framework 4.1)
 * Quartz 1.8.5 (note: 2.1 as of Spring Framework 4.1)
 * Jackson 1.8 (note: 2.0 as of Spring Framework 4.1)
 * Groovy 1.8
 * Hessian 4.0.7
 * XStream 1.4
-* Apache POI 3.7
 * Apache Velocity 1.7
-* Apache Tiles 2.2.2
+* Apache Tiles 2.2.2 (note: to be deprecated as of Spring Framework 4.1, with Tiles 3.0.3 recommended)
+* Apache POI 3.7
 * Apache Derby 10.8
 
 ### Deprecated code
-The following classes and methods have been deprecated in Spring Framework 4.0. These will be removed at a future date, so please check the javadoc and migrate to the suggested alternatives:
+The following classes and methods have been deprecated in Spring Framework 4.0 or will be deprecated as of Spring Framework 4.1. They will be removed at a future date, so please check the javadoc and migrate to the suggested alternatives...
+
+#### Hibernate 3.6 support
+The `org.springframework.orm.hibernate3` package will be deprecated as of Spring Framework 4.1. We keep supporting it for the time being, in particular against Spring Framework 4.0. However, we recommend a timely upgrade to Hibernate 4.2/4.3: As of Spring Framework 4.0.1, we provide a HibernateTemplate variant in `org.springframework.orm.hibernate4` to ease migration for common Hibernate 3.x data access code, in particular if your motivation for an upgrade is the lack of bug fixes in the Hibernate 3.x line. Note that newly written code is recommended to use Hibernate's native `SessionFactory.getCurrentSession()` style.
+
+#### Tiles 2.2.2
+While Spring Framework 4.0 still fully supports Tiles 2.2.2, the corresponding `org.springframework.web.servlet.view.tiles2` package will be deprecated as of Spring Framework 4.1. We recommend a timely upgrade to Tiles 3.0.3, supported in `org.springframework.web.servlet.view.tiles3`.
 
 #### Quartz 1.x
 Quartz 1.x support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.1+ from then onwards.

@@ -59,10 +59,10 @@ The `org.springframework.orm.hibernate3` package will be deprecated as of Spring
 #### Tiles 2.2.2
 While Spring Framework 4.0 still fully supports Tiles 2.2.2, the corresponding `org.springframework.web.servlet.view.tiles2` package will be deprecated as of Spring Framework 4.1. We recommend a timely upgrade to Tiles 3.0.3, supported in `org.springframework.web.servlet.view.tiles3`.
 
-#### Quartz 1.x
-Quartz 1.x support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.1+ from then onwards.
+#### Quartz 1.8
+Quartz 1.8 support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.1+ from then onwards.
 
-#### Jackson 1.x
+#### Jackson 1.8
 All Jackson v1 support is deprecated in favor of Jackson v2, and will be removed in Spring Framework 4.1:
 * `JacksonObjectMapperFactoryBean`
 * `MappingJacksonHttpMessageConverter`

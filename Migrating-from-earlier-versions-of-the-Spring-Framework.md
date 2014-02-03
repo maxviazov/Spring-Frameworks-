@@ -47,6 +47,7 @@ As of Spring Framework 4.0.1, we declare the following minimum (optional) depend
 * XStream 1.4
 * Apache Velocity 1.7
 * Apache Tiles 2.2.2 (note: to be deprecated as of Spring Framework 4.1, with Tiles 3.0.3 recommended)
+* Apache HttpComponents 4.3 (for Spring's http.client package; as of Spring Framework 4.1, it'll be required for all of Spring)
 * Apache POI 3.7
 * Apache Derby 10.8
 

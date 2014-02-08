@@ -57,9 +57,9 @@ The following classes and methods have been deprecated in Spring Framework 4.0 o
 #### Hibernate 3.6
 The `org.springframework.orm.hibernate3` package will be deprecated as of Spring Framework 4.1. We keep fully supporting it for the time being against Spring Framework 4.0. However, we recommend a timely upgrade to Hibernate 4.2/4.3: As of Spring Framework 4.0.1, we provide a HibernateTemplate variant in `org.springframework.orm.hibernate4` to ease migration for common Hibernate 3.x data access code, in particular if your motivation for an upgrade is the lack of bug fixes in the Hibernate 3.x line. Note that newly written code is recommended to use Hibernate's native `SessionFactory.getCurrentSession()` style.
 
-On a related note, HibernateInterceptor is deprecated in `org.springframework.orm.hibernate3` and doesn't exist anymore in `org.springframework.orm.hibernate4`. As a replacement for basic Session binding needs, consider the use of the new OpenSessionInterceptor variant, available for both Hibernate 3 and 4.
+On a related note, HibernateInterceptor is deprecated in `org.springframework.orm.hibernate3` and doesn't exist anymore in `org.springframework.orm.hibernate4`. As a replacement for basic Session binding needs, consider the use of the new OpenSessionInterceptor variant, available for both Hibernate 3 and 4 as of Spring Framework 4.0.2.
 
-Note: The Spring Framework 4.0.0 release accidentally restricted HibernateTemplate's List return types to List<Object> only. This has been fixed as of 4.0.2 (https://jira.springsource.org/browse/SPR-11402); if you run into any issues migrating existing code, please upgrade to Spring Framework 4.0.2 first.
+Note: The Spring Framework 4.0.0 release accidentally restricted HibernateTemplate's List element types to Object only. This has been fixed as of 4.0.2 (https://jira.springsource.org/browse/SPR-11402), allowing for immediate casts to specifically typed Lists again. If you run into any issues migrating existing Hibernate access code, please upgrade to Spring Framework 4.0.2 first.
 
 #### Tiles 2.2.2
 While Spring Framework 4.0 still fully supports Tiles 2.2.2, the corresponding `org.springframework.web.servlet.view.tiles2` package will be deprecated as of Spring Framework 4.1. We recommend a timely upgrade to Tiles 3.0.3, supported in `org.springframework.web.servlet.view.tiles3`.

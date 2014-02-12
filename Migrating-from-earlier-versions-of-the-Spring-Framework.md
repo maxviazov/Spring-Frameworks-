@@ -30,7 +30,7 @@ As of Spring Framework 4.0.1, we declare the following minimum (optional) depend
 #### Servers
 * Tomcat 6.0.33 / 7.0.20
 * Jetty 7.5
-* JBoss AS 6.1
+* JBoss AS 6.1 (note: JBoss EAP 6 recommended, since AS 6/7 community releases have many unresolved bugs)
 * GlassFish 3.1 (note: deployment workaround necessary for non-serializable session attributes)
 * Oracle WebLogic 10.3.4 (with JPA 2.0 patch applied)
 * IBM WebSphere 7.0.0.9 (with JPA 2.0 feature pack installed)

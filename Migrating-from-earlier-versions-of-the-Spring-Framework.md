@@ -105,12 +105,16 @@ The default `KeyGenerator` used by Spring's cache abstraction has changed from `
 ### MVC namespace
 The Spring MVC namespace XSD had been updated to correct the casing used for a couple of attributes. When upgrading to `spring-mvc-4.0.xsd`, you should replace `enableMatrixVariables` and `ignoreDefaultModelOnRedirect` with `enable-matrix-variables` and `ignore-default-model-on-redirect` respectively.
 
+### Using Spring's JSP tags with FreeMarker
+As of Spring 4.0, Spring's JSP tag library uses specifically declared attribute types, relying on externally applied EL parsing as supported by JSP 2.0+. As a consequence, some attributes that used to accept Object values - e.g. for String EL expressions or Boolean target values - are now specifically declared for the actual target type - e.g. boolean, suggesting a target type for external EL parsing.
+
+Native JSP parsing can handle this change transparently, just requiring a recompile of the JSP pages. However, FreeMarker's JSP tag support cannot handle String values against a boolean target type - e.g. readonly='false' - and requires a change to an actual boolean value - e.g. readonly=false. In case you happened to specify such values as Strings before, please adapt those values to the actual target type.
+
 ### Spring MVC Test and Java 6
 An issue with compiling Spring MVC Test framework tests with JDK 1.6 has been [identified and fixed](https://jira.springsource.org/browse/SPR-11238) for version 4.0.1.
 
 ## Migrating to Spring Framework 3.2
 The migration guide for upgrading to Spring 3.2 is available as [Appendix D in the Spring 3.2 reference documentation](http://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/htmlsingle/#migration-3.2).
-
 
 ## Migrating to Spring Framework 3.1
 The migration guide for upgrading to Spring 3.1 is available as [Appendix C in the Spring 3.2 reference documentation](http://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/htmlsingle/#migration-3.1).

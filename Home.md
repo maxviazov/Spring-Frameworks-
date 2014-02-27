@@ -1,9 +1,9 @@
 ## Welcome!
 
-* [README](../spring-framework/#readme)
 * [[Downloading Spring artifacts]]
 * [[Building a distribution with dependencies]]
 * [[Contributor guidelines]]
+* [[Spring Code Style]]
 * [[Gradle build and release FAQ]]
 * [[autorepo version updating]]
 * [[Spring repository FAQ]]

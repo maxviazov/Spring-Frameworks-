@@ -1,6 +1,6 @@
 ## Introduction
 
-This document serves as the definition of our coding standards for source files of the Spring framework. It is primarily intended to the Spring team but can be used as a reference by contributors.
+This document serves as the definition of our coding standards for source files of the Spring Framework. It is primarily intended to the Spring Framework team but can be used as a reference by contributors.
 
 The structure of this document is based on the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) reference and is **an ongoing process**.
 

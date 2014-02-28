@@ -1,6 +1,6 @@
 This page provides information when upgrading to newer versions of the Spring Framework. If you find items not covered yet, please raise a [ticket in JIRA](http://jira.springsource.org) or submit a pull-request against this page.
 
-### Currently supported generations: 3.2.x and 4.0.x
+### Currently supported generations: 3.2 and 4.0
 Note that there is no open source support for the 3.0.x and 3.1.x lines anymore. We strongly recommend an upgrade to the latest Spring Framework 3.2.x release, and suggest an early upgrade to the 4.0.x line: http://projects.spring.io/spring-framework/
 
 ## Migrating to Spring Framework 4.0

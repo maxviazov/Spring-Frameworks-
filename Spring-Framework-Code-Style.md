@@ -1,18 +1,18 @@
 ## Introduction
 
-This document serves as the definition of our coding standards for source files of the Spring Framework. It is primarily intended to the Spring Framework team but can be used as a reference by contributors.
+This document serves as the definition of the coding standards for source files in the Spring Framework. It is primarily intended for the Spring Framework team but can be used as a reference by contributors.
 
-The structure of this document is based on the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) reference and is **an ongoing process**.
+The structure of this document is based on the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) reference and is _work in progress_.
 
-## Source file basics
+## Source File Basics
 
 ### File encoding: ISO-8859-1 
 
-Source files are encoded in `ISO-8859-1`.
+Source files must be encoded using `ISO-8859-1`.
 
 ### Indentation
 
-* Indentation uses _tabs_ (and not space)
+* Indentation uses _tabs_ (not spaces)
 * Unix (LF), not DOS (CRLF) line endings
 * Eliminate all trailing whitespace
 
@@ -29,7 +29,7 @@ Exactly one blank line separates each section that is present.
 
 ### License
 
-Each source file should specifies the following license
+Each source file must specify the following license at the very top of the file:
 
 	/*
 	 * Copyright 2002-2014 the original author or authors.
@@ -47,18 +47,18 @@ Each source file should specifies the following license
 	 * limitations under the License.
 	 */
 
-Always check the date range in the license header. For example, if you've modified a file in 2014 whose header still reads
+Always check the date range in the license header. For example, if you've modified a file in 2014 whose header still reads:
 ```   
 * Copyright 2002-2011 the original author or authors.
 ```
-then be sure to update it to 2014 appropriately
+Then be sure to update it to 2014 accordingly:
 ```
 * Copyright 2002-2014 the original author or authors.
 ```
 
-### Java source file organisation
+### Java source file organization
 
-The following governs how the source file is organised:
+The following governs how the elements of a source file are organized:
 
 1. static fields
 1. normal fields
@@ -69,22 +69,22 @@ The following governs how the source file is organised:
 1. method implementations coming from interfaces
 1. private or protected templates that get called from method implementations coming from interfaces
 1. other methods
-1. equals, hashCode, and toString
+1. `equals`, `hashCode`, and `toString`
 
-Above all, the organisation of the code should feel natural. 
+Above all, the organization of the code should feel natural.
 
 ## Formatting
 
 ### Braces
 
-#### Block-like constructs: K&R syle
+#### Block-like constructs: K&R style
 
-Braces mostly follow the Kernighan and Ritchie style ("Egyptian brackets") for nonempty blocks and block-like constructs:
+Braces mostly follow the _Kernighan and Ritchie style_ (a.k.a., "Egyptian brackets") for nonempty blocks and block-like constructs:
 
-* No line break before the opening brace
+* No line break before the opening brace but prefixed by a single space
 * Line break after the opening brace
 * Line break before the closing brace
-* Line break after the closing brace if that brace terminates a statement or the body of a method, constructor or named class with the exception of the `else` statement that also leads to a line break
+* Line break after the closing brace if that brace terminates a statement or the body of a method, constructor, or named class with the exception of the `else` statement that also leads to a line break
 
 Example:
 
@@ -108,15 +108,15 @@ return new MyClass() {
 
 ### Line wrapping: around 90 characters
 
-Aim to wrap code and Javadoc at 90 characters, but favor readability over wrapping as there is no deterministic way to line-wrap in every situation. 
+Aim to wrap code and Javadoc at 90 characters but favor readability over wrapping as there is no deterministic way to line-wrap in every situation. 
 
 ## Naming
 
 ### Constant names
 
-constant names use `CONSTANT_CASE`: all uppercase letters, with words separated by underscores. 
+Constant names use `CONSTANT_CASE`: all uppercase letters, with words separated by underscores. 
 
-Every constant is a `static final` field, but not all `static final` fields are constants. The constant case should be therefore chosen only if the field **is really** a constant.
+Every constant is a `static final` field, but not all `static final` fields are constants. Constant case should therefore be chosen only if the field **is really** a constant.
 
 Example:
 
@@ -134,12 +134,12 @@ private static final Set<String> internalAnnotationAttributes = new HashSet<Stri
 
 ### File history
 
-* A file should like as it is crafted as one, not like a history of changes
+* A file should look like it was crafted by a single author, not like a history of changes
 * Don't artificially spread things out that belong together
 
-### Setters organisation
+### Organization of setter methods
 
-Chose wisely where to add a new setter; it should not be simply added at the end of the list. Maybe the setter is related to another setter or relates to a group. In that case it should be placed accordingly.
+Choose wisely where to add a new setter method; it should not be simply added at the end of the list. Perhaps the setter is related to another setter or relates to a group. In that case it should be placed near related methods.
 
 * Setter order should reflect order of importance, not historical order
-* Order of _fields_ and order of _setters_ should be **consistent**
+* Ordering of _fields_ and _setters_ should be **consistent**

@@ -42,16 +42,16 @@ As of Spring Framework 4.0.2, we declare the following minimum (optional) depend
 * Joda-Time 2.0
 * Hibernate Validator 4.3
 * Hibernate ORM 3.6.9 (note: to be deprecated as of Spring Framework 4.1, with Hibernate 4.2/4.3 recommended)
+* Apache Tiles 2.2.2 (note: to be deprecated as of Spring Framework 4.1, with Tiles 3.0.3 recommended)
+* Apache HttpComponents 4.3 (for Spring's http.client package; as of Spring Framework 4.1, it'll be required for all of Spring)
 * EhCache 2.4.7 (note: 2.5 as of Spring Framework 4.1)
 * Quartz 1.8.6 (note: 2.1 as of Spring Framework 4.1)
 * Jackson 1.8.6 (note: 2.0 as of Spring Framework 4.1)
-* Apache Tiles 2.2.2 (note: to be deprecated as of Spring Framework 4.1, with Tiles 3.0.3 recommended)
-* Apache HttpComponents 4.3 (for Spring's http.client package; as of Spring Framework 4.1, it'll be required for all of Spring)
-* Apache Velocity 1.7
-* Apache POI 3.7
-* Apache Derby 10.8
+* Hessian 4.0.33
 * XStream 1.4
-* Hessian 4.0.7 (note: 4.0.33+ recommended)
+* Apache POI 3.7
+* Apache Velocity 1.7
+* Apache Derby 10.8
 
 ### Deprecated code
 The following classes and methods have been deprecated in Spring Framework 4.0 or will be deprecated as of Spring Framework 4.1. They will be removed at a future date, so please check the javadocs and migrate to the suggested alternatives...

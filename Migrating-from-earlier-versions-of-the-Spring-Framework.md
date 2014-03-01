@@ -54,7 +54,7 @@ As of Spring Framework 4.0.2, we declare the following minimum (optional) depend
 * Hessian 4.0.7 (note: 4.0.33+ recommended)
 
 ### Deprecated code
-The following classes and methods have been deprecated in Spring Framework 4.0 or will be deprecated as of Spring Framework 4.1. They will be removed at a future date, so please check the javadoc and migrate to the suggested alternatives...
+The following classes and methods have been deprecated in Spring Framework 4.0 or will be deprecated as of Spring Framework 4.1. They will be removed at a future date, so please check the javadocs and migrate to the suggested alternatives...
 
 #### Hibernate 3.6
 The `org.springframework.orm.hibernate3` package will be deprecated as of Spring Framework 4.1. We keep fully supporting it for the time being against Spring Framework 4.0. However, we recommend a timely upgrade to Hibernate 4.2/4.3.

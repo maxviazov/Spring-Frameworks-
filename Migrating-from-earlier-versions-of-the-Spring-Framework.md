@@ -71,7 +71,7 @@ While Spring Framework 4.0 still fully supports Tiles 2.2.2, the corresponding `
 #### Quartz 1.8
 Quartz 1.8 support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.1+ from then onwards.
 
-#### Jackson 1.8
+#### Jackson 1.8/1.9
 All Jackson v1 support is deprecated in favor of Jackson v2, and will be removed in Spring Framework 4.1:
 * `JacksonObjectMapperFactoryBean`
 * `MappingJacksonHttpMessageConverter`

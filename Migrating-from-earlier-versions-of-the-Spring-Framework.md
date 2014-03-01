@@ -22,7 +22,7 @@ The Spring Framework generally doesn't require a specific level of Java EE overa
 As of Spring Framework 4.0.2, we declare the following minimum (optional) dependencies as officially supported. Those versions and later are what the Spring team recommends, in particular with respect to providing support for Spring applications that interact with those servers and libaries. Note that earlier versions may still work with Spring to some degree, as long as the fundamental system requirements are met; however, when using older versions, you are on your own from a support perspective.
 
 #### Specifications
-* Servlet 3.0 (2.5 supported for deployment)
+* Servlet 3.0  _(2.5 supported for deployment)_
 * JPA 2.0
 * Bean Validation 1.0
 * JSF 2.0
@@ -32,21 +32,21 @@ As of Spring Framework 4.0.2, we declare the following minimum (optional) depend
 #### Servers
 * Tomcat 6.0.33 / 7.0.20
 * Jetty 7.5
-* JBoss AS 6.1 (note: JBoss EAP 6 recommended, since AS 6/7 community releases have many unresolved bugs)
-* GlassFish 3.1 (note: deployment workaround necessary for non-serializable session attributes)
-* Oracle WebLogic 10.3.4 (with JPA 2.0 patch applied)
-* IBM WebSphere 7.0.0.9 (with JPA 2.0 feature pack installed)
+* JBoss AS 6.1  _(note: JBoss EAP 6 recommended, since AS 6/7 community releases have many unresolved bugs)_
+* GlassFish 3.1  _(note: deployment workaround necessary for non-serializable session attributes)_
+* Oracle WebLogic 10.3.4  _(with JPA 2.0 patch applied)_
+* IBM WebSphere 7.0.0.9  _(with JPA 2.0 feature pack installed)_
 
 #### Libraries
 * Groovy 1.8.7
 * Joda-Time 2.1
 * Hibernate Validator 4.3
-* Hibernate ORM 3.6.9 (note: to be deprecated as of Spring Framework 4.1, with Hibernate 4.2/4.3 recommended)
-* Apache Tiles 2.2.2 (note: to be deprecated as of Spring Framework 4.1, with Tiles 3.0.3 recommended)
-* Apache HttpComponents 4.3 (for Spring's http.client package; as of Spring Framework 4.1, it'll be required for all of Spring)
-* EhCache 2.4.7 (note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.6 or later recommended)
-* Quartz 1.8.6 (note: minimum 2.1 as of Spring Framework 4.1, with Quartz 2.1.6 or later recommended)
-* Jackson 1.8.6 (note: minimum 2.0 as of Spring Framework 4.1, with Jackson 2.2 or later recommended)
+* Hibernate ORM 3.6.9  _(note: to be deprecated as of Spring Framework 4.1, with Hibernate 4.2/4.3 recommended)_
+* Apache Tiles 2.2.2  _(note: to be deprecated as of Spring Framework 4.1, with Tiles 3.0.3 recommended)_
+* Apache HttpComponents 4.3  _(for Spring's http.client package; as of Spring Framework 4.1, it'll be required for all of Spring)_
+* EhCache 2.4.7  _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.6 or later recommended)_
+* Quartz 1.8.6  _(note: minimum 2.1 as of Spring Framework 4.1, with Quartz 2.1.6 or later recommended)_
+* Jackson 1.8.6  _(note: minimum 2.0 as of Spring Framework 4.1, with Jackson 2.2 or later recommended)_
 * Hessian 4.0.33
 * XStream 1.4
 * Apache Velocity 1.7

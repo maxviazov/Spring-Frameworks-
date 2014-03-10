@@ -17,6 +17,10 @@ These are the reported issues that we still discuss (or simply things that the f
 
 * Use tab character
 
+### Spaces
+
+* Add a space before the left brace of an array initializer
+
 ### Wrapping and braces
 
 * Keep when reformating: _multiple expressions in one line_, _simple blocks in one line_

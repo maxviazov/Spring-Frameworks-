@@ -28,6 +28,11 @@ These are the reported issues that we still discuss (or simply things that the f
 * Keep one space before } (solely use to keep the space between the end of the last method and the end of the class)
 * Minimum blank line after class header 0 (instead of 1)
 
+### Javadoc
+
+* Disabled
+
 ### Imports
 
+* Class count to trigger static import to 50 (to prevent `import org.foo.*;` instead of listing the classes of `org.foo`)
 * Changed the import sequence to import in the following order: `static imports`, `java.*`, `javax.*`, others, `org.springframework.*`. Each sequence is separated by a space

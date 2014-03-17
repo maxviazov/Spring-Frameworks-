@@ -23,7 +23,7 @@ These are the reported issues that we still discuss (or simply things that the f
 
 ### Wrapping and braces
 
-* Keep when reformating: _multiple expressions in one line_, _simple blocks in one line_
+* Keep when reformating: _multiple expressions in one line_, _simple blocks in one line_, _simple classes in one line_
 * `else`, `catch` and `finally` on new line
 * Method declaration parameters: do not align when multiline
 

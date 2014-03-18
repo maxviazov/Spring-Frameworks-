@@ -71,6 +71,8 @@ The following governs how the elements of a source file are organized:
 1. other methods
 1. `equals`, `hashCode`, and `toString`
 
+Note that private or protected methods called from method implementations should be immediately below the methods where they're used. In other words if there 3 interface method implementations with 3 private methods (one used from each), then the order of methods should include 1 interface and 1 private method in sequence, not 3 interface and then 3 private methods at the bottom.
+
 Above all, the organization of the code should feel natural.
 
 ## Formatting

@@ -197,6 +197,10 @@ public abstract MyUtils {
 
 Making the method abstract prevents anyone from instantiating it and replace the _private_ constructor.
 
+### Field and method references
+
+A field of a class should *always* be referenced using `this`. A method of class should, on the contrary, never be prefixed by `this`.
+
 ## Javadoc
 
 ### Javadoc formatting

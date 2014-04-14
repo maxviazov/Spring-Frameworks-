@@ -11,7 +11,7 @@ The first thing to understand is that the Spring Framework is modular in nature,
     spring-aop        spring-context-support    spring-instrument-tomcat    spring-oxm       spring-web
     spring-aspects    spring-core               spring-jdbc                 spring-struts    spring-webmvc
     spring-beans      spring-expression         spring-jms                  spring-test      spring-webmvc-portlet
-    spring-context    spring-instrument         spring-orm                  spring-tx
+    spring-context    spring-instrument         spring-orm                  spring-tx        spring-websocket
 
 Since the release of Spring 3, there is no longer an "über-jar" containing all Spring classes, and this is a good thing!  For example, most folks want to take advantage of the core dependency injection container (`spring-context`) but comparatively few need Spring's Portlet MVC support (`spring-webmvc-portlet`) classes hanging around on their classpath.
 
@@ -28,7 +28,7 @@ Spring Framework (and all Spring-* projects, for that matter), publish their ind
 
 Before we go any further, let's take a moment to understand the semantics of Spring versioning:
 
-    3.1.0.RELEASE
+    4.1.0.RELEASE
     | | | | - version type
     | | | --- maintenance version
     | | ----- major version
@@ -64,7 +64,7 @@ If you are using Maven, the Central repository is always automatically searched,
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
-        <version>3.1.0.RELEASE</version>
+        <version>4.0.3.RELEASE</version>
     </dependency>
 ```
 
@@ -74,7 +74,7 @@ Notice that the `groupId` value is `org.springframework`. This is true for all S
 RC, Milestone and Snapshot versions are published to the [Spring repository](http://repo.spring.io). In addition to being published to Maven Central, GA releases are published to the Spring repository as well. _See also the [[Spring repository FAQ]]._
 
 #### Snapshots
-The following configuration will resolve the latest `spring-context` 3.1.0.BUILD-SNAPSHOT:
+The following configuration will resolve the latest `spring-context` 4.1.0.BUILD-SNAPSHOT:
 ```xml
 <repository>
     <id>repository.spring.snapshot</id>
@@ -85,12 +85,12 @@ The following configuration will resolve the latest `spring-context` 3.1.0.BUILD
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>3.1.0.BUILD-SNAPSHOT</version>
+    <version>4.1.0.BUILD-SNAPSHOT</version>
 </dependency>
 ```
 
 #### Milestones and RCs
-The following configuration will resolve `spring-context` 3.1.0.M2:
+The following configuration will resolve `spring-context` 4.0.0.M2:
 ```xml
 <repository>
     <id>repository.spring.milestone</id>
@@ -101,11 +101,11 @@ The following configuration will resolve `spring-context` 3.1.0.M2:
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>3.1.0.M2</version>
+    <version>4.0.0.M2</version>
 </dependency>
 ```
 
-And the following will resolve `spring-context` 3.1.0.RC1:
+And the following will resolve `spring-context` 4.0.0.RC1:
 ```xml
 <repository>
     <id>repository.spring.milestone</id>
@@ -116,11 +116,11 @@ And the following will resolve `spring-context` 3.1.0.RC1:
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>3.1.0.RC1</version>
+    <version>4.0.0.RC1</version>
 </dependency>
 ```
 #### GA releases
-The following configuration will resolve `spring-context` 3.1.0.RELEASE:
+The following configuration will resolve `spring-context` 4.0.3.RELEASE:
 ```xml
 <repository>
     <id>repository.spring.release</id>
@@ -131,7 +131,7 @@ The following configuration will resolve `spring-context` 3.1.0.RELEASE:
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>3.1.0.RELEASE</version>
+    <version>4.0.3.RELEASE</version>
 </dependency>
 ```
 

@@ -1,21 +1,21 @@
 _This document explains the purpose, nature, and best practices for use of the Spring repository at  http://repo.spring.io (formerly at http://repo.springsource.org). For basic instructions on downloading Spring artifacts manually or using Maven and other build systems, see [[downloading Spring artifacts]]._
 
 ### Table of Contents
-* [For the impatient](#wiki-impatient)
-* [What is the Spring repository?](#wiki-what_is_repo)
-* [What repositories are available?](#wiki-available_repositories)
-* [Can I resolve EBR artifacts via repo.spring.io?](#wiki-ebr)
-* [Will artifacts still be published to Maven Central?](#wiki-maven_central)
-* [What about existing artifacts published to S3 / maven.springsource.org?](#wiki-s3)
-* [How to add an additional Maven repository for artifacts hosted elsewhere?](#wiki-add_repository)
-* [Why do I get 401/403 errors when downloading dependencies?](#wiki-401-403-errors)
-* [What are the benefits of the Spring repository?](#wiki-benefits)
+* [For the impatient](#for-the-impatient)
+* [What is the Spring repository?](#what-is-the-spring-repository)
+* [What repositories are available?](#what-repositories-are-available)
+* [Can I resolve EBR artifacts via repo.spring.io?](#can-i-resolve-ebr-artifacts-via-the-repospringio)
+* [Will artifacts still be published to Maven Central?](#will-artifacts-still-be-published-to-maven-central)
+* [What about existing artifacts published to S3 / maven.springsource.org?](#what-about-existing-artifacts-published-to-s3--mavenspringsourceorg)
+* [How to add an additional Maven repository for artifacts hosted elsewhere?](#how-to-add-an-additional-maven-repository-for-artifacts-hosted-elsewhere)
+* [Why do I get 401/403 errors when downloading dependencies?](#why-do-i-get-401403-errors-when-downloading-dependencies)
+* [What are the benefits of the Spring repository?](#what-are-the-benefits-of-the-spring-repository)
 
 ***
 <a name="wiki-impatient"/>
 # For the impatient
-* End user application builds should use http://repo.spring.io/release, /milestone and /snapshot to resolve Spring project artifacts. [details](#wiki-available_repositories)
-* Spring project builds should use http://repo.spring.io/libs-release, /libs-milestone, and /libs-snapshot to resolve Spring project artifacts and all transitive dependencies. [details](#wiki-available_repositories)
+* End user application builds should use http://repo.spring.io/release, /milestone and /snapshot to resolve Spring project artifacts. [details](#what-repositories-are-available)
+* Spring project builds should use http://repo.spring.io/libs-release, /libs-milestone, and /libs-snapshot to resolve Spring project artifacts and all transitive dependencies. [details](#what-repositories-are-available)
 * Older-style http://maven.springsource.org URLs will continue to work, but switch to repo.spring.io for new development. [details](#wiki-s3)
 * GA Spring project artifacts will continue to be available via Maven Central. [details](#wiki-maven_central)
 

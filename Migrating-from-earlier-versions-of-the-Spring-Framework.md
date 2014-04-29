@@ -3,7 +3,7 @@ This page provides information when upgrading to newer versions of the Spring Fr
 ### Currently supported generations: 3.2 and 4.0
 Note that the 3.0.x and 3.1.x lines have been retired already, with no support available anymore. We strongly recommend an upgrade to the latest Spring Framework 3.2.x release, and suggest an early upgrade to the 4.0.x line: http://projects.spring.io/spring-framework/
 
-## Migrating to Spring Framework 4.0
+## Migrating to Spring Framework 4.0 / 4.1
 For a general overview of new features, refer to [New Features and Enhancements in Spring Framework 4.0](http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#new-in-4.0) in the reference documentation.
 
 ### JDK 6
@@ -41,7 +41,7 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 * Hibernate Validator 4.3
 * Hibernate ORM 3.6.9  _(note: to be deprecated as of Spring Framework 4.2, with Hibernate 4.2/4.3 recommended)_
 * Apache Tiles 2.2.2  _(note: to be deprecated as of Spring Framework 4.2, with Tiles 3.0.3 recommended)_
-* Apache HttpComponents 4.3  _(for Spring's http.client package; as of Spring Framework 4.1, it'll be required for all of Spring)_
+* Apache HttpComponents 4.3  _(for Spring's http.client package; as of Spring Framework 4.1, it is required for all of Spring)_
 * EhCache 2.4.7  _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.6.5 or later recommended)_
 * Quartz 1.8.6  _(note: minimum 2.1.4 as of Spring Framework 4.1, with Quartz 2.1.6 or later recommended)_
 * Jackson 1.8.6  _(note: minimum 2.0 as of Spring Framework 4.1, with Jackson 2.2 or later recommended)_
@@ -69,10 +69,10 @@ Note: The Spring Framework 4.0.0 release accidentally restricted HibernateTempla
 While Spring Framework 4.0 and 4.1 still fully support Tiles 2.2.2, the corresponding `org.springframework.web.servlet.view.tiles2` package will be deprecated as of Spring Framework 4.2. We recommend a timely upgrade to Tiles 3.0.3, supported in `org.springframework.web.servlet.view.tiles3`.
 
 #### Quartz 1.8
-Quartz 1.8 support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.1.4+ from then onwards.
+Quartz 1.8 support in the `org.springframework.scheduling.support` package is deprecated and has been removed for Spring Framework 4.1, with that package only working with Quartz 2.1.4+ from then onwards.
 
 #### Jackson 1.8/1.9
-All Jackson v1 support is deprecated in favor of Jackson v2, and will be removed in Spring Framework 4.1:
+All Jackson v1 support is deprecated in favor of Jackson v2 and has been removed in Spring Framework 4.1:
 * `JacksonObjectMapperFactoryBean`
 * `MappingJacksonHttpMessageConverter`
 * `MappingJacksonJsonView`

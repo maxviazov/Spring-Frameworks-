@@ -39,7 +39,7 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 
 #### Libraries
 * Hibernate Validator 4.3
-* Hibernate ORM 3.6.9  _(note: to be deprecated as of Spring Framework 4.2, with Hibernate 4.2/4.3 recommended)_
+* Hibernate ORM 3.6.10  _(note: to be deprecated as of Spring Framework 4.2, with Hibernate 4.2/4.3 recommended)_
 * Apache Tiles 2.2.2  _(note: to be deprecated as of Spring Framework 4.2, with Tiles 3.0.3 recommended)_
 * Apache HttpComponents 4.3  _(for Spring's http.client package; as of Spring Framework 4.1, it is required for all of Spring)_
 * EhCache 2.4.7  _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.6.5 or later recommended)_
@@ -56,7 +56,7 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 ### Deprecated code
 The following classes and methods have been deprecated in Spring Framework 4.0 or will be deprecated along the Spring Framework 4.x line. They will be removed at a future date, so please check the javadocs and migrate to the suggested alternatives...
 
-#### Hibernate 3.6
+#### Hibernate 3.6.10
 The `org.springframework.orm.hibernate3` package will be deprecated as of Spring Framework 4.2. We keep fully supporting it for the time being against Spring Framework 4.0 and 4.1. However, we recommend a timely upgrade to Hibernate 4.2/4.3.
 
 As of Spring Framework 4.0.1, we provide a HibernateTemplate variant in `org.springframework.orm.hibernate4` to ease migration for common Hibernate 3.x data access code, in particular if your motivation for an upgrade is the lack of bug fixes in the Hibernate 3.x line. Note that newly written code is recommended to use Hibernate's native `SessionFactory.getCurrentSession()` style.

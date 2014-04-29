@@ -54,10 +54,10 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 * Apache Derby 10.8
 
 ### Deprecated code
-The following classes and methods have been deprecated in Spring Framework 4.0 or will be deprecated as of Spring Framework 4.1. They will be removed at a future date, so please check the javadocs and migrate to the suggested alternatives...
+The following classes and methods have been deprecated in Spring Framework 4.0 or will be deprecated along the Spring Framework 4.x line. They will be removed at a future date, so please check the javadocs and migrate to the suggested alternatives...
 
 #### Hibernate 3.6
-The `org.springframework.orm.hibernate3` package will be deprecated as of Spring Framework 4.1. We keep fully supporting it for the time being against Spring Framework 4.0. However, we recommend a timely upgrade to Hibernate 4.2/4.3.
+The `org.springframework.orm.hibernate3` package will be deprecated as of Spring Framework 4.2. We keep fully supporting it for the time being against Spring Framework 4.0 and 4.1. However, we recommend a timely upgrade to Hibernate 4.2/4.3.
 
 As of Spring Framework 4.0.1, we provide a HibernateTemplate variant in `org.springframework.orm.hibernate4` to ease migration for common Hibernate 3.x data access code, in particular if your motivation for an upgrade is the lack of bug fixes in the Hibernate 3.x line. Note that newly written code is recommended to use Hibernate's native `SessionFactory.getCurrentSession()` style.
 
@@ -66,10 +66,10 @@ On a related note, HibernateInterceptor is deprecated in `org.springframework.or
 Note: The Spring Framework 4.0.0 release accidentally restricted HibernateTemplate's List element types to Object only. This has been fixed as of 4.0.2 (https://jira.springsource.org/browse/SPR-11402), allowing for immediate casts to specifically typed Lists again. If you run into any issues migrating existing Hibernate access code, please upgrade to Spring Framework 4.0.2 first.
 
 #### Tiles 2.2.2
-While Spring Framework 4.0 still fully supports Tiles 2.2.2, the corresponding `org.springframework.web.servlet.view.tiles2` package will be deprecated as of Spring Framework 4.1. We recommend a timely upgrade to Tiles 3.0.3, supported in `org.springframework.web.servlet.view.tiles3`.
+While Spring Framework 4.0 and 4.1 still fully support Tiles 2.2.2, the corresponding `org.springframework.web.servlet.view.tiles2` package will be deprecated as of Spring Framework 4.2. We recommend a timely upgrade to Tiles 3.0.3, supported in `org.springframework.web.servlet.view.tiles3`.
 
 #### Quartz 1.8
-Quartz 1.8 support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.1+ from then onwards.
+Quartz 1.8 support in the `org.springframework.scheduling.support` package is deprecated and will be removed in Spring Framework 4.1, with that package only working with Quartz 2.1.4+ from then onwards.
 
 #### Jackson 1.8/1.9
 All Jackson v1 support is deprecated in favor of Jackson v2, and will be removed in Spring Framework 4.1:

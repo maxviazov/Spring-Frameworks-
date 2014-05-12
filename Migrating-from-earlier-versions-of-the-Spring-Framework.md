@@ -40,7 +40,7 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 #### Libraries
 * Hibernate Validator 4.3
 * Hibernate ORM 3.6.10  _(note: to be deprecated as of Spring Framework 4.2, with Hibernate 4.2/4.3 recommended)_
-* Apache Tiles 2.2.2  _(note: to be deprecated as of Spring Framework 4.2, with Tiles 3.0.3 recommended)_
+* Apache Tiles 2.2.2  _(note: to be deprecated as of Spring Framework 4.2, with Tiles 3.0.4 recommended)_
 * Apache HttpComponents 4.3  _(for Spring's http.client package; as of Spring Framework 4.1, it is required for all of Spring)_
 * EhCache 2.4.7  _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.6.7 or later recommended)_
 * Quartz 1.8.6  _(note: minimum 2.1.4 as of Spring Framework 4.1, with Quartz 2.1.7 or later recommended)_
@@ -66,7 +66,7 @@ On a related note, HibernateInterceptor is deprecated in `org.springframework.or
 Note: The Spring Framework 4.0.0 release accidentally restricted HibernateTemplate's List element types to Object only. This has been fixed as of 4.0.2 (https://jira.springsource.org/browse/SPR-11402), allowing for immediate casts to specifically typed Lists again. If you run into any issues migrating existing Hibernate access code, please upgrade to Spring Framework 4.0.2 first.
 
 #### Tiles 2.2.2
-While Spring Framework 4.0 and 4.1 still fully support Tiles 2.2.2, the corresponding `org.springframework.web.servlet.view.tiles2` package will be deprecated as of Spring Framework 4.2. We recommend a timely upgrade to Tiles 3.0.3, supported in `org.springframework.web.servlet.view.tiles3`.
+While Spring Framework 4.0 and 4.1 still fully support Tiles 2.2.2, the corresponding `org.springframework.web.servlet.view.tiles2` package will be deprecated as of Spring Framework 4.2. We recommend a timely upgrade to Tiles 3.0.4, supported in `org.springframework.web.servlet.view.tiles3`.
 
 #### Quartz 1.8
 Quartz 1.8 support in the `org.springframework.scheduling.support` package is deprecated and has been removed for Spring Framework 4.1, with that package only working with Quartz 2.1.4+ from then onwards.

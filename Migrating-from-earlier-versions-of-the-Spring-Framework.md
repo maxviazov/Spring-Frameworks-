@@ -42,9 +42,9 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 * Hibernate ORM 3.6.10  _(note: to be deprecated as of Spring Framework 4.2, with Hibernate 4.2/4.3 recommended)_
 * Apache Tiles 2.2.2  _(note: to be deprecated as of Spring Framework 4.2, with Tiles 3.0.3 recommended)_
 * Apache HttpComponents 4.3  _(for Spring's http.client package; as of Spring Framework 4.1, it is required for all of Spring)_
-* EhCache 2.4.7  _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.6.5 or later recommended)_
-* Quartz 1.8.6  _(note: minimum 2.1.4 as of Spring Framework 4.1, with Quartz 2.1.6 or later recommended)_
-* Jackson 1.8.6  _(note: minimum 2.0 as of Spring Framework 4.1, with Jackson 2.2 or later recommended)_
+* EhCache 2.4.7  _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.6.7 or later recommended)_
+* Quartz 1.8.6  _(note: minimum 2.1.4 as of Spring Framework 4.1, with Quartz 2.1.7 or later recommended)_
+* Jackson 1.8.6  _(note: minimum 2.0 as of Spring Framework 4.1, with Jackson 2.2.2 or later recommended)_
 * Groovy 1.8.6
 * Joda-Time 2.1
 * Hessian 4.0.33

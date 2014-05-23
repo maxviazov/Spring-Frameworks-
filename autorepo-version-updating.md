@@ -67,7 +67,7 @@ ln -s ../../spring-framework/docs spring</code></pre>
 
 Similar to the documents, the schema should point to the corresponding autorepo location. Depending on the project, these steps may need to be repeated for multiple schema folders. For example:
 
-<pre><code>$ cd /var/www/domains/springsource.org/static/schema
+<pre><code>$ cd /var/www/domains/springsource.org/static/htdocs/schema
 mv beans .beans
 ln -fs ../autorepo/schema/spring/current/beans beans</code></pre>
 

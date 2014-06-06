@@ -1,6 +1,6 @@
 ## Introduction
 
-This document serves as the definition of the coding standards for source files in the Spring Framework. It is primarily intended for the Spring Framework team but can be used as a reference by contributors.
+This document defines the coding standards for source files in the Spring Framework. It is primarily intended for the Spring Framework team but can be used as a reference by contributors.
 
 The structure of this document is based on the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) reference and is _work in progress_.
 
@@ -15,17 +15,18 @@ Source files must be encoded using `ISO-8859-1`. (see [SPR-11569](https://jira.s
 * Indentation uses _tabs_ (not spaces)
 * Unix (LF), not DOS (CRLF) line endings
 * Eliminate all trailing whitespace
+  * On Linux, Mac, etc.: `find . -type f -name "*.java" -exec perl -p -i -e "s/[ \t]$//g" {} \;`
 
 ## Source file structure
 
-A source file consists of, in order:
+A source file consists of the following, in this exact order:
 
 * License
 * Package statement
 * Import statements
 * Exactly one top-level class
 
-Exactly one blank line separates each section that is present.
+Exactly one blank line separates each of the above sections.
 
 ### License
 
@@ -65,15 +66,15 @@ The following governs how the elements of a source file are organized:
 1. constructors
 1. (private) methods called from constructors
 1. static factory methods
-1. properties
+1. JavaBean properties (i.e., getters and setters)
 1. method implementations coming from interfaces
 1. private or protected templates that get called from method implementations coming from interfaces
 1. other methods
 1. `equals`, `hashCode`, and `toString`
 
-Note that private or protected methods called from method implementations should be immediately below the methods where they're used. In other words if there 3 interface method implementations with 3 private methods (one used from each), then the order of methods should include 1 interface and 1 private method in sequence, not 3 interface and then 3 private methods at the bottom.
+Note that private or protected methods called from method implementations should be placed immediately below the methods where they're used. In other words if there 3 interface method implementations with 3 private methods (one used from each), then the order of methods should include 1 interface and 1 private method in sequence, not 3 interface and then 3 private methods at the bottom.
 
-Above all, the organization of the code should feel natural.
+Above all, the organization of the code should feel _natural_.
 
 ## Formatting
 
@@ -113,14 +114,14 @@ return new MyClass() {
 
 Aim to wrap code and Javadoc at 90 characters but favor readability over wrapping as there is no deterministic way to line-wrap in every situation. 
 
-### Spaces
+### Blank Lines
 
-Add two spaces around the following elements:
+Add two blank lines before the following elements:
 
-* `static {` block
-* fields
+* `static {}` block
+* Fields
 * Constructors
-* Inner class
+* Inner classes
 
 ## Naming
 
@@ -156,13 +157,13 @@ Choose wisely where to add a new setter method; it should not be simply added at
 * Setter order should reflect order of importance, not historical order
 * Ordering of _fields_ and _setters_ should be **consistent**
 
-### Elvis operator
+### Ternary Operator
 
-Wrap the elvis operator with parenthesis, i.e. `return (foo != null ? foo : "default");`
+Wrap the ternary operator within parentheses, i.e. `return (foo != null ? foo : "default");`
 
-### Null check
+### Null Checks
 
-Use the `Assert.notNull` static method to check that a method argument is not `null`. Format the exception message so that the name of the parameter comes first with its first character capitalized, following by _must not be null_. For instance
+Use the `org.springframework.util.Assert.notNull` static method to check that a method argument is not `null`. Format the exception message so that the name of the parameter comes first with its first character capitalized, followed by "_must not be null_". For instance
 
 ```
 public void handle(Event event) {
@@ -173,11 +174,11 @@ public void handle(Event event) {
 
 ### Static imports
 
-Static imports should not be used in production code. It should be used in test code, especially for things like `org.junit.Assert`
+Static imports should not be used in production code. They should be used in test code, especially for things like `org.junit.Assert`.
 
 ### Use of @Override
 
-Always add `@Override` on methods overriding a method declared in a super type.
+Always add `@Override` on methods overriding or implementing a method declared in a super type.
 
 ### Use of @since
 
@@ -186,33 +187,35 @@ Always add `@Override` on methods overriding a method declared in a super type.
 
 ### Utility classes
 
-A class that has only a bunch of utility static methods should be named with a `Utils` suffix and should be abstract, e.g.
+A class that is only a collection of static utility methods must be named with a `Utils` suffix, must have a private default constructor, and must be abstract. Making the class abstract and providing a `private` _default_ constructor prevent anyone from instantiating it. For example:
 
 ```
 public abstract MyUtils {
 
-  // static utility methods
+    private MyUtils() {
+        /* prevent instantiation */
+    }
+
+    // static utility methods
 }
 ```
 
-Making the method abstract prevents anyone from instantiating it and replace the _private_ constructor.
-
 ### Field and method references
 
-A field of a class should *always* be referenced using `this`. A method of class should, on the contrary, never be prefixed by `this`.
+A field of a class should *always* be referenced using `this`. A method of class, however, should never be referenced using `this`.
 
 ## Javadoc
 
 ### Javadoc formatting
 
-The following template summarizes a typical use for the javadoc of a method
+The following template summarizes a typical use for the Javadoc of a method.
 
 ```
 /**
  * Parse the specified {@link Element} and register the resulting
  * {@link BeanDefinition BeanDefinition(s)}.
  * <p>Implementations must return the primary {@link BeanDefinition} that results
- * from the parse if they will ever be used in a nested fashion (for example as
+ * from the parsing if they will ever be used in a nested fashion (for example as
  * an inner tag in a {@code <property/>} tag). Implementations may return
  * {@code null} if they will <strong>not</strong> be used in a nested fashion.
  * @param element the element that is to be parsed into one or more {@link BeanDefinition BeanDefinitions}
@@ -225,12 +228,12 @@ BeanDefinition parse(Element element, ParserContext parserContext);
 
 In particular, please note:
 
-* Use an imperative style (i.e. _Return_ and not _Returns_)
-* No space between the description and the parameters description
-* If the description is defined with multiple paragraphs, start each of them with `<p>`
-* If a parameter description needs to be wrapped, do not align it (see `parserContext`)
+* Use an imperative style (i.e. _Return_ and not _Returns_) for the first sentence.
+* No blank lines between the description and the parameter descriptions.
+* If the description is defined with multiple paragraphs, start each of them with `<p>`.
+* If a parameter description needs to be wrapped, do not indent subsequent lines (see `parserContext`).
 
-The javadoc of a class has some extra rules that are illustrated by the sample below:
+The Javadoc of a class has some extra rules that are illustrated by the sample below:
 
 ```
 /*
@@ -250,20 +253,20 @@ The javadoc of a class has some extra rules that are illustrated by the sample b
  */
 ```
 
-* Each class should have a `@since` tag with the version in which the class was introduced
-* The order of tags for a class javadoc is `@author`, `@since` and `@see`
-* Contrary to methods javadoc, the paragraphs of a class description *are* separated by a space
+* Each class must have a `@since` tag with the version in which the class was introduced.
+* The order of tags for class-level Javadoc is `@author`, `@since` and `@see`.
+* In contrast to method-level Javadoc, the paragraphs of a class description *are* separated by blank lines.
 
-The following are other general rules to also apply when writing javadoc:
+The following are additional general rules to apply when writing Javadoc:
 
-* Use `{@code}` to wrap code statements or values such as `null`
-* If a class is solely used by a `{@link}` element, use the fully qualified name to avoid a useless import
+* Use `{@code}` to wrap code statements or values such as `null`.
+* If a type is only referenced by a `{@link}` element, use the fully qualified name in order to avoid an unnecessary `import` declaration.
 
-## Test
+## Tests
 
 ### Naming
 
-Each test class should end with a `Tests` suffix.
+Each test class must end with a `Tests` suffix.
 
 ### Mocking
 

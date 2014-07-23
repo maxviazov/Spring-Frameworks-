@@ -8,7 +8,7 @@ The structure of this document is based on the [Google Java Style](http://google
 
 ### File encoding: ISO-8859-1 
 
-Source files must be encoded using `ISO-8859-1`. (see [SPR-11569](https://jira.spring.io/browse/SPR-11569) for an attempt to move to `UTF-8`)
+Source files must be encoded using `ISO-8859-1`. (see [SPR-11569](https://jira.spring.io/browse/SPR-11569) for a suggestion to move to `UTF-8`)
 
 ### Indentation
 
@@ -57,6 +57,21 @@ Then be sure to update it to 2014 accordingly:
 * Copyright 2002-2014 the original author or authors.
 ```
 
+### Import statements
+
+The import statements are structured as follow:
+
+* import `java.*`
+* import `javax.*`
+* blank line
+* import all other imports
+* blank line
+* import `org.springframework.*`
+* blank line
+* import static all other imports
+
+Also, static imports should not be used in production code. They should be used in test code, especially for things like `org.junit.Assert`.
+
 ### Java source file organization
 
 The following governs how the elements of a source file are organized:
@@ -102,7 +117,7 @@ return new MyClass() {
 			try {
 				alternative();
 			} 
-			catch (ProblemException e) {
+			catch (ProblemException ex) {
 				recover();
 			}
 		}
@@ -114,6 +129,15 @@ return new MyClass() {
 
 Aim to wrap code and Javadoc at 90 characters but favor readability over wrapping as there is no deterministic way to line-wrap in every situation. 
 
+When wrapping a lengthy expression put the separator symbol at the end of the line, rather on the next line (think comma separated arguments as an exemple). For instance:
+
+```
+if (thisLengthyMethodCall(param1, param2) && anotherCheck() &&
+        yetAnotherCheck()) {
+....
+}
+```
+
 ### Blank Lines
 
 Add two blank lines before the following elements:
@@ -122,6 +146,21 @@ Add two blank lines before the following elements:
 * Fields
 * Constructors
 * Inner classes
+
+Add one blank line after a method signature that is multiline, i.e.
+
+```
+@Override
+protected Object invoke(FooBarOperationContext<FooBarOperation> context,
+  			FooBarInvoker invoker) {
+
+    CacheKeyInvocationContext<CachePut> invocationContext = ...
+```
+## Class declaration
+
+Try as much as possible to put the `implemnts`, `extends` section of a class declaration on the same line as the class itself. 
+
+Order the classes so that the most important comes first.
 
 ## Naming
 
@@ -143,6 +182,10 @@ private static final ThreadLocal<Executor> executorHolder = new ThreadLocal<Exec
 private static final Set<String> internalAnnotationAttributes = new HashSet<String>();
 ```
 
+### variable names
+
+Avoid using variable name for a single character. For instance prefer `Method method` to `Method m`. 
+
 ## Programming Practices
 
 ### File history
@@ -161,6 +204,8 @@ Choose wisely where to add a new setter method; it should not be simply added at
 
 Wrap the ternary operator within parentheses, i.e. `return (foo != null ? foo : "default");`
 
+Also make sure that the _not null_ condition comes first.
+
 ### Null Checks
 
 Use the `org.springframework.util.Assert.notNull` static method to check that a method argument is not `null`. Format the exception message so that the name of the parameter comes first with its first character capitalized, followed by "_must not be null_". For instance
@@ -171,10 +216,6 @@ public void handle(Event event) {
     //...
 }
 ```
-
-### Static imports
-
-Static imports should not be used in production code. They should be used in test code, especially for things like `org.junit.Assert`.
 
 ### Use of @Override
 

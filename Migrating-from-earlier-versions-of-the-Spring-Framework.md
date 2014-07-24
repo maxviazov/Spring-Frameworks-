@@ -19,7 +19,7 @@ If you deploy your Spring applications to Java EE servers, we recommend server g
 The Spring Framework generally doesn't require a specific level of Java EE overall but rather specific minimum levels of individual specifications, such as JPA 2.0. This approach allows for running on "intermediate" server generations which selectively introduce new specifications while being based on an older EE platform level: e.g. WebSphere 7.0.0.9 with its JPA 2.0 feature pack, WebLogic 10.3.4 with its JPA 2.0 patch, or now WebLogic 12.1.3 with its JPA 2.1 support on an EE 6 baseline.
 
 ### Dependency updates
-As of Spring Framework 4.0.3, we declare the following minimum (optional) dependencies as officially supported. Those versions and later are what the Spring team recommends, in particular with respect to providing support for Spring applications that interact with those servers and libaries. Note that earlier versions may still work with Spring to some degree, as long as the fundamental system requirements are met; however, when using older versions, you are on your own from a support perspective.
+As of Spring Framework 4.0.3, we declare the following minimum (optional) dependencies as officially supported. Those versions and later are what the Spring team recommends, in particular with respect to providing support for Spring applications that interact with those servers and libraries. Note that earlier versions may still work with Spring to some degree, as long as the fundamental system requirements are met; however, when using older versions, you are on your own from a support perspective.
 
 #### Specifications
 * Servlet 3.0  _(2.5 supported for deployment)_
@@ -45,6 +45,7 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 * EhCache 2.4.7 _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.6.7 or later recommended)_
 * Quartz 1.8.6 _(note: minimum 2.1.4 as of Spring Framework 4.1, with Quartz 2.1.7 or later recommended)_
 * Jackson 1.8.6 _(note: minimum 2.1 as of Spring Framework 4.1, with Jackson 2.2.2 or later recommended)_
+* Rome 1.0 _(note: minimum 1.5.0 as of Spring Framework 4.1, dependency groupId has also changed from rome to com.rometools)_
 * Groovy 1.8.6 _(note: 2.3 or later recommended)_
 * Joda-Time 2.1 _(note: 2.2 or later recommended)_
 * Hessian 4.0.33

@@ -17,3 +17,4 @@ Theres are the rules that we have disabled:
 * _Tabulation characters should not be used_ as we do ask our code to use tabs and not spaces
 * _Throwable and Error classes should not be caught_ as framework code requires such arrangement in many places
 * _Constant names should comply with a naming convention_ basically states that any `public static final` field is a constant. We address this specifically in [constant names](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Code-Style#constant-names)
+* _Loggers should be "private static final" and should share a naming convention_ as framework code requires non static loggers and some use cases require several loggers in the same class.

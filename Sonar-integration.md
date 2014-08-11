@@ -6,7 +6,7 @@ This document defines the quality profile the Spring Framework is using for Sona
 
 The `Spring Framework` quality profile is based on the standard `Sonar Way` profile. Note that no findbugs-related rule can be enabled as Java8 support is not there yet.
 
-The `Sonar Way` brings by 114 rules by default.
+The `Sonar Way` brings 114 rules by default.
 
 ### Disabled rules
 

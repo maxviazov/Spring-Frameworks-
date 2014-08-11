@@ -12,9 +12,16 @@ The `Sonar Way` brings by 114 rules by default.
 
 Theres are the rules that we have disabled:
 
-* _Right curly brace and next "else", "catch" and "finally" keywords should be located on the same line_ as our [Spring Framework Code Style](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Code-Style) uses a different style
-* _Useless parentheses around expressions should be removed to prevent any misunderstanding_ as we actually use such extra parantheses, especially with [ternary operatops](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Code-Style#ternary-operator)
-* _Tabulation characters should not be used_ as we do ask our code to use tabs and not spaces
-* _Throwable and Error classes should not be caught_ as framework code requires such arrangement in many places
-* _Constant names should comply with a naming convention_ basically states that any `public static final` field is a constant. We address this specifically in [constant names](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Code-Style#constant-names)
-* _Loggers should be "private static final" and should share a naming convention_ as framework code requires non static loggers and some use cases require several loggers in the same class.
+* **Right curly brace and next "else", "catch" and "finally" keywords should be located on the same line**: our [Spring Framework Code Style](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Code-Style) uses a different style
+* **Useless parentheses around expressions should be removed to prevent any misunderstanding**: we actually use such extra parantheses, especially with [ternary operatops](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Code-Style#ternary-operator)
+* **Tabulation characters should not be used**: we do ask our code to use tabs and not spaces
+* **Throwable and Error classes should not be caught**: framework code requires such arrangement in many places
+* **Generic exceptions Error, RuntimeException, Throwable and Exception should never be thrown**: same as above
+* **Constant names should comply with a naming convention**: states that any `public static final` field is a constant. We address this specifically in [constant names](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Code-Style#constant-names)
+* **Loggers should be "private static final" and should share a naming convention**: framework code requires non static loggers and some use cases require several loggers in the same class.
+
+## Under consideration
+
+Theres are the rules that we may decide to disable eventually:
+
+* **Throws declarations should not be redundant**: this violation is thrown when an `@Override` method declares a `RuntimeException`

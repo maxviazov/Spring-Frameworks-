@@ -27,3 +27,5 @@ These are the rules that we have disabled:
 These are the rules that we may decide to disable eventually:
 
 * **Throws declarations should not be redundant**: this violation is thrown when an `@Override` method declares a `RuntimeException`
+* **Avoid commented-out lines of code**
+* **Expressions should not be too complex**

@@ -21,6 +21,7 @@ These are the rules that we have disabled:
 * **Loggers should be "private static final" and should share a naming convention**: framework code requires non static loggers and some use cases require several loggers in the same class.
 * **Methods should not be empty**: as the framework uses this mechanism for all kinds of extensions points.
 * **Return an empty array instead of null.** as we disagree with this rule the way we use it. `null` has an additional semantic that we use compared to the one provided by an empty array
+* **Thread.run() and Runnable.run() should not be called directly** as framework code actually requires such call
 
 ## Under consideration
 

@@ -19,6 +19,8 @@ These are the rules that we have disabled:
 * **Generic exceptions Error, RuntimeException, Throwable and Exception should never be thrown**: same as above
 * **Constant names should comply with a naming convention**: states that any `public static final` field is a constant. We address this specifically in [constant names](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Code-Style#constant-names)
 * **Loggers should be "private static final" and should share a naming convention**: framework code requires non static loggers and some use cases require several loggers in the same class.
+* **Methods should not be empty**: as the framework uses this mechanism for all kinds of extensions points.
+* **Return an empty array instead of null.** as we disagree with this rule the way we use it. `null` has an additional semantic that we use compared to the one provided by an empty array
 
 ## Under consideration
 

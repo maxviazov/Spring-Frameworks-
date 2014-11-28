@@ -1,0 +1,92 @@
+This document describes how our application event infrastructure can be improved and harmonized with other recent message-related use cases.
+
+# Proposals
+
+This sections lists some code samples that represent what we might support.
+
+Any public method in a spring-managed bean could react to an event by adding the `@EventListener` annotation.
+
+```java
+@EventListner
+public void handle(OrderCreatedEvent event) { ... }
+```
+
+Some events may be flagged as holding a single value (see `JobExecutionEvent` that holds the related `JobExecution`). In this case, the following may be used:
+
+```java
+@EventListener
+public void handle(@EventSource Object source, JobExecution jobExecution) { ... }
+```
+
+Note the use of `@EventSource` to tag that event source must be injected. This gives a similar experience than the one we have with the recent `@JmsListener` and `@RabbitListener`. 
+
+# Features
+
+The following features are under consideration
+
+## Asynchronous processing
+
+An event may be processed asynchronously by adding an `@Async` annotation on the method declaration. 
+
+```java
+@EventListener @Async
+public void processOrderCreatedEvent(OrderCreatedEvent event) { ... }
+```
+
+Using the standard `Async` _might_ be a bad idea.
+
+## Event qualifier using SpEL
+
+An event listener may be interested by only a subset of a given even type. If the content of the event is the only way to filter the candidates, we could use a SpEL expression. Something like
+
+```java
+@EventListener(condition = "${#execution.getStatus() == Status.RUNNING}")
+public void handleJobExecution(JobExecution execution) { ... }
+```
+
+## Custom even qualifier
+
+We could also abstract the SpEL example so that other kind of qualifiers can be added. The basic infrastructure would be to link an annotation with one handler. The handler would receive the annotation and event has callbacks and figure out if it matches the qualifier or not. 
+
+From a user perspective, this may look like this:
+
+```java
+@EventListener
+@Status("RUNNING")
+public void handleJobExecution(JobExecution execution) { ... }
+```
+
+## Messaging integration
+
+A event is not really different from a `Message<Event>` so we could also support that kind of signature. That way, we would provide a consistent model for JMS, AMQP, STOMP and event handling.
+
+```java
+@EventListener
+public class hanleJobExeuction(Message<JobExecutionEvent> message) { ... }
+```
+
+## Event processing customizations
+
+Certain kind of events should be processed if a certain condition is met and ideally this should be open enough for others to add their own. A typical example is https://jira.spring.io/browse/SPR-12080[SPR-12080] that requires that an event should be processed if the transaction has completed for instance. 
+
+Ideally an extra annotation should be added to the method and a handler registered in the context. This handler has a chance to determine when the event should be fired.
+
+## Ordering
+
+If multiple listeners are attached to the same event, they can be ordered. Something like:
+
+```java
+@Order(42)
+@EventListner
+public void handle(OrderCreatedEvent event) { ... }
+```
+
+## Firing events
+
+The `ApplicationContext` is a central component in a typical Spring-based application so it could be used to fire new events. `ApplicationEventPublisher` already exists but we probably need a different interface that does not stick to `ApplicationEvent`. 
+
+# Resources
+
+* https://jira.spring.io/browse/SPR-12080[SPR-12080]: transaction bound application events
+* https://jira.spring.io/browse/SPR-11622[SPR-11622]: annotation-based event listener
+* https://jira.spring.io/browse/SPR-12410[SPR-12410]: event listener ordering

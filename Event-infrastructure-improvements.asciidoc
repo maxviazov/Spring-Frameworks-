@@ -18,7 +18,7 @@ Some events may be flagged as holding a single value (see `JobExecutionEvent` th
 public void handle(@EventSource Object source, JobExecution jobExecution) { ... }
 ```
 
-Note the use of `@EventSource` to tag that event source must be injected. This gives a similar experience than the one we have with the recent `@JmsListener` and `@RabbitListener`. 
+Note the use of `@EventSource` to tag that event source must be injected. This gives a similar experience than the one we have with the recent `@JmsListener` and `@RabbitListener`. Note that we could choose to support `@Payload` even if we'll have to do so reflectively.
 
 # Features
 
@@ -54,6 +54,17 @@ From a user perspective, this may look like this:
 @EventListener
 @Status("RUNNING")
 public void handleJobExecution(JobExecution execution) { ... }
+```
+
+_TODO_: What should be do if both such condition is set and the _condition_ attribute is set. The easiest would be to delivery the event if all conditions match.
+
+## Reply pattern
+
+A event listener may return an event or a simple payload in which case it's wrapped in a generic event with the current instance as the source
+
+```java
+@EventListener
+public JobStatus handleJobExecution(JobExecution execution) { ... }
 ```
 
 ## Messaging integration

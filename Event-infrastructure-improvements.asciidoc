@@ -7,7 +7,7 @@ This sections lists some code samples that represent what we might support.
 Any public method in a spring-managed bean could react to an event by adding the `@EventListener` annotation.
 
 ```java
-@EventListner
+@EventListener
 public void handle(OrderCreatedEvent event) { ... }
 ```
 

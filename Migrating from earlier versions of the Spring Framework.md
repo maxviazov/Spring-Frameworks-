@@ -11,6 +11,8 @@ In general, there are no special migration steps from 4.0 to 4.1. Make sure you 
 ### Enforced minimum dependency versions
 As of Spring Framework 4.1, several optional dependencies are required to be within the supported range: in particular, _EhCache 2.5+, Quartz 2.1.4+, Jackson 2.1+, and ROME 1.5+_ (see below for details about 4.x dependency declarations in the Spring Framework 4.0 section). Older versions have still been tolerated in the Spring Framework 4.0.x line for a smoother upgrade path; as of 4.1, the intended minimum versions are being enforced. _Most importantly, don't use Quartz 1.8.x anymore; upgrade to Quartz 2.1.4+ instead!_
 
+Note that as of Spring Framework 4.1.4, Apache HttpComponents HttpClient needs to be 4.3+ across the framework. The previous partial tolerance of old HttpClient versions had to be dropped in order to fix several configuration issues when running against 4.3+.
+
 ## Migrating to Spring Framework 4.0
 For a general overview of new features, refer to [New Features and Enhancements in Spring Framework 4.0](http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#new-in-4.0) in the reference documentation.
 
@@ -24,7 +26,7 @@ Spring generally supports equivalent generations of the IBM JDK and JRE, in part
 If you deploy your Spring applications to Java EE servers, we recommend server generations certified for Java EE 6. Of particular importance are the JPA 2.0 and Servlet 3.0 specifications. That said, it is still possible to deploy Spring 4 applications to servers with a Servlet 2.5 container (e.g. Google App Engine, WebSphere 7, WebLogic 10.3); however, some Servlet 3.0 based Spring features won't be available then. For Tomcat, the same rules apply: We recommend Tomcat 7 or 8 but still support Tomcat 6 as well.
 
 #### A note on Java EE levels
-The Spring Framework generally doesn't require a specific level of Java EE overall but rather specific minimum levels of individual specifications, such as JPA 2.0. This approach allows for running on "intermediate" server generations which selectively introduce new specifications while being based on an older EE platform level: e.g. WebSphere 7.0.0.9 with its JPA 2.0 feature pack, WebLogic 10.3.4 with its JPA 2.0 patch, or now WebLogic 12.1.3 with its JPA 2.1 support on an EE 6 baseline.
+The Spring Framework generally doesn't require a specific level of Java EE overall but rather specific minimum levels of individual specifications, such as JPA 2.0. This approach allows for running on "intermediate" server generations which selectively introduce new specifications while being based on an older EE platform level: e.g. WebSphere 7.0.0.9 with its JPA 2.0 feature pack, WebLogic 10.3.4 with its JPA 2.0 patch, or now WebLogic 12.1.3 with its JPA 2.1 support and WebSphere 8.5 Liberty Profile with its Servlet 3.1 and JSR-236 Concurrency support on an EE 6 baseline.
 
 ### Dependency updates
 As of Spring Framework 4.0.3, we declare the following minimum (optional) dependencies as officially supported. Those versions and later are what the Spring team recommends, in particular with respect to providing support for Spring applications that interact with those servers and libraries. Note that earlier versions may still work with Spring to some degree, as long as the fundamental system requirements are met; however, when using older versions, you are on your own from a support perspective.
@@ -49,7 +51,7 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 * Hibernate Validator 4.3
 * Hibernate ORM 3.6.10  _(note: to be deprecated as of Spring Framework 4.2, with Hibernate 4.2/4.3 recommended)_
 * Apache Tiles 2.2.2 _(note: to be deprecated as of Spring Framework 4.2, with Tiles 3.0.5 recommended)_
-* Apache HttpComponents 4.3 _(required for Spring's http.client package, recommended for all of Spring)_
+* Apache HttpComponents 4.3 _(required for Spring's http.client package, and for all of Spring as of 4.1.4)_
 * EhCache 2.4.7 _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.8 or later recommended)_
 * Quartz 1.8.6 _(note: minimum 2.1.4 as of Spring Framework 4.1, with Quartz 2.2.1 recommended)_
 * Jackson 1.8.6 _(note: minimum 2.1 as of Spring Framework 4.1, with Jackson 2.3 or later recommended)_

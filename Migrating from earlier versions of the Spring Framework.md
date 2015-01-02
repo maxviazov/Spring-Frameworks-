@@ -6,6 +6,8 @@ Note that the 3.0.x and 3.1.x lines have been retired already, with no support a
 ## Migrating to Spring Framework 4.1
 For a general overview of new features, refer to [New Features and Enhancements in Spring Framework 4.1](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.1) in the reference documentation.
 
+In general, there are no special migration steps from 4.0 to 4.1. Make sure you satisfy all of 4.0's requirements as stated in the 4.0 section below. 4.1 will then just be a minor upgrade, with the most noticeable part being the enforcement of several optional dependency versions...
+
 ### Enforced minimum dependency versions
 As of Spring Framework 4.1, several optional dependencies are required to be within the supported range: in particular, _EhCache 2.5+, Quartz 2.1.4+, Jackson 2.1+, and ROME 1.5+_ (see below for details about 4.x dependency declarations in the Spring Framework 4.0 section). Older versions have still been tolerated in the Spring Framework 4.0.x line for a smoother upgrade path; as of 4.1, the intended minimum versions are being enforced. _Most importantly, don't use Quartz 1.8.x anymore; upgrade to Quartz 2.1.4+ instead!_
 

@@ -1,7 +1,7 @@
 This page provides information when upgrading to newer versions of the Spring Framework. If you find items not covered yet, please raise a [ticket in JIRA](http://jira.springsource.org) or submit a pull-request against this page.
 
-### Currently supported generations: 3.2, 4.0 and 4.1
-Note that the 3.0.x and 3.1.x lines have been retired already, with no support available anymore. We strongly recommend an upgrade to the latest Spring Framework 3.2.x release, and suggest an early upgrade to the 4.1.x line: http://projects.spring.io/spring-framework/ - note that 4.0.x will be retired soon as well, in favor of 4.1.x, so at this point, please upgrade to the latest 4.1.x release directly.
+### Actively supported generations: 3.2 and 4.1
+Note that the 3.0.x and 3.1.x lines have been retired already, with no support available anymore. Limited support for 4.0.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 3.2.x release or - preferably - to the 4.1.x line: http://projects.spring.io/spring-framework/
 
 ## Migrating to Spring Framework 4.0 / 4.1
 For a general overview of new features, refer to [New Features and Enhancements in Spring Framework 4.0](http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#new-in-4.0) and [New Features and Enhancements in Spring Framework 4.1](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.1) in the reference documentation.

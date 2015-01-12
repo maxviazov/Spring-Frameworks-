@@ -44,19 +44,7 @@ An event listener may be interested by only a subset of a given even type. If th
 public void handleJobExecution(JobExecution execution) { ... }
 ```
 
-## Custom event qualifier
 
-We could also abstract the SpEL example so that other kind of qualifiers can be added. The basic infrastructure would be to link an annotation with one handler. The handler would receive the annotation and event as callbacks and figure out if it matches the qualifier or not. 
-
-From a user perspective, this may look like this:
-
-```java
-@EventListener
-@Status("RUNNING")
-public void handleJobExecution(JobExecution execution) { ... }
-```
-
-_TODO_: What should we do if such condition is set **and** the _condition_ attribute is set? The easiest would be to deliver the event if all conditions match.
 
 ## Reply pattern
 

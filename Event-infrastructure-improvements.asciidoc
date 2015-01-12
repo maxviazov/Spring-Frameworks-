@@ -24,6 +24,23 @@ Note the use of `@EventSource` to tag that event source must be injected. This g
 
 The following features are under consideration
 
+## Event qualifier using SpEL
+
+An event listener may be interested by only a subset of a given even type. If the content of the event is the only way to filter the candidates, we could use a SpEL expression. Something like
+
+```java
+@EventListener(condition = "${#execution.getStatus() == Status.RUNNING}")
+public void handleJobExecution(JobExecution execution) { ... }
+```
+
+## Reply pattern
+
+A event listener may return an event or a simple payload in which case it's wrapped in a generic event with the current instance as the source
+
+```java
+@EventListener
+public JobStatus handleJobExecution(JobExecution execution) { ... }
+```
 ## Asynchronous processing
 
 An event may be processed asynchronously by adding an `@Async` annotation on the method declaration. 
@@ -34,27 +51,6 @@ public void processOrderCreatedEvent(OrderCreatedEvent event) { ... }
 ```
 
 Using the standard `Async` _might_ be a bad idea.
-
-## Event qualifier using SpEL
-
-An event listener may be interested by only a subset of a given even type. If the content of the event is the only way to filter the candidates, we could use a SpEL expression. Something like
-
-```java
-@EventListener(condition = "${#execution.getStatus() == Status.RUNNING}")
-public void handleJobExecution(JobExecution execution) { ... }
-```
-
-
-
-## Reply pattern
-
-A event listener may return an event or a simple payload in which case it's wrapped in a generic event with the current instance as the source
-
-```java
-@EventListener
-public JobStatus handleJobExecution(JobExecution execution) { ... }
-```
-
 ## Messaging integration
 
 A event is not really different from a `Message<Event>` so we could also support that kind of signature. That way, we would provide a consistent model for JMS, AMQP, STOMP and event handling.

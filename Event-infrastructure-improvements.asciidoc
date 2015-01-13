@@ -41,6 +41,7 @@ A event listener may return an event or a simple payload in which case it's wrap
 @EventListener
 public JobStatus handleJobExecution(JobExecution execution) { ... }
 ```
+
 ## Asynchronous processing
 
 An event may be processed asynchronously by adding an `@Async` annotation on the method declaration. 

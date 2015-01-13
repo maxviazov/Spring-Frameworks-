@@ -86,3 +86,4 @@ The `ApplicationContext` is a central component in a typical Spring-based applic
 * https://jira.spring.io/browse/SPR-12080[SPR-12080]: transaction bound application events
 * https://jira.spring.io/browse/SPR-11622[SPR-11622]: annotation-based event listener
 * https://jira.spring.io/browse/SPR-12410[SPR-12410]: event listener ordering
+* https://github.com/olivergierke/spring-restbucks[restbucks app] using a tx-bound events prototype.

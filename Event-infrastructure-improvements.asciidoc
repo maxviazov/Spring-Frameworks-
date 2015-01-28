@@ -11,14 +11,12 @@ Any public method in a spring-managed bean could react to an event by adding the
 public void handle(OrderCreatedEvent event) { ... }
 ```
 
-Some events may be flagged as holding a single value (see `JobExecutionEvent` that holds the related `JobExecution`). In this case, the following may be used:
+We should also be able to publish any arbitrary event and wrap that in some kind of `GenericEvent`. In this case, the following may be used:
 
 ```java
 @EventListener
-public void handle(@EventSource Object source, JobExecution jobExecution) { ... }
+public void handle(JobExecution jobExecution) { ... }
 ```
-
-Note the use of `@EventSource` to tag that event source must be injected. This gives a similar experience than the one we have with the recent `@JmsListener` and `@RabbitListener`. Note that we could choose to support `@Payload` even if we'll have to do so reflectively.
 
 # Features
 
@@ -49,16 +47,6 @@ An event may be processed asynchronously by adding an `@Async` annotation on the
 ```java
 @EventListener @Async
 public void processOrderCreatedEvent(OrderCreatedEvent event) { ... }
-```
-
-Using the standard `Async` _might_ be a bad idea.
-## Messaging integration
-
-A event is not really different from a `Message<Event>` so we could also support that kind of signature. That way, we would provide a consistent model for JMS, AMQP, STOMP and event handling.
-
-```java
-@EventListener
-public class hanleJobExeuction(Message<JobExecutionEvent> message) { ... }
 ```
 
 ## Event processing customizations

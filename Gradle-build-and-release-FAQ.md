@@ -5,6 +5,7 @@ build-related
 
 * [How do I check out and build the Framework?](#wiki-check_out_and_build)
 * [How long should a build take?](#wiki-build_duration)
+* [How do I configure the Gradle Daemon to speed up builds?](#wiki-gradle-daemon)
 * [Why are there so many Javadoc warnings?](#wiki-javadoc_warnings)
 * [Why are compile-time warnings suppressed?](#wiki-compilation_warnings)
 * [What are the most important tips for Gradle newbies?](#wiki-gradle_tips)

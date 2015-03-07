@@ -3,20 +3,20 @@ _This FAQ has been written with building and releasing the Spring Framework in m
 ### Table of Contents
 build-related
 
-* [How do I check out and build the Framework?](#wiki-check_out_and_build)
-* [How long should a build take?](#wiki-build_duration)
-* [How do I configure the Gradle Daemon to speed up builds?](#wiki-gradle_daemon)
-* [Why are there so many Javadoc warnings?](#wiki-javadoc_warnings)
-* [Why are compile-time warnings suppressed?](#wiki-compilation_warnings)
-* [What are the most important tips for Gradle newbies?](#wiki-gradle_tips)
-* [Why do I get 401/403 errors when downloading dependencies?](#wiki-authentication)
+* [How do I check out and build the Framework?](#user-content-wiki-check_out_and_build)
+* [How long should a build take?](#user-content-wiki-build_duration)
+* [How do I configure the Gradle Daemon to speed up builds?](#user-content-wiki-gradle_daemon)
+* [Why are there so many Javadoc warnings?](#user-content-wiki-javadoc_warnings)
+* [Why are compile-time warnings suppressed?](#user-content-wiki-compilation_warnings)
+* [What are the most important tips for Gradle newbies?](#user-content-wiki-gradle_tips)
+* [Why do I get 401/403 errors when downloading dependencies?](#user-content-wiki-authentication)
 
 release-related
 
-* [How and where are snapshots published?](#wiki-snapshot_publication)
-* [How do I perform a Milestone, RC, or GA release?](#wiki-release_process)
-* [What about publishing artifacts to Maven Central?](#wiki-maven_central)
-* [How are docs and schemas and distribution zips published?](#wiki-docs_schema_dist_publication)
+* [How and where are snapshots published?](#user-content-wiki-snapshot_publication)
+* [How do I perform a Milestone, RC, or GA release?](#user-content-wiki-release_process)
+* [What about publishing artifacts to Maven Central?](#user-content-wiki-maven_central)
+* [How are docs and schemas and distribution zips published?](#user-content-wiki-docs_schema_dist_publication)
 
 ***
 <a name="wiki-check_out_and_build"/>
@@ -109,7 +109,7 @@ Note that both IDEA and STS are hard at work on even more advanced Gradle toolin
 [This commit](https://github.com/spring-projects/spring-framework/commit/b6cb514d383dcef52ba6c609a863f19e1a4c1faf) provides all the detail you'll ever want on how we manage optional and provided dependencies with regard to our generated Maven poms.
 
 ## Use the `init.gradle` init script to configure repo.spring.io authentication
-See the FAQ item on [authentication](#wiki-authentication) below.
+See the FAQ item on [authentication](#user-content-wiki-authentication) below.
 
 ## Use `mavenLocal()` to resolve dependencies from your Maven cache
 If you need to compile against a locally built version of a dependency, you'll need to add your local $HOME/.m2 repository to the set of repositories that Gradle searches during the build.

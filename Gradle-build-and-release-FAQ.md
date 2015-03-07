@@ -5,7 +5,7 @@ build-related
 
 * [How do I check out and build the Framework?](#wiki-check_out_and_build)
 * [How long should a build take?](#wiki-build_duration)
-* [How do I configure the Gradle Daemon to speed up builds?](#wiki-gradle-daemon)
+* [How do I configure the Gradle Daemon to speed up builds?](#wiki-gradle_daemon)
 * [Why are there so many Javadoc warnings?](#wiki-javadoc_warnings)
 * [Why are compile-time warnings suppressed?](#wiki-compilation_warnings)
 * [What are the most important tips for Gradle newbies?](#wiki-gradle_tips)
@@ -37,7 +37,7 @@ As is also mentioned below in the 'tips' section, you'll want to break yourself 
 Also, consider running with the `-a` flag to avoid evaluating other subprojects you depend on. For example, if you're iterating on changes in spring-webmvc, cd into the spring-webmvc directory and run `../gradlew -a build` to tell gradle to evaluate and build *only* that subproject.
 
 ***
-<a name="wiki-gradle-daemon"/>
+<a name="wiki-gradle_daemon"/>
 # How do I configure the Gradle Daemon to speed up builds?
 
 The Gradle daemon helps greatly in eliminating startup overhead. This feature may potentially be 'enabled by default' in the future, but in the meantime you need to run instruct Gradle to launch the daemon process. This can be achieved by passing the `--daemon` flag to `gradle` at the command line, by exporting a `GRADLE_OPTS` environment variable that includes `-Dorg.gradle.daemon=true`, or by adding `org.gradle.daemon=true` to the `gradle.properties` file in your 'gradle user home' directory (e.g., `~/.gradle/gradle.properties`).

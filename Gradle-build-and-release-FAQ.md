@@ -42,7 +42,7 @@ Also, consider running with the `-a` flag to avoid evaluating other subprojects 
 
 The Gradle daemon helps greatly in eliminating startup overhead. This feature may potentially be _enabled by default_ in the future, but in the meantime you need to instruct Gradle to launch the daemon process. This can be achieved by passing the `--daemon` flag to `gradle` at the command line, by exporting a `GRADLE_OPTS` environment variable that includes `-Dorg.gradle.daemon=true`, or by adding `org.gradle.daemon=true` to the `gradle.properties` file in your _gradle user home_ directory (e.g., `~/.gradle/gradle.properties`).
 
-If you are building against JDK 9 and using the Gradle daemon, you may encounter an `Unrecognized VM option` error which halts the build. To avoid this error, you can add `org.gradle.jvmargs=-XX:MaxMetaspaceSize=1024m -Xmx1024m` to the `gradle.properties` file in your _gradle user home_ directory. See also [GRADLE-3256](https://issues.gradle.org/browse/GRADLE-3256) for details.
+If you are building against [JDK 9](https://jdk9.java.net/download/) and using the Gradle daemon, you may encounter an `Unrecognized VM option` error which halts the build. To avoid this error, you can add `org.gradle.jvmargs=-XX:MaxMetaspaceSize=1024m -Xmx1024m` to the `gradle.properties` file in your _gradle user home_ directory. See also [GRADLE-3256](https://issues.gradle.org/browse/GRADLE-3256) for details.
 
 ***
 <a name="wiki-compilation_warnings"/>

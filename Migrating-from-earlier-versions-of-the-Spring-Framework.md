@@ -1,7 +1,13 @@
 This page provides information when upgrading to newer versions of the Spring Framework. If you find items not covered yet, please raise a [ticket in JIRA](http://jira.springsource.org) or submit a pull-request against this page.
 
-### Actively supported generations: 3.2 and 4.1
+### Actively supported generations: 3.2, 4.1, 4.2
 Note that the 3.0.x and 3.1.x lines have been retired already, with no support whatsoever available anymore, in favor of the 3.2.x line. Limited support for 4.0.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 3.2.x release or - preferably - to the 4.1.x line: http://projects.spring.io/spring-framework/
+
+## Migrating to Spring Framework 4.2
+For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
+
+### Third-Party Dependencies
+Spring's Reactor support is based on _Reactor 2.0_ now. Furthermore, Spring Framework 4.2 introduces support for _Hibernate 5.0_ next to the existing support for Hibernate 3.6 and 4.x. All other dependency ranges remain the same as with Spring Framework 4.1.x.
 
 ## Migrating to Spring Framework 4.1
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.1](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.1) in the reference documentation.
@@ -49,7 +55,7 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 
 #### Libraries
 * Hibernate Validator 4.3
-* Hibernate ORM 3.6.10  _(note: to be deprecated as of Spring Framework 4.2, with Hibernate 4.2/4.3 recommended)_
+* Hibernate ORM 3.6.10  _(note: phasing out as of Spring Framework 4.2, with Hibernate 4.2/4.3 recommended)_
 * Apache Tiles 2.2.2 _(note: to be deprecated as of Spring Framework 4.2, with Tiles 3.0.5 recommended)_
 * Apache HttpComponents 4.3 _(required for Spring's http.client package, and for all of Spring as of 4.1.4)_
 * EhCache 2.4.7 _(note: minimum 2.5 as of Spring Framework 4.1, with EhCache 2.8 or later recommended)_

@@ -81,7 +81,7 @@ As of Spring Framework 4.0.3, we declare the following minimum (optional) depend
 The following classes and methods have been deprecated in Spring Framework 4.0 or will be deprecated along the Spring Framework 4.x line. They will be removed at a future date, so please check the javadocs and migrate to the suggested alternatives...
 
 #### Hibernate 3.6.10
-The `org.springframework.orm.hibernate3` package will be deprecated as of Spring Framework 4.2. We keep fully supporting it for the time being against Spring Framework 4.0 and 4.1. However, we recommend a timely upgrade to Hibernate 4.2/4.3.
+The `org.springframework.orm.hibernate3` package will be phasing out as of Spring Framework 4.2. We keep supporting it for the time being; however, we strongly recommend an upgrade to Hibernate 4.2/4.3 or 5.0.
 
 As of Spring Framework 4.0.1, we provide a HibernateTemplate variant in `org.springframework.orm.hibernate4` to ease migration for common Hibernate 3.x data access code, in particular if your motivation for an upgrade is the lack of bug fixes in the Hibernate 3.x line. Note that newly written code is recommended to use Hibernate's native `SessionFactory.getCurrentSession()` style.
 

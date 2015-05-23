@@ -12,6 +12,9 @@ Spring's Reactor support is based on _Reactor 2.0_ now. Spring Framework 4.2 als
 ### Modern Web Interaction Defaults
 Note that Spring Framework 4.2 comes with revised HTTP cache header processing and in particular a different default mode for HTML escaping: namely, taking the response encoding into account and therefore reducing the effort to basic XML character escaping in case of UTF-* encodings (since all other characters can be natively represented in UTF anyway). This can be overridden through setting the "responseEncodedHtmlEscape" context-param to "false", restoring the previous default behavior of full HTML character escaping in any case.
 
+### Configuration class ordering
+Spring Framework 4.2 comes with significant fine-tuning in configuration class processing. There may be subtle differences in the order of registration compared to 4.1; however, those are considered fixes of behavior that wasn't well-defined previously. If you are relying on a specific order, e.g. for overriding beans by name, please consider using 4.2's new facilities, in particular @Order annotations on config classes.
+
 ## Migrating to Spring Framework 4.1
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.1](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.1) in the reference documentation.
 

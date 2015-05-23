@@ -7,7 +7,10 @@ Note that the 3.0.x and 3.1.x lines have been retired already, with no support w
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
 
 ### Third-Party Dependencies
-Spring's Reactor support is based on _Reactor 2.0_ now. Furthermore, Spring Framework 4.2 introduces support for _Hibernate 5.0_ next to the existing support for Hibernate 3.6 and 4.x. All other dependency ranges remain the same as with Spring Framework 4.1.x.
+Spring's Reactor support is based on _Reactor 2.0_ now. Furthermore, Spring Framework 4.2 introduces support for _Hibernate ORM 5.0_ next to the existing support for Hibernate ORM 3.6 and 4.x. All other dependency ranges remain the same as with Spring Framework 4.1.x.
+
+### Modern Web Defaults
+Note that Spring Framework 4.2 comes with revised HTTP cache header processing and in particular a different default mode for HTML escaping: namely, taking the response encoding into account and thus only escaping XML markup significant characters with UTF-* encodings (i.e. the minimum amount of encoding necessary in such a case). This can be overridden through setting the "responseEncodedHtmlEscape" context-param to "false".
 
 ## Migrating to Spring Framework 4.1
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.1](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.1) in the reference documentation.

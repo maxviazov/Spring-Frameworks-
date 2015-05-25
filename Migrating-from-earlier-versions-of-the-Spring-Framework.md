@@ -1,10 +1,10 @@
 This page provides information when upgrading to newer versions of the Spring Framework. If you find items not covered yet, please raise a [ticket in JIRA](http://jira.springsource.org) or submit a pull-request against this page.
 
 ### Actively supported generations: 3.2, 4.1, 4.2
-Note that the 3.0.x and 3.1.x lines have been retired already, with no support whatsoever available anymore, in favor of the 3.2.x line. Limited support for 4.0.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 3.2.x release or - preferably - to the 4.1.x line: http://projects.spring.io/spring-framework/
+Note that the 3.0.x and 3.1.x lines have been retired already, with no support whatsoever available anymore, in favor of the 3.2.x line. Limited support for 4.0.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 3.2.x release or - preferably - to the 4.1/4.2 line: http://projects.spring.io/spring-framework/
 
 ## Migrating to Spring Framework 4.2
-For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
+For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](http://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
 
 ### Third-party dependencies
 Spring's Reactor support is based on _Reactor 2.0_ now. Spring Framework 4.2 also introduces support for _Hibernate ORM 5.0_ next to the existing support for Hibernate ORM 3.6 and 4.x. All other dependency ranges remain the same as with Spring Framework 4.1.x.

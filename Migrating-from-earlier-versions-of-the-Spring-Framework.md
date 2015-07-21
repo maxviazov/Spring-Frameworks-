@@ -14,7 +14,11 @@ Spring's Reactor support is based on _Reactor 2.0_ now. Spring 4.2 also introduc
 All other dependency ranges in 4.2 remain the same as with Spring Framework 4.1.x, with - as usual - the latest minor versions being officially supported now: e.g. Hibernate Validator 5.2, Jackson 2.6, Undertow 1.2.
 
 ### Modern web interaction defaults
-Note that Spring Framework 4.2 comes with revised HTTP cache header processing and in particular a different default mode for HTML escaping: namely, taking the response encoding into account and therefore reducing the effort to basic XML character escaping in case of UTF-* encodings (since all other characters can be natively represented in UTF anyway). This can be overridden through setting the "responseEncodedHtmlEscape" context-param to "false", restoring the previous default behavior of full HTML character escaping in any case.
+
+Note that Spring Framework 4.2 comes with revised HTTP cache header processing for resource handling; for common use cases, HTTP caching
+related headers now have new defaults which do not involve HTTP 1.0 headers such as `"Expires"` or `"Pragma"`. See [WebContentGenerator.setCacheSeconds](http://docs.spring.io/spring-framework/docs/4.2.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/web/servlet/support/WebContentGenerator.html#setCacheSeconds-int-) and the [new CacheControl class](http://docs.spring.io/spring-framework/docs/4.2.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/http/CacheControl.html) for more details. 
+
+Also, Spring Framework now enforces a different default mode for HTML escaping: namely, taking the response encoding into account and therefore reducing the effort to basic XML character escaping in case of UTF-* encodings (since all other characters can be natively represented in UTF anyway). This can be overridden through setting the "responseEncodedHtmlEscape" context-param to "false", restoring the previous default behavior of full HTML character escaping in any case.
 
 ### Configuration class ordering
 Spring Framework 4.2 comes with significant fine-tuning in configuration class processing. There may be subtle differences in the order of registration compared to 4.1; however, those are considered fixes of behavior that wasn't well-defined previously. If you are relying on a specific order, e.g. for overriding beans by name, please consider using 4.2's new facilities, in particular @Order annotations on config classes.

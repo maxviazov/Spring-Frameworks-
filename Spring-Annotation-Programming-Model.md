@@ -5,7 +5,29 @@ Spring Framework 4.2; however, this document is still a _work in progress_.
 As such, you can expect to see multiple updates throughout the course of
 the 4.2.x timeline.
 
-# Introduction
+# Overview
+
+Over the years, the Spring Framework has continually evolved its support for
+annotations, _meta-annotations_, and _composed annotations_. This document
+is intended to aid developers (both end users of Spring and developers of
+the Spring Framework and Spring portfolio projects) in the development and
+use of annotations with Spring.
+
+## Goals of this Document
+
+This document has the following primary goals.
+
+* Explain how to use annotations with Spring.
+* Explain how to develop annotations for use with Spring.
+* Explain how Spring _finds_ annotations (i.e., how Spring's annotation
+  search algorithms work).
+
+## Non-goals of this Document
+
+This document does not aim to explain the semantics or configuration
+options for particular annotations in the Spring Framework. For details
+on a particular annotation, developers are encouraged to consult the
+corresponding Javadoc of applicable sections of the reference manual.
 
 # @AliasFor
 

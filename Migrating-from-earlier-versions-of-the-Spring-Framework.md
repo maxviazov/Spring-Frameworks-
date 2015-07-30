@@ -11,7 +11,7 @@ For an overview of new features, refer to [New Features and Enhancements in Spri
 ### Third-party dependencies
 Spring's Reactor support is based on _Reactor 2.0_ now. Spring 4.2 also introduces support for _Hibernate ORM 5.0_ next to the existing support for Hibernate ORM 3.6 and 4.2 / 4.3. Note that support for Apache Tiles 2.2 is deprecated in the meantime, in favor of Tiles 3.0.
 
-All other dependency ranges in 4.2 remain the same as with Spring Framework 4.1.x, with - as usual - the latest minor versions of all common frameworks being officially supported now: e.g. Hibernate Validator 5.2, Jackson 2.6, Undertow 1.2, Apache HttpComponents 4.5.
+All other dependency ranges in 4.2 remain the same as with Spring Framework 4.1.x, with - as usual - the latest minor versions of common frameworks being officially supported now: e.g. Hibernate Validator 5.2, Jackson 2.6, Undertow 1.2, Apache HttpComponents 4.5.
 
 ### Modern web interaction defaults
 

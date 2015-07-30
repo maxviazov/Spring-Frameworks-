@@ -1,4 +1,4 @@
-## Welcome!
+## Welcome to the Spring Framework Wiki!
 
 * [[Downloading Spring artifacts]]
 * [[Building a distribution with dependencies]]
@@ -10,3 +10,4 @@
 * [[The lifecycle of an issue]]
 * [[Manually merging pull requests]]
 * [[Migrating from earlier versions of the Spring Framework]]
+* [[Spring Annotation Programming Model]]

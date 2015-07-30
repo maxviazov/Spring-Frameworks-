@@ -31,13 +31,13 @@ corresponding Javadoc or applicable sections of the reference manual.
 
 # Terminology
 
-A _meta-annotation_ is an annotation that is declared on another
+A _**meta-annotation**_ is an annotation that is declared on another
 annotation. An annotation is therefore _meta-annotated_ if it is
 annotated with another annotation. For example, any annotation 
 that is declared to be _documented_ is meta-annotated with
 `@Documented` from the `java.lang.annotation` package.
 
-A _composed annotation_ is an annotation that is _meta-annotated_ with
+A _**composed annotation**_ is an annotation that is _meta-annotated_ with
 one or more annotations with the intent of combining the behavior
 associated with those meta-annotations into a single custom annotation.
 For example, an annotation named `@TransactionalService` that is
@@ -45,11 +45,11 @@ meta-annotated with Spring's `@Transactional` and `@Service` annotations
 is a composed annotation that combines the semantics of `@Transactional`
 and `@Service`.
 
-The terms _directly present_, _indirectly present_, and _present_ have
-the same meanings as defined in the class-level Javadoc for
-`java.lang.reflect.AnnotatedElement` in Java 8.
+The terms _**directly present**_, _**indirectly present**_, and
+_**present**_ have the same meanings as defined in the class-level
+Javadoc for `java.lang.reflect.AnnotatedElement` in Java 8.
 
-In Spring, an annotation is considered to be _meta-present_ on an element
+In Spring, an annotation is considered to be _**meta-present**_ on an element
 if the annotation is declared as a meta-annotation on some other annotation
 which is _present_ on the element. For example, given the aforementioned
 `@TransactionalService`, we would say that `@Transactional` is

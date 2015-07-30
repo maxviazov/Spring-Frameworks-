@@ -2,6 +2,46 @@
 
 # Introduction
 
+# @AliasFor
+
+Spring Framework 4.2 introduces first-class support for declaring and
+looking up aliases for annotation attributes. The new `@AliasFor`
+annotation can be used to declare a pair of aliased attributes within
+a single annotation or to declare an alias from one attribute in a
+custom composed annotation to an attribute in a meta-annotation.
+
+For example, `@ContextConfiguration` from the `spring-test` module
+is now declared as follows:
+
+    public @interface ContextConfiguration {
+
+        @AliasFor("locations")
+        String[] value() default {};
+        
+        @AliasFor("value")
+        String[] locations() default {};
+        
+        // ...
+    }
+
+Similarly, _composed annotations_ that override attributes from
+meta-annotations can now use `@AliasFor` for fine-grained control
+over exactly which attributes are overridden within an annotation
+hierarchy. In fact, it is now possible to declare an alias for the
+`value` attribute of a meta-annotation.
+
+For example, one can now develop a composed annotation with a custom
+attribute override as follows.
+
+    @ContextConfiguration
+    public @interface MyTestConfig {
+
+        @AliasFor(annotation = ContextConfiguration.class, attribute = "value")
+        String[] xmlFiles();
+    
+        // ...
+    }
+
 # Appendix
 
 ## Annotations using @AliasFor

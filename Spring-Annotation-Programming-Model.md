@@ -9,8 +9,8 @@ the 4.2.x timeline.
 
 Over the years, the Spring Framework has continually evolved its support for
 annotations, _meta-annotations_, and _composed annotations_. This document
-is intended to aid developers (both end users of Spring and developers of
-the Spring Framework and Spring portfolio projects) in the development and
+is intended to aid developers (both end users of Spring as well as developers
+of the Spring Framework and Spring portfolio projects) in the development and
 use of annotations with Spring.
 
 ## Goals of this Document

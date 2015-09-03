@@ -109,16 +109,18 @@ a meta-annotation.
 For example, `@ContextConfiguration` from the `spring-test` module is now
 declared as follows:
 
-    public @interface ContextConfiguration {
+```java
+public @interface ContextConfiguration {
 
-        @AliasFor("locations")
-        String[] value() default {};
-        
-        @AliasFor("value")
-        String[] locations() default {};
-        
-        // ...
-    }
+    @AliasFor("locations")
+    String[] value() default {};
+
+    @AliasFor("value")
+    String[] locations() default {};
+
+    // ...
+}
+```
 
 Similarly, _composed annotations_ that override attributes from
 meta-annotations can use `@AliasFor` for fine-grained control over exactly
@@ -129,15 +131,16 @@ meta-annotation.
 For example, one can develop a composed annotation with a custom attribute
 override as follows.
 
-    @ContextConfiguration
-    public @interface MyTestConfig {
+```java
+@ContextConfiguration
+public @interface MyTestConfig {
 
-        @AliasFor(annotation = ContextConfiguration.class, attribute = "value")
-        String[] xmlFiles();
-    
-        // ...
-    }
+    @AliasFor(annotation = ContextConfiguration.class, attribute = "value")
+    String[] xmlFiles();
 
+    // ...
+}
+```
 
 # Appendix
 

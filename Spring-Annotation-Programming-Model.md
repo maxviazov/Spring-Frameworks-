@@ -97,8 +97,21 @@ can be categorized as follows.
    _transitive explicit override_ for `C` following the
    [law of transitivity](https://en.wikipedia.org/wiki/Transitive_relation).
 
+# Examples
 
-# Declaring attribute aliases with @AliasFor
+## Spring Composed
+
+The [Spring Composed](https://github.com/sbrannen/spring-composed) project
+is a collection of _composed annotations_ for use with the Spring Framework
+4.2.1 and higher. There you will find annotations such as `@Get`, `@Post`,
+`@Put`, and `@Delete` for use with Spring MVC and annotations such as
+`@GetJson`, `@PostJson`, etc. for use with Spring MVC REST applications.
+
+Be sure to check out `spring-composed` for further examples and inspiration
+or to contribute your own custom _composed annotations_!
+
+
+## Declaring attribute aliases with @AliasFor
 
 Spring Framework 4.2 introduced first-class support for declaring and looking
 up aliases for annotation attributes. The `@AliasFor` annotation can be used to

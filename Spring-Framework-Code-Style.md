@@ -151,4 +151,9 @@ Add one blank line after a method signature that is multiline, i.e.
 
 ```
 @Override
-protected Object invoke(FooBarOperationContext
+protected Object invoke(FooBarOperationContext context, 
+        AnotherSuperLongName name) {
+
+    // code here
+}
+```

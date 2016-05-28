@@ -125,16 +125,25 @@ return new MyClass() {
 };
 ```
 
-### Line wrapping: around 90 characters
+### Line wrapping
 
-Aim to wrap code and Javadoc at 90 characters but favor readability over wrapping as there is no deterministic way to line-wrap in every situation. 
+90 characters is the *preferred* line length we aim for. In some cases the preferred length can be achieved by refactoring code slightly. In other cases it's  just not possible.
 
-When wrapping a lengthy expression put the separator symbol at the end of the line, rather on the next line (think comma separated arguments as an exemple). For instance:
+90 is not a hard limit. Lines between 90-105 are perfectly acceptable in many cases where it aids readability and where wrapping has the opposite effect of reducing readability. This is a judgement call and it's also important to seek consistency. Many times you can learn by looking how specific situations are handled in other parts of the code.
+
+Lines between 105-120 are allowed but discouraged and should be few.
+
+No lines should exceed 120 characters.
+
+The one big exception to the above line wrapping rules is Javadoc where we aim to wrap around 80 characters for maximum readability in all kinds of contexts, e.g. reading on Github, on your phone, etc.
+
+When wrapping a lengthy expression, 90 characters is the length at which we aim to wrap. Put the separator symbols at the end of the line rather on the next line (comma separated arguments, etc). For instance:
 
 ```
 if (thisLengthyMethodCall(param1, param2) && anotherCheck() &&
         yetAnotherCheck()) {
-....
+
+    // ....
 }
 ```
 

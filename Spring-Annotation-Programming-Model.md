@@ -1,9 +1,8 @@
 # Work In Progress
 
 This document was introduced in conjunction with the release of Spring
-Framework 4.2; however, this document is still a _work in progress_. As such,
-you can expect to see multiple updates throughout the course of the 4.2.x
-timeline.
+Framework 4.2; however, this document is a _work in progress_. As such,
+you can expect to see updates over the course of time.
 
 # Overview
 

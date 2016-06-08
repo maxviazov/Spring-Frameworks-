@@ -154,6 +154,14 @@ public @interface MyTestConfig {
 }
 ```
 
+# FAQ
+
+## 1) Can `@AliasFor` be used with the `value` attributes for `@Component` and `@Qualifier`?
+
+The short answer is: no.
+
+The `value` attributes in `@Qualifier` and in _stereotype_ annotations (e.g., `@Component`, `@Repository`, `@Controller`, and any custom stereotype annotations) _cannot_ be influenced by `@AliasFor`. The reason is that the special handling of these `value` attributes was in place years before `@AliasFor` was invented. Consequently, due to backward compatibility issues it is simply not possible to use `@AliasFor` with such `value` attributes.
+
 # Appendix
 
 ## Annotations using @AliasFor
@@ -210,4 +218,3 @@ As of Spring Framework 4.2, the following annotations from core Spring use
     * explicit mapping using `@AliasFor`
   * What happens if an attribute _and_ one of its aliases are declared somewhere within the annotation _hierarchy_? Which one takes precedence?
   * In general, how are conflicts involving annotation attributes resolved?
-* Document the special handling of the `value` attribute for `@Component` and `@Qualifier`.

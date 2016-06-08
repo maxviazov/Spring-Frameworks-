@@ -1,4 +1,4 @@
-# Work In Progress
+# Introduction
 
 This document was introduced in conjunction with the release of Spring
 Framework 4.2; however, this document is a _work in progress_. As such,

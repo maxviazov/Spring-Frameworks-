@@ -48,6 +48,26 @@ another annotation. For example, any annotation that is declared to be
 _documented_ is meta-annotated with `@Documented` from the
 `java.lang.annotation` package.
 
+## Stereotype Annotations
+
+A _**stereotype annotation**_ is an annotation that is used to declare the
+role that a component plays within the application. For example, the
+`@Repository` annotation in the Spring Framework is a marker for any class
+that fulfills the role or _stereotype_ of a repository (also known as
+Data Access Object or DAO).
+
+`@Component` is a generic stereotype for any Spring-managed component.
+Any component annotated with `@Component` is a candidate for
+component scanning. Similarly, any component annotated with an annotation
+that is itself meta-annotated with `@Component` is also a candidate for
+component scanning. For example, `@Service` is meta-annotated with
+`@Component`.
+
+Core Spring provides several stereotype annotations out of the box,
+including but not limited to: `@Component`, `@Service`, `@Repository`,
+`@Controller`, `@RestController`, and `@Configuration`. `@Repository`,
+`@Service`, etc. are specializations of `@Component`.
+
 ## Composed Annotations
 
 A _**composed annotation**_ is an annotation that is _meta-annotated_ with one
@@ -56,6 +76,7 @@ those meta-annotations into a single custom annotation. For example, an
 annotation named `@TransactionalService` that is meta-annotated with Spring's
 `@Transactional` and `@Service` annotations is a composed annotation that
 combines the semantics of `@Transactional` and `@Service`.
+`@TransactionalService` is technically also a custom _stereotype annotation_.
 
 ## Annotation Presence
 

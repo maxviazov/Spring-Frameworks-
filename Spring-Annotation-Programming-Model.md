@@ -4,6 +4,16 @@ This document was introduced in conjunction with the release of Spring
 Framework 4.2; however, this document is a _work in progress_. As such,
 you can expect to see updates over the course of time.
 
+**Table of Contents**
+
+- [Overview](#overview)
+- [Terminology](#terminology)
+- [Examples](#examples)
+- [FAQ](#faq)
+- [Appendix](#appendix)
+
+----
+
 # Overview
 
 Over the years, the Spring Framework has continually evolved its support for

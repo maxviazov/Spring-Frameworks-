@@ -102,7 +102,8 @@ Braces mostly follow the _Kernighan and Ritchie style_ (a.k.a., "Egyptian bracke
 * No line break before the opening brace but prefixed by a single space
 * Line break after the opening brace
 * Line break before the closing brace
-* Line break after the closing brace if that brace terminates a statement or the body of a method, constructor, or named class with the exception of the `else`, `catch` and `finally` statements that also lead to a line break
+* Line break after the closing brace if that brace terminates a statement or the body of a method, constructor, or named class
+* Line break before else, catch and finally statements
 
 Example:
 

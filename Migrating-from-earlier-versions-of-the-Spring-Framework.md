@@ -13,6 +13,12 @@ Spring 4.3 supports all current versions of its optionally integrated libraries,
 
 Please note that several minimum dependency versions have been raised: Jackson 2.6+, FreeMarker 2.3.21+, XStream 1.4.5+. Spring's support for Hibernate 3.x and Velocity has been deprecated and scheduled for removal in 5.0.
 
+### Default handling of HEAD and OPTIONS requests
+As of 4.3, Spring MVC processes HEAD and OPTIONS requests by default if there are no explicit bindings for those HTTP methods on a given path, along the lines of what HttpServlet does by default. While this should be a reasonable enhancement to all common Spring web applications, there may be subtle interaction side effects.
+
+### Injection points declared as Collection, Map or array
+Spring 4.3 refines autowiring support for beans which are declared as a Collection, Map or array type, matching them by type against injection points of a compatible type directly. This support lives side by side with Spring's existing support for finding beans by the element/value type of a declared Collection, Map or array injection point. There might be subtle side effects if custom application context arrangements rely on Collection/Map beans not matching directly.
+
 ## Migrating to Spring Framework 4.2
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](http://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
 

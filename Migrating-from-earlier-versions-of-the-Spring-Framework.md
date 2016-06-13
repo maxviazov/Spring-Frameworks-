@@ -1,9 +1,17 @@
 This page provides information when upgrading to newer versions of the Spring Framework. If you find items not covered yet, please raise a [ticket in JIRA](http://jira.springsource.org) or submit a pull-request against this page.
 
-### Actively supported generations: 3.2, 4.1, 4.2
+### Actively supported generations: 3.2, 4.2, 4.3
 Note that the 3.0.x and 3.1.x lines have been retired already, with no support whatsoever available anymore, in favor of the 3.2.x line (EOL is December 31 2016, see [this blog announcement](https://spring.io/blog/2015/06/15/spring-framework-3-2-x-eol-on-dec-31-2016)).
 
-Limited support for 4.0.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 4.1.x release or - preferably - to the 4.2 line: http://projects.spring.io/spring-framework/
+Limited support for 4.1.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 4.2.x release or - preferably - to the 4.3 line: http://projects.spring.io/spring-framework/
+
+## Migrating to Spring Framework 4.3
+For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.3](http://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#new-in-4.3) in the reference documentation.
+
+### Third-party dependencies
+Spring 4.3 supports all current versions of its optionally integrated libraries, including _Hibernate ORM 5.2_ and _Jackson 2.7/2.8_ as well as _OkHttp 3.x_. Furthermore, it embeds the updated ASM 5.1 and Objenesis 2.4.
+
+Please note that several minimum dependency versions have been raised: Jackson 2.6+, FreeMarker 2.3.21+, XStream 1.4.5+. Spring's support for Hibernate 3.x and Velocity has been deprecated and scheduled for removal in 5.0.
 
 ## Migrating to Spring Framework 4.2
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](http://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.

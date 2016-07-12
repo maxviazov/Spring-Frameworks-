@@ -19,6 +19,17 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Testing Improvements
 
+* Complete support for [JUnit 5](http://junit.org/junit5/)'s _Jupiter_ programming model in
+   in the Spring TestContext Framework.
+  * `SpringExtension`: an implementation of multiple extension APIs from JUnit Jupiter
+  that provides full support for the existing feature set of the Spring TestContext Framework.
+  This support is enabled via `@ExtendWith(SpringExtension.class)`.
+  * `@SpringJUnitConfig`: a composed annotation that combines `@ExtendWith(SpringExtension.class)`
+  from JUnit Jupiter with `@ContextConfiguration` from the Spring TestContext Framework.
+  * `@SpringJUnitWebConfig`: a composed annotation that combines `@ExtendWith(SpringExtension.class)`
+  from JUnit Jupiter with `@ContextConfiguration` and `@WebAppConfiguration` from the Spring
+  TestContext Framework.
+
 ----
 # What's New in Spring Framework 4.x
 The "What's New" guide for Spring Framework 4.x is available in the [Spring Framework 4.3.x reference manual](http://docs.spring.io/spring/docs/4.3.x/spring-framework-reference/htmlsingle/#spring-whats-new).

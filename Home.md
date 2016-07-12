@@ -1,5 +1,6 @@
 ## Welcome to the Spring Framework Wiki!
 
+* [[What's New in the Spring Framework]]
 * [[Downloading Spring artifacts]]
 * [[Building a distribution with dependencies]]
 * [[Contributor guidelines]]

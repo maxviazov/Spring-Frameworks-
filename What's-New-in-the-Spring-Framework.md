@@ -8,8 +8,8 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 **Table of Contents**
 
 - [What's New in Spring Framework 5.x](#whats-new-in-spring-framework-5x)
-- [What's New in Spring Framework 4.x](whats-new-in-spring-framework-4x)
-- [What's New in Spring Framework 3.x](whats-new-in-spring-framework-3x)
+- [What's New in Spring Framework 4.x](#whats-new-in-spring-framework-4x)
+- [What's New in Spring Framework 3.x](#whats-new-in-spring-framework-3x)
 
 ----
 # What's New in Spring Framework 5.x

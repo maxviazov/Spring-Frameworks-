@@ -5,6 +5,13 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 [[Migrating from earlier versions of the Spring Framework]] wiki page.
 
 ----
+**Table of Contents**
+
+- [What's New in Spring Framework 5.x](#whats-new-in-spring-framework-5x)
+- [What's New in Spring Framework 4.x](whats-new-in-spring-framework-4x)
+- [What's New in Spring Framework 3.x](whats-new-in-spring-framework-3x)
+
+----
 # What's New in Spring Framework 5.x
 
 ## New Features and Enhancements in Spring Framework 5.0

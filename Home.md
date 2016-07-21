@@ -9,6 +9,7 @@
 
 ## Migrating from earlier versions
 
+* [[Migrating from earlier versions of the Spring Framework]]
 * [[Migrating to Spring Framework 5.x]]
 * [[Migrating to Spring Framework 4.x]]
 * [[Migrating to Spring Framework 3.x]]

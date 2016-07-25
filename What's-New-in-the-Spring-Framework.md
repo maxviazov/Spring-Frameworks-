@@ -29,9 +29,9 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Removed Packages, Classes and Methods
 
-* Package mock.staticmock removed from spring-aspects module.
-  * No support for AnnotationDrivenStaticEntityMockingControl anymore.
-* Packages web.view.tiles2 and orm.hibernate3/hibernate4 dropped.
+* Package `mock.staticmock` removed from `spring-aspects` module.
+  * No support for `AnnotationDrivenStaticEntityMockingControl` anymore.
+* Packages `web.view.tiles2` and `orm.hibernate3/hibernate4` dropped.
   * Minimum requirement: Tiles 3 and Hibernate 5 now.
 * Dropped support: Portlet, Velocity, JasperReports, XMLBeans, JDO, Guava.
   * Recommendation: Stay on Spring Framework 4.3.x for those if needed.
@@ -42,13 +42,14 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 * JDK 8+ enhancements
   * Efficient method parameter access based on Java 8 reflection enhancements.
-  * Selective use of Java 8 default methods in core Spring interfaces.
-  * Consistent use of JDK 7 Charset and StandardCharsets enhancements.
+  * Selective declarations of Java 8 default methods in core Spring interfaces.
+  * Consistent use of JDK 7 `Charset` and `StandardCharsets` enhancements.
 * JDK 9 preparations
   * Consistent instantiation via constructors (with revised exception handling)
 * XML configuration namespaces streamlined towards unversioned schemas.
-  * Always resolved against latest xsd files; no support for deprecated features.
+  * Always resolved against latest `xsd` files; no support for deprecated features.
   * Version-specific declarations still supported but validated against latest schema.
+* `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
 
 ### Reactive Programming Model
 

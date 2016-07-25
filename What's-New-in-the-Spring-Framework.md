@@ -55,8 +55,9 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Web Improvements
 
-* Unified support for media type resolution
-* Support for Protobuf 3.0
+* Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
+* Unified support for media type resolution through `MediaTypeFactory` delegate.
+* Support for Protobuf 3.0 (currently beta 4).
 
 ### Testing Improvements
 

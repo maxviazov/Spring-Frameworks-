@@ -6,9 +6,9 @@ The structure of this document is based on the [Google Java Style](http://google
 
 ## Source File Basics
 
-### File encoding: ISO-8859-1 
+### File encoding: UTF-8
 
-Source files must be encoded using `ISO-8859-1`. (see [SPR-11569](https://jira.spring.io/browse/SPR-11569) for a suggestion to move to `UTF-8`)
+Source files must be encoded using `UTF-8`.
 
 ### Indentation
 

@@ -16,9 +16,23 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ## New Features and Enhancements in Spring Framework 5.0
 
-### Java 8 Baseline
+### JDK 8+9 and Java EE 7 Baseline
 
-### Removed Deprecated Packages and Methods
+* Entire framework codebase based on Java 8 source code level now.
+  * Selective use of Java 8 default methods in core Spring interfaces.
+* Java EE 7 API level required in Spring's corresponding modules now.
+  * Servlet 3.1, JMS 2.0, JPA 2.1, Bean Validation 1.1
+* Full compatibility with JDK 9 as of July 2016.
+  * Project spring-framework can be built on JDK 9; test suite passes.
+
+### Removed Packages, Classes and Methods
+
+* Packages web.view.tiles2 and orm.hibernate3/hibernate4 dropped.
+  * Minimum requirement: Tiles 3 and Hibernate 5 now.
+* Support dropped: Portlet, Velocity, JDO, OpenJPA, XMLBeans, Guava.
+  * Recommendation: Stay on Spring Framework 4.3 for those if needed.
+* Many deprecated classes and methods removed across the codebase.
+  * A few compromises made for commonly used methods in the ecosystem.
 
 ### Core Container Improvements
 

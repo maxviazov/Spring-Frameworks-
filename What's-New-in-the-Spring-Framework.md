@@ -19,7 +19,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 ### JDK 8+9 and Java EE 7 Baseline
 
 * Entire framework codebase based on Java 8 source code level now.
-  * Selective use of Java 8 default methods in core Spring interfaces.
+  * 
 * Java EE 7 API level required in Spring's corresponding modules now.
   * Servlet 3.1, JMS 2.0, JPA 2.1, Bean Validation 1.1
 * Full compatibility with JDK 9 as of July 2016.
@@ -27,6 +27,8 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Removed Packages, Classes and Methods
 
+* Package mock.staticmock removed from spring-aspects module.
+  * No support for AnnotationDrivenStaticEntityMockingControl anymore.
 * Packages web.view.tiles2 and orm.hibernate3/hibernate4 dropped.
   * Minimum requirement: Tiles 3 and Hibernate 5 now.
 * Support dropped: Portlet, Velocity, JDO, OpenJPA, XMLBeans, Guava.
@@ -36,9 +38,18 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Core Container Improvements
 
+* JDK 8+ enhancements
+  * Efficient method parameter access based on Java 8 reflection enhancements.
+  * Selective use of Java 8 default methods in core Spring interfaces.
+  * Consistent use of JDK 7 Charset and StandardCharsets enhancements.
+* JDK 9 preparations
+  * Consistent instantiation via constructors (with revised exception handling)
+
 ### Reactive Programming Model
 
 ### Web Improvements
+
+* Support for Protobuf 3.0
 
 ### Testing Improvements
 
@@ -58,6 +69,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   4 rules).
   * New `beforeTestExecution()` and `afterTestExecution()` callbacks in the
     `TestExecutionListener` API and `TestContextManager`.
+* XMLUnit support upgraded to 2.2
 
 ----
 # What's New in Spring Framework 4.x

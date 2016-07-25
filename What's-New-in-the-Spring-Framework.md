@@ -46,13 +46,15 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Consistent use of JDK 7 Charset and StandardCharsets enhancements.
 * JDK 9 preparations
   * Consistent instantiation via constructors (with revised exception handling)
-* XML configuration namespaces streamlined towards unversioned schemas
-  * Always resolved against latest schemas now; no older variants anymore.
+* XML configuration namespaces streamlined towards unversioned schemas.
+  * Always resolved against latest schemas; no support for deprecated features.
+  * Version-specific declarations still supported but validated against latest.
 
 ### Reactive Programming Model
 
 ### Web Improvements
 
+* Unified support for media type resolution
 * Support for Protobuf 3.0
 
 ### Testing Improvements

@@ -19,9 +19,11 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 ### JDK 8+9 and Java EE 7 Baseline
 
 * Entire framework codebase based on Java 8 source code level now.
-  * 
+  * Improved readability through inferred generics etc.
+  * Conditional support for Java 8 features now in straight code.
 * Java EE 7 API level required in Spring's corresponding modules now.
   * Servlet 3.1, JMS 2.0, JPA 2.1, Bean Validation 1.1
+  * Recent servers: e.g. Tomcat 8.5+, Jetty 9.3+, WildFly 10+
 * Full compatibility with JDK 9 as of July 2016.
   * Project spring-framework can be built on JDK 9; test suite passes.
 
@@ -31,7 +33,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * No support for AnnotationDrivenStaticEntityMockingControl anymore.
 * Packages web.view.tiles2 and orm.hibernate3/hibernate4 dropped.
   * Minimum requirement: Tiles 3 and Hibernate 5 now.
-* Support dropped: Portlet, Velocity, JDO, OpenJPA, XMLBeans, Guava.
+* Dropped outdated support: Portlet, Velocity, JDO, XMLBeans, Guava.
   * Recommendation: Stay on Spring Framework 4.3 for those if needed.
 * Many deprecated classes and methods removed across the codebase.
   * A few compromises made for commonly used methods in the ecosystem.

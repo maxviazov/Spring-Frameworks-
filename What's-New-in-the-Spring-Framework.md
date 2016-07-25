@@ -34,7 +34,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Packages web.view.tiles2 and orm.hibernate3/hibernate4 dropped.
   * Minimum requirement: Tiles 3 and Hibernate 5 now.
 * Dropped support: Portlet, Velocity, JasperReports, XMLBeans, JDO, Guava.
-  * Recommendation: Stay on Spring Framework 4.3 for those if needed.
+  * Recommendation: Stay on Spring Framework 4.3.x for those if needed.
 * Many deprecated classes and methods removed across the codebase.
   * A few compromises made for commonly used methods in the ecosystem.
 
@@ -47,8 +47,8 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * JDK 9 preparations
   * Consistent instantiation via constructors (with revised exception handling)
 * XML configuration namespaces streamlined towards unversioned schemas.
-  * Always resolved against latest schemas; no support for deprecated features.
-  * Version-specific declarations still supported but validated against latest.
+  * Always resolved against latest xsd files; no support for deprecated features.
+  * Version-specific declarations still supported but validated against latest schema.
 
 ### Reactive Programming Model
 

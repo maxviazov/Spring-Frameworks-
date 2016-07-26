@@ -51,19 +51,21 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Version-specific declarations still supported but validated against latest schema.
 * `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
 
+### General Web Improvements
+
+* Unified support for media type resolution through `MediaTypeFactory` delegate.
+* Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
+* Support for Protobuf 3.0 (currently beta 4).
+
 ### Reactive Programming Model
 
+* Core `DataBuffer` and `Encoder`/`Decoder` abstractions with non-blocking semantics.
+* An HTTP message codec abstraction with JSON (Jackson) and XML (JAXB) support.
 * A new `spring-web-reactive` module provides support for the `@Controller` programming model
 on a reactive and non-blocking foundation adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm) with the help of [Reactor](projectreactor.io) to Servlet 3.1 containers
 like Tomcat and Jetty as well as additional non-Servlet runtimes such as Netty and Undertow.
 * A new `WebClient` provides a reactive support on the client side. For more details refer to the
 [reference docs](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#web-reactive).
-
-### Web Improvements
-
-* Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
-* Unified support for media type resolution through `MediaTypeFactory` delegate.
-* Support for Protobuf 3.0 (currently beta 4).
 
 ### Testing Improvements
 

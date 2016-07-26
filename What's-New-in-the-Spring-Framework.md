@@ -59,13 +59,14 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Reactive Programming Model
 
-* Core `DataBuffer` and `Encoder`/`Decoder` abstractions with non-blocking semantics.
-* An HTTP message codec abstraction with JSON (Jackson) and XML (JAXB) support.
-* A new `spring-web-reactive` module provides support for the `@Controller` programming model
-on a reactive and non-blocking foundation adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm) with the help of [Reactor](projectreactor.io) to Servlet 3.1 containers
-like Tomcat and Jetty as well as additional non-Servlet runtimes such as Netty and Undertow.
-* A new `WebClient` provides a reactive support on the client side. For more details refer to the
-[reference docs](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#web-reactive).
+* `spring-core` `DataBuffer` and `Encoder`/`Decoder` abstractions with non-blocking semantics.
+* `spring-web` HTTP message codec implementations with JSON (Jackson) and XML (JAXB) support.
+* New `spring-web-reactive` module with reactive support for the `@Controller` programming model
+adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm) to Servlet
+3.1 containers as well as non-Servlet runtimes such as Netty and Undertow.
+* New `WebClient` with reactive support on the client side.
+* For more details refer to the chapter
+["Web Reactive Framework"](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#web-reactive) in the reference docs.
 
 ### Testing Improvements
 

@@ -6,7 +6,7 @@ For a general overview of new features, refer to [[What's New in the Spring Fram
 
 ### Baseline update
 
-Spring Framework 4.0 requires Java SE 8 or above, since its entire codebase is now based on Java 8 source code level now.
+Spring Framework 5.0 requires Java SE 8 or above, since its entire codebase is now based on Java 8 source code level.
 The project offers full compatibility with JDK 9 as of July 2016.
 
 Java EE 7 API level is required in Spring's corresponding modules now:
@@ -34,8 +34,8 @@ Java EE 7 API level is required in Spring's corresponding modules now:
 
 ### Dropped support
 
-The Spring Framework does not support anymore: Portlet, Velocity, JasperReports, XMLBeans, JDO
-, Guava (replaced by the Caffeine support).
+The Spring Framework no longer supports: Portlet, Velocity, JasperReports, XMLBeans, JDO,
+Guava (replaced by the Caffeine support).
 If those are critical to your project, you should stay on Spring Framework 4.3.x (supported until 2019).
 
 ### Libraries

@@ -1,5 +1,9 @@
 Limited support for 4.1.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 4.2.x release or - preferably - to the 4.3 line: http://projects.spring.io/spring-framework/
 
+The 4.3.x line will enjoy an extended support life until 2019, within the general Spring Framework 4 system requirements (JDK 6+, Servlet 2.5+) but with a focus on recent servers such as Tomcat 8 and WebSphere 8.
+
+
+
 ## Migrating to Spring Framework 4.3
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.3](http://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#new-in-4.3) in the reference documentation.
 

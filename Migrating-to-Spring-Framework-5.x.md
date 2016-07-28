@@ -38,7 +38,7 @@ The Spring Framework does not support anymore: Portlet, Velocity, JasperReports,
 , Guava (replaced by the Caffeine support).
 If those are critical to your project, you should stay on Spring Framework 4.3.x (supported until 2019).
 
-#### Libraries
+### Libraries
 
 * Jackson 2.6+
 * EhCache 2.10+ / 3.0 GA

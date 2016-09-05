@@ -81,6 +81,8 @@ adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams
   * `@SpringJUnitWebConfig`: a composed annotation that combines 
     `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` 
 	and `@WebAppConfiguration` from the Spring TestContext Framework.
+* Support for parallel test execution in the Spring TestContext Framework. See the
+  _Parallel test execution_ section of the _Testing_ chapter for details.
 * New _before_ and _after_ test execution callbacks in the Spring TestContext Framework
   with support for TestNG, JUnit 5, and JUnit 4 via the `SpringRunner` (but not via JUnit
   4 rules).

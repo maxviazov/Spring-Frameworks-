@@ -2,7 +2,7 @@
 
 This document defines the coding standards for source files in the Spring Framework. It is primarily intended for the Spring Framework team but can be used as a reference by contributors.
 
-The structure of this document is based on the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) reference and is _work in progress_.
+The structure of this document is based on the [Google Java Style](https://google.github.io/styleguide/javaguide.html) reference and is _work in progress_.
 
 ## Source File Basics
 

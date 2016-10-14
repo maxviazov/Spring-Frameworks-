@@ -92,6 +92,8 @@ adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams
   4 rules).
   * New `beforeTestExecution()` and `afterTestExecution()` callbacks in the
     `TestExecutionListener` API and `TestContextManager`.
+* `MockHttpServletRequest` now has `getContentAsByteArray()` and `getContentAsString()`
+  methods for accessing the content (i.e., request body).
 * XMLUnit support upgraded to 2.2
 
 ----

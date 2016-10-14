@@ -96,6 +96,8 @@ adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams
   methods for accessing the content (i.e., request body).
 * The `print()` and `log()` methods in Spring MVC Test now print the request body
   if the character encoding has been set in the mock request.
+* The `redirectedUrl()` and `forwardedUrl()` methods in Spring MVC Test now support
+  URI templates with variable expansion.
 * XMLUnit support upgraded to 2.2
 
 ----

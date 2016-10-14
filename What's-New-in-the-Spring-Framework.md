@@ -94,6 +94,8 @@ adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams
     `TestExecutionListener` API and `TestContextManager`.
 * `MockHttpServletRequest` now has `getContentAsByteArray()` and `getContentAsString()`
   methods for accessing the content (i.e., request body).
+* The `print()` and `log()` methods in Spring MVC Test now print the request body
+  if the character encoding has been set in the mock request.
 * XMLUnit support upgraded to 2.2
 
 ----

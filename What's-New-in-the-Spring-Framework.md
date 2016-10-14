@@ -80,7 +80,11 @@ adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams
     from the Spring TestContext Framework.
   * `@SpringJUnitWebConfig`: a composed annotation that combines 
     `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` 
-	and `@WebAppConfiguration` from the Spring TestContext Framework.
+    and `@WebAppConfiguration` from the Spring TestContext Framework.
+  * `@EnabledIf`: signals that the annotated test class or test method is _enabled_ if
+    the supplied SpEL expression or property placeholder evaluates to `true`.
+  * `@DisabledIf`: signals that the annotated test class or test method is _disabled_ if
+    the supplied SpEL expression or property placeholder evaluates to `true`.
 * Support for parallel test execution in the Spring TestContext Framework. See the
   _Parallel test execution_ section of the _Testing_ chapter for details.
 * New _before_ and _after_ test execution callbacks in the Spring TestContext Framework

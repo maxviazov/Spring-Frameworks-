@@ -196,7 +196,7 @@ private static final Set<String> internalAnnotationAttributes = new HashSet<Stri
 
 ### variable names
 
-Avoid using variable name for a single character. For instance prefer `Method method` to `Method m`. 
+Avoid using single characters as variable names. For instance prefer `Method method` to `Method m`. 
 
 ## Programming Practices
 

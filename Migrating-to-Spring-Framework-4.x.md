@@ -10,7 +10,9 @@ For an overview of new features, refer to [New Features and Enhancements in Spri
 ### Third-party dependencies
 Spring 4.3 supports all current versions of its optionally integrated libraries, including _Hibernate ORM 5.2_ and _Jackson 2.7/2.8_ as well as _OkHttp 3.x_. Furthermore, it embeds the updated _ASM 5.1_ and _Objenesis 2.4_.
 
-Please note that several minimum dependency versions have been raised: _Jackson 2.6+_, _FreeMarker 2.3.21+_, _XStream 1.4.5+_. Spring's support for _Hibernate 3.x_ and _Velocity_ has been deprecated and scheduled for removal in 5.0.
+Please note that several minimum dependency versions have been raised: _Jetty 9.1+_, _Jackson 2.6+_, _FreeMarker 2.3.21+_, _XStream 1.4.5+_. Spring's support for _Hibernate 3.x_ and _Velocity_ has been deprecated and scheduled for removal in 5.0.
+
+
 
 ### Default handling of HEAD and OPTIONS requests
 As of 4.3, Spring MVC processes HEAD and OPTIONS requests by default if there are no explicit bindings for those HTTP methods on a given path, along the lines of what HttpServlet does by default. While this should be a reasonable enhancement to all common Spring web applications, there may be subtle interaction side effects.

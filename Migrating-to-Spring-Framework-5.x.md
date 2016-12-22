@@ -19,7 +19,7 @@ Java EE 7 API level is required in Spring's corresponding modules now:
 ### Servers
 
 * Tomcat 8.5+
-* Jetty 9.3+
+* Jetty 9.4+
 * WildFly 10+
 * with the addition of Netty 4.1 and Undertow 1.4 for the Web Reactive module
 
@@ -45,5 +45,5 @@ If those are critical to your project, you should stay on Spring Framework 4.3.x
 * Hibernate 5.0+
 * JDBC 4.0+
 * XmlUnit 2.x+
-* OkHttp 2.x is deprecated, 3.x recommended
+* OkHttp 3.x+
 * Netty 4.1+

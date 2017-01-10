@@ -2,10 +2,8 @@ This page provides information when upgrading to newer versions of the Spring Fr
 
 For information pertaining to new features a given release, consult the [[What's New in the Spring Framework]] wiki page.
 
-### Actively supported generations: 3.2, 4.2, 4.3
-Note that the 3.0.x and 3.1.x lines have been retired already, with no support whatsoever available anymore, in favor of the 3.2.x line (EOL is December 31 2016, see [this blog announcement](https://spring.io/blog/2015/06/15/spring-framework-3-2-x-eol-on-dec-31-2016)).
-
-Limited support for 4.1.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 4.2.x release or - preferably - to the 4.3 line: http://projects.spring.io/spring-framework/
+### Actively supported generations: 4.3, 5.0
+Limited support for 3.2.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 4.3.x release: http://projects.spring.io/spring-framework/
 
 ## See dedicated Migration pages
 

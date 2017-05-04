@@ -55,7 +55,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 * Unified support for media type resolution through `MediaTypeFactory` delegate.
 * Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
-* Support for Protobuf 3.0 (currently beta 4).
+* Support for Protobuf 3.0.
 
 ### Reactive Programming Model
 

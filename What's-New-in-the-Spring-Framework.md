@@ -21,11 +21,13 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Entire framework codebase based on Java 8 source code level now.
   * Improved readability through inferred generics etc.
   * Conditional support for Java 8 features now in straight code.
+* Compatibility with JDK 9 at runtime.
+  * In classpath mode as well as automatic module mode.
 * Java EE 7 API level required in Spring's corresponding modules now.
   * Servlet 3.1, JMS 2.0, JPA 2.1, Bean Validation 1.1
-  * Recent servers: e.g. Tomcat 8.5+, Jetty 9.3+, WildFly 10+
-* Full compatibility with JDK 9 as of July 2016.
-  * Project spring-framework can be built on JDK 9; test suite passes.
+  * Recent servers: e.g. Tomcat 8.5+, Jetty 9.4+, WildFly 10+
+* Compatibility with Java EE 8 API level at runtime.
+  * Servlet 4.0, Bean Validation 2.0, JSON Binding API
 
 ### Removed Packages, Classes and Methods
 
@@ -61,12 +63,13 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 * `spring-core` `DataBuffer` and `Encoder`/`Decoder` abstractions with non-blocking semantics.
 * `spring-web` HTTP message codec implementations with JSON (Jackson) and XML (JAXB) support.
-* New `spring-web-reactive` module with reactive support for the `@Controller` programming model
+* New `spring-webflux` module with reactive support for the `@Controller` programming model,
 adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm) to Servlet
 3.1 containers as well as non-Servlet runtimes such as Netty and Undertow.
+* New functional endpoint registration model on the same reactive web foundation.
 * New `WebClient` with reactive support on the client side.
 * For more details refer to the chapter
-["Web Reactive Framework"](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#web-reactive) in the reference docs.
+["WebFlux framework"](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#web-reactive) in the reference docs.
 
 ### Testing Improvements
 

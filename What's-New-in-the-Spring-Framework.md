@@ -42,7 +42,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Many deprecated classes and methods removed across the codebase.
   * A few compromises made for commonly used methods in the ecosystem.
 
-### General Core Improvements
+### General Core Revision
 
 * JDK 8+ enhancements:
   * Efficient method parameter access based on Java 8 reflection enhancements.
@@ -56,7 +56,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
   * Also features NIO-based `readableChannel` accessor now.
 
-### Core Container Improvements
+### Core Container
 
 * Functional style on `GenericApplicationContext`/`AnnotationConfigApplicationContext`
   * `Supplier`-based bean registration API with bean definition customizer callbacks.
@@ -71,7 +71,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Always resolved against latest `xsd` files; no support for deprecated features.
   * Version-specific declarations still supported but validated against latest schema.
 
-### Spring MVC
+### Spring WebMVC
 
 * Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
 * Support for Servlet 4.0 `PushBuilder` argument in Spring MVC controller methods.
@@ -85,7 +85,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 as return values from Spring MVC controller methods targeting use of the new reactive `WebClient` (see below) or Spring Data Reactive repositories in Spring MVC controllers.
 * New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/web/util/patterns/PathPattern.html).
 * `@ExceptionHandler` methods allow `RedirectAttributes` arguments (and therefore flash attributes).
-* Support for `ResponseStatusException` as programmtic alternative to `@ResponseStatus`.
+* Support for `ResponseStatusException` as a programmatic alternative to `@ResponseStatus`.
 
 
 ### Spring WebFlux

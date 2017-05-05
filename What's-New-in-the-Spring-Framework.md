@@ -42,7 +42,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Many deprecated classes and methods removed across the codebase.
   * A few compromises made for commonly used methods in the ecosystem.
 
-### Core Container Improvements
+### General Core Improvements
 
 * JDK 8+ enhancements:
   * Efficient method parameter access based on Java 8 reflection enhancements.
@@ -50,24 +50,31 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Consistent use of JDK 7 `Charset` and `StandardCharsets` enhancements.
 * JDK 9 preparations:
   * Consistent instantiation via constructors (with revised exception handling)
-* XML configuration namespaces streamlined towards unversioned schemas.
-  * Always resolved against latest `xsd` files; no support for deprecated features.
-  * Version-specific declarations still supported but validated against latest schema.
 * Spring Framework 5.0 comes with its own Commons Logging bridge out of the box.
   * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
   * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
 * `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
   * Also features NIO-based `readableChannel` accessor.
-* Consistent detection of transaction, caching, async annotations on interface methods.
-  * In case of CGLIB proxies.
+
+### Core Container Improvements
+
 * Functional style on `GenericApplicationContext`/`AnnotationConfigApplicationContext`
   * `Supplier`-based bean registration API with bean definition customizer callbacks.
 * First-class support for Kotlin through specific functional style extensions.
   * For bean registration as well as `JdbcTemplate` and functional endpoints.
+* Support for any @Nullable annotations as indicators for optional injection points.
+  * Also for Kotlin nullability declarations.
+* Consistent detection of transaction, caching, async annotations on interface methods.
+  * In case of CGLIB proxies.
+* XML configuration namespaces streamlined towards unversioned schemas.
+  * Always resolved against latest `xsd` files; no support for deprecated features.
+  * Version-specific declarations still supported but validated against latest schema.
 
 ### General Web Improvements
 
 * Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
+* Support for Servlet 4.0 `PushBuilder` argument in Spring MVC handler methods.
+* `MaxUploadSizeExceededException` for Servlet 3.0 multipart parsing on common servers.
 * Unified support for common media types through `MediaTypeFactory` delegate.
   * Superseding use of the Java Activation Framework.
 * Data binding with immutable objects (Kotlin / Lombok / @ConstructorProperties)
@@ -77,6 +84,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Reactive Programming Model
 
+* Support for Reactor `Flux` and `Mono` as well as RxJava 1.x and 2.x composition types.
 * `spring-core` `DataBuffer` and `Encoder`/`Decoder` abstractions with non-blocking semantics.
 * `spring-web` HTTP message codec implementations with JSON (Jackson) and XML (JAXB) support.
 * New `spring-webflux` module with reactive support for the `@Controller` programming model,

@@ -71,10 +71,10 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Always resolved against latest `xsd` files; no support for deprecated features.
   * Version-specific declarations still supported but validated against latest schema.
 
-### General Web Improvements
+### Spring MVC
 
 * Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
-* Support for Servlet 4.0 `PushBuilder` argument in Spring MVC handler methods.
+* Support for Servlet 4.0 `PushBuilder` argument in Spring MVC controller methods.
 * `MaxUploadSizeExceededException` for Servlet 3.0 multipart parsing on common servers.
 * Unified support for common media types through `MediaTypeFactory` delegate.
   * Superseding use of the Java Activation Framework.
@@ -82,19 +82,20 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Support for Jackson 2.9 (GA expected along with Spring Framework 5.0 GA).
 * Support for the JSON Binding API (as an alternative to Jackson and GSON).
 * Support for Protobuf 3.
+* Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 as return values from Spring MVC controller methods targeting use of the new reactive `WebClient` (see below) or Spring Data Reactive repositories in Spring MVC controllers.
+* New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/web/util/patterns/PathPattern.html).
+* `@ExceptionHandler` methods allow `RedirectAttributes` arguments (and therefore flash attributes).
+* Support for `ResponseStatusException` as programmtic alternative to `@ResponseStatus`.
 
-### Reactive Programming Model
 
-* Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 composition types.
-* `spring-core` `DataBuffer` and `Encoder`/`Decoder` abstractions with non-blocking semantics.
-* `spring-web` HTTP message codec implementations with JSON (Jackson) and XML (JAXB) support.
-* New `spring-webflux` module with reactive support for the `@Controller` programming model,
-adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm) to Servlet
-3.1 containers as well as non-Servlet runtimes such as Netty and Undertow.
-* New functional endpoint registration API ("WebFlux fn") on the same reactive web foundation.
-* New `WebClient` with reactive support on the client side.
-* For more details refer to the chapter
-["WebFlux framework"](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#web-reactive) in the reference docs.
+### Spring WebFlux
+
+* New [spring-webflux](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#web-reactive) module, an alternative to `spring-webmvc` built on a [reactive](https://github.com/reactive-streams/reactive-streams-jvm) foundation -- fully asynchronous and non-blocking, intended for use in an event-loop execution model vs traditional large thread pool with thread-per-request execution model.
+* Reactive infrastructure in `spring-core` such as `Encoder` and `Decoder` for encoding and decoding streams of Objects; `DataBuffer` abstraction, e.g. for using Java `ByteBuffer` or Netty `ByteBuf`; `ReactiveAdapterRegistry` for transparent support of reactive libraries in controller method signatures.
+* Reactive infrastructure in `spring-web` including `HttpMessageReader` and `HttpMessageWriter` that build on and delegate to `Encoder` and `Decoder`; server `HttpHandler` with adapters to (non-blocking) runtimes such as Servlet 3.1+ containers, Netty, and Undertow; `WebFilter`, `WebHandler` and other non-blocking contract alternatives to Servlet API equivalents.
+* `@Controller` style, annotation-based, programming model, similar to Spring MVC, but supported in WebFlux, running on a reactive stack, e.g. capable of supporting reactive types as controller method arguments, never blocking on I/O, respecting backpressure all the way to the HTTP socket, and running on extra, non-Servlet containers such as Netty and Undertow.
+* New [functional web framework](https://github.com/spring-projects/spring-framework/blob/master/src/docs/asciidoc/web/web-flux-functional.adoc) ("WebFlux.fn") as an alternative to the `@Controller`, annotation-based, programming model -- minimal and transparent with an endpoint routing API, running on the same reactive stack and WebFlux infrastructure.
+* New `WebClient` with a functional and reactive API for HTTP calls, comparable to the `RestTemplate` but through a fluent API and also excelling in non-blocking and streaming scenarios based on WebFlux infrastructure; in 5.0 the `AsyncRestTemplate` is deprecated in favor of the `WebClient`.
 
 ### Testing Improvements
 

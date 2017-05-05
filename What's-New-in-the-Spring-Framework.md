@@ -16,7 +16,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ## New Features and Enhancements in Spring Framework 5.0
 
-### JDK 8+9 and Java EE 7 Baseline
+### JDK 8+ and Java EE 7+ Baseline
 
 * Entire framework codebase based on Java 8 source code level now.
   * Improved readability through inferred generics etc.
@@ -54,7 +54,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
   * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
 * `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
-  * Also features NIO-based `readableChannel` accessor.
+  * Also features NIO-based `readableChannel` accessor now.
 
 ### Core Container Improvements
 
@@ -78,14 +78,14 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * `MaxUploadSizeExceededException` for Servlet 3.0 multipart parsing on common servers.
 * Unified support for common media types through `MediaTypeFactory` delegate.
   * Superseding use of the Java Activation Framework.
-* Data binding with immutable objects (Kotlin / Lombok / @ConstructorProperties)
+* Data binding with immutable objects (Kotlin / Lombok / `@ConstructorProperties`)
 * Support for Jackson 2.9 (GA expected along with Spring Framework 5.0 GA).
 * Support for the JSON Binding API (as an alternative to Jackson and GSON).
 * Support for Protobuf 3.
 
 ### Reactive Programming Model
 
-* Support for Reactor `Flux` and `Mono` as well as RxJava 1.x and 2.x composition types.
+* Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 composition types.
 * `spring-core` `DataBuffer` and `Encoder`/`Decoder` abstractions with non-blocking semantics.
 * `spring-web` HTTP message codec implementations with JSON (Jackson) and XML (JAXB) support.
 * New `spring-webflux` module with reactive support for the `@Controller` programming model,

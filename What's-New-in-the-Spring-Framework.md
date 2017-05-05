@@ -48,7 +48,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Efficient method parameter access based on Java 8 reflection enhancements.
   * Selective declarations of Java 8 default methods in core Spring interfaces.
   * Consistent use of JDK 7 `Charset` and `StandardCharsets` enhancements.
-* JDK 9 preparations:
+* JDK 9 compatibility:
   * Consistent instantiation via constructors (with revised exception handling)
 * Spring Framework 5.0 comes with its own Commons Logging bridge out of the box.
   * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
@@ -66,6 +66,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Also for Kotlin nullability declarations.
 * Consistent detection of transaction, caching, async annotations on interface methods.
   * In case of CGLIB proxies.
+* Support for candidate component index (as alternative to classpath scanning).
 * XML configuration namespaces streamlined towards unversioned schemas.
   * Always resolved against latest `xsd` files; no support for deprecated features.
   * Version-specific declarations still supported but validated against latest schema.
@@ -90,7 +91,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * New `spring-webflux` module with reactive support for the `@Controller` programming model,
 adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm) to Servlet
 3.1 containers as well as non-Servlet runtimes such as Netty and Undertow.
-* New functional endpoint registration model on the same reactive web foundation.
+* New functional endpoint registration API ("WebFlux fn") on the same reactive web foundation.
 * New `WebClient` with reactive support on the client side.
 * For more details refer to the chapter
 ["WebFlux framework"](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#web-reactive) in the reference docs.
@@ -112,8 +113,8 @@ adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams
     the supplied SpEL expression or property placeholder evaluates to `true`.
   * `@DisabledIf`: signals that the annotated test class or test method is _disabled_ if
     the supplied SpEL expression or property placeholder evaluates to `true`.
-* Support for parallel test execution in the Spring TestContext Framework. See the
-  _Parallel test execution_ section of the _Testing_ chapter for details.
+* Support for parallel test execution in the Spring TestContext Framework.
+  * See the _Parallel test execution_ section of the _Testing_ chapter for details.
 * New _before_ and _after_ test execution callbacks in the Spring TestContext Framework
   with support for TestNG, JUnit 5, and JUnit 4 via the `SpringRunner` (but not via JUnit
   4 rules).
@@ -125,7 +126,7 @@ adapting [Reactive Streams](https://github.com/reactive-streams/reactive-streams
   if the character encoding has been set in the mock request.
 * The `redirectedUrl()` and `forwardedUrl()` methods in Spring MVC Test now support
   URI templates with variable expansion.
-* XMLUnit support upgraded to 2.2
+* XMLUnit support upgraded to 2.3
 
 ----
 # What's New in Spring Framework 4.x

@@ -31,6 +31,8 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Removed Packages, Classes and Methods
 
+* Package `beans.factory.access` (`BeanFactoryLocator` mechanism).
+* Package `jdbc.support.nativejdbc` (`NativeJdbcExtractor` mechanism).
 * Package `mock.staticmock` removed from `spring-aspects` module.
   * No support for `AnnotationDrivenStaticEntityMockingControl` anymore.
 * Packages `web.view.tiles2` and `orm.hibernate3/hibernate4` dropped.
@@ -42,22 +44,36 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Core Container Improvements
 
-* JDK 8+ enhancements
+* JDK 8+ enhancements:
   * Efficient method parameter access based on Java 8 reflection enhancements.
   * Selective declarations of Java 8 default methods in core Spring interfaces.
   * Consistent use of JDK 7 `Charset` and `StandardCharsets` enhancements.
-* JDK 9 preparations
+* JDK 9 preparations:
   * Consistent instantiation via constructors (with revised exception handling)
 * XML configuration namespaces streamlined towards unversioned schemas.
   * Always resolved against latest `xsd` files; no support for deprecated features.
   * Version-specific declarations still supported but validated against latest schema.
+* Spring Framework 5.0 comes with its own Commons Logging bridge out of the box.
+  * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
+  * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
 * `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
+  * Also features NIO-based `readableChannel` accessor.
+* Consistent detection of transaction, caching, async annotations on interface methods.
+  * In case of CGLIB proxies.
+* Functional style on `GenericApplicationContext`/`AnnotationConfigApplicationContext`
+  * `Supplier`-based bean registration API with bean definition customizer callbacks.
+* First-class support for Kotlin through specific functional style extensions.
+  * For bean registration as well as `JdbcTemplate` and functional endpoints.
 
 ### General Web Improvements
 
-* Unified support for media type resolution through `MediaTypeFactory` delegate.
 * Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
-* Support for Protobuf 3.0.
+* Unified support for common media types through `MediaTypeFactory` delegate.
+  * Superseding use of the Java Activation Framework.
+* Data binding with immutable objects (Kotlin / Lombok / @ConstructorProperties)
+* Support for Jackson 2.9 (GA expected along with Spring Framework 5.0 GA).
+* Support for the JSON Binding API (as an alternative to Jackson and GSON).
+* Support for Protobuf 3.
 
 ### Reactive Programming Model
 

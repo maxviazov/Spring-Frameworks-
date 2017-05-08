@@ -62,7 +62,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * `Supplier`-based bean registration API with bean definition customizer callbacks.
 * First-class support for Kotlin through specific functional style extensions.
   * For bean registration as well as `JdbcTemplate` and functional endpoints.
-* Support for any @Nullable annotations as indicators for optional injection points.
+* Support for any `@Nullable` annotations as indicators for optional injection points.
   * Also for Kotlin nullability declarations.
 * Consistent detection of transaction, caching, async annotations on interface methods.
   * In case of CGLIB proxies.

@@ -58,15 +58,12 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 ### Core Container
 
+* Support for candidate component index (as alternative to classpath scanning).
+* Support for any `@Nullable` annotations as indicators for optional injection points.
 * Functional style on `GenericApplicationContext`/`AnnotationConfigApplicationContext`
   * `Supplier`-based bean registration API with bean definition customizer callbacks.
-* First-class support for Kotlin through specific functional style extensions.
-  * For bean registration as well as `JdbcTemplate` and functional endpoints.
-* Support for any `@Nullable` annotations as indicators for optional injection points.
-  * Also for Kotlin nullability declarations.
 * Consistent detection of transaction, caching, async annotations on interface methods.
   * In case of CGLIB proxies.
-* Support for candidate component index (as alternative to classpath scanning).
 * XML configuration namespaces streamlined towards unversioned schemas.
   * Always resolved against latest `xsd` files; no support for deprecated features.
   * Version-specific declarations still supported but validated against latest schema.
@@ -101,9 +98,9 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Various Kotlin extensions are provided to allow idiomatic Kotlin code when developing Spring Framework 5.x applications.
 * Leveraging Kotlin reified type parameters to avoid specifying explicitly the `Class` to use for serialization/deserialization in various APIs like `RestTemplate` or WebFlux APIs.
 * `KClass` based method parameters are provided as alternatives to `Class` ones.
-* Kotlin null-safety support for `@RequestParam`, `@Autowired` and `@Inject` annotation in order to determine if a parameter/bean is required or not.
-* WebFlux Functional routing Kotlin DSL.
-* Functional bean registration Kotlin DSL.
+* Kotlin null-safety support for `@Autowired`/`@Inject` and `@RequestParam`/`@RequestHeader`/etc annotations in order to determine if a parameter/bean is required or not.
+* Functional bean registration Kotlin DSL for `GenericApplicationContext`.
+* Functional routing Kotlin DSL for WebFlux.
 * Kotlin script support in `ScriptTemplateView` for both Spring MVC and Spring WebFlux.
 * Array-like setters added to `Model` and `ModelMap`.
 

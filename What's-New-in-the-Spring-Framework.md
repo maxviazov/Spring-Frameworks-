@@ -86,7 +86,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/web/util/patterns/PathPattern.html).
 * `@ExceptionHandler` methods allow `RedirectAttributes` arguments (and therefore flash attributes).
 * Support for `ResponseStatusException` as a programmatic alternative to `@ResponseStatus`.
-
+* Support i18n and nested templates in `ScriptTemplateView` via the new `RenderingContext` parameter.
 
 ### Spring WebFlux
 

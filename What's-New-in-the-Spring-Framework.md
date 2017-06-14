@@ -27,7 +27,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Servlet 3.1, JMS 2.0, JPA 2.1, Bean Validation 1.1
   * Recent servers: e.g. Tomcat 8.5+, Jetty 9.4+, WildFly 10+
 * Compatibility with Java EE 8 API level at runtime.
-  * Servlet 4.0, Bean Validation 2.0, JSON Binding API
+  * Servlet 4.0, Bean Validation 2.0, JPA 2.2, JSON Binding API 1.0
 
 ### Removed Packages, Classes and Methods
 
@@ -50,6 +50,10 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Consistent use of JDK 7 `Charset` and `StandardCharsets` enhancements.
 * JDK 9 compatibility:
   * Consistent instantiation via constructors (with revised exception handling)
+* Non-null API declaration at the package level
+  * Nullable arguments and return values explicitly annotated with `@Nullable`.
+  * Primarily for use with IntelliJ IDEA and Kotlin.
+  * Some Spring APIs are not tolerating null values anymore (e.g. in `StringUtils`).
 * Spring Framework 5.0 comes with its own Commons Logging bridge out of the box.
   * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
   * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
@@ -84,6 +88,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * `@ExceptionHandler` methods allow `RedirectAttributes` arguments (and therefore flash attributes).
 * Support for `ResponseStatusException` as a programmatic alternative to `@ResponseStatus`.
 * Support i18n and nested templates in `ScriptTemplateView` via the new `RenderingContext` parameter.
+* Spring's FreeMarker macros (`spring.ftl`) use HTML output formatting now (requiring FreeMarker 2.3.24+).
 
 ### Spring WebFlux
 

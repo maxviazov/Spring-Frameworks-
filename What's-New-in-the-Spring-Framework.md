@@ -19,10 +19,10 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 ### JDK 8+ and Java EE 7+ Baseline
 
 * Entire framework codebase based on Java 8 source code level now.
-  * Improved readability through inferred generics etc.
+  * Improved readability through inferred generics, lambdas, etc.
   * Conditional support for Java 8 features now in straight code.
 * Compatibility with JDK 9 at runtime.
-  * In classpath mode as well as automatic module mode.
+  * On the classpath as well as on the module path (as automatic modules).
 * Java EE 7 API level required in Spring's corresponding modules now.
   * Servlet 3.1, JMS 2.0, JPA 2.1, Bean Validation 1.1
   * Recent servers: e.g. Tomcat 8.5+, Jetty 9.4+, WildFly 10+
@@ -49,10 +49,11 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Selective declarations of Java 8 default methods in core Spring interfaces.
   * Consistent use of JDK 7 `Charset` and `StandardCharsets` enhancements.
 * JDK 9 compatibility:
-  * Consistent instantiation via constructors (with revised exception handling)
+  * Consistent instantiation via constructors (with revised exception handling).
+  * Defensive use of reflection against core JDK classes.
 * Non-null API declaration at the package level
   * Nullable arguments and return values explicitly annotated with `@Nullable`.
-  * Primarily for use with IntelliJ IDEA and Kotlin.
+  * Primarily for use with IntelliJ IDEA and Kotlin, but also Eclipse and FindBugs.
   * Some Spring APIs are not tolerating null values anymore (e.g. in `StringUtils`).
 * Spring Framework 5.0 comes with its own Commons Logging bridge out of the box.
   * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
@@ -102,7 +103,6 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 ### [Kotlin 1.1+ support](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0)
 * Various Kotlin extensions are provided to allow idiomatic Kotlin code when developing Spring Framework 5.x applications.
 * Leveraging Kotlin reified type parameters to avoid specifying explicitly the `Class` to use for serialization/deserialization in various APIs like `RestTemplate` or WebFlux APIs.
-* `KClass` based method parameters are provided as alternatives to `Class` ones.
 * Kotlin null-safety support for `@Autowired`/`@Inject` and `@RequestParam`/`@RequestHeader`/etc annotations in order to determine if a parameter/bean is required or not.
 * Functional bean registration Kotlin DSL for `GenericApplicationContext`.
 * Functional routing Kotlin DSL for WebFlux.

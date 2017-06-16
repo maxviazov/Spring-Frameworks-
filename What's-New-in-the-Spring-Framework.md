@@ -24,10 +24,11 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Compatibility with JDK 9 at runtime.
   * On the classpath as well as on the module path (as automatic modules).
 * Java EE 7 API level required in Spring's corresponding modules now.
-  * Servlet 3.1, JMS 2.0, JPA 2.1, Bean Validation 1.1
+  * Servlet 3.1, Bean Validation 1.1, JPA 2.1, JMS 2.0
   * Recent servers: e.g. Tomcat 8.5+, Jetty 9.4+, WildFly 10+
 * Compatibility with Java EE 8 API level at runtime.
   * Servlet 4.0, Bean Validation 2.0, JPA 2.2, JSON Binding API 1.0
+  * Tested against Tomcat 9.0, Hibernate Validator 6.0, Apache Johnzon 1.1
 
 ### Removed Packages, Classes and Methods
 

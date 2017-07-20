@@ -104,14 +104,15 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * New [functional web framework](https://github.com/spring-projects/spring-framework/blob/master/src/docs/asciidoc/web/web-flux-functional.adoc) ("WebFlux.fn") as an alternative to the `@Controller`, annotation-based, programming model -- minimal and transparent with an endpoint routing API, running on the same reactive stack and WebFlux infrastructure.
 * New `WebClient` with a functional and reactive API for HTTP calls, comparable to the `RestTemplate` but through a fluent API and also excelling in non-blocking and streaming scenarios based on WebFlux infrastructure; in 5.0 the `AsyncRestTemplate` is deprecated in favor of the `WebClient`.
 
-### [Kotlin 1.1+ support](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0)
-* Various Kotlin extensions are provided to allow idiomatic Kotlin code when developing Spring Framework 5.x applications.
+### [Kotlin support](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0)
+* Full null-safe API when using Kotlin 1.1.4+ (use `-Xload-jsr305-annotations` command line option to enable it, will be the default in Kotlin 1.3+)
+* Support for Kotlin immutable classes with optional parameters and default values
+* Functional bean definition Kotlin DSL.
+* Functional routing Kotlin DSL for WebFlux.
 * Leveraging Kotlin reified type parameters to avoid specifying explicitly the `Class` to use for serialization/deserialization in various APIs like `RestTemplate` or WebFlux APIs.
 * Kotlin null-safety support for `@Autowired`/`@Inject` and `@RequestParam`/`@RequestHeader`/etc annotations in order to determine if a parameter/bean is required or not.
-* Functional bean registration Kotlin DSL for `GenericApplicationContext`.
-* Functional routing Kotlin DSL for WebFlux.
 * Kotlin script support in `ScriptTemplateView` for both Spring MVC and Spring WebFlux.
-* Array-like setters added to `Model` and `ModelMap`.
+* Array-like setters added to `Model`, `ModelMap` and `Environement`.
 
 ### Testing Improvements
 

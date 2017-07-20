@@ -23,7 +23,8 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Conditional support for Java 8 features now in straight code.
 * Compatibility with JDK 9 at runtime.
   * On the classpath as well as on the module path (as automatic modules).
-* Java EE 7 API level required in Spring's corresponding modules now.
+  * Framework build and test suite passes on JDK 9 (runs on JDK 8 by default).
+* Java EE 7 API level required in Spring's corresponding features now.
   * Servlet 3.1, Bean Validation 1.1, JPA 2.1, JMS 2.0
   * Recent servers: e.g. Tomcat 8.5+, Jetty 9.4+, WildFly 10+
 * Compatibility with Java EE 8 API level at runtime.
@@ -50,17 +51,19 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Selective declarations of Java 8 default methods in core Spring interfaces.
   * Consistent use of JDK 7 `Charset` and `StandardCharsets` enhancements.
 * JDK 9 compatibility:
+  * Avoiding JDK APIs which are deprecated in JDK 9 wherever possible.
   * Consistent instantiation via constructors (with revised exception handling).
   * Defensive use of reflection against core JDK classes.
-* Non-null API declaration at the package level
-  * Nullable arguments and return values explicitly annotated with `@Nullable`.
+* Non-null API declaration at the package level:
+  * Nullable arguments, fields and return values explicitly annotated with `@Nullable`.
   * Primarily for use with IntelliJ IDEA and Kotlin, but also Eclipse and FindBugs.
   * Some Spring APIs are not tolerating null values anymore (e.g. in `StringUtils`).
-* Spring Framework 5.0 comes with its own Commons Logging bridge out of the box.
+* Spring Framework 5.0 comes with its own Commons Logging bridge out of the box:
   * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
   * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
 * `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
-  * Also features NIO-based `readableChannel` accessor now.
+  * Also features NIO-based `readableChannel` accessor in the `Resource` interface.
+  * File system access via NIO streams (no `FileInput/OutputStream` used anymore).
 
 ### Core Container
 

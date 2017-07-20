@@ -21,7 +21,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Entire framework codebase based on Java 8 source code level now.
   * Improved readability through inferred generics, lambdas, etc.
   * Conditional support for Java 8 features now in straight code.
-* Compatibility with JDK 9 at runtime.
+* Full compatibility with JDK 9 for development and deployment.
   * On the classpath as well as on the module path (as automatic modules).
   * Framework build and test suite passes on JDK 9 (runs on JDK 8 by default).
 * Java EE 7 API level required in Spring's corresponding features now.
@@ -63,7 +63,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
 * `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
   * Also features NIO-based `readableChannel` accessor in the `Resource` interface.
-  * File system access via NIO streams (no `FileInput/OutputStream` used anymore).
+  * File system access via NIO.2 streams (no `FileInput/OutputStream` used anymore).
 
 ### Core Container
 
@@ -85,8 +85,8 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Unified support for common media types through `MediaTypeFactory` delegate.
   * Superseding use of the Java Activation Framework.
 * Data binding with immutable objects (Kotlin / Lombok / `@ConstructorProperties`)
-* Support for Jackson 2.9 (GA expected along with Spring Framework 5.0 GA).
 * Support for the JSON Binding API (as an alternative to Jackson and GSON).
+* Support for Jackson 2.9.
 * Support for Protobuf 3.
 * Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 as return values from Spring MVC controller methods targeting use of the new reactive `WebClient` (see below) or Spring Data Reactive repositories in Spring MVC controllers.
 * New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](http://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/web/util/patterns/PathPattern.html).

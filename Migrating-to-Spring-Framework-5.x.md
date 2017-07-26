@@ -40,7 +40,7 @@ If those are critical to your project, you should stay on Spring Framework 4.3.x
 
 ### Libraries
 
-* Jackson 2.6+
+* Jackson 2.9+
 * EhCache 2.10+ / 3.0 GA
 * Hibernate 5.0+
 * JDBC 4.0+

@@ -1,5 +1,3 @@
-# Spring Framework 5 FAQ
-
 ### What is Spring Framework 5?
 
 Spring Framework 5 is a major version upgrade of the Spring Framework, several years in the making. It introduces a new non-blocking web framework called [Spring WebFlux](https://docs.spring.io/spring-framework/docs/5.0.x/spring-framework-reference/reactive-web.html#webflux) which uses [Reactor](https://projectreactor.io/) to support the [Reactive Streams](https://github.com/reactive-streams/reactive-streams-jvm) API. It also offers a functional programming alternative to annotated controllers, and first-class Kotlin language support. It is based on Java 8 language features, and designed to work with Java 9.

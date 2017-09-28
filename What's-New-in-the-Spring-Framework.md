@@ -105,7 +105,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * New `WebClient` with a functional and reactive API for HTTP calls, comparable to the `RestTemplate` but through a fluent API and also excelling in non-blocking and streaming scenarios based on WebFlux infrastructure; in 5.0 the `AsyncRestTemplate` is deprecated in favor of the `WebClient`.
 
 ### [Kotlin support](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0)
-* Full null-safe API when using Kotlin 1.1.4+ (use `-Xload-jsr305-annotations` command line option to enable it, will be the default in Kotlin 1.3+)
+* Null-safe API when using Kotlin 1.1.50+
 * Support for Kotlin immutable classes with optional parameters and default values
 * Functional bean definition Kotlin DSL.
 * Functional routing Kotlin DSL for WebFlux.
@@ -113,6 +113,8 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * Kotlin null-safety support for `@Autowired`/`@Inject` and `@RequestParam`/`@RequestHeader`/etc annotations in order to determine if a parameter/bean is required or not.
 * Kotlin script support in `ScriptTemplateView` for both Spring MVC and Spring WebFlux.
 * Array-like setters added to `Model`, `ModelMap` and `Environement`.
+* Support for Kotlin autowired constructor with optional parameters
+* Kotlin reflection is used to determine interface method parameters
 
 ### Testing Improvements
 

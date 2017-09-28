@@ -121,7 +121,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 
 * Complete support for [JUnit 5](http://junit.org/junit5/)'s _Jupiter_ programming and 
   extension models in the Spring TestContext Framework.
-  * `SpringExtension`: an implementation of multiple extension APIs from JUnit Jupiter 
+  * [`SpringExtension`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-junit-jupiter-extension): an implementation of multiple extension APIs from JUnit Jupiter 
     that provides full support for the existing feature set of the Spring TestContext 
     Framework. This support is enabled via `@ExtendWith(SpringExtension.class)`.
   * `@SpringJUnitConfig`: a composed annotation that combines 

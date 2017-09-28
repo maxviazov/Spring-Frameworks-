@@ -134,7 +134,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
     the supplied SpEL expression or property placeholder evaluates to `true`.
   * [`@DisabledIf`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#disabledif): signals that the annotated test class or test method is _disabled_ if
     the supplied SpEL expression or property placeholder evaluates to `true`.
-* Support for parallel test execution in the Spring TestContext Framework.
+* Support for [parallel test execution](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-parallel-test-execution) in the Spring TestContext Framework.
   * See the _Parallel test execution_ section of the _Testing_ chapter for details.
 * New _before_ and _after_ test execution callbacks in the Spring TestContext Framework
   with support for TestNG, JUnit 5, and JUnit 4 via the `SpringRunner` (but not via JUnit

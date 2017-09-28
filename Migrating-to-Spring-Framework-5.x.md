@@ -8,12 +8,11 @@ For a general overview of new features, refer to [[What's New in the Spring Fram
 
 ### Baseline update
 
-Spring Framework 5.0 requires Java SE 8 or above, since its entire codebase is now based on Java 8 source code level.
-The project offers full compatibility with JDK 9 as of July 2016.
+Spring Framework 5.0 requires JDK 8 (Java SE 8) or above, since its entire codebase is now based on Java 8 source code level, and provides full compatibility with JDK 9 on the classpath as well as the module path (Jigsaw).
 
-Java EE 7 API level is required in Spring's corresponding modules now:
+The Java EE 7 API level is required in Spring's corresponding framework modules now:
 
-* Servlet 3.1 (Servlet 2.5 runtime compatibility has been dropped)
+* Servlet 3.1
 * JMS 2.0
 * JPA 2.1
 * Bean Validation 1.1
@@ -43,9 +42,7 @@ If those are critical to your project, you should stay on Spring Framework 4.3.x
 ### Libraries
 
 * Jackson 2.9+
-* EhCache 2.10+ / 3.0 GA
+* EhCache 2.10+
 * Hibernate 5.0+
-* JDBC 4.0+
-* XmlUnit 2.x+
-* OkHttp 3.x+
-* Netty 4.1+
+* OkHttp 3.0+
+* XmlUnit 2.0+

@@ -124,15 +124,15 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * [`SpringExtension`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-junit-jupiter-extension): an implementation of multiple extension APIs from JUnit Jupiter 
     that provides full support for the existing feature set of the Spring TestContext 
     Framework. This support is enabled via `@ExtendWith(SpringExtension.class)`.
-  * `@SpringJUnitConfig`: a composed annotation that combines 
+  * [`@SpringJUnitConfig`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#springjunitconfig): a composed annotation that combines 
     `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` 
     from the Spring TestContext Framework.
-  * `@SpringJUnitWebConfig`: a composed annotation that combines 
+  * [`@SpringJUnitWebConfig`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#springjunitwebconfig): a composed annotation that combines 
     `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` 
     and `@WebAppConfiguration` from the Spring TestContext Framework.
-  * `@EnabledIf`: signals that the annotated test class or test method is _enabled_ if
+  * [`@EnabledIf`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#enabledif): signals that the annotated test class or test method is _enabled_ if
     the supplied SpEL expression or property placeholder evaluates to `true`.
-  * `@DisabledIf`: signals that the annotated test class or test method is _disabled_ if
+  * [`@DisabledIf`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#disabledif): signals that the annotated test class or test method is _disabled_ if
     the supplied SpEL expression or property placeholder evaluates to `true`.
 * Support for parallel test execution in the Spring TestContext Framework.
   * See the _Parallel test execution_ section of the _Testing_ chapter for details.

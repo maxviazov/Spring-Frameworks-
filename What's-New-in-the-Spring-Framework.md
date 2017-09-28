@@ -22,7 +22,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Improved readability through inferred generics, lambdas, etc.
   * Conditional support for Java 8 features now in straight code.
 * Full compatibility with JDK 9 for development and deployment.
-  * On the classpath as well as on the module path (as automatic modules).
+  * On classpath as well as module path (with stable automatic module names).
   * Framework build and test suite passes on JDK 9 (runs on JDK 8 by default).
 * Java EE 7 API level required in Spring's corresponding features now.
   * Servlet 3.1, Bean Validation 1.1, JPA 2.1, JMS 2.0
@@ -58,16 +58,16 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   * Nullable arguments, fields and return values explicitly annotated with `@Nullable`.
   * Primarily for use with IntelliJ IDEA and Kotlin, but also Eclipse and FindBugs.
   * Some Spring APIs are not tolerating null values anymore (e.g. in `StringUtils`).
-* Spring Framework 5.0 comes with its own Commons Logging bridge out of the box:
-  * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
-  * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
 * `Resource` abstraction provides `isFile` indicator for defensive `getFile` access.
   * Also features NIO-based `readableChannel` accessor in the `Resource` interface.
   * File system access via NIO.2 streams (no `FileInput/OutputStream` used anymore).
+* Spring Framework 5.0 comes with its own Commons Logging bridge out of the box:
+  * `spring-jcl` instead of standard Commons Logging; still excludable/overridable.
+  * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
+* `spring-core` comes with ASM 6.0 (next to CGLIB 3.2.5 and Objenesis 2.6).
 
 ### Core Container
 
-* Support for candidate component index (as alternative to classpath scanning).
 * Support for any `@Nullable` annotations as indicators for optional injection points.
 * Functional style on `GenericApplicationContext`/`AnnotationConfigApplicationContext`
   * `Supplier`-based bean registration API with bean definition customizer callbacks.
@@ -76,8 +76,9 @@ For assistance with migrating to a newer version of the Spring Framework, consul
 * XML configuration namespaces streamlined towards unversioned schemas.
   * Always resolved against latest `xsd` files; no support for deprecated features.
   * Version-specific declarations still supported but validated against latest schema.
+* Support for candidate component index (as alternative to classpath scanning).
 
-### Spring WebMVC
+### Spring Web MVC
 
 * Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
 * Support for Servlet 4.0 `PushBuilder` argument in Spring MVC controller methods.
@@ -146,7 +147,7 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   if the character encoding has been set in the mock request.
 * The `redirectedUrl()` and `forwardedUrl()` methods in Spring MVC Test now support
   URI templates with variable expansion.
-* XMLUnit support upgraded to 2.3
+* XMLUnit support upgraded to 2.3.
 
 ----
 # What's New in Spring Framework 4.x

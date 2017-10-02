@@ -60,7 +60,7 @@ Please consult this [wiki page](https://github.com/spring-projects/spring-framew
 
 ### What about HTTP Client code?
 
-The [AsyncRestTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/AsyncRestTemplate.html) has been deprecated in favor of the new [WebClient](https://docs.spring.io/spring-framework/docs/5.0.x/spring-framework-reference/reactive-web.html#webflux-client) which provides a more fluent API, and is capable of both sync and async in one package. RestTemplate itself is not deprecated and there is nothing wrong with using it; the WebClient can be seen as its more modern successor 
+The [AsyncRestTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/AsyncRestTemplate.html) has been deprecated in favor of the new [WebClient](https://docs.spring.io/spring-framework/docs/5.0.x/spring-framework-reference/web-reactive.html#webflux-client) which provides a more fluent API, and is capable of both sync and async in one package. RestTemplate itself is not deprecated and there is nothing wrong with using it; the WebClient can be seen as its more modern successor 
 
 ### Does Spring Framework 5 support Kotlin?
 

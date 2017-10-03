@@ -32,6 +32,8 @@ The Java EE 7 API level is required in Spring's corresponding framework modules 
   * Minimum requirement: Tiles 3 and Hibernate 5 now.
 * Many deprecated classes and methods removed across the codebase.
   * A few compromises made for commonly used methods in the ecosystem.
+* Note that several deprecated methods have been removed from the JSP tag library as well.
+  * e.g. FormTag's "commandName" attribute, superseded by "modelAttribute" many years ago.
 
 ### Dropped support
 

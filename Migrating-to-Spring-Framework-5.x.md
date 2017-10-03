@@ -33,13 +33,14 @@ The Java EE 7 API level is required in Spring's corresponding framework modules 
 * Many deprecated classes and methods removed across the codebase.
   * A few compromises made for commonly used methods in the ecosystem.
 * Note that several deprecated methods have been removed from the JSP tag library as well.
-  * e.g. FormTag's "commandName" attribute, superseded by "modelAttribute" many years ago.
+  * e.g. FormTag's "commandName" attribute, superseded by "modelAttribute" years ago.
 
 ### Dropped support
 
 The Spring Framework no longer supports: Portlet, Velocity, JasperReports, XMLBeans, JDO,
 Guava (replaced by the Caffeine support).
 If those are critical to your project, you should stay on Spring Framework 4.3.x (supported until 2019).
+Alternatively, you may create custom adapter classes in your own project (possibly derived from Spring).
 
 ### Libraries
 

@@ -24,6 +24,14 @@ The Java EE 7 API level is required in Spring's corresponding framework modules 
 * WildFly 10+
 * with the addition of Netty 4.1 and Undertow 1.4 for the Web Reactive module
 
+### Libraries
+
+* Jackson 2.9+
+* EhCache 2.10+
+* Hibernate 5.0+
+* OkHttp 3.0+
+* XmlUnit 2.0+
+
 ### Removed Packages, Classes and Methods
 
 * Package `mock.staticmock` removed from `spring-aspects` module.
@@ -37,21 +45,15 @@ The Java EE 7 API level is required in Spring's corresponding framework modules 
 
 ### Dropped support
 
-The Spring Framework no longer supports: Portlet, Velocity, JasperReports, XMLBeans, JDO,
-Guava (replaced by the Caffeine support).
-If those are critical to your project, you should stay on Spring Framework 4.3.x (supported until 2019).
-Alternatively, you may create custom adapter classes in your own project (possibly derived from Spring).
-
-### Libraries
-
-* Jackson 2.9+
-* EhCache 2.10+
-* Hibernate 5.0+
-* OkHttp 3.0+
-* XmlUnit 2.0+
+The Spring Framework no longer supports: Portlet, Velocity, JasperReports, XMLBeans, JDO, Guava (replaced by the Caffeine support). If those are critical to your project, you should stay on Spring Framework 4.3.x (supported until 2020).
+Alternatively, you may create custom adapter classes in your own project (possibly derived from Spring Framework 4.x).
 
 ### Commons Logging setup
 
-Spring Framework 5.0 comes with its own Commons Logging bridge in the form of the 'spring-jcl' module that 'spring-core' depends on. This replaces the former dependency on the 'commons-logging' artifact which required an exclude declaration for switching to 'jcl-over-slf4j' (SLF4J / Logback) and an extra bridge declaration for 'log4j-jcl' (Log4j 2.x). Now, 'spring-jcl' itself is a very capable Commons Logging bridge with first-class support for Log4j 2, SLF4J and JUL (java.util.logging), working out of the box without any special excludes or bridge declarations for all three scenarios.
+Spring Framework 5.0 comes with its own Commons Logging bridge in the form of the 'spring-jcl' module that 'spring-core' depends on. This replaces the former dependency on the 'commons-logging' artifact which required an exclude declaration for switching to 'jcl-over-slf4j' (SLF4J / Logback) and an extra bridge declaration for 'log4j-jcl' (Log4j 2.x).
 
-You may still exclude 'spring-jcl' from 'spring-core' and bring in 'jcl-over-slf4j' as your choice, in particular for upgrading an existing project. However, please note that 'spring-jcl' can easily supersede 'jcl-over-slf4j' by default for a streamlined Maven dependency setup, reacting to the plain presence of the core Log4j 2.x / Logback providers at runtime. Please note: For a clean classpath arrangement (without several variants of Commons Logging on the classpath), you might have to declare explicit excludes for 'commons-logging' and/or 'jcl-over-slf4j' in other libraries that you're using.
+Now, 'spring-jcl' itself is a very capable Commons Logging bridge with first-class support for Log4j 2, SLF4J and JUL (java.util.logging), working out of the box without any special excludes or bridge declarations for all three scenarios.
+
+You may still exclude 'spring-jcl' from 'spring-core' and bring in 'jcl-over-slf4j' as your choice, in particular for upgrading an existing project. However, please note that 'spring-jcl' can easily supersede 'jcl-over-slf4j' by default for a streamlined Maven dependency setup, reacting to the plain presence of the core Log4j 2.x / Logback providers at runtime. 
+
+Please note: For a clean classpath arrangement (without several variants of Commons Logging on the classpath), you might have to declare explicit excludes for 'commons-logging' and/or 'jcl-over-slf4j' in other libraries that you're using.

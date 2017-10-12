@@ -46,17 +46,17 @@ Yes, both Spring MVC and Spring WebFlux support the same annotation-based progra
 
 Yes, for developers who prefer to avoid the magic of annotations and reflection, Spring Framework 5 offers a new [functional API](https://github.com/spring-projects/spring-framework/blob/master/src/docs/asciidoc/web/webflux-functional.adoc) to match routes with handler functions programmatically. This is made possible by the first class function support in Java 8, using lambdas or method references. For more information about how to compose handlers, see the blog post [New in Spring Framework 5: Functional Web Framework](https://spring.io/blog/2016/09/22/new-in-spring-5-functional-web-framework) by Arjen Poutsma.
 
-### On which HTTP servers will the WebFlux framework run?
+### Which HTTP servers will the WebFlux framework run on?
 
-The WebFlux framework will run on Tomcat and Jetty as well as Netty and Undertow ('undertow-core', no 'undertow-servlet' necessary). Since it is designed to support async programming, the framework never exposes the Servlet API - but it can adapt its Reactive Streams layer onto the non-blocking features of Servlet 3.1 containers underneath the covers (with first-class support for Tomcat and Jetty and best-effort adaptation to other Servlet containers).
+The WebFlux framework focuses on Tomcat and Jetty as well as Netty and Undertow ('undertow-core', no 'undertow-servlet' necessary). Since it is designed to support async programming, the framework never exposes the Servlet API - but it can adapt its Reactive Streams layer onto the non-blocking features of Servlet 3.1 containers underneath the covers (with first-class support for Tomcat and Jetty and best-effort adaptation to other Servlet containers at runtime).
 
-### What about HTTP Client code?
+### What about HTTP client code?
 
 The [AsyncRestTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/AsyncRestTemplate.html) has been deprecated in favor of the new [WebClient](https://docs.spring.io/spring-framework/docs/5.0.x/spring-framework-reference/web-reactive.html#webflux-client) which provides a more fluent API, and is capable of both sync and async in one package. RestTemplate itself is not deprecated and there is nothing wrong with using it; the WebClient can be seen as its more modern successor 
 
 ### Will Spring Framework 5 work with Java 6 or Java 7?
 
-No. Spring Framework 5 requires Java 8 or later.
+No. Spring Framework 5 requires Java 8 or later. Please keep using Spring Framework 4.3 for Java 6/7 scenarios.
 
 ### Does Spring Framework 5 work with the new Java 9 module system?
 
@@ -64,7 +64,7 @@ Yes, Spring Framework 5 ships with automatic module name entries in the manifes
 
 ### Does Spring Framework 5 support Kotlin?
 
-Yes, Spring Framework 5 officially supports Kotlin. More details are available in the [Kotlin support documentation](https://docs.spring.io/spring-framework/docs/5.0.x/spring-framework-reference/kotlin.html). There are also two great blog posts about Kotlin support in Spring 5. [Introducing Kotlin support in Spring Framework 5](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0) and [Spring Framework 5 Kotlin APIs, the functional way](https://spring.io/blog/2017/08/01/spring-framework-5-kotlin-apis-the-functional-way), both by Sébastien Deleuze.
+Yes, Spring Framework 5 officially supports Kotlin. More details are available in the [Kotlin support documentation](https://docs.spring.io/spring-framework/docs/5.0.x/spring-framework-reference/kotlin.html). There are also two great blog posts about Kotlin support in Spring Framework 5: [Introducing Kotlin support in Spring Framework 5](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0) and [Spring Framework 5 Kotlin APIs, the functional way](https://spring.io/blog/2017/08/01/spring-framework-5-kotlin-apis-the-functional-way), both by Sébastien Deleuze.
 
 ### How do I upgrade to Spring Framework 5?
 

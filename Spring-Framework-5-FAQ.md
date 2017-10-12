@@ -4,19 +4,19 @@ Spring Framework 5 is a major version upgrade of the Spring Framework, several y
 
 For more details see the [reference documentation](https://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/web-reactive.html#spring-webflux), or watch [Spring Framework 5 Themes & Trends](https://www.youtube.com/watch?v=ETFe3KiYwt8) by Juergen Hoeller.
 
-### Will Spring Boot support Spring Framework 5?
+### Does Spring Boot support Spring Framework 5?
 
-Yes, the Spring Boot 2.x line is built on Spring Framework 5. Spring Boot 2.0 is [expected to GA](https://github.com/spring-projects/spring-boot/milestones) after Spring Framework 5.0, aiming for a timeframe around [SpringOne Platform](https://springoneplatform.io). For the latest release check the [spring.io/spring-boot](https://projects.spring.io/spring-boot/) website or [GitHub](https://github.com/spring-projects/spring-boot/milestones).
+Yes, the Spring Boot 2.x line is built on Spring Framework 5. Spring Boot 2.0 is [expected to become generally available](https://github.com/spring-projects/spring-boot/milestones) after Spring Framework 5.0, aiming for a timeframe around [SpringOne Platform](https://springoneplatform.io). Please use the latest Spring Boot 2.0 milestone for the time being, shipping with Spring Framework 5.0 already. For the latest release check the [spring.io/spring-boot](https://projects.spring.io/spring-boot/) website or [GitHub](https://github.com/spring-projects/spring-boot/milestones).
 
 ### Why are we introducing Spring WebFlux?
 
-Blocking threads consume resources. For latency sensitive workloads which need to handle a large number of concurrent requests, the non-blocking async programming model is more efficient. This is particularly relevant for mobile applications and interconnected microservices.
+Blocking threads consume resources. For latency-sensitive workloads which need to handle a large number of concurrent requests, the non-blocking async programming model is more efficient. This is particularly relevant for mobile applications and interconnected microservices, and generally for scenarios with many clients and uneven workloads.
 
-The goal of Spring WebFlux is to offer Spring developers a non-blocking event-loop style programming model similar to [node.js](https://nodejs.org/en/about/). For more details and demos, watch [Servlet vs Reactive Stacks in Five Use Cases](https://www.infoq.com/presentations/servlet-reactive-stack) and [Reactive Web Applications with Spring Framework 5](https://www.youtube.com/watch?v=rdgJ8fOxJhc), both by Rossen Stoyanchev.
+The goal of Spring WebFlux is to offer Spring developers a non-blocking event-loop style programming model similar to [node.js](https://nodejs.org/en/about/). For more details and demos, please watch [Servlet vs Reactive Stacks in Five Use Cases](https://www.infoq.com/presentations/servlet-reactive-stack) and [Reactive Web Applications with Spring Framework 5](https://www.youtube.com/watch?v=rdgJ8fOxJhc), both by Rossen Stoyanchev.
 
 ### Can I keeping using Spring MVC with Spring Framework 5?
 
-Absolutely, Spring MVC is included alongside the new WebFlux framework in Spring Framework 5. Upgrading to Spring Framework 5 does not require re-writing your applications to use Spring WebFlux. By all means, keep using Spring MVC if you are developing web apps that don't need a non-blocking programming model, or that use blocking JPA or JDBC libraries for persistence.
+Absolutely, the Servlet-based Spring MVC remains included as a first-class choice alongside the new WebFlux framework. Upgrading to Spring Framework 5 does not require re-writing your applications to use Spring WebFlux. By all means, keep using Spring MVC if you are developing web apps that don't benefit from a non-blocking programming model, or that use blocking JPA or JDBC APIs for persistence (typically in combination with thread-bound transactions).
 
 As a bonus, Spring MVC also supports reactive return types as an alternative to its DeferredResult feature now, allowing for asynchronous responses using the new WebClient or reactive datastore drivers even in traditional Servlet arrangements. However, please note that only a complete WebFlux stack delivers entirely non-blocking I/O within an event loop model.
 
@@ -26,11 +26,13 @@ The WebFlux framework in Spring Framework 5 uses [Reactor](https://projectreacto
 
 ### How do I make all my code non-blocking?
 
-For handlers to be fully non-blocking, you need to use reactive libraries throughout the processing chain, all the way to the persistence layer. Reactive Spring Data libraries are already available for Cassandra, MongoDB, Redis, and Couchbase. JPA and JDBC are inherently blocking APIs. We are still waiting for common ground around non-blocking relational database drivers. Other Spring projects which are already reactive include Spring Security, Spring Vault, and Spring Cloud Stream.
+For handlers to be fully non-blocking, you need to use reactive libraries throughout the processing chain, all the way to the persistence layer. Reactive Spring Data libraries are already available for Cassandra, MongoDB, Redis, and Couchbase. Please note that JPA and JDBC are inherently blocking APIs; we are still waiting for common ground around non-blocking relational database drivers.
+
+Other Spring projects which are already reactive include Spring Security, Spring Vault, and Spring Cloud Stream.
 
 ### What if there is no reactive library for my database?
 
-One suggestion for handling a mix of blocking and non-blocking code, would be to use the power of a microservice boundary to separate the blocking backend datastore code from the non blocking front-end API.
+One suggestion for handling a mix of blocking and non-blocking code would be to use the power of a microservice boundary to separate the blocking backend datastore code from the non blocking front-end API. Alternatively, you may also go with a worker thread pool for blocking operations, keeping the main event loop non-blocking that way.
 
 ### What about interoperability with other reactive libraries like RxJava?
 

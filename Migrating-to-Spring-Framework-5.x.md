@@ -10,19 +10,21 @@ For a general overview of new features, refer to [[What's New in the Spring Fram
 
 Spring Framework 5.0 requires JDK 8 (Java SE 8) or above, since its entire codebase is now based on Java 8 source code level, and provides full compatibility with JDK 9 on the classpath as well as the module path (Jigsaw).
 
-The Java EE 7 API level is required in Spring's corresponding framework modules now:
+The Java EE 7 API level is required in Spring's corresponding modules now, with runtime support for the EE 8 level:
 
-* Servlet 3.1
+* Servlet 3.1 / 4.0
+* JPA 2.1 / 2.2
+* Bean Validation 1.1 / 2.0
 * JMS 2.0
-* JPA 2.1
-* Bean Validation 1.1
+* JSON Binding API 1.0 (as an alternative to Jackson / Gson)
 
-### Servers
+### Web Servers
 
 * Tomcat 8.5+
 * Jetty 9.4+
 * WildFly 10+
-* with the addition of Netty 4.1 and Undertow 1.4 for the Web Reactive module
+* WebSphere 9+
+* with the addition of Netty 4.1 and Undertow 1.4 for Spring WebFlux
 
 ### Libraries
 
@@ -54,6 +56,6 @@ Spring Framework 5.0 comes with its own Commons Logging bridge in the form of th
 
 Now, 'spring-jcl' itself is a very capable Commons Logging bridge with first-class support for Log4j 2, SLF4J and JUL (java.util.logging), working out of the box without any special excludes or bridge declarations for all three scenarios.
 
-You may still exclude 'spring-jcl' from 'spring-core' and bring in 'jcl-over-slf4j' as your choice, in particular for upgrading an existing project. However, please note that 'spring-jcl' can easily supersede 'jcl-over-slf4j' by default for a streamlined Maven dependency setup, reacting to the plain presence of the core Log4j 2.x / Logback providers at runtime. 
+You may still exclude 'spring-jcl' from 'spring-core' and bring in 'jcl-over-slf4j' as your choice, in particular for upgrading an existing project. However, please note that 'spring-jcl' can easily supersede 'jcl-over-slf4j' by default for a streamlined Maven dependency setup, reacting to the plain presence of the Log4j 2.x / Logback core jars at runtime. 
 
 Please note: For a clean classpath arrangement (without several variants of Commons Logging on the classpath), you might have to declare explicit excludes for 'commons-logging' and/or 'jcl-over-slf4j' in other libraries that you're using.

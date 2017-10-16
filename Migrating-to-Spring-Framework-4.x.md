@@ -1,4 +1,4 @@
-Limited support for 4.1.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 4.2.x release or - preferably - to the 4.3 line: http://projects.spring.io/spring-framework/
+Limited support for 4.2.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 4.3.x release: http://projects.spring.io/spring-framework/
 
 The 4.3.x line will enjoy an extended support life until 2020, within the general Spring Framework 4 system requirements (JDK 6+, Servlet 2.5+) but with a focus on recent servers such as Tomcat 8 and WebSphere 8.
 
@@ -8,7 +8,7 @@ The 4.3.x line will enjoy an extended support life until 2020, within the genera
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.3](http://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#new-in-4.3) in the reference documentation.
 
 ### Third-party dependencies
-Spring 4.3 supports all current versions of its optionally integrated libraries, including _Hibernate ORM 5.2_ and _Jackson 2.7/2.8_ as well as _OkHttp 3.x_. Furthermore, it embeds the updated _ASM 5.1_ and _Objenesis 2.4_.
+Spring 4.3 supports all current versions of its optionally integrated libraries, including _Hibernate ORM 5.2_ and _Jackson 2.8/2.9_ as well as _OkHttp 3.x_. Furthermore, it embeds the updated _ASM 5.2_ and _Objenesis 2.6_.
 
 Please note that several minimum dependency versions have been raised: _Jetty 9.1+_, _Jackson 2.6+_, _FreeMarker 2.3.21+_, _XStream 1.4.5+_. Spring's support for _Hibernate 3.x_ and _Velocity_ has been deprecated and scheduled for removal in 5.0.
 

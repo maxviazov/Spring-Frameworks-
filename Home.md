@@ -3,6 +3,7 @@
 ## General
 
 * [[What's New in the Spring Framework]]
+* [[Spring Framework 5 FAQ]]
 * [[Downloading Spring artifacts]]
 * [[Spring repository FAQ]]
 * [[Building a distribution with dependencies]]

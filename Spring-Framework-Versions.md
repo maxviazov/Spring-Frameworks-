@@ -1,4 +1,4 @@
-_This document provides a summary of changes and guidance on upgrades related to specific versions. If you see anything missing or inaccurate, please submit a pull-request against this page, or create a [ticket in JIRA](https://jira.spring.io/browse/SPR). For details on new features and changes, see [[What's New in the Spring Framework]]._
+_This document provides a summary of changes and guidance on upgrades related to specific versions. If you see anything missing or inaccurate, please submit a pull-request against this page, or create a [ticket in JIRA](https://jira.spring.io/browse/SPR)._
 
 # Supported Versions
 

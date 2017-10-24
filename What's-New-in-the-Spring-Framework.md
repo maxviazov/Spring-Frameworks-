@@ -1,13 +1,13 @@
-_This document provides a summary of new features and noteworthy changes by version. For additional details on upgrading, see [[Migrating from earlier versions of the Spring Framework]]._
+_This document provides a summary of new features and noteworthy changes for individual versions. See the of framework generations below. For information on upgrades, see the page [[Upgrading from previous versions|Migrating from earlier versions of the Spring Framework]]._
 
-- [What's New in Spring Framework 5.x](#whats-new-in-spring-framework-5x)
-- [What's New in Spring Framework 4.x](#whats-new-in-spring-framework-4x)
-- [What's New in Spring Framework 3.x](#whats-new-in-spring-framework-3x)
+- [Version 5.x](#whats-new-in-spring-framework-5x)
+- [Version 4.x](#whats-new-in-spring-framework-4x)
+- [Version 3.x](#whats-new-in-spring-framework-3x)
 
 
 # What's New in Spring Framework 5.x
 
-See the [[Spring Framework 5 FAQ]], for a list of common questions.
+This section covers the framework's 5th generation. See also the [[Spring Framework 5 FAQ]] for a list of common questions.
 
 ## Spring Framework 5.0
 

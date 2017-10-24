@@ -1,5 +1,5 @@
 * [Home](https://github.com/spring-projects/spring-framework/wiki)
-* [[What's new|What's New in the Spring Framework]] and [[Upgrades|Migrating from earlier versions of the Spring Framework]]
+* [[Versions|Spring Framework Versions]]
 * [[Spring artifacts|Downloading Spring artifacts]]
 * Develop
   * [[Spring Annotation Programming Model]]

@@ -1,20 +1,16 @@
-This page provides information pertaining to new features and changes in various versions
-of the Spring Framework.
+_This document provides a summary of new features and noteworthy changes by version. For additional details on upgrading, see [[Migrating from earlier versions of the Spring Framework]]._
 
-For assistance with migrating to a newer version of the Spring Framework, consult the
-[[Migrating from earlier versions of the Spring Framework]] wiki page.
-
-----
 **Table of Contents**
-
 - [What's New in Spring Framework 5.x](#whats-new-in-spring-framework-5x)
 - [What's New in Spring Framework 4.x](#whats-new-in-spring-framework-4x)
 - [What's New in Spring Framework 3.x](#whats-new-in-spring-framework-3x)
 
-----
+
 # What's New in Spring Framework 5.x
 
-## New Features and Enhancements in Spring Framework 5.0
+For a list of common questions related to version 5, see the [[Spring Framework 5 FAQ]].
+
+## Spring Framework 5.0
 
 ### JDK 8+ and Java EE 7+ Baseline
 
@@ -148,12 +144,12 @@ For assistance with migrating to a newer version of the Spring Framework, consul
   URI templates with variable expansion.
 * XMLUnit support upgraded to 2.3.
 
-----
+
 # What's New in Spring Framework 4.x
 The "What's New" guide for Spring Framework 4.x is available in the
 [Spring Framework 4.3.x reference manual](http://docs.spring.io/spring/docs/4.3.x/spring-framework-reference/htmlsingle/#spring-whats-new).
 
-----
+
 # What's New in Spring Framework 3.x
 The "What's New" guide for Spring Framework 3.x is available in the
 [Spring Framework 3.2.x reference manual](http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/htmlsingle/#spring-whats-new).

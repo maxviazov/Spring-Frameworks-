@@ -1,6 +1,8 @@
 _This document provides a summary of new features and changes in the 5th generation of the Spring Framework. Also see the [[Spring Framework 5 FAQ]] for answers to common questions._
 
-# What's New in Spring Framework 5.0
+Back to [[Spring Framework Versions]].
+
+# What's New in Version 5.0
 
 ## JDK 8+ and Java EE 7+ Baseline
 

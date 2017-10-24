@@ -10,7 +10,7 @@ _This document provides a summary of changes and guidance on upgrades related to
 - [4th generation](https://docs.spring.io/spring/docs/4.3.x/spring-framework-reference/htmlsingle/#spring-whats-new) (4.3.x reference)
 - [3rd generation](http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/htmlsingle/#spring-whats-new) (3.2.x reference)
 
-# Upgrading
+# Upgrades
 
 - [[5th generation|Upgrading to Spring Framework 5.x]]
 - [[4th generation|Upgrading to Spring-Framework 4.x]]

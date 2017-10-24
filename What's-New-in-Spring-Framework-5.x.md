@@ -1,6 +1,8 @@
-_This document provides a summary of new features and changes in version Spring Framework 5.0. Also see the [[Spring Framework 5 FAQ]] for answers to common questions._
+_This document provides a summary of new features and changes in the 5th generation of the Spring Framework. Also see the [[Spring Framework 5 FAQ]] for answers to common questions._
 
-# JDK 8+ and Java EE 7+ Baseline
+# What's New in Spring Framework 5.0
+
+## JDK 8+ and Java EE 7+ Baseline
 
 * Entire framework codebase based on Java 8 source code level now.
   * Improved readability through inferred generics, lambdas, etc.
@@ -15,7 +17,7 @@ _This document provides a summary of new features and changes in version Spring 
   * Servlet 4.0, Bean Validation 2.0, JPA 2.2, JSON Binding API 1.0
   * Tested against Tomcat 9.0, Hibernate Validator 6.0, Apache Johnzon 1.1
 
-# Removed Packages, Classes and Methods
+## Removed Packages, Classes and Methods
 
 * Package `beans.factory.access` (`BeanFactoryLocator` mechanism).
 * Package `jdbc.support.nativejdbc` (`NativeJdbcExtractor` mechanism).
@@ -28,7 +30,7 @@ _This document provides a summary of new features and changes in version Spring 
 * Many deprecated classes and methods removed across the codebase.
   * A few compromises made for commonly used methods in the ecosystem.
 
-# General Core Revision
+## General Core Revision
 
 * JDK 8+ enhancements:
   * Efficient method parameter access based on Java 8 reflection enhancements.
@@ -50,7 +52,7 @@ _This document provides a summary of new features and changes in version Spring 
   * Autodetecting Log4j 2.x, SLF4J, JUL (java.util.logging) without any extra bridges.
 * `spring-core` comes with ASM 6.0 (next to CGLIB 3.2.5 and Objenesis 2.6).
 
-# Core Container
+## Core Container
 
 * Support for any `@Nullable` annotations as indicators for optional injection points.
 * Functional style on `GenericApplicationContext`/`AnnotationConfigApplicationContext`
@@ -62,7 +64,7 @@ _This document provides a summary of new features and changes in version Spring 
   * Version-specific declarations still supported but validated against latest schema.
 * Support for candidate component index (as alternative to classpath scanning).
 
-# Spring Web MVC
+## Spring Web MVC
 
 * Full Servlet 3.1 signature support in Spring-provided `Filter` implementations.
 * Support for Servlet 4.0 `PushBuilder` argument in Spring MVC controller methods.
@@ -80,7 +82,7 @@ _This document provides a summary of new features and changes in version Spring 
 * Support script engines that do not implement `Invocable` via direct rendering of the script provided using `ScriptEngine#eval(String, Bindings)`, and also i18n and nested templates in `ScriptTemplateView` via the new `RenderingContext` parameter.
 * Spring's FreeMarker macros (`spring.ftl`) use HTML output formatting now (requiring FreeMarker 2.3.24+).
 
-# Spring WebFlux
+## Spring WebFlux
 
 * New [spring-webflux](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux) module, an alternative to `spring-webmvc` built on a [reactive](https://github.com/reactive-streams/reactive-streams-jvm) foundation -- fully asynchronous and non-blocking, intended for use in an event-loop execution model vs traditional large thread pool with thread-per-request execution model.
 * Reactive infrastructure in `spring-core` such as `Encoder` and `Decoder` for encoding and decoding streams of Objects; `DataBuffer` abstraction, e.g. for using Java `ByteBuffer` or Netty `ByteBuf`; `ReactiveAdapterRegistry` for transparent support of reactive libraries in controller method signatures.
@@ -89,7 +91,7 @@ _This document provides a summary of new features and changes in version Spring 
 * New [functional programming model](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-fn) ("WebFlux.fn") as an alternative to the `@Controller`, annotation-based, programming model -- minimal and transparent with an endpoint routing API, running on the same reactive stack and WebFlux infrastructure.
 * New `WebClient` with a functional and reactive API for HTTP calls, comparable to the `RestTemplate` but through a fluent API and also excelling in non-blocking and streaming scenarios based on WebFlux infrastructure; in 5.0 the `AsyncRestTemplate` is deprecated in favor of the `WebClient`.
 
-# [Kotlin support](https://docs.spring.io/spring/docs/current/spring-framework-reference/kotlin.html#kotlin)
+## [Kotlin support](https://docs.spring.io/spring/docs/current/spring-framework-reference/kotlin.html#kotlin)
 * Null-safe API when using Kotlin 1.1.50+
 * Support for Kotlin immutable classes with optional parameters and default values
 * Functional bean definition Kotlin DSL.
@@ -101,7 +103,7 @@ _This document provides a summary of new features and changes in version Spring 
 * Support for Kotlin autowired constructor with optional parameters
 * Kotlin reflection is used to determine interface method parameters
 
-# Testing Improvements
+## Testing Improvements
 
 * Complete support for [JUnit 5](http://junit.org/junit5/)'s _Jupiter_ programming and 
   extension models in the Spring TestContext Framework.

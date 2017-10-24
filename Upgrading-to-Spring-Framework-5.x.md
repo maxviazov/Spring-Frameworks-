@@ -1,12 +1,8 @@
-Note that the 5.x generation is currently in the Milestone phase; please check out the [Roadmap page on JIRA](https://jira.spring.io/browse/SPR/?selectedTab=com.atlassian.jira.jira-projects-plugin:roadmap-panel) for more details on upcoming versions.
+_This page provides guidance on upgrading to Spring Framework 5.x. See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
 
-See also the [[Spring-Framework-5-FAQ]]
+# Migrating to Spring Framework 5.0
 
-## Migrating to Spring Framework 5.0
-
-For a general overview of new features, refer to [[What's New in the Spring Framework]].
-
-### Baseline update
+## Baseline update
 
 Spring Framework 5.0 requires JDK 8 (Java SE 8) or above, since its entire codebase is now based on Java 8 source code level, and provides full compatibility with JDK 9 on the classpath as well as the module path (Jigsaw).
 
@@ -18,7 +14,7 @@ The Java EE 7 API level is required in Spring's corresponding modules now, with 
 * JMS 2.0
 * JSON Binding API 1.0 (as an alternative to Jackson / Gson)
 
-### Web Servers
+## Web Servers
 
 * Tomcat 8.5+
 * Jetty 9.4+
@@ -26,7 +22,7 @@ The Java EE 7 API level is required in Spring's corresponding modules now, with 
 * WebSphere 9+
 * with the addition of Netty 4.1 and Undertow 1.4 for Spring WebFlux
 
-### Libraries
+## Libraries
 
 * Jackson 2.9+
 * EhCache 2.10+
@@ -34,7 +30,7 @@ The Java EE 7 API level is required in Spring's corresponding modules now, with 
 * OkHttp 3.0+
 * XmlUnit 2.0+
 
-### Removed Packages, Classes and Methods
+## Removed Packages, Classes and Methods
 
 * Package `mock.staticmock` removed from `spring-aspects` module.
   * No support for `AnnotationDrivenStaticEntityMockingControl` anymore.
@@ -45,12 +41,12 @@ The Java EE 7 API level is required in Spring's corresponding modules now, with 
 * Note that several deprecated methods have been removed from the JSP tag library as well.
   * e.g. FormTag's "commandName" attribute, superseded by "modelAttribute" years ago.
 
-### Dropped support
+## Dropped support
 
 The Spring Framework no longer supports: Portlet, Velocity, JasperReports, XMLBeans, JDO, Guava (replaced by the Caffeine support). If those are critical to your project, you should stay on Spring Framework 4.3.x (supported until 2020).
 Alternatively, you may create custom adapter classes in your own project (possibly derived from Spring Framework 4.x).
 
-### Commons Logging setup
+## Commons Logging setup
 
 Spring Framework 5.0 comes with its own Commons Logging bridge in the form of the 'spring-jcl' module that 'spring-core' depends on. This replaces the former dependency on the 'commons-logging' artifact which required an exclude declaration for switching to 'jcl-over-slf4j' (SLF4J / Logback) and an extra bridge declaration for 'log4j-jcl' (Log4j 2.x).
 

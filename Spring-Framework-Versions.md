@@ -2,7 +2,7 @@ _This document provides a summary of changes and guidance on upgrades related to
 
 # Supported Versions
 
-4.3.x (4th gen) and 5.0 (5th gen) are the actively supported branches. Limited support for 3.2.x is still available but no further maintenance releases are planned in that line. We strongly recommend upgrading to the latest Spring Framework 5.0.x or 4.3.x release listed on [spring.io/spring-framework](http://spring.io/spring-framework).
+4.3.x and 5.0 are the actively supported branches in the 4th and 5th generation respectively. Limited support for 3.2.x is still available but no further maintenance releases are planned in that line. We strongly recommend upgrading to the latest Spring Framework 5.0.x or 4.3.x release listed on [spring.io/spring-framework](http://spring.io/spring-framework).
 
 # What's New
 

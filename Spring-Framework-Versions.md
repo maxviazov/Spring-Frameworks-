@@ -1,4 +1,4 @@
-_This document describes new features, noteworthy changes, and provides guidance on upgrading from earlier versions. If you see anything missing or inaccurate, please submit a pull-request against this page, or create a [ticket in JIRA](https://jira.spring.io/browse/SPR)._
+_This document describes new features, noteworthy changes, and provides guidance on upgrading from earlier versions. If you see anything missing or inaccurate, please submit a pull-request against individual pages, or create a [ticket in JIRA](https://jira.spring.io/browse/SPR)._
 
 # Supported Versions
 

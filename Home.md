@@ -1,4 +1,4 @@
-**Welcome to the Spring Framework Wiki!**
+Welcome to the Spring Framework Wiki!
 
 This wiki complements the [Spring Framework reference](https://docs.spring.io/spring/docs/current/spring-framework-reference/). We use it to explain concepts (vs provide a reference), to maintain documents we want to edit independent of release cadence, or to summarize information across multiple versions.
 

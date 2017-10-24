@@ -1,32 +1,11 @@
-# Welcome to the Spring Framework Wiki!
+**Welcome to the Spring Framework Wiki!**
 
-## General
+This wiki complements the [Spring Framework reference](https://docs.spring.io/spring/docs/current/spring-framework-reference/). We use it to explain concepts (vs provide a reference), to maintain documents we want to edit independent of release cadence, or to summarize information across multiple versions.
 
-* [[What's New in the Spring Framework]]
-* [[Spring Framework 5 FAQ]]
-* [[Downloading Spring artifacts]]
-* [[Spring repository FAQ]]
-* [[Building a distribution with dependencies]]
+If you're new to Spring, see the [Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction) in the reference, for a quick introduction to the Spring Framework, its origins, history, design philosophy, and family of [Spring projects](https://spring.io/projects). 
 
-## Migrating from earlier versions
+For an opinionated jump-start, check out [Spring Boot](https://projects.spring.io/spring-boot/) or use [Spring Initializer](https://start.spring.io/) to create a running application in minutes.
 
-* [[Migrating from earlier versions of the Spring Framework]]
-* [[Migrating to Spring Framework 5.x]]
-* [[Migrating to Spring Framework 4.x]]
-* [[Migrating to Spring Framework 3.x]]
 
-## Development
 
-* [[Contributor guidelines]]
-* [[The lifecycle of an issue]]
-* [[Spring Framework Code Style]]
-* [[Manually merging pull requests]]
 
-## Concepts
-
-* [[Spring Annotation Programming Model]]
-
-## Release process
-
-* [[Gradle build and release FAQ]]
-* [[autorepo version updating]]

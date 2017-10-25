@@ -1,6 +1,6 @@
 _This page provides guidance on upgrading to Spring Framework 5.x. See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
 
-# Upgrading to Spring Framework 5.0
+# Upgrading to Version 5.0
 
 ## Baseline update
 

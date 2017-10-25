@@ -20,9 +20,9 @@ cd spring-framework
 
 **Import Into Your IDE**
 
-To import into an IDE, ensure JDK 8 is configured. Then run `./import-into-eclipse.sh`
-or read [import-into-idea.md](import-into-idea.md). For IntelliJ please do read the
-instructions as a straight-up import will not work.
+To import into an IDE, ensure JDK 8 is configured. Then run `./import-into-eclipse.sh` or read
+[import-into-idea.md](https://github.com/spring-projects/spring-framework/blob/master/import-into-idea.md).  
+For IntelliJ please do read the instructions as a straight-up import will not work.
 
 **Run Gradle Tasks**
 

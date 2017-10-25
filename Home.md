@@ -2,6 +2,6 @@ This Wiki complements the [Spring Framework reference](https://docs.spring.io/sp
 
 If you're new to Spring, read the [Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction) section in the reference documentation for a quick introduction to the Spring Framework and the family of related Spring projects.
 
-If you have feedback, a question, or a contribution you'd like to make, please review the [CONTRIBUTING](https://github.com/SpringSource/spring-framework/blob/master/CONTRIBUTING.md) guidelines including instructions to [[build from source|Build from Source]] and [[code style|Spring Framework Code Style]].
+If you have feedback, a question, or a contribution you'd like to make, please review the [CONTRIBUTING](https://github.com/SpringSource/spring-framework/blob/master/CONTRIBUTING.md) guidelines including how to [[build from source|Build from Source]] and [[code style|Spring Framework Code Style]].
 
 For an opinionated jump-start, check out the [Spring Boot](https://projects.spring.io/spring-boot/) project, use [Spring Initializer](https://start.spring.io/) to create an application, or follow one of the available [guides and tutorials](https://spring.io/guides).

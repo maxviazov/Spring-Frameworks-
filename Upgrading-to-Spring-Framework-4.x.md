@@ -4,7 +4,7 @@ The 4.3.x line will enjoy an extended support life until 2020, within the genera
 
 
 
-## Migrating to Spring Framework 4.3
+## Upgrading to Version 4.3
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.3](http://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#new-in-4.3) in the reference documentation.
 
 ### Third-party dependencies
@@ -20,7 +20,7 @@ As of 4.3, Spring MVC processes HEAD and OPTIONS requests by default if there ar
 ### Injection points declared as Collection, Map or array
 Spring 4.3 refines autowiring support for beans which are declared as a Collection, Map or array type, matching them by type against injection points of a compatible type directly. This support lives side by side with Spring's existing support for finding beans by the element/value type of a declared Collection, Map or array injection point. There might be subtle side effects if custom application context arrangements rely on Collection/Map beans not matching directly.
 
-## Migrating to Spring Framework 4.2
+## Upgrading to Version 4.2
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](http://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
 
 ### Third-party dependencies
@@ -38,7 +38,7 @@ Also, Spring Framework now enforces a different default mode for HTML escaping: 
 ### Configuration class ordering
 Spring Framework 4.2 comes with significant fine-tuning in configuration class processing. There may be subtle differences in the order of registration compared to 4.1; however, those are considered fixes of behavior that wasn't well-defined previously. If you are relying on a specific order, e.g. for overriding beans by name, please consider using 4.2's new facilities, in particular @Order annotations on config classes.
 
-## Migrating to Spring Framework 4.1
+## Upgrading to Version 4.1
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.1](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.1) in the reference documentation.
 
 In general, there are no special migration steps from 4.0 to 4.1. Make sure that you satisfy all of 4.0's requirements as stated in the 4.0 section below. 4.1 will then just be a minor upgrade, with the most noticeable part being the enforcement of several optional dependency versions...
@@ -48,7 +48,7 @@ As of Spring Framework 4.1, several optional dependencies are required to be wit
 
 Note that as of Spring Framework 4.1.4, Apache HttpComponents HttpClient needs to be 4.3+ across the framework. The previous partial tolerance of old HttpClient versions had to be dropped in order to fix several configuration issues when running against 4.3+.
 
-## Migrating to Spring Framework 4.0
+## Upgrading to Version 4.0
 For a general overview of new features, refer to [New Features and Enhancements in Spring Framework 4.0](http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#new-in-4.0) in the reference documentation.
 
 ### JDK 6

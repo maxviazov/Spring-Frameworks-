@@ -2,8 +2,6 @@
 
 The [Spring Framework JIRA](https://jira.spring.io/browse/SPR) has many issues. To ensure every issue is given attention, we use a process. Understanding that process will set your expectations and enable you to interpret the state an issue is currently in regardless of when it was created, a couple of days or a couple of years ago. 
 
-The process described here has been followed for issues created since January 2011. We are working through the backlog of issues older than that.
-
 ## Lifecycle Phases
 
 ### Unassigned

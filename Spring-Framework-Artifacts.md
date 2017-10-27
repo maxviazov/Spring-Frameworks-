@@ -1,3 +1,5 @@
+_This document describes how to access Spring Framework artifacts. For snippets of POM configuration go to [Maven Central](#maven-central) or [Spring Repositories](spring-repositories). For more in-depth information about Spring repositories see the [[Spring Artifactory]] page._
+
 The Spring Framework is modular and publishes 20+ different jars:
 ````
 spring-aop           spring-context-indexer  spring-instrument  spring-orm   spring-webflux  
@@ -23,7 +25,7 @@ The Spring Framework publishes GA (general availability) versions to [Maven Cent
 
 ## Spring Repositories
 
-Snapshot, milestone, and release candidate versions are published to an [Artifactory](https://www.jfrog.com/artifactory/) instance hosted by [JFrog](http://www.jfrog.com). You can use the web interface at http://repo.spring.io to browse the Spring Artifactory, or go directly to one of the repositories listed below.
+Snapshot, milestone, and release candidate versions are published to an [Artifactory](https://www.jfrog.com/artifactory/) instance hosted by [JFrog](http://www.jfrog.com). You can use the Web UI at http://repo.spring.io to browse the Spring Artifactory, or go directly to one of the repositories listed below.
 
 ### Snapshots
 

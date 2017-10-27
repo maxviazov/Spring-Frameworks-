@@ -1,5 +1,3 @@
-![Spring Framework](https://github.com/spring-projects/spring-framework/tree/master/src/docs/asciidoc/images/spring-framework.png)
-
 This Wiki complements the [Spring Framework reference](https://docs.spring.io/spring/docs/current/spring-framework-reference/) with concepts (vs providing a reference) and documents that are independent of release cadence or provide a summary across multiple versions.
 
 Use the menus on the left to navigate wiki content.

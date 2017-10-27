@@ -1,4 +1,4 @@
-_This document provides more in-depth information about the [Spring Artifactory](http://repo.spring.io). If you're looking for more basic instructions about using Spring Framework jars in your application, see [[Downloading Spring artifacts]]._
+_This document provides more in-depth information about the [Spring Artifactory](http://repo.spring.io). If you're looking for more basic instructions about using Spring Framework jars in your application, see [[Spring Framework Artifacts]]._
 
 ## Overview
 

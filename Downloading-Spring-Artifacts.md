@@ -6,9 +6,9 @@ spring-beans         spring-core             spring-jdbc        spring-test  spr
 spring-beans-groovy  spring-expression       spring-jms         spring-tx  
 spring-context       spring-framework-bom    spring-messaging   spring-web  
 ````
-Some modules are interdependent. For example `spring-context` depends on `spring-beans` which in turn depends on `spring-core`. There are no required external dependencies although each module has optional dependencies and some of those may be required depending on what functionality is used.
+Some modules are interdependent. For example `spring-context` depends on `spring-beans` which in turn depends on `spring-core`. There are no required external dependencies although each module has optional dependencies and some of those may be required depending on what functionality the application needs.
 
-There is no "spring-all" jar.
+There is no one "spring-all" jar that includes all sources.
 
 ## Maven Central
 

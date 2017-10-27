@@ -1,4 +1,4 @@
-_This document provides more in-depth information about the [Spring Artifactory](http://repo.spring.io). This is primarily of interest to Spring project committers. If you're looking for more instructions about using Spring Framework jars in your application, see [[Downloading Spring artifacts]]._
+_This document provides more in-depth information about the [Spring Artifactory](http://repo.spring.io). If you're looking for more basic instructions about using Spring Framework jars in your application, see [[Downloading Spring artifacts]]._
 
 ## Overview
 
@@ -34,9 +34,9 @@ The following are virtual repositories for use by Spring open-source projects to
 
 Note that this is designed in such a way that build scripts need only point to a single repository (vs adding multiple). For example by switching from `libs-release` to `libs-milestone`, you can use not only all release versions, but also milestones and release candidates. Or by pointing to `libs-snapshot` you get access to the full set of Spring artifacts and downstream dependencies. This results in fewer HTTP requests and allows the server do the work.
 
-Spring applications may also choose to use the 'libs' repositories but should note that for security reasons, only authenticated users (i.e. Spring project committers) may cause remote repositories to resolve and cache dependencies not already cached. That means non-authenticated users may be able to resolve _every_ dependency the need against repo.spring.io, and will fall back to Maven Central or other third-party repositories.
+Spring applications can also use the `libs-*` repositories but note that for security reasons, only authenticated users (i.e. Spring project committers), may cause a remote repository to resolve and cache new dependencies. That means non-authenticated users may be able to resolve _every_ dependency the need against repo.spring.io, and will fall back to Maven Central or other third-party repositories.
 
-There also exist [plugins-snapshot-local](http://repo.spring.io/plugins-snapshot-local) and [plugins-release-local](http://repo.spring.io/plugins-release-local) for hosting custom plugins created by the Spring team. 
+There also exist [plugins-snapshot-local](http://repo.spring.io/plugins-snapshot-local) and [plugins-release-local](http://repo.spring.io/plugins-release-local) for custom plugins created by the Spring team. 
 
 ## Adding a Repository
 

@@ -1,4 +1,4 @@
-_This document describes how to build the Spring Framework sources locally._
+_This document describes how to build the Spring Framework sources locally or import them into an IDE._
 
 The Spring Framework uses a [Gradle](http://gradle.org) build. The instructions below
 use [Gradle Wrapper](http://vimeo.com/34436402) from the root of the source tree.

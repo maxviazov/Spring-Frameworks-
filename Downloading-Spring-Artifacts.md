@@ -21,9 +21,9 @@ The Spring Framework publishes GA (general availability) versions to [Maven Cent
 </dependency>
 ```
 
-## Spring Repository
+## Spring Repositories
 
-Snapshot, milestone, and RC (release candidate) versions are published to the [Spring repository](http://repo.spring.io/), and so are GA releases as well.
+Snapshot, milestone, and release candidate versions are published to an [Artifactory](https://www.jfrog.com/artifactory/) instance hosted by [JFrog](http://www.jfrog.com). You can use the web interface at http://repo.spring.io to browse the Spring Artifactory, or go directly to one of the repositories listed below.
 
 ### Snapshots
 
@@ -62,8 +62,9 @@ Add the following to resolve milestone and RC versions, e.g. `5.1.0.M1` or `5.1.
     <version>5.1.0.M1</version>
 </dependency>
 ```
+### Releases
 
-There is also `http://repo.spring.io/release` for GA releases.
+You can also resolve GA versions of Spring Framework artifacts against `http://repo.spring.io/release`.
 
 ## Downloading a Distribution
 

@@ -74,7 +74,7 @@ Back to [[Spring Framework Versions]].
 * Unified support for common media types through `MediaTypeFactory` delegate.
   * Superseding use of the Java Activation Framework.
 * Data binding with immutable objects (Kotlin / Lombok / `@ConstructorProperties`)
-* Support for the JSON Binding API (as an alternative to Jackson and GSON).
+* Support for the JSON Binding API (with Eclipse Yasson or Apache Johnzon as an alternative to Jackson and GSON).
 * Support for Jackson 2.9.
 * Support for Protobuf 3.
 * Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 as return values from Spring MVC controller methods targeting use of the new reactive `WebClient` (see below) or Spring Data Reactive repositories in Spring MVC controllers.
@@ -95,15 +95,15 @@ Back to [[Spring Framework Versions]].
 
 ## [Kotlin support](https://docs.spring.io/spring/docs/current/spring-framework-reference/kotlin.html#kotlin)
 * Null-safe API when using Kotlin 1.1.50+
-* Support for Kotlin immutable classes with optional parameters and default values
+* Support for Kotlin immutable classes with optional parameters and default values.
 * Functional bean definition Kotlin DSL.
 * Functional routing Kotlin DSL for WebFlux.
 * Leveraging Kotlin reified type parameters to avoid specifying explicitly the `Class` to use for serialization/deserialization in various APIs like `RestTemplate` or WebFlux APIs.
-* Kotlin null-safety support for `@Autowired`/`@Inject` and `@RequestParam`/`@RequestHeader`/etc annotations in order to determine if a parameter/bean is required or not.
+* Kotlin null-safety support for `@Autowired`/`@Inject` and `@RequestParam`/`@RequestHeader`/etc annotations in order to determine if an injection point or handler method parameter is required or not.
 * Kotlin script support in `ScriptTemplateView` for both Spring MVC and Spring WebFlux.
-* Array-like setters added to `Model`, `ModelMap` and `Environement`.
-* Support for Kotlin autowired constructor with optional parameters
-* Kotlin reflection is used to determine interface method parameters
+* Array-like setters added to `Model`, `ModelMap` and `Environment`.
+* Support for Kotlin autowired constructor with optional parameters.
+* Kotlin reflection is used to determine interface method parameters.
 
 ## Testing Improvements
 

@@ -1,8 +1,6 @@
-Limited support for 4.2.x is still available but no further maintenance releases are planned in that line. We strongly recommend an upgrade to the latest Spring Framework 4.3.x release: http://projects.spring.io/spring-framework/
+**If you are still on an older 4.x branch (even 4.2.x reached its end of support in the meantime), we strongly recommend an upgrade to the latest Spring Framework 4.3.x release for continued production support:** http://projects.spring.io/spring-framework/
 
-The 4.3.x line will enjoy an extended support life until 2020, within the general Spring Framework 4 system requirements (JDK 6+, Servlet 2.5+) but with a focus on recent servers such as Tomcat 8 and WebSphere 8.
-
-
+The 4.3.x line will enjoy an extended support life until 2020, within the general Spring Framework 4 system requirements (JDK 6+, Servlet 2.5+) but with a focus on recent servers such as Tomcat 8.5+ and WebSphere 8.5+ on JDK 7 and 8. If you can deploy to a Servlet 3.1+ baseline on JDK 8, you may also consider an upgrade straight to Spring Framework 5.
 
 ## Upgrading to Version 4.3
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.3](http://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#new-in-4.3) in the reference documentation.
@@ -11,8 +9,6 @@ For an overview of new features, refer to [New Features and Enhancements in Spri
 Spring 4.3 supports all current versions of its optionally integrated libraries, including _Hibernate ORM 5.2_ and _Jackson 2.8/2.9_ as well as _OkHttp 3.x_. Furthermore, it embeds the updated _ASM 5.2_ and _Objenesis 2.6_.
 
 Please note that several minimum dependency versions have been raised: _Jetty 9.1+_, _Jackson 2.6+_, _FreeMarker 2.3.21+_, _XStream 1.4.5+_. Spring's support for _Hibernate 3.x_ and _Velocity_ has been deprecated and scheduled for removal in 5.0.
-
-
 
 ### Default handling of HEAD and OPTIONS requests
 As of 4.3, Spring MVC processes HEAD and OPTIONS requests by default if there are no explicit bindings for those HTTP methods on a given path, along the lines of what HttpServlet does by default. While this should be a reasonable enhancement to all common Spring web applications, there may be subtle interaction side effects.

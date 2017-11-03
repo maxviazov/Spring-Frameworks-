@@ -7,8 +7,8 @@ _This document describes new features, noteworthy changes, and provides guidance
 # What's New
 
 - [[5th generation|What's New in Spring Framework 5.x]] and [[Spring Framework 5 FAQ]]
-- [4th generation](https://docs.spring.io/spring/docs/4.3.x/spring-framework-reference/htmlsingle/#spring-whats-new) (4.3.x reference)
-- [3rd generation](http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/htmlsingle/#spring-whats-new) (3.2.x reference)
+- [4th generation](https://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#spring-whats-new) (4.3.x reference)
+- [3rd generation](http://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/htmlsingle/#spring-whats-new) (3.2.x reference)
 
 # Upgrades
 

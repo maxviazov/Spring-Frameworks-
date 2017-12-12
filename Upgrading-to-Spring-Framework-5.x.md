@@ -32,6 +32,10 @@ The Java EE 7 API level is required in Spring's corresponding modules now, with 
 
 ## Removed Packages, Classes and Methods
 
+* Package beans.factory.access (BeanFactoryLocator mechanism).
+  * Including `SpringBeanAutowiringInterceptor` for EJB3 which was based on such a statically shared context. Preferably integrate a Spring backend via CDI instead.
+* Package jdbc.support.nativejdbc (NativeJdbcExtractor mechanism).
+  * Superseded by the native `Connection.unwrap` mechanism in JDBC 4. There is generally very little need for unwrapping these days, even against the Oracle JDBC driver.
 * Package `mock.staticmock` removed from `spring-aspects` module.
   * No support for `AnnotationDrivenStaticEntityMockingControl` anymore.
 * Packages `web.view.tiles2` and `orm.hibernate3/hibernate4` dropped.

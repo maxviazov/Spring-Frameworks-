@@ -78,7 +78,7 @@ Back to [[Spring Framework Versions]].
 * Support for Jackson 2.9.
 * Support for Protobuf 3.
 * Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 as return values from Spring MVC controller methods targeting use of the new reactive `WebClient` (see below) or Spring Data Reactive repositories in Spring MVC controllers.
-* New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](http://docs.spring.io/spring/docs/5.0.0.RELEASE/javadoc-api/org/springframework/web/util/patterns/PathPattern.html).
+* New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](http://docs.spring.io/spring/docs/5.0.0.RELEASE/javadoc-api/org/springframework/web/util/pattern/PathPattern.html).
 * `@ExceptionHandler` methods allow `RedirectAttributes` arguments (and therefore flash attributes).
 * Support for `ResponseStatusException` as a programmatic alternative to `@ResponseStatus`.
 * Support script engines that do not implement `Invocable` via direct rendering of the script provided using `ScriptEngine#eval(String, Bindings)`, and also i18n and nested templates in `ScriptTemplateView` via the new `RenderingContext` parameter.
@@ -94,7 +94,7 @@ Back to [[Spring Framework Versions]].
 * New `WebClient` with a functional and reactive API for HTTP calls, comparable to the `RestTemplate` but through a fluent API and also excelling in non-blocking and streaming scenarios based on WebFlux infrastructure; in 5.0 the `AsyncRestTemplate` is deprecated in favor of the `WebClient`.
 
 ## [Kotlin support](https://docs.spring.io/spring/docs/current/spring-framework-reference/kotlin.html#kotlin)
-* Null-safe API when using Kotlin 1.1.50+
+* Null-safe API when using Kotlin 1.1.50 or higher.
 * Support for Kotlin immutable classes with optional parameters and default values.
 * Functional bean definition Kotlin DSL.
 * Functional routing Kotlin DSL for WebFlux.
@@ -107,31 +107,16 @@ Back to [[Spring Framework Versions]].
 
 ## Testing Improvements
 
-* Complete support for [JUnit 5](http://junit.org/junit5/)'s _Jupiter_ programming and 
-  extension models in the Spring TestContext Framework.
-  * [`SpringExtension`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-junit-jupiter-extension): an implementation of multiple extension APIs from JUnit Jupiter 
-    that provides full support for the existing feature set of the Spring TestContext 
-    Framework. This support is enabled via `@ExtendWith(SpringExtension.class)`.
-  * [`@SpringJUnitConfig`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#springjunitconfig): a composed annotation that combines 
-    `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` 
-    from the Spring TestContext Framework.
-  * [`@SpringJUnitWebConfig`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#springjunitwebconfig): a composed annotation that combines 
-    `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` 
-    and `@WebAppConfiguration` from the Spring TestContext Framework.
-  * [`@EnabledIf`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#enabledif): signals that the annotated test class or test method is _enabled_ if
-    the supplied SpEL expression or property placeholder evaluates to `true`.
-  * [`@DisabledIf`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#disabledif): signals that the annotated test class or test method is _disabled_ if
-    the supplied SpEL expression or property placeholder evaluates to `true`.
+* Complete support for [JUnit 5](http://junit.org/junit5/)'s _Jupiter_ programming and extension models in the Spring TestContext Framework.
+  * [`SpringExtension`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-junit-jupiter-extension): an implementation of multiple extension APIs from JUnit Jupiter that provides full support for the existing feature set of the Spring TestContext Framework. This support is enabled via `@ExtendWith(SpringExtension.class)`.
+  * [`@SpringJUnitConfig`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#springjunitconfig): a composed annotation that combines `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` from the Spring TestContext Framework.
+  * [`@SpringJUnitWebConfig`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#springjunitwebconfig): a composed annotation that combines `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` and `@WebAppConfiguration` from the Spring TestContext Framework.
+  * [`@EnabledIf`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#enabledif): signals that the annotated test class or test method is _enabled_ if the supplied SpEL expression or property placeholder evaluates to `true`.
+  * [`@DisabledIf`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#disabledif): signals that the annotated test class or test method is _disabled_ if the supplied SpEL expression or property placeholder evaluates to `true`.
 * Support for [parallel test execution](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-parallel-test-execution) in the Spring TestContext Framework.
-* New _before_ and _after_ test execution callbacks in the Spring TestContext Framework
-  with support for TestNG, JUnit 5, and JUnit 4 via the `SpringRunner` (but not via JUnit
-  4 rules).
-  * New `beforeTestExecution()` and `afterTestExecution()` callbacks in the
-    `TestExecutionListener` API and `TestContextManager`.
-* `MockHttpServletRequest` now has `getContentAsByteArray()` and `getContentAsString()`
-  methods for accessing the content (i.e., request body).
-* The `print()` and `log()` methods in Spring MVC Test now print the request body
-  if the character encoding has been set in the mock request.
-* The `redirectedUrl()` and `forwardedUrl()` methods in Spring MVC Test now support
-  URI templates with variable expansion.
+* New _before_ and _after_ test execution callbacks in the Spring TestContext Framework with support for TestNG, JUnit 5, and JUnit 4 via the `SpringRunner` (but not via JUnit 4 rules).
+  * New `beforeTestExecution()` and `afterTestExecution()` callbacks in the `TestExecutionListener` API and `TestContextManager`.
+* `MockHttpServletRequest` now has `getContentAsByteArray()` and `getContentAsString()` methods for accessing the content (i.e., request body).
+* The `print()` and `log()` methods in Spring MVC Test now print the request body if the character encoding has been set in the mock request.
+* The `redirectedUrl()` and `forwardedUrl()` methods in Spring MVC Test now support URI templates with variable expansion.
 * XMLUnit support upgraded to 2.3.

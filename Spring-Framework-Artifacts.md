@@ -1,4 +1,4 @@
-_This document describes how to access Spring Framework artifacts. For snippets of POM configuration go to [Maven Central](#maven-central) or [Spring Repositories](spring-repositories). For more in-depth information about Spring repositories see the [[Spring Artifactory]] page._
+_This document describes how to access Spring Framework artifacts. For snippets of POM configuration go to Maven Central or Spring Repositories. For more in-depth information about Spring repositories see the [[Spring Artifactory]] page._
 
 The Spring Framework is modular and publishes 20+ different jars:
 ````
@@ -67,6 +67,9 @@ Add the following to resolve milestone and RC versions, e.g. `5.1.0.M1` or `5.1.
 ### Releases
 
 You can also resolve GA versions of Spring Framework artifacts against `http://repo.spring.io/release`.
+
+For more in-depth information about Spring repositories, see the [[Spring Artifactory]] page.
+
 
 ## Downloading a Distribution
 

@@ -1,5 +1,5 @@
 # Introduction
-The  'autorepo' process runs periodically (every 20 minutes), querying Artifactory for docs and schema zips and uploading them to the [autorepo](http://static.springsource.org/autorepo/) location. You can learn more about it in the [[Gradle build and release FAQ]]. There are two related scripts that can automatically update the links to a project's documentation and/or schema. This document describes the different options available and how to set each of them up. Specifically it describes:
+The  'autorepo' process runs periodically (every 20 minutes), querying Artifactory for docs and schema zips and uploading them to the [autorepo](http://static.springsource.org/autorepo/) location. There are two related scripts that can automatically update the links to a project's documentation and/or schema. This document describes the different options available and how to set each of them up. Specifically it describes:
 
 * [autoln](autorepo-version-updating#autoln) - updates links to docs and schema folder versions
 * [autoschemaln](autorepo-version-updating#autoschemaln) - updates links to individual schema documents

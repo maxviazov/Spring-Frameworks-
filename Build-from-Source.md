@@ -46,3 +46,4 @@ Ensure JDK 8 is configured properly in the IDE. Then follow the instructions:
 * For Eclipse run `./import-into-eclipse.sh`.
 * For IntelliJ IDEA, a straight-up import will not work. Please read [import-into-idea.md](https://github.com/spring-projects/spring-framework/blob/master/import-into-idea.md).
 
+See also [[Code Style]] and [[IntelliJ IDEA Editor Settings]].

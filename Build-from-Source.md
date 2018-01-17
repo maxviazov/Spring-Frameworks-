@@ -1,4 +1,5 @@
-_This document describes how to build the Spring Framework sources or import into an IDE._
+_This document describes how to build and import the Spring Framework into an IDE.
+You may also be interested to see [[Code Style]] and [[IntelliJ IDEA Editor Settings]]._
 
 The Spring Framework uses a [Gradle](http://gradle.org) build. The instructions below
 use [Gradle Wrapper](http://vimeo.com/34436402) from the root of the source tree.
@@ -45,5 +46,3 @@ To install all Spring Framework jars into your local Maven cache (note that "-x"
 Ensure JDK 8 is configured properly in the IDE. Then follow the instructions:
 * For Eclipse run `./import-into-eclipse.sh`.
 * For IntelliJ IDEA, a straight-up import will not work. Please read [import-into-idea.md](https://github.com/spring-projects/spring-framework/blob/master/import-into-idea.md).
-
-See also [[Code Style]] and [[IntelliJ IDEA Editor Settings]].

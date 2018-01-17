@@ -38,5 +38,13 @@ These are the reported issues that we still discuss (or simply things that the f
 
 ### Imports
 
-* Class count to trigger static import to 50 (to prevent `import org.foo.*;` instead of listing the classes of `org.foo`)
-* Changed the import sequence to import in the following order: `static imports`, `java.*`, `javax.*`, others, `org.springframework.*`. Each sequence is separated by a space
+* Use **100** for _"Class count to use import with `*`"_ so that imported classes are always listed individually.
+* Use **0** for _"Names count to use static imports with `*`"_ since static imports are only allowed in test sources where they can and should be aggregated, e.g. `import static org.junit.Assert.*;`.
+* Use the following import sequence order:
+  * `java.*`
+  * `javax.*`
+  * `<blank line>`
+  * `all other imports`
+  * `<blank line>`
+  * `org.springframework.*`
+  * `import static all other methods`

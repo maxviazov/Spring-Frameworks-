@@ -59,3 +59,11 @@ Now, 'spring-jcl' itself is a very capable Commons Logging bridge with first-cla
 You may still exclude 'spring-jcl' from 'spring-core' and bring in 'jcl-over-slf4j' as your choice, in particular for upgrading an existing project. However, please note that 'spring-jcl' can easily supersede 'jcl-over-slf4j' by default for a streamlined Maven dependency setup, reacting to the plain presence of the Log4j 2.x / Logback core jars at runtime. 
 
 Please note: For a clean classpath arrangement (without several variants of Commons Logging on the classpath), you might have to declare explicit excludes for 'commons-logging' and/or 'jcl-over-slf4j' in other libraries that you're using.
+
+## CORS support
+
+CORS support has been updated to be more secured by default and more flexible.
+
+When upgrading, be aware that [`allowCredentials` default value has been changed to `false`](https://jira.spring.io/browse/SPR-16130) and now requires to be explicitly set to `true` if cookies or authentication are needed in CORS requests. This can be done at controller level via `@CrossOrigin(allowCredentials="true")` or configured globally via `WebMvcConfigurer#addCorsMappings`.
+
+CORS configuration combination logic has also been [slightly modified](https://jira.spring.io/browse/SPR-15772) to differentiate user defined `*` values where additive logic should be used and default `@CrossOrigin` values which should be replaced by any user provided values.

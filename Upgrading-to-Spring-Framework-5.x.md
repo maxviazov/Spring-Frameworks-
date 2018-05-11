@@ -9,7 +9,9 @@ _This page provides guidance on upgrading to Spring Framework [5.1](#Upgrading-t
 
 ### Forwarded headers
 
-`"Forwarded"` and `"X-Forwaded-*"` headers are no longer implicitly checked individually in places where they apply such as CORS same origin checks, `MvcUriComponentsBuilder`, and others. Instead applications can use the `ForwardedHeaderFilter` to extract those headers from a single place, or discard them if not behind a trusted proxy. Applications can also use forwarded header support provided by the server.
+`"Forwarded"` and `"X-Forwaded-*"` headers that reflect the client's original address, are no longer implicitly checked individually in places where they apply, e.g. same origin CORS checks, `MvcUriComponentsBuilder`, and others. Instead applications can use:
+* The Spring Framework `ForwardedHeaderFilter` which can extract or discard such headers.
+* Server-level support for forwarded headers.
 
 
 ## Upgrading to Version 5.0

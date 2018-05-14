@@ -7,11 +7,23 @@ _This page provides guidance on upgrading to Spring Framework [5.1](#Upgrading-t
 
 ...
 
-### Forwarded headers
+### Web Applications
 
-`"Forwarded"` and `"X-Forwaded-*"` headers that reflect the client's original address, are no longer implicitly checked individually in places where they apply, e.g. same origin CORS checks, `MvcUriComponentsBuilder`, and others. Instead applications can use:
-* The Spring Framework `ForwardedHeaderFilter` which can extract or discard such headers.
+#### Forwarded headers
+
+`"Forwarded"` and `"X-Forwaded-*"` headers, which reflect the client's original address, are no longer checked individually in places where they apply, e.g. same origin CORS checks, `MvcUriComponentsBuilder`, etc. 
+
+Applications [are expected](https://jira.spring.io/browse/SPR-16668) to use one of the following:
+* The Spring Framework `ForwardedHeaderFilter` which can extract or discard such headers from a single place.
 * Server-level support for forwarded headers.
+
+#### Multipart and query values merged
+
+The integration with Apache Commons FileUpload [now aggregates](https://jira.spring.io/browse/SPR-16590) multipart parameter values with other request parameters from the query, as required by Servlet spec, section 3.1. Previously it returned only multipart parameter values if present.
+
+#### OPTIONS listed in HTTP OPTIONS
+
+The built-in support for HTTP OPTIONS in `@RequestMapping` methods now consistently [adds HTTP OPTIONS](https://jira.spring.io/browse/SPR-16513) as one of the supported HTTP methods, whereas previously it did not.
 
 
 ## Upgrading to Version 5.0

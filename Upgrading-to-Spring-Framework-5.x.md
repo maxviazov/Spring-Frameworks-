@@ -17,6 +17,10 @@ Applications [are expected](https://jira.spring.io/browse/SPR-16668) to use one 
 * The Spring Framework `ForwardedHeaderFilter` which can extract or discard such headers from a single place.
 * Server-level support for forwarded headers.
 
+#### Produces condition and error responses
+
+The produces condition of an `@RequestMapping` no longer [impacts](https://jira.spring.io/browse/SPR-16318) the content type of error responses.
+
 #### Multipart and query values merged
 
 The integration with Apache Commons FileUpload [now aggregates](https://jira.spring.io/browse/SPR-16590) multipart parameter values with other request parameters from the query, as required by Servlet spec, section 3.1. Previously it returned only multipart parameter values if present.

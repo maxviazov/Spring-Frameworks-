@@ -148,8 +148,8 @@ declare a pair of aliased attributes _within_ a single annotation or to declare
 an alias from one attribute in a custom composed annotation to an attribute in
 a meta-annotation.
 
-For example, `@ContextConfiguration` from the `spring-test` module is now
-declared as follows:
+For example, `@ContextConfiguration` from the `spring-test` module is
+declared as follows. 
 
 ```java
 public @interface ContextConfiguration {
@@ -162,6 +162,25 @@ public @interface ContextConfiguration {
 
     // ...
 }
+```
+
+The `locations` attribute is declared as an alias for the `value`
+attribute, and vice versa. Consequently, the following declarations
+of `@ContextConfiguration` are equivalent.
+
+```java
+@ContextConfiguration("/test-config.xml")
+public class MyTests { /* ... */ }
+```
+
+```java
+@ContextConfiguration(value = "/test-config.xml")
+public class MyTests { /* ... */ }
+```
+
+```java
+@ContextConfiguration(locations = "/test-config.xml")
+public class MyTests { /* ... */ }
 ```
 
 Similarly, _composed annotations_ that override attributes from

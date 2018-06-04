@@ -124,17 +124,13 @@ can be categorized as follows.
 
 # Examples
 
-## Spring Composed
+Many of the annotations within the Spring Framework and Spring portfolio
+projects make use of the `@AliasFor` annotation for declaring _attribute
+aliases_ and _attribute overrides_. Common examples include `@RequestMapping`,
+`@GetMapping`, and `@PostMapping` from Spring MVC as well as annotations
+such as `@SpringBootApplication` and `@SpringBootTest` from Spring Boot.
 
-The [Spring Composed](https://github.com/sbrannen/spring-composed) project
-is a collection of _composed annotations_ for use with the Spring Framework
-4.2.1 and higher. There you will find annotations such as `@Get`, `@Post`,
-`@Put`, and `@Delete` for use with Spring MVC and annotations such as
-`@GetJson`, `@PostJson`, etc. for use with Spring MVC REST applications.
-
-Be sure to check out `spring-composed` for further examples and inspiration
-or to contribute your own custom _composed annotations_!
-
+The following sections provide code snippets to demonstrate these features.
 
 ## Declaring attribute aliases with @AliasFor
 
@@ -198,6 +194,56 @@ public @interface MyTestConfig {
     // ...
 }
 ```
+
+The above example demonstrates how developers can implement their own
+custom _composed annotations_; whereas, the following demonstrates that
+Spring itself makes use of this feature in many core Spring annotations.
+
+
+```java
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@RequestMapping(method = RequestMethod.GET)
+public @interface GetMapping {
+
+	/**
+	 * Alias for {@link RequestMapping#name}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String name() default "";
+
+	/**
+	 * Alias for {@link RequestMapping#value}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String[] value() default {};
+
+	/**
+	 * Alias for {@link RequestMapping#path}.
+	 */
+	@AliasFor(annotation = RequestMapping.class)
+	String[] path() default {};
+
+	// ...
+}
+```
+
+## Spring Composed and Spring Polyglot
+
+The [Spring Composed](https://github.com/sbrannen/spring-composed) project
+is a collection of _composed annotations_ for use with the Spring Framework
+4.2.1 and higher. There you will find annotations such as `@Get`, `@Post`,
+`@Put`, and `@Delete` that served as the inspiration for the `@GetMapping`, 
+`@PostMapping`, `@PutMapping`, and `@DeleteMapping` annotations that are
+now part of Spring MVC and Spring WebFlux.
+
+Feel free to check out `spring-composed` for further examples and inspiration
+for how you can implement your own custom _composed annotations_, and for a
+bit of geek humor and entertainment that further demonstrate the power of
+`@AliasFor`, take a look at
+[Spring Polyglot](https://github.com/sbrannen/spring-polyglot).
+
 
 # FAQ
 

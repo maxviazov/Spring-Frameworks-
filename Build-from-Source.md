@@ -43,6 +43,4 @@ To install all Spring Framework jars into your local Maven cache (note that "-x"
 
 ### Import Into Your IDE
 
-Ensure JDK 8 is configured properly in the IDE. Then follow the instructions:
-* For Eclipse, please read [import-into-eclipse.md](https://github.com/spring-projects/spring-framework/blob/master/import-into-eclipse.md).
-* For IntelliJ IDEA, please read [import-into-idea.md](https://github.com/spring-projects/spring-framework/blob/master/import-into-idea.md).
+Ensure JDK 8 is configured properly in the IDE. Then follow the instructions for [Eclipse](https://github.com/spring-projects/spring-framework/blob/master/import-into-eclipse.md) and [IntelliJ IDEA](https://github.com/spring-projects/spring-framework/blob/master/import-into-idea.md).

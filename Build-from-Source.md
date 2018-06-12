@@ -44,5 +44,5 @@ To install all Spring Framework jars into your local Maven cache (note that "-x"
 ### Import Into Your IDE
 
 Ensure JDK 8 is configured properly in the IDE. Then follow the instructions:
-* For Eclipse run `./gradlew compileTestJava install -x javadoc` and import using Buildship (`Import -> Gradle...`). You will need AJDT to compile `spring-aspects` (or you can just delete that project from the workspace since nothing depends on it). You also need Java 9 (or 10) to build `spring-core` and `spring-web`. To build `spring-oxm` you need to manually add the 2 folders in `build/generated-sources` to the build path.
+* For Eclipse run `./import-into-eclipse.sh`.
 * For IntelliJ IDEA, a straight-up import will not work. Please read [import-into-idea.md](https://github.com/spring-projects/spring-framework/blob/master/import-into-idea.md).

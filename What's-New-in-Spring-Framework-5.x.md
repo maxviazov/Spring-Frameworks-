@@ -2,8 +2,9 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ## What's New in Version 5.1
 
+### Spring Web
 
-...
+* Sets of annotated controllers can be configured externally with a based path, via `WebMvcConfigurer#configurePathMatch`.
 
 
 ## What's New in Version 5.0

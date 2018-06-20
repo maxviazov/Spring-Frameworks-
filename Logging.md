@@ -9,23 +9,23 @@ Logging in development needs to be selected and presented with care to maximize 
 
 DEBUG and TRACE log levels should work _together_ as a two-tier system. That doesn't mean having most messages at DEBUG level and some at TRACE, but rather having a definition of what belongs at each level, and in some cases having intelligently designed messages that show nuanced output for DEBUG vs TRACE.
 
-The purpose of _DEBUG logging_ is to provide feedback on what's happening in a way that is a) minimal, b) presented in a compact way, and c) focused on high value bits of information that are generally useful over and over again, as opposed to being useful for a specific issue, i.e. the 80/20 rule. DEBUG level is the window display of the development experience. It should provide a reasonable, out-of-the-box experience, without the need to tweak settings by package to avoid a fire hose.
+The purpose of _DEBUG logging_ is to provide feedback on what's happening in a way that is a) minimal, b) presented in a compact way, and c) focused on high value bits of information that are generally useful over and over again, as opposed to being useful for debuggin a specific issue, i.e. the 80/20 rule. DEBUG level is the window display of the development experience. It should provide a reasonable, out-of-the-box experience, without the need to tweak settings by package to avoid a fire hose.
 
-_TRACE logging_ follows the same mindset as DEBUG, except for the 80/20 rule. It should still aim to be minimal, compact, and focused on value, but also allow extended information to be logged, including for specific issues. Like DEBUG, TRACE aims to avoid a fire hose but it's expected that log settings by package may need to be customized to obtain the right amount of detail for the problem at hand.
+_TRACE logging_ follows the same mindset as DEBUG, except for the 80/20 rule. It should still aim to be minimal, compact, and focused on value, but also allow more extended information to be logged, including some for specific issues. Like DEBUG, TRACE aims to avoid a fire hose but it's expected that log settings by package may need to be customized to obtain the right amount of detail for the problem at hand.
 
 **The Fine-Tuning Process**
 
 Log messages can only be calibrated in the full context of log output for specific scenarios. It's impossible otherwise to spot issues such as duplication (e.g. request path logged in many places), inconsistent level of detail (vs other related components), verbosity, and other unintended consequences. We cannot gauge overall effectiveness in isolation either.
 
-Duplication and verbosity may seem like small issues, surely we can err on the side of extra information. For once they add noise without value, but more importantly consider what is not done. To address those issues, we must consider where certain information is best shown relative to this and other scenarios. We must iterate over wording. We must think about the relative value of information, or what else we could show. 
+Duplication and verbosity may seem like small issues. Surely we can err on the side of extra information? For once that adds noise without value, but more importantly consider what isn't done. To address such issues we have to consider where certain information is best shown relative to this or other scenarios, we must iterate over wording, and we must think about the relative value of information, and potentially what else we might be better to show instead. 
 
 All of that is extra work of course, but just like we need tests to prove code works, iterating over and reviewing actual logging output is the only way to create good logging and a good development experience.
 
 **Questions To Ask**
 
-**Q:** Is the information relevant when solving a specific issue (TRACE), or is it important enough to see all the time (DEBUG)?
+**Q:** Is the information relevant when solving a specific issue (TRACE), or is it important enough to see all the time in development (DEBUG)?
 
-For example, HTTP request mappings (request conditions, handlers, and methods with full signatures) is very useful information, but do you really want to see hundreds or thousands of those, on every startup in development mode? More likely, most of the time, we'll tune that out since it's not relevant, but in the process other important bits will get burried.
+For example, HTTP request mappings (request conditions, handlers, and methods with full signatures) is very useful information, but do you really need/want to see hundreds or thousands of those on every startup? More likely, most of the time, we're forced to skip over that information, and in the process miss out on other potentially important bits.
 
 Instead we could show summary information by `HandlerMapping`:
 ```
@@ -34,7 +34,7 @@ Instead we could show summary information by `HandlerMapping`:
 17:04:11.965 [main] DEBUG SimpleUrlHandlerMapping - Patterns [/resources/**] in 'resourceHandlerMapping'
 ```
 
-That's minimal, compact, and aids with understanding. It gives assurance about what handler mappings are present, along with a bit of valuable bits that can fit in compact form, and also doesn't forget to add the bean name at the end, which is essential in order to know the function of each `HandlerMapping`. Note that `BeanNameHandlerMapping` is also present (with `@EnableWebMvc`) but does not add a message at DEBUG level like above if it does not find any beans with a mapping. It logs such information at TRACE level, when we may suspect an issue, or want more information, but we don't need to see by default, every time.
+That's minimal, compact, and aids with understanding. It gives assurance about what handler mappings are present, along with valuable bits that can fit in such compact form, and also not forgetting to add the bean name, which is essential for recognizing different `HandlerMapping` instances. Note that `BeanNameHandlerMapping` was also present for the above output (with `@EnableWebMvc`) but did not add a message at DEBUG level since it did not find any mappings. It does log at TRACE level, when we may suspect an issue or want more information.
 
 **Q:** What is the most compact way to present the information?
 

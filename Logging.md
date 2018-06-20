@@ -1,7 +1,7 @@
 
 _The purpose of this page is to discuss logging practices in the Spring Framework._
 
-# Development Logging
+## Development Logging
 
 Logging in development needs to be selected and presented with care to maximize value and lower the noise-to-signal ratio. This section aims to define what that means more concretely.
 

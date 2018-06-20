@@ -34,7 +34,7 @@ Instead we could show summary information by `HandlerMapping`:
 17:04:11.965 [main] DEBUG SimpleUrlHandlerMapping - Patterns [/resources/**] in 'resourceHandlerMapping'
 ```
 
-That's minimal, compact, and aids with understanding. It gives assurance about what handler mappings are present, along with a bit of valuable data that can fit in such compact form, and also doesn't forget to add the bean name at the end, which is essential in order to know the function of each `HandlerMapping`. Note that `BeanNameHandlerMapping` was also configured but did not chime in at DEBUG level because it did not find any beans with mappings -- such information is left for TRACE level, if we suspect an issue, or want more information but we don't need to see it every time.
+That's minimal, compact, and aids with understanding. It gives assurance about what handler mappings are present, along with a bit of valuable bits that can fit in compact form, and also doesn't forget to add the bean name at the end, which is essential in order to know the function of each `HandlerMapping`. Note that `BeanNameHandlerMapping` is also present (with `@EnableWebMvc`) but does not add a message at DEBUG level like above if it does not find any beans with a mapping. It logs such information at TRACE level, when we may suspect an issue, or want more information, but we don't need to see by default, every time.
 
 **Q:** What is the most compact way to present the information?
 
@@ -83,5 +83,5 @@ For examples `FreeMarkerView` can be ordered ahead of `JstlView`, as it can chec
 
 Showing all request mappings for annotated methods at DEBUG level is arguably too much volume to see by default in development, but for `SimpleUrlHandlerMapping` it's a different situation since showing all patterns (but not handlers) is both feasible and valuable. 
 
-On a single HTML page there may have 20-30 or more static resources to load. For a fine-grained component such as `CachingResourceResolver` we can't afford to show much, if anything at all, at DEBUG level. It just doesn't bring enough value for the volume it adds. Showing cache add/remove operations creates a lot of noise even at TRACE level. We might however log a small message "Resource served from cache" whenever a resource is served from cache, which tells us that the `ResourceResolver` chain was bypassed, and we could show that at TRACE based on expected average volume vs value.
+On a single HTML page there may be 20-30, or more static resources to load. For a fine-grained component such as `CachingResourceResolver` we can't afford to show much, if anything at all, at DEBUG level. It just doesn't bring enough value for the volume it adds. Showing cache add/remove operations creates a lot of noise even at TRACE level. We might however log a small message "Resource served from cache" whenever a resource is served from cache, which tells us that the `ResourceResolver` chain was bypassed, and we could show that at TRACE based on expected average volume vs value.
 

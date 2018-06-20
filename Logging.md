@@ -81,7 +81,7 @@ For examples `FreeMarkerView` can be ordered ahead of `JstlView`, as it can chec
 
 **Q:** How much volume does it add vs how much value does it bring?
 
-Clearly if showing all request mappings for annotated methods at DEBUG is too much volume but showing all patterns for `SimpleUrlHandlerMapping` (but not handlers) is both feasible and valuable.
+Showing all request mappings for annotated methods at DEBUG level is arguably too much volume to see by default in development, but for `SimpleUrlHandlerMapping` it's a different situation since showing all patterns (but not handlers) is both feasible and valuable. 
 
-As another example, on a single HTML page there may have 20-30 or more static resources to load. Clearly for fine-grained components such as `CachingResourceResolver` we can't afford to show much, if anything at all, at DEBUG level. Showing cache add/remove operations creates a lot of noise even for TRACE level, with little value. We might however log a small message "Resource served from cache" when a resource is served from cache, which tells us the `ResourceResolver` chain was bypassed. We could show that at TRACE based on expected average volume.
+On a single HTML page there may have 20-30 or more static resources to load. For a fine-grained component such as `CachingResourceResolver` we can't afford to show much, if anything at all, at DEBUG level. It just doesn't bring enough value for the volume it adds. Showing cache add/remove operations creates a lot of noise even at TRACE level. We might however log a small message "Resource served from cache" whenever a resource is served from cache, which tells us that the `ResourceResolver` chain was bypassed, and we could show that at TRACE based on expected average volume vs value.
 

@@ -59,20 +59,18 @@ Then be sure to update it to 2016 accordingly:
 
 ### Import statements
 
-Import statements are structured as follow.
+The import statements are structured as follow:
 
-* `import java.*`
-* `import javax.*`
+* import `java.*`
+* import `javax.*`
 * blank line
-* `import com.*`
-* `import org.*`
-* `import` all other imports not covered explicitly in this list (e.g., `reactor.*`, etc.)
+* import all other imports
 * blank line
-* `import org.springframework.*`
+* import `org.springframework.*`
 * blank line
-* `import static` all static imports
+* import static all other imports
 
-Also, _static imports_ should not be used in production code. However, they should be used in test code, especially for things like `org.junit.Assert` and `org.junit.jupiter.api.Assertions`.
+Also, static imports should not be used in production code. They should be used in test code, especially for things like `org.junit.Assert`.
 
 ### Java source file organization
 

@@ -240,7 +240,7 @@ Always add `@Override` on methods overriding or implementing a method declared i
 
 ### Utility classes
 
-A class that is only a collection of static utility methods must be named with a `Utils` suffix, must have a private default constructor, and must be abstract. Making the class abstract and providing a `private` _default_ constructor prevent anyone from instantiating it. For example:
+A class that is only a collection of static utility methods must be named with a `Utils` suffix, must have a `private` default constructor, and must be `abstract`. Making the class `abstract` and providing a `private` _default_ constructor prevent anyone from instantiating it. For example:
 
 ```
 public abstract MyUtils {

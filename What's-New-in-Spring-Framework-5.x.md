@@ -47,6 +47,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 ### Spring WebFlux
 
 * Correlated WebFlux log messages.
+* Session cookies specify [SameSite](https://www.owasp.org/index.php/SameSite) attribute to protect against CSRF attacks.
 * DSL enhancements:
   * DSL-style router function builder.
   * Refined Kotlin router DSL.
@@ -54,7 +55,6 @@ _This document provides a summary of features and changes in Spring Framework [5
   * Support for Protobuf serialization.
   * Jetty-based WebClient connector.
 * Hamcrest and XML assertions in WebTestClient.
-* Session cookies specify [SameSite](https://www.owasp.org/index.php/SameSite) attribute to protect against CSRF attacks
 
 ### Spring Messaging
 

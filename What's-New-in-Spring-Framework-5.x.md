@@ -1,10 +1,75 @@
-_This document provides a summary of features and changes in Spring Framework [5.1](What's-New-in-Version-5.1) and [5.0](What's-New-in-Version-5.0). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
+_This document provides a summary of features and changes in [5.0](What's-New-in-Version-5.0) and Spring Framework [5.1](What's-New-in-Version-5.1). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
 
 ## What's New in Version 5.1
 
-### Spring Web
+### General Core Revision
 
-* Sets of annotated controllers can be configured with a base path externally via `WebMvcConfigurer#configurePathMatch`.
+* Infrastructure:
+  * Warning-free support for JDK 11 on classpath and module path.
+  * Out-of-the-box support for GraalVM conventions.
+  * Upgrade to Reactor Core 3.2 and Reactor Netty 0.8 ("Reactor Californium").
+* Core facilities:
+  * NIO.2 Path support in FileSystemResource (superseding PathResource).
+  * Performance improvements for core type and annotation resolution.
+  * Consistent detection of method annotations on generic interfaces.
+* Logging revision:
+  * Spring's JCL bridge can be detected by standard Commons Logging.
+  * Less noise on info, readable debug logs.
+
+### Core Container
+
+* Bean definitions:
+  * Support for logical and/or expressions in @Profile conditions.
+  * Refined Kotlin beans DSL.
+* Bean retrieval:
+  * Consistent non-exposure of null beans in the BeanFactory API.
+  * Programmatic ObjectProvider retrieval through the BeanFactory API.
+  * ObjectProvider iterable/stream access for beans-of-type resolution.
+  * Empty collection/map/array injection in single constructor scenarios.
+
+### General Web Revision
+
+* Controller parameter annotations get detected on interfaces as well:
+  * Allowing for complete mapping contracts in controller interfaces.
+* Support for stricter encoding of URI variables in UriComponentsBuilder.
+
+### Spring Web MVC
+
+* Updated web locale representation:
+  * Language tag compliant by default.
+  * CookieLocaleResolver sends RFC6265-compliant timezone cookies.
+* Specific MVC exceptions for missing header, cookie, path variable:
+  * Allowing for differentiated exception handling and status codes.
+* External base path for sets of annotated controllers:
+  * Configured via `WebMvcConfigurer#configurePathMatch`.
+* Centralized handling of Forwarded headers in ForwardedHeaderFilter.
+
+### Spring WebFlux
+
+* Correlated WebFlux log messages.
+* DSL enhancements:
+  * DSL-style router function builder.
+  * Refined Kotlin router DSL.
+* Third-party integration:
+  * Support for Protobuf serialization.
+  * Jetty-based WebClient connector.
+* Hamcrest and XML assertions in WebTestClient.
+
+### Spring Messaging
+
+* Support for reactive clients in @MessageMapping methods:
+  * Out-of-the-box support for Mono/Flux return values.
+* Option to preserve order of STOMP messages on WebSocket broker.
+
+### Spring ORM
+
+* Support for Hibernate ORM 5.3:
+  * Bean container integration with Hibernate's new SPI.
+* LocalSessionFactoryBean supports standard JPA interaction as well:
+  * Allowing for native Hibernate as well as JPA access within same transaction.
+* Read-only transactions do not retain entity snapshots on Hibernate:
+  * Session.setDefaultReadOnly(true) by default.
+* SAP HANA as common JpaVendorAdapter database platform.
 
 
 ## What's New in Version 5.0

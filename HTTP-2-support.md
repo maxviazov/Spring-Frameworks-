@@ -32,3 +32,12 @@ If you're using Jetty as an embedded server, the [samples folder in Jetty's repo
 ### Undertow
 
 With Undertow 1.3, developers needed to use [Jetty's ALPN Agent](https://github.com/jetty-project/jetty-alpn-agent) to run their server with ALPN support. As of Undertow 1.4, you can enable HTTP/2 support with a single option (see [reference documentation](http://undertow.io/undertow-docs/undertow-docs-1.4.0/index.html#http2-listener)).
+
+### Reactor Netty
+
+As of Spring Framework 5.1 (Reactor Netty 0.8), this server supports as well HTTP/2.
+JDK9+ deployments will support that protocol without specific infrastructure changes.
+
+For JDK 8 environments, or for optimal runtime performance, this server also supports HTTP/2 with native libraries. To enable that, your application needs to have an additional dependency.
+
+Spring Boot manages the version for the `io.netty:netty-tcnative-boringssl-static` "uber jar", containing native libraries for all platforms. Developers can choose to import only the required dependendencies using a classifier (see the [Netty official documentation](http://netty.io/wiki/forked-tomcat-native.html)).

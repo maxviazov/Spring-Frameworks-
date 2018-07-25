@@ -1,4 +1,4 @@
-_This document provides a summary of features and changes in [5.0](What's-New-in-Version-5.0) and Spring Framework [5.1](What's-New-in-Version-5.1). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
+_This document provides a summary of features and changes in Spring Framework [5.0](What's-New-in-Version-5.0) and [5.1](What's-New-in-Version-5.1). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
 
 ## What's New in Version 5.1
 
@@ -14,7 +14,7 @@ _This document provides a summary of features and changes in [5.0](What's-New-in
   * Consistent detection of method annotations on generic interfaces.
 * Logging revision:
   * Spring's JCL bridge can be detected by standard Commons Logging.
-  * Less noise on info, readable debug logs.
+  * Less noise on info, readable debug logs, details at trace level.
 
 ### Core Container
 

@@ -31,36 +31,55 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 * Controller parameter annotations get detected on interfaces as well:
   * Allowing for complete mapping contracts in controller interfaces.
-* Support for stricter encoding of URI variables in UriComponentsBuilder.
+* Support for stricter encoding of URI variables in `UriComponentsBuilder`:
+  * See updated [URI Encoding](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#web-uri-encoding) section.
+* Servlet requests params with HTTP PUT, PATCH, and DELETE:
+  * See [Form Data](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#filters-http-put).
 
 ### Spring Web MVC
 
+* Logging
+  * Improved, human-friendly, compact, DEBUG and TRACE logging.
+  * Control over DEBUG logging of potentially sensitive data.
+    * via `DispatcherServlet#enableLoggingRequestDetails`
 * Updated web locale representation:
   * Language tag compliant by default.
   * CookieLocaleResolver sends RFC6265-compliant timezone cookies.
 * Specific MVC exceptions for missing header, cookie, path variable:
   * Allowing for differentiated exception handling and status codes.
-* External base path for sets of annotated controllers:
-  * Configured via `WebMvcConfigurer#configurePathMatch`.
-* Centralized handling of Forwarded headers in ForwardedHeaderFilter.
+* [Externally configured]((https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-config-path-matching)) base path for sets of annotated controllers.
+* Centralized handling of "forwarded" type headers via `ForwardedHeaderFilter`:
+  * Please see important [upgrade note](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-5.x#forwarded-headers).
+* Support for serving Brotli, in addition to GZip, pre-encoded static resources.
 
 ### Spring WebFlux
 
-* Correlated WebFlux log messages.
-* Session cookies specify [SameSite](https://www.owasp.org/index.php/SameSite) attribute to protect against CSRF attacks.
+* HTTP/2 support when running with Reactor Netty 0.8.
+* Logging
+  * Improved, human-friendly, compact, DEBUG and TRACE logging.
+  * Correlated log messages for HTTP requests and WebSocket sessions.
+  * Control over DEBUG logging of potentially sensitive data.
+    * via `CodecConfigurer#defaultCodecs`
+* Session cookies now have `SameSite=Lax` to protect against CSRF attacks:
+  * See [OWASP page](https://www.owasp.org/index.php/SameSite) and [this article](https://scotthelme.co.uk/csrf-is-dead/).
 * DSL enhancements:
-  * DSL-style router function builder.
+  * DSL-style builder for `RouterFunction` without static imports ([sample](https://github.com/spring-projects/spring-framework/blob/91e96d8084acb7d92a1a2f086f30cd3381b26440/spring-webflux/src/test/java/org/springframework/web/reactive/function/server/RouterFunctionBuilderTests.java#L157-L179)).
   * Refined Kotlin router DSL.
+* [Externally configured](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-config-path-matching) base path for sets of annotated controllers.
 * Third-party integration:
-  * Support for Protobuf serialization.
-  * Jetty-based WebClient connector.
-* Hamcrest and XML assertions in WebTestClient.
+  * Support for Protobuf serialization, including [message streaming](https://developers.google.com/protocol-buffers/docs/techniques).
+  * `WebClient` connector for the Jetty reactive [HTTP Client](https://webtide.com/jetty-reactivestreams-http-client/).
+* WebSocket:
+  * Support for `WebSocketSession` attributes.
+  * Improve docs on reactive [WebSocket API](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web-reactive.html#webflux-websocket-server) handling.
 
 ### Spring Messaging
 
 * Support for reactive clients in @MessageMapping methods:
-  * Out-of-the-box support for Mono/Flux return values.
-* Option to preserve order of STOMP messages on WebSocket broker.
+  * Out-of-the-box support for Reactor and RxJava return values.
+* [Option to preserve](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#websocket-stomp-ordered-messages) publication order of messages by STOMP broker.
+* `@SendTo` and `@SendToUser` can [both be used](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#websocket-stomp-message-mapping) on controller method.
+* Improved docs on [handling](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#websocket-stomp-handle-annotations) of messages and [subscriptions](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#websocket-stomp-subscribe-mapping).
 
 ### Spring ORM
 
@@ -71,6 +90,11 @@ _This document provides a summary of features and changes in Spring Framework [5
 * Read-only transactions do not retain entity snapshots on Hibernate:
   * Session.setDefaultReadOnly(true) by default.
 * SAP HANA as common JpaVendorAdapter database platform.
+
+### Testing
+
+* Hamcrest and XML assertions in `WebTestClient`.
+* `MockServerWebExchange` can be configured with fixed `WebSession`.
 
 
 ## What's New in Version 5.0

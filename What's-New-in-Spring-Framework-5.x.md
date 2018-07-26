@@ -32,9 +32,9 @@ _This document provides a summary of features and changes in Spring Framework [5
 * Controller parameter annotations get detected on interfaces as well:
   * Allowing for complete mapping contracts in controller interfaces.
 * Support for stricter encoding of URI variables in `UriComponentsBuilder`:
-  * See updated [URI Encoding](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#web-uri-encoding) section.
+  * See updated ["URI Encoding"](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#web-uri-encoding) in the reference.
 * Servlet requests params with HTTP PUT, PATCH, and DELETE:
-  * See [Form Data](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#filters-http-put).
+  * See ["Form Data"](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#filters-http-put).
 
 ### Spring Web MVC
 
@@ -72,6 +72,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * WebSocket:
   * Support for `WebSocketSession` attributes.
   * Improve docs on reactive [WebSocket API](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web-reactive.html#webflux-websocket-server) handling.
+* Support for serving Brotli, in addition to GZip, pre-encoded static resources.
 
 ### Spring Messaging
 

@@ -5,15 +5,21 @@ _This page provides guidance on upgrading to Spring Framework [5.0](#Upgrading-t
 
 ### JDK 11
 
-Spring Framework 5.1 requires JDK 8 or higher and specifically supports JDK 11 (as the next long-term support release) for the first time. We strongly recommend an upgrade to Spring Framework 5.1 for any applications targeting JDK 11, delivering a warning-free experience on the classpath as well as the module path. JDK 11 is not officially supported with any older version of Spring, in particular not on the module path and not with the JDK 11 bytecode format (see below).
+Spring Framework 5.1 requires JDK 8 or higher and specifically supports JDK 11 (as the next long-term support release) for the first time. We strongly recommend an upgrade to Spring Framework 5.1 for any applications targeting JDK 11, delivering a warning-free experience on the classpath as well as the module path.
+
+Please note that developing against JDK 11 is not officially supported with any older version of the core framework. Spring Framework 5.0.9 and 4.3.19 just support deploying Java 8 based applications to a JVM 11 runtime environment (using `-target 1.8`; see below), accepting JVM-level warnings on startup.
 
 #### ASM
 
-Spring Framework 5.1 uses a patched ASM 6.2 fork which is prepared for JDK 11 and its new bytecode level but not battle-tested yet since JDK 11 is not yet generally available at the time of release. For a defensive upgrade strategy, consider compiling your application code with JDK 8 as a target (-target 1.8), simply deploying it to JDK 11; this makes your bytecode safer to parse not only for Spring's classpath scanning but also for other bytecode processing tools.
+Spring Framework 5.1 uses a patched ASM 6.2 fork which is prepared for JDK 11 and its new bytecode level but not battle-tested yet since JDK 11 is not yet generally available at the time of release.
+
+For a defensive upgrade strategy, consider compiling your application code with JDK 8 as a target (`-target 1.8`), simply deploying it to JDK 11. This makes your bytecode safer to parse not only for Spring's classpath scanning but also for other bytecode processing tools.
 
 #### CGLIB
 
-Spring Framework 5.1 uses a patched CGLIB 3.2 fork that delegates to JDK 9+ API for defining classes at runtime. Since this code path is only active when actually running on JDK 9 or higher (in particular necessary on JDK 11 where an alternative API for defining classes has been removed), side effects might show up when upgrading existing applications to JDK 11. Spring has a fallback in place which tries to mitigate any such side effects, possibly leading to a JVM warning being logged, whereas the standard code path delivers a warning-free experience on JDK 11 for regular class definition purposes. Consider revisiting your class definitions and bytecode processing tools in such a scenario, upgrading them to JDK 11 policies.
+Spring Framework 5.1 uses a patched CGLIB 3.2 fork that delegates to JDK 9+ API for defining classes at runtime. Since this code path is only active when actually running on JDK 9 or higher (in particular necessary on JDK 11 where an alternative API for defining classes has been removed), side effects might show up when upgrading existing applications to JDK 11.
+
+Spring has a fallback in place which tries to mitigate class definition issues, possibly leading to a JVM warning being logged, whereas the standard code path delivers a warning-free experience on JDK 11 for regular class definition purposes. Consider revisiting your class definitions and bytecode processing tools in such a scenario, upgrading them to JDK 11 policies.
 
 ### Web Applications
 

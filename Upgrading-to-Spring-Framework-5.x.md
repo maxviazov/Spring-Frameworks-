@@ -27,13 +27,15 @@ Spring has a fallback in place which tries to mitigate class definition issues, 
 
 `"Forwarded"` and `"X-Forwarded-*"` headers, which reflect the client's original address, are no longer checked individually in places where they apply, e.g. same origin CORS checks, `MvcUriComponentsBuilder`, etc. 
 
-Applications [are expected](https://jira.spring.io/browse/SPR-16668) to use one of the following:
-* The Spring Framework `ForwardedHeaderFilter` which can extract or discard such headers from a single place.
-* Server-level support for forwarded headers.
+Applications [are expected](https://jira.spring.io/browse/SPR-16668) to use one of:
+* Spring Framework's own `ForwardedHeaderFilter`.
+* Support for forwarded headers from the HTTP server or proxy.
+
+Note that `ForwardedHeaderFilter` can be configured in a safe mode where it checks and discards such headers so they cannot impact the application.
 
 #### Encoding Mode of `DefaultUriBuilderFactory`
 
-The default encoding mode of `DefaultUriBuilderFactory` has been switched to enforce stricter encoding of URI variables. This could impact applications using the `WebClient`, or otherwise directly using `DefaultUriBuilderFactory`. See the ["Encoding URIs"](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#web-uri-encoding) section and also the Javadoc for `DefaultUriBuilderFactory#setEncodingMode`.
+The encoding mode of `DefaultUriBuilderFactory` has been switched to enforce stricter encoding of URI variables by default. This could impact any application using the `WebClient` with default settings, or any application using `DefaultUriBuilderFactory` directly. See the ["Encoding URIs"](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#web-uri-encoding) section and also the [Javadoc](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/web/util/DefaultUriBuilderFactory.html#setEncodingMode-org.springframework.web.util.DefaultUriBuilderFactory.EncodingMode-) for `DefaultUriBuilderFactory#setEncodingMode`.
 
 #### Content Negotiation for Error Responses
 

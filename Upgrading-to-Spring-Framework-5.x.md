@@ -1,13 +1,25 @@
-_This page provides guidance on upgrading to Spring Framework [5.1](#Upgrading-to-Version-5.1) and [5.0](#Upgrading-to-Version-5.0). See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
+_This page provides guidance on upgrading to Spring Framework [5.0](#Upgrading-to-Version-5.0) and [5.1](#Upgrading-to-Version-5.1). See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
 
 
 ## Upgrading to Version 5.1
+
+### JDK 11
+
+Spring Framework 5.1 requires JDK 8 or higher and specifically supports JDK 11 (as the next long-term support release) for the first time. We strongly recommend an upgrade to Spring Framework 5.1 for any applications targeting JDK 11, delivering a warning-free experience on the classpath as well as the module path. JDK 11 is not officially supported with any older version of Spring, in particular not on the module path and not with the JDK 11 bytecode format (see below).
+
+#### ASM
+
+Spring Framework 5.1 uses a patched ASM 6.2 fork which is prepared for JDK 11 and its new bytecode level but not battle-tested yet since JDK 11 is not yet generally available at the time of release. For a defensive upgrade strategy, consider compiling your application code with JDK 8 as a target (-target 1.8), simply deploying it to JDK 11; this makes your bytecode safer to parse not only for Spring's classpath scanning but also for other bytecode processing tools.
+
+#### CGLIB
+
+Spring Framework 5.1 uses a patched CGLIB 3.2 fork that delegates to JDK 9+ API for defining classes at runtime. Since this code path is only active when actually running on JDK 9 or higher (in particular necessary on JDK 11 where an alternative API for defining classes has been removed), side effects might show up when upgrading existing applications to JDK 11. Spring has a fallback in place which tries to mitigate any such side effects, possibly leading to a JVM warning being logged, whereas the standard code path delivers a warning-free experience on JDK 11 for regular class definition purposes. Consider revisiting your class definitions and bytecode processing tools in such a scenario, upgrading them to JDK 11 policies.
 
 ### Web Applications
 
 #### Forwarded Headers
 
-`"Forwarded"` and `"X-Forwaded-*"` headers, which reflect the client's original address, are no longer checked individually in places where they apply, e.g. same origin CORS checks, `MvcUriComponentsBuilder`, etc. 
+`"Forwarded"` and `"X-Forwarded-*"` headers, which reflect the client's original address, are no longer checked individually in places where they apply, e.g. same origin CORS checks, `MvcUriComponentsBuilder`, etc. 
 
 Applications [are expected](https://jira.spring.io/browse/SPR-16668) to use one of the following:
 * The Spring Framework `ForwardedHeaderFilter` which can extract or discard such headers from a single place.

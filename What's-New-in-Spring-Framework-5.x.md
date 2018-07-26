@@ -85,11 +85,11 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 * Support for Hibernate ORM 5.3:
   * Bean container integration with Hibernate's new SPI.
-* LocalSessionFactoryBean supports standard JPA interaction as well:
-  * Allowing for native Hibernate as well as JPA access within same transaction.
-* Read-only transactions do not retain entity snapshots on Hibernate:
+* LocalSessionFactoryBean and HibernateTransactionManager support JPA interaction:
+  * Allowing for native Hibernate as well as JPA access within the same transaction.
+* Read-only transactions do not retain Hibernate entity snapshots in memory anymore:
   * Session.setDefaultReadOnly(true) by default.
-* SAP HANA as common JpaVendorAdapter database platform.
+* SAP HANA as a common JpaVendorAdapter database platform.
 
 ### Testing
 

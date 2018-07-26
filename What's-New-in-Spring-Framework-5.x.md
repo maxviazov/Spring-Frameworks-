@@ -1,12 +1,12 @@
-_This document provides a summary of features and changes in Spring Framework [5.0](What's-New-in-Version-5.0) and [5.1](What's-New-in-Version-5.1). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
+_This document provides a summary of features and changes in Spring Framework [5.0](#What's-New-in-Version-5.0) and [5.1](#What's-New-in-Version-5.1). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
 
 ## What's New in Version 5.1
 
 ### General Core Revision
 
 * Infrastructure:
-  * Warning-free support for JDK 11 on classpath and module path.
-  * Out-of-the-box support for GraalVM conventions.
+  * Warning-free support for JDK 11 on the classpath and the module path.
+  * Support for Graal native image constraints (reflection, parameter names).
   * Upgrade to Reactor Core 3.2 and Reactor Netty 0.8 ("Reactor Californium").
 * Core facilities:
   * NIO.2 Path support in FileSystemResource (superseding PathResource).

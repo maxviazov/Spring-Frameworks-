@@ -47,7 +47,7 @@ _This document provides a summary of features and changes in Spring Framework [5
   * CookieLocaleResolver sends RFC6265-compliant timezone cookies.
 * Specific MVC exceptions for missing header, cookie, path variable:
   * Allowing for differentiated exception handling and status codes.
-* [Externally configured]((https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-config-path-matching)) base path for sets of annotated controllers.
+* [Externally configured](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-config-path-matching) base path for sets of annotated controllers.
 * Centralized handling of "forwarded" type headers via `ForwardedHeaderFilter`:
   * Please see important [upgrade note](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-5.x#forwarded-headers).
 * Support for serving Brotli, in addition to GZip, pre-encoded static resources.
@@ -65,7 +65,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * DSL enhancements:
   * DSL-style builder for `RouterFunction` without static imports ([sample](https://github.com/spring-projects/spring-framework/blob/91e96d8084acb7d92a1a2f086f30cd3381b26440/spring-webflux/src/test/java/org/springframework/web/reactive/function/server/RouterFunctionBuilderTests.java#L157-L179)).
   * Refined Kotlin router DSL.
-* [Externally configured](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-config-path-matching) base path for sets of annotated controllers.
+* [Externally configured](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web-reactive.html#webflux-config-path-matching) base path for sets of annotated controllers.
 * Third-party integration:
   * Support for Protobuf serialization, including [message streaming](https://developers.google.com/protocol-buffers/docs/techniques).
   * `WebClient` connector for the Jetty reactive [HTTP Client](https://webtide.com/jetty-reactivestreams-http-client/).

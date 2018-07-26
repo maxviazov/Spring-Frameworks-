@@ -3,13 +3,9 @@ _This page provides guidance on upgrading to Spring Framework [5.1](#Upgrading-t
 
 ## Upgrading to Version 5.1
 
-### Baseline update
-
-...
-
 ### Web Applications
 
-#### Forwarded headers
+#### Forwarded Headers
 
 `"Forwarded"` and `"X-Forwaded-*"` headers, which reflect the client's original address, are no longer checked individually in places where they apply, e.g. same origin CORS checks, `MvcUriComponentsBuilder`, etc. 
 
@@ -17,15 +13,19 @@ Applications [are expected](https://jira.spring.io/browse/SPR-16668) to use one 
 * The Spring Framework `ForwardedHeaderFilter` which can extract or discard such headers from a single place.
 * Server-level support for forwarded headers.
 
-#### Produces condition and error responses
+#### Encoding Mode of `DefaultUriBuilderFactory`
+
+The default encoding mode of `DefaultUriBuilderFactory` has been switched to enforce stricter encoding of URI variables. This could impact applications using the `WebClient`, or otherwise directly using `DefaultUriBuilderFactory`. See the ["Encoding URIs"](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#web-uri-encoding) section and also the Javadoc for `DefaultUriBuilderFactory#setEncodingMode`.
+
+#### Content Negotiation for Error Responses
 
 The produces condition of an `@RequestMapping` no longer [impacts](https://jira.spring.io/browse/SPR-16318) the content type of error responses.
 
-#### Multipart and query values merged
+#### Multipart and Query Values
 
 The integration with Apache Commons FileUpload [now aggregates](https://jira.spring.io/browse/SPR-16590) multipart parameter values with other request parameters from the query, as required by Servlet spec, section 3.1. Previously it returned only multipart parameter values if present.
 
-#### OPTIONS listed in HTTP OPTIONS
+#### HTTP OPTIONS
 
 The built-in support for HTTP OPTIONS in `@RequestMapping` methods now consistently [adds HTTP OPTIONS](https://jira.spring.io/browse/SPR-16513) as one of the supported HTTP methods, whereas previously it did not.
 

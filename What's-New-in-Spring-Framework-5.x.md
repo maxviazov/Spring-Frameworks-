@@ -54,7 +54,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Spring WebFlux
 
-* HTTP/2 support when running with Reactor Netty 0.8.
+* HTTP/2 server support when running with Reactor Netty 0.8.
 * Logging
   * Improved, human-friendly, compact, DEBUG and TRACE logging.
   * Correlated log messages for HTTP requests and WebSocket sessions.

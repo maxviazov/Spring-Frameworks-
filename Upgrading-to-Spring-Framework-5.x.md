@@ -23,7 +23,7 @@ Spring has a fallback in place which tries to mitigate class definition issues, 
 
 ### Core Container
 
-The core container has been fine-tuned for Graal compatibility (native images on SubstrateVM) and generally optimized for startup performance and memory consumption. As part of this effort, several introspection algorithms have been streamlined towards avoiding unnecessary reflection steps.
+The core container has been fine-tuned for Graal compatibility (native images on Substrate VM) and generally optimized for less startup overhead and less garbage collection pressure. As part of this effort, several introspection algorithms have been streamlined towards avoiding unnecessary reflection steps, potentially causing side effects for annotations declared outside of well-defined places.
 
 #### Nested Configuration Class Detection
 

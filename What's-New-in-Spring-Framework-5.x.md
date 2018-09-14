@@ -8,6 +8,7 @@ _This document provides a summary of features and changes in Spring Framework [5
   * Warning-free support for JDK 11 on the classpath and the module path.
   * Support for Graal native image constraints (reflection, parameter names).
   * Upgrade to Reactor Core 3.2 and Reactor Netty 0.8 ("Reactor Californium").
+  * Upgrade to ASM 7.0 and CGLIB 3.2.8.
 * Core facilities:
   * NIO.2 Path support in FileSystemResource (superseding PathResource).
   * Performance improvements for core type and annotation resolution.
@@ -20,7 +21,9 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 * Bean definitions:
   * Support for logical and/or expressions in @Profile conditions.
+  * Consistent (non-)detection of nested configuration classes.
   * Refined Kotlin beans DSL.
+    * Unique implicit bean names for multiple beans of same type.
 * Bean retrieval:
   * Consistent non-exposure of null beans in the BeanFactory API.
   * Programmatic ObjectProvider retrieval through the BeanFactory API.

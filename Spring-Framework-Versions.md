@@ -2,7 +2,12 @@ _This document describes new features, noteworthy changes, and provides guidance
 
 # Supported Versions
 
-4.3.x and 5.0 are the actively supported branches in the 4th and 5th generation respectively. Limited support for 3.2.x is still available but no further maintenance releases are planned in that line. We strongly recommend upgrading to the latest Spring Framework 5.0.x or 4.3.x release listed on [spring.io/spring-framework](http://spring.io/spring-framework).
+- 5.1.x is the latest and recommended line
+- 5.0.x has been superseded by 5.1.x, but is supported for Boot 2.0's lifetime still (~ March 2019)
+- 4.3.x is the last branch of the 4th generation, it's got an extended support life until 2020 so you can migrate your applications to the latest generation safely
+- 3.2.x is EOL, no further maintenance releases are planned in that line
+
+We strongly recommend upgrading to the latest Spring Framework 5.1.x or 4.3.x release listed on [spring.io/spring-framework](http://spring.io/spring-framework).
 
 # What's New
 

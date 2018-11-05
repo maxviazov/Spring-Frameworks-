@@ -7,7 +7,7 @@ _This document describes new features, noteworthy changes, and provides guidance
 - 4.3.x is the last branch of the 4th generation, it's got an extended support life until 2020 so you can migrate your applications to the latest generation safely
 - 3.2.x is EOL, no further maintenance releases are planned in that line
 
-We strongly recommend upgrading to the latest Spring Framework 5.1.x or 4.3.x release listed on [spring.io/spring-framework](http://spring.io/spring-framework).
+We strongly recommend upgrading to the latest Spring Framework 5.1.x or 4.3.x release listed.
 
 # What's New
 
@@ -15,9 +15,8 @@ We strongly recommend upgrading to the latest Spring Framework 5.1.x or 4.3.x re
 - [4th generation](https://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#spring-whats-new) (4.3.x reference)
 - [3rd generation](http://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/htmlsingle/#spring-whats-new) (3.2.x reference)
 
-# Upgrades
+# Upgrading
 
-- [[5th generation|Upgrading to Spring Framework 5.x]]
-- [[4th generation|Upgrading to Spring-Framework 4.x]]
-- [[3rd generation|Upgrading to Spring-Framework 3.x]]
-
+- [[Spring Framework 5.x|Upgrading to Spring Framework 5.x]]
+- [[Spring Framework 4.3|Upgrading to Spring-Framework 4.x]]
+- [[Spring Framework 3.2|Upgrading to Spring-Framework 3.x]]

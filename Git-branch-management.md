@@ -1,4 +1,4 @@
-_This document describes how the Spring Framework team manages Git branches and how changes are applied to multiple branches. For more details about the code conventions, check out the [[Code Style]] page_
+_This document describes how the Spring Framework team manages Git branches and how changes are applied to multiple branches. For more details about the code conventions, check out the [[Code Style]] page._
 
 ## Git Branches
 
@@ -11,7 +11,7 @@ When looking at the Spring Framework repository, we can find several branches:
 
 ## Applying changes to the Spring Framework repository
 
-For this example, we'll use this as the current state of the repository:
+For this example, we'll use the following as the current state of the repository:
 
 * the `master` branch is dedicated to the upcoming `5.2.0.RELEASE` minor version
 * the current branch is `5.1.x`
@@ -51,6 +51,6 @@ $ git cherry-pick c0ffee456
 $ git push origin 5.0.x
 ```
 
-If you wish to create the backport issue beforehand, you can always tag the main issue with the `for: backport-to-5.0.x` GitHub issue tag, the backport-bot will create an issue accordingly. Pushing the cherry-picked commit will close the backport issue, even if the commit message refers to the original issue.
+If you wish to create the backport issue beforehand, you can always tag the main issue with the `for: backport-to-5.0.x` GitHub issue label; the backport-bot will create an issue accordingly. Pushing the cherry-picked commit will close the backport issue, even if the commit message refers to the original issue.
 
 

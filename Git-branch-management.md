@@ -7,7 +7,7 @@ When looking at the Spring Framework repository, we can find several branches:
 * the current branch - the branch of the current Framework generation, i.e. the latest generation with GA releases. This information is available on the [Spring Framework project page](https://spring.io/projects/spring-framework#learn)
 * the Git `master` branch - this can be the current branch, or a branch dedicated to the next major/minor release
 * maintenance branches - branches of Framework generations being actively maintained
-* former maintenance branches of EOL'd versions, not maintained anymore
+* former maintenance branches of EOL'd versions, i.e. not maintained anymore
 
 ## Applying changes to the Spring Framework repository
 
@@ -15,7 +15,7 @@ For this example, we'll use this as the current state of the repository:
 
 * the `master` branch is dedicated to the upcoming `5.2.0.RELEASE` minor version
 * the current branch is `5.1.x`
-* there are two active maintenance branches, `5.0.x` and '`4.3.x`
+* there are two active maintenance branches, `5.0.x` and `4.3.x`
 
 Let's consider the issue `#1234`, which is the bugfix we're working on.
 

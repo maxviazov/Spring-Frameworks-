@@ -51,6 +51,6 @@ $ git cherry-pick c0ffee456
 $ git push origin 5.0.x
 ```
 
-If you wish to create the backport issue beforehand, you can always tag the main issue with the `for: backport-to-5.0.x` GitHub issue tag, the backport-bot will create an issue accordingly. 
+If you wish to create the backport issue beforehand, you can always tag the main issue with the `for: backport-to-5.0.x` GitHub issue tag, the backport-bot will create an issue accordingly. Pushing the cherry-picked commit will close the backport issue, even if the commit message refers to the original issue.
 
 

@@ -2,9 +2,9 @@ _This document describes new features, noteworthy changes, and provides guidance
 
 # Supported Versions
 
-- 5.1.x is the latest and recommended line, supported until the end of 2019 (to be superseded by the longer-lived 5.2.x in mid 2019).
-- 5.0.x has been superseded by 5.1.x already but keeps being supported for Boot 2.0's lifetime still (~ March 2019).
-- 4.3.x is the last feature branch of the 4th generation. It comes with extended maintenance until 2020, so you may migrate your applications to 5.x at your own pace.
+- 5.1.x is the latest and recommended line, supported until the end of 2019 (to be superseded by the longer-lived 5.2.x in July 2019).
+- 5.0.x has been superseded by 5.1.x already and entered its EOL phase as of April 2019. As a courtesy to 5.0.x users, one more maintenance release is scheduled for June 2019.
+- 4.3.x is the last feature branch of the 4th generation. It comes with extended maintenance until at least June 2020, so you may migrate your applications to 5.x at your own pace.
 - _3.2.x is EOL (reached its end of life) as of December 31st, 2016. No further maintenance releases are planned in that line. Please migrate to 4.3 or 5.x at your earliest convenience!_
 
 We recommend upgrading to the latest Spring Framework 5.1.x or 4.3.x release from Maven Central.

@@ -11,18 +11,23 @@ _This document provides a summary of features and changes in Spring Framework [5
 * Commons Logging conveniences:
   * `LogMessage` for first-class message supplier and argument-based formatting support.
   * `LogAccessor` as a convenient `Log` alternative with out-of-the-box support for message suppliers.
+* Upgrade to Kotlin 1.3
+* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters 
 
 ### General Web Revision
 
 * Complete set of `java.time` based setters on `HttpHeaders`, `CacheControl`, `CorsConfiguration`.
 * `@RequestMapping` has enhanced `produces` condition support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
+* CORS revision that adds `Vary` header for non CORS requests on CORS enabled endpoints and avoid considering same-origin requests with an `Origin` header as a CORS request
 
 ### Spring Web MVC
 
 * New WebMvc.fn programming model providing a functional alternative to annotated controllers built on the Servlet API.
+* [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#router-dsl)
 
 ### Spring WebFlux
 
+* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#coroutines)
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
 
 ### Spring Messaging
@@ -36,6 +41,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * Enhancements to the `TestContext` API
   * New `hasApplicationContext()` method to determine if the application context for the current test is known to be available. ([javadoc](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--))
   * New `publishEvent()` method for simplified `ApplicationEvent` publication. ([javadoc](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-))
+* [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#mockmvc-dsl)
 
 
 ## What's New in Version 5.1

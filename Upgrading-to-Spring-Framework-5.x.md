@@ -4,7 +4,12 @@ Currently active branches: Spring Framework 4.3.x and Spring Framework 5.1, with
 
 Next up, Spring Framework 5.2 is expected to go GA in July 2019.
 
+
 ## Upgrading to Version 5.2
+
+### Core Container
+
+Spring's annotation retrieval algorithms have been completely revised for efficiency and consistency, as well as for potential optimizations through annotation presence hints (e.g. from a compile-time index). This may have side effects, e.g. finding annotations in places where they haven't been found before or not finding annotations anymore where they have previously been found accidentally. While we don't expect common Spring applications to be affected, annotation declaration accidents in application code may get uncovered when you upgrade to 5.2. [e.g. [gh-22766]](https://github.com/spring-projects/spring-framework/issues/22766)
 
 ### Web Applications
 

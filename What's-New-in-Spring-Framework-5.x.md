@@ -4,15 +4,25 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### General Core Revision
 
+* Upgrade to ASM 7.1 and Kotlin 1.3.
 * Annotation retrieval optimizations:
   * New `MergedAnnotations` API for efficient sophisticated annotation retrieval checks.
   * Candidate class mechanism for indications about the potential presence of certain annotation types.
-  * Optimized `@Configuration` class introspection.
 * Commons Logging conveniences:
   * `LogMessage` for first-class message supplier and argument-based formatting support.
   * `LogAccessor` as a convenient `Log` alternative with out-of-the-box support for message suppliers.
-* Upgrade to Kotlin 1.3
+
+### Core Container
+
+* `@Configuration` model improvements:
+  * Optimized annotation introspection on configuration candidate classes.
+  * `proxyBeanMethods` attribute for `@Configuration`-demarcated classes in lite mode, i.e. without CGLIB subclasses.
+  * Support for factory method introspection in `ListableBeanFactory.getBeanNamesForAnnotation/getBeansWithAnnotation/findAnnotationOnBean`.
 * [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters 
+
+### Transaction Management
+
+* Support for transaction control via Vavr `Try` return type on `@Transactional` methods.
 
 ### General Web Revision
 

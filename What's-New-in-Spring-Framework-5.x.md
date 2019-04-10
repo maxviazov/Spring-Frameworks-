@@ -1,4 +1,4 @@
-_This document provides a summary of features and changes in Spring Framework [5.0](#What's-New-in-Version-5.0) and [5.1](#What's-New-in-Version-5.1). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
+_This document provides a summary of features and changes in Spring Framework [5.0](#What's-New-in-Version-5.0), [5.1](#What's-New-in-Version-5.1), and [5.2](#What's-New-in-Version-5.2). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
 
 ## What's New in Version 5.2
 

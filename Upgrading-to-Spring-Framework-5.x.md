@@ -14,6 +14,10 @@ Currently active branches: Spring Framework 4.3.x and Spring Framework 5.1, with
 
 `@Bean` methods in `Web**ConfigurationSupport` now declare bean dependencies as method arguments rather than use method calls to make it possible to avoid creating proxies for bean methods via `@Configuration(proxyBeanMethods=false)` which Spring Boot 2.2 now does. This should not affect existing applications but if sub-classing `Web**ConfigurationSupport` (or `DelegatingWeb**Configuration`) and using `proxyBeanMethods=false` be sure to also to declare dependent beans as method arguments rather than using method calls. [[gh-22596]](https://github.com/spring-projects/spring-framework/pull/22596)
 
+### Testing
+
+The mock JNDI support in the `spring-test` module has been deprecated. If you have been using classes such as the `SimpleNamingContext` and `SimpleNamingContextBuilder`, you are encouraged to migrate to a complete JNDI solution from a third party such as [Simple-JNDI](https://github.com/h-thurow/Simple-JNDI). [[gh-22779]](https://github.com/spring-projects/spring-framework/issues/22779)
+
 
 ## Upgrading to Version 5.1
 

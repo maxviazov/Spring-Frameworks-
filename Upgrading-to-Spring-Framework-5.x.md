@@ -2,6 +2,20 @@ _This page provides guidance on upgrading to Spring Framework [5.0](#Upgrading-t
 
 Currently active branches: Spring Framework 4.3.19+ and Spring Framework 5.1, with Spring Framework 5.0.x phased out in favor of 5.1 by early 2019. Please upgrade to the latest 5.1.x or 4.3.x release at your earliest convenience!
 
+## Upgrading to Version 5.2
+
+### Web Applications
+
+#### `@RequestMapping` without path attribute
+
+Prior to [gh-22543](https://github.com/spring-projects/spring-framework/issues/22543), `@RequestMapping` (and other meta-annotated variants) without `path` attributes would act as a "match all" condition for controller endpoints. This can lead to confusion and methods handling more requests than expected. This behavior is now modified and such mappings will act as empty mappings, like `@RequestMapping("")`. If you'd like to revert to the previous behavior, the mapping needs to be explicit, such as `@RequestMapping("/**")`.
+
+#### Spring MVC and Spring WebFlux configuration infrastructure changes
+
+As of [gh-22596](https://github.com/spring-projects/spring-framework/pull/22596), the basic infrastructure for web configuration had API changes, in order to avoid creating proxies for bean methods, and to make bean dependencies more explicit. This should only affect you if you are subclassing `DelegatingWeb**Configuration` or `Web**ConfigurationSupport`
+
+
+
 ## Upgrading to Version 5.1
 
 ### JDK 11

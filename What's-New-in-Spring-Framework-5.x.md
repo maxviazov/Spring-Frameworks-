@@ -19,8 +19,8 @@ _This document provides a summary of features and changes in Spring Framework [5
 * JUnit Jupiter 5.4 support
 * Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/testing.html#testcontext-test-execution-events)
 * Enhancements to the `TestContext` API
-  * New `hasApplicationContext()` method to determine if the application context for the current test is known to be available. ([javadoc](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--))
-  * New `publishEvent()` method for simplified `ApplicationEvent` publication. ([javadoc](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-))
+  * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
+  * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
 
 
 ## What's New in Version 5.1

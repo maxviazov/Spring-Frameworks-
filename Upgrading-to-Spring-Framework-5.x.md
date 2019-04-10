@@ -1,6 +1,6 @@
-_This page provides guidance on upgrading to Spring Framework [5.0](#Upgrading-to-Version-5.0) and [5.1](#Upgrading-to-Version-5.1). See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
+_This page provides guidance on upgrading to Spring Framework [5.0](#Upgrading-to-Version-5.0), [5.1](#Upgrading-to-Version-5.1), and [5.2](#Upgrading-to-Version-5.2). See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
 
-Currently active branches: Spring Framework 4.3.19+ and Spring Framework 5.1, with Spring Framework 5.0.x phased out in favor of 5.1 by early 2019. Please upgrade to the latest 5.1.x or 4.3.x release at your earliest convenience!
+Currently active branches: Spring Framework 4.3.x and Spring Framework 5.1, with Spring Framework 5.0.x phased out in favor of 5.1 by early 2019. Please upgrade to the latest 5.1.x or 4.3.x release at your earliest convenience!
 
 ## Upgrading to Version 5.2
 
@@ -8,14 +8,11 @@ Currently active branches: Spring Framework 4.3.19+ and Spring Framework 5.1, wi
 
 #### `@RequestMapping` without path attribute
 
-
 `@RequestMapping()` and meta-annotated variants `@GetMapping()`, `PostMapping()`, etc., without explicitly declared `path` patterns are now equivalent to `RequestMapping("")` and match only to URLs with no path. In the absence of declared patterns previously the path was not checked thereby matching to any path. If you would like to match to all paths, please use `"/**"` as the pattern. [[gh-22543]](https://github.com/spring-projects/spring-framework/issues/22543)
  
-
 #### `@EnableWebMvc` and `@EnableWebFlux` Infrastructure
 
 `@Bean` methods in `Web**ConfigurationSupport` now declare bean dependencies as method arguments rather than use method calls to make it possible to avoid creating proxies for bean methods via `@Configuration(proxyBeanMethods=false)` which Spring Boot 2.2 now does. This should not affect existing applications but if sub-classing `Web**ConfigurationSupport` (or `DelegatingWeb**Configuration`) and using `proxyBeanMethods=false` be sure to also to declare dependent beans as method arguments rather than using method calls. [[gh-22596]](https://github.com/spring-projects/spring-framework/pull/22596)
-
 
 
 ## Upgrading to Version 5.1

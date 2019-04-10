@@ -17,7 +17,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * `@Configuration` model improvements:
   * Optimized annotation introspection on configuration candidate classes.
   * `proxyBeanMethods` attribute for `@Configuration`-demarcated classes in lite mode, i.e. without CGLIB subclasses.
-  * Support for factory method introspection in `ListableBeanFactory.getBeanNamesForAnnotation/getBeansWithAnnotation/findAnnotationOnBean`.
+  * Support for annotation detection on factory methods in `ListableBeanFactory` retrieval methods: `getBeanNamesForAnnotation`, `getBeansWithAnnotation`, `findAnnotationOnBean`.
 * [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters 
 
 ### Transaction Management
@@ -32,8 +32,9 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Spring Web MVC
 
-* New WebMvc.fn programming model providing a functional alternative to annotated controllers built on the Servlet API.
-* [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#router-dsl)
+* New WebMvc.fn programming model
+  * A functional alternative to annotated controllers built on the Servlet API.
+  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#router-dsl)
 
 ### Spring WebFlux
 
@@ -49,8 +50,8 @@ _This document provides a summary of features and changes in Spring Framework [5
 * JUnit Jupiter 5.4 support
 * Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/testing.html#testcontext-test-execution-events)
 * Enhancements to the `TestContext` API
-  * New `hasApplicationContext()` method to determine if the application context for the current test is known to be available. ([javadoc](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--))
-  * New `publishEvent()` method for simplified `ApplicationEvent` publication. ([javadoc](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-))
+  * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
+  * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
 * [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#mockmvc-dsl)
 
 

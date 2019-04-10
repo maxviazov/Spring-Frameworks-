@@ -8,11 +8,13 @@ Currently active branches: Spring Framework 4.3.19+ and Spring Framework 5.1, wi
 
 #### `@RequestMapping` without path attribute
 
-Prior to [gh-22543](https://github.com/spring-projects/spring-framework/issues/22543), `@RequestMapping` (and other meta-annotated variants) without `path` attributes would act as a "match all" condition for controller endpoints. This can lead to confusion and methods handling more requests than expected. This behavior is now modified and such mappings will act as empty mappings, like `@RequestMapping("")`. If you'd like to revert to the previous behavior, the mapping needs to be explicit, such as `@RequestMapping("/**")`.
 
-#### Spring MVC and Spring WebFlux configuration infrastructure changes
+`@RequestMapping()` and meta-annotated variants `@GetMapping()`, `PostMapping()`, etc., without explicitly declared `path` patterns are now equivalent to `RequestMapping("")` and match only to URLs with no path. In the absence of declared patterns previously the path was not checked thereby matching to any path. If you would like to match to all paths, please use `"/**"` as the pattern. [[gh-22543]](https://github.com/spring-projects/spring-framework/issues/22543)
+ 
 
-As of [gh-22596](https://github.com/spring-projects/spring-framework/pull/22596), the basic infrastructure for web configuration had API changes, in order to avoid creating proxies for bean methods, and to make bean dependencies more explicit. This should only affect you if you are subclassing `DelegatingWeb**Configuration` or `Web**ConfigurationSupport`
+#### `@EnableWebMvc` and `@EnableWebFlux` Infrastructure
+
+`@Bean` methods in `Web**ConfigurationSupport` now declare bean dependencies as method arguments rather than use method calls to make it possible to avoid creating proxies for bean methods via `@Configuration(proxyBeanMethods=false)` which Spring Boot 2.2 now does. This should not affect existing applications but if sub-classing `Web**ConfigurationSupport` (or `DelegatingWeb**Configuration`) and using `proxyBeanMethods=false` be sure to also to declare dependent beans as method arguments rather than using method calls. [[gh-22596]](https://github.com/spring-projects/spring-framework/pull/22596)
 
 
 

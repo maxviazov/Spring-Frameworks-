@@ -4,7 +4,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Spring Web
 
-`@RequestMapping` has enhanced `produces` condition support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
+* `@RequestMapping` has enhanced `produces` condition support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
 
 
 ### Spring WebFlux

@@ -1,5 +1,6 @@
 _This document provides a summary of features and changes in Spring Framework [5.0](#What's-New-in-Version-5.0), [5.1](#What's-New-in-Version-5.1), and [5.2](#What's-New-in-Version-5.2). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
 
+
 ## What's New in Version 5.2
 
 ### General Core Revision
@@ -17,8 +18,8 @@ _This document provides a summary of features and changes in Spring Framework [5
 * `@Configuration` model improvements:
   * Optimized annotation introspection on configuration candidate classes.
   * `proxyBeanMethods` attribute for `@Configuration`-demarcated classes in lite mode, i.e. without CGLIB subclasses.
-  * Support for annotation detection on factory methods in `ListableBeanFactory` retrieval methods: `getBeanNamesForAnnotation`, `getBeansWithAnnotation`, `findAnnotationOnBean`.
-* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters 
+  * Support for annotation detection on factory methods with common `ListableBeanFactory` retrieval methods: `getBeanNamesForAnnotation`, `getBeansWithAnnotation`, `findAnnotationOnBean`.
+* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters.
 
 ### Transaction Management
 
@@ -28,17 +29,17 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 * Complete set of `java.time` based setters on `HttpHeaders`, `CacheControl`, `CorsConfiguration`.
 * `@RequestMapping` has enhanced `produces` condition support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
-* CORS revision that adds `Vary` header for non CORS requests on CORS enabled endpoints and avoid considering same-origin requests with an `Origin` header as a CORS request
+* CORS revision that adds `Vary` header for non CORS requests on CORS enabled endpoints and avoid considering same-origin requests with an `Origin` header as a CORS request.
 
 ### Spring Web MVC
 
 * New "WebMvc.fn" programming model, analogous to the existing "WebFlux.fn":
   * A functional alternative to annotated controllers built on the Servlet API.
-  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#router-dsl)
+  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#router-dsl).
 
 ### Spring WebFlux
 
-* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#coroutines)
+* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#coroutines).
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
 
 ### Spring Messaging
@@ -49,8 +50,8 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Testing
 
-* JUnit Jupiter 5.4 support
-* Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/testing.html#testcontext-test-execution-events)
+* JUnit Jupiter 5.4 support.
+* Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/testing.html#testcontext-test-execution-events).
 * Enhancements to the `TestContext` API:
   * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
   * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.

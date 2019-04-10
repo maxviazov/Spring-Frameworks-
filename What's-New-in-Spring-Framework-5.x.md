@@ -6,7 +6,6 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 * `@RequestMapping` has enhanced `produces` condition support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
 
-
 ### Spring WebFlux
 
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
@@ -14,6 +13,14 @@ _This document provides a summary of features and changes in Spring Framework [5
 ### Spring Messaging
 
 * [RSocket](http://rsocket.io/) support with response handling via annotated `@MessageMapping` methods and performing requests via `RSocketRequester` with encoding and decoding to and from higher level Objects.
+
+### Testing
+
+* JUnit Jupiter 5.4 support
+* Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/testing.html#testcontext-test-execution-events)
+* Enhancements to the `TestContext` API
+  * New `hasApplicationContext()` method to determine if the application context for the current test is known to be available. ([javadoc](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--))
+  * New `publishEvent()` method for simplified `ApplicationEvent` publication. ([javadoc](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-))
 
 
 ## What's New in Version 5.1

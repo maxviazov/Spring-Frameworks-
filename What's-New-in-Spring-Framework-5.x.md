@@ -1,5 +1,21 @@
 _This document provides a summary of features and changes in Spring Framework [5.0](#What's-New-in-Version-5.0) and [5.1](#What's-New-in-Version-5.1). Also see the [[Spring Framework 5 FAQ]] for answers to common questions. Or back to [[Spring Framework Versions]]._
 
+## What's New in Version 5.2
+
+### Spring Web
+
+`@RequestMapping` has enhanced `produces` condition support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
+
+
+### Spring WebFlux
+
+* Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
+
+### Spring Messaging
+
+* [RSocket](http://rsocket.io/) support with response handling via annotated `@MessageMapping` methods and performing requests via `RSocketRequester` with encoding and decoding to and from higher level Objects.
+
+
 ## What's New in Version 5.1
 
 ### General Core Revision

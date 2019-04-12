@@ -48,11 +48,11 @@ Each source file must specify the following license at the very top of the file:
 	 * limitations under the License.
 	 */
 
-Always check the date range in the license header. For example, if you've modified a file in 2016 whose header still reads:
+Always check the date range in the license header. For example, if you've modified a file in 2019 whose header still reads:
 ```   
 * Copyright 2002-2013 the original author or authors.
 ```
-Then be sure to update it to 2016 accordingly:
+Then be sure to update it to 2019 accordingly:
 ```
 * Copyright 2002-2019 the original author or authors.
 ```

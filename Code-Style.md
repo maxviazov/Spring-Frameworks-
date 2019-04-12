@@ -33,13 +33,13 @@ Exactly one blank line separates each of the above sections.
 Each source file must specify the following license at the very top of the file:
 
 	/*
-	 * Copyright 2002-2016 the original author or authors.
+	 * Copyright 2002-2019 the original author or authors.
 	 *
 	 * Licensed under the Apache License, Version 2.0 (the "License");
 	 * you may not use this file except in compliance with the License.
 	 * You may obtain a copy of the License at
 	 *
-	 *      http://www.apache.org/licenses/LICENSE-2.0
+	 *      https://www.apache.org/licenses/LICENSE-2.0
 	 *
 	 * Unless required by applicable law or agreed to in writing, software
 	 * distributed under the License is distributed on an "AS IS" BASIS,
@@ -54,7 +54,7 @@ Always check the date range in the license header. For example, if you've modifi
 ```
 Then be sure to update it to 2016 accordingly:
 ```
-* Copyright 2002-2016 the original author or authors.
+* Copyright 2002-2019 the original author or authors.
 ```
 
 ### Import statements

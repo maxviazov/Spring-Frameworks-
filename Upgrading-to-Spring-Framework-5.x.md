@@ -21,6 +21,10 @@ Spring's annotation retrieval algorithms have been completely revised for effici
 
 `@Bean` methods in `Web**ConfigurationSupport` now declare bean dependencies as method arguments rather than use method calls to make it possible to avoid creating proxies for bean methods via `@Configuration(proxyBeanMethods=false)` which Spring Boot 2.2 now does. This should not affect existing applications but if sub-classing `Web**ConfigurationSupport` (or `DelegatingWeb**Configuration`) and using `proxyBeanMethods=false` be sure to also to declare dependent beans as method arguments rather than using method calls. [[gh-22596]](https://github.com/spring-projects/spring-framework/pull/22596)
 
+#### Deprecation of `MediaType.APPLICATION_JSON_UTF8` and `MediaType.APPLICATION_PROBLEM_JSON_UTF8`
+
+Since the [related Chrome bug](https://bugs.chromium.org/p/chromium/issues/detail?id=438464) is now fixed since September 2017, Spring Framework 5.2 deprecates `MediaType.APPLICATION_JSON_UTF8` and `MediaType.APPLICATION_PROBLEM_JSON_UTF8` in favor of `MediaType.APPLICATION_JSON` and `MediaType.APPLICATION_PROBLEM_JSON` and uses them by default. As a consequence, integration tests relying on the default JSON content type may have to be updated. See [gh-22788](https://github.com/spring-projects/spring-framework/issues/22788) for more details.
+
 ### Testing
 
 The mock JNDI support in the `spring-test` module has been deprecated. If you have been using classes such as the `SimpleNamingContext` and `SimpleNamingContextBuilder`, you are encouraged to migrate to a complete JNDI solution from a third party such as [Simple-JNDI](https://github.com/h-thurow/Simple-JNDI). [[gh-22779]](https://github.com/spring-projects/spring-framework/issues/22779)

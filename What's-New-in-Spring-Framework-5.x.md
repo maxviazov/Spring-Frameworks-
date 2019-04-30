@@ -47,6 +47,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * [RSocket](http://rsocket.io/) support:
   * Response handling via annotated `@MessageMapping` methods.
   * Performing requests via `RSocketRequester` with encoding and decoding to and from higher-level objects.
+  * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#coroutines).
 
 ### Testing
 

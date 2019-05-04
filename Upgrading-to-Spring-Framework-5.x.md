@@ -25,6 +25,15 @@ Spring's annotation retrieval algorithms have been completely revised for effici
 
 Since the [related Chrome bug](https://bugs.chromium.org/p/chromium/issues/detail?id=438464) is now fixed since September 2017, Spring Framework 5.2 deprecates `MediaType.APPLICATION_JSON_UTF8` and `MediaType.APPLICATION_PROBLEM_JSON_UTF8` in favor of `MediaType.APPLICATION_JSON` and `MediaType.APPLICATION_PROBLEM_JSON` and uses them by default. As a consequence, integration tests relying on the default JSON content type may have to be updated. See [gh-22788](https://github.com/spring-projects/spring-framework/issues/22788) for more details.
 
+#### CORS handling
+
+CORS handling has been [significantly updated](https://github.com/spring-projects/spring-framework/commit/d27b5d0ab6e8b91a77e272ad57ae83c7d81d810b) in Spring Framework 5.2:
+ - CORS processing is now only used for CORS-enabled endpoints
+ - CORS processing for skipped for same-origin requests with an `Origin` header
+ - Vary headers are added for non-CORS requests on CORS endpoints
+
+These changes introduce an `AbstractHandlerMapping#hasCorsConfigurationSource` method (in both Spring MVC and WebFlux) in order to be able to check CORS endpoints efficiently. When upgrading to Spring Framework 5.2, handler mapping extending `AbstractHandlerMapping` and supporting CORS should override `hasCorsConfigurationSource` with their custom logic.
+
 ### Testing
 
 The mock JNDI support in the `spring-test` module has been deprecated. If you have been using classes such as the `SimpleNamingContext` and `SimpleNamingContextBuilder`, you are encouraged to migrate to a complete JNDI solution from a third party such as [Simple-JNDI](https://github.com/h-thurow/Simple-JNDI). [[gh-22779]](https://github.com/spring-projects/spring-framework/issues/22779)

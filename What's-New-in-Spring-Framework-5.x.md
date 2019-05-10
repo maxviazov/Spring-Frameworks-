@@ -23,6 +23,9 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Transaction Management
 
+* Support for reactive transaction management on Reactive Streams Publishers
+  * `ReactiveTransactionManager` SPI as alternative to `PlatformTransactionManager`.
+  * Programmatic `TransactionalOperator` as well as `@Transactional` integration.
 * Support for transaction control via Vavr `Try` return type on `@Transactional` methods.
 
 ### General Web Revision

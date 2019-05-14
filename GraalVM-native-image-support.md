@@ -6,15 +6,16 @@ One important thing to have in mind regarding to GraalVM is that it is an umbrel
 
 GraalVM native image allows to compile Spring applications to native executable with very fast startup (less than 100ms) with low memory consumption (usually 5x less than its regular JVM equivalent) at the price of lower throughput and various [limitations](https://github.com/oracle/graal/blob/master/substratevm/LIMITATIONS.md). [Reflection](https://github.com/oracle/graal/blob/master/substratevm/LIMITATIONS.md#reflection) and [dynamic proxies](https://github.com/oracle/graal/blob/master/substratevm/LIMITATIONS.md#dynamic-proxy) are supported but need to be configured. It also allows to produce small container images.
 
-# Support at Spring Framework level
+# Support at Spring level
 
 Spring Framework provides [initial support for GraalVM native images](https://github.com/spring-projects/spring-framework/issues/21529) as of 5.1 but various issues on GraalVM during its RC phase prevented to use it correctly. Since GA, GraalVM allows to run Spring Framework applications with reflection configuration and command line arguments documented in the section.
 
-The main missing piece for considering GraalVM as a suitable deployment target for Spring applications is providing custom `Feature` implementation at Spring Framework level to automatically register classes used in the dependency mechanism or Spring factories (TODO create issue on https://github.com/spring-projects/spring-framework/issues).
+The main missing piece for considering GraalVM as a suitable deployment target for Spring applications is providing custom `Feature` implementation at Spring Framework level to automatically register classes used in the dependency mechanism or Spring factories, see [the related issue #22968](https://github.com/spring-projects/spring-framework/issues/22968) for more details.
 
-## Known issues related to Spring Framework
+Spring Boot should leverage these Spring Framework capabilities with potentially dedicated support at its level, see the [spring-boot-graal-feature](https://github.com/aclement/spring-boot-graal-feature) experimental project created by Andy Clément.
 
-TODO
+## Known GraalVM issues impacting Spring
+ * [#1196](https://github.com/oracle/graal/issues/1196) Having to delete a class from my project - delay or allow-incomplete-cp options not helping
 
 ## Reflection configuration
 

@@ -2,7 +2,7 @@ This wiki page is intended to provide an up-to-date status of Spring Framework s
 
 # GraalVM
 
-One important thing to have in mind regarding to GraalVM is that it is an umbrella project with a wide scope and multiple components. As of May 2019 and the release of GraalVM 19 GA, GraalVM native images functionality (Substrate VM) which allows ahead-of-time compilation of Java applications into executable images is available as an **early adopter plugin**. 2 versions of GraalVM are provided: the community version which is free and the EE version which is not.
+One important thing to have in mind regarding to GraalVM is that it is an umbrella project with a wide scope and multiple components.  **While GraalVM is now GA, GraalVM native image feature which allows ahead-of-time compilation of Java applications into executable images is only available as an early adopter plugin so we don't consider it production ready yet**. 2 versions of GraalVM are provided: the community version which is free and the EE version which is not.
 
 GraalVM native image allows to compile Spring applications to native executable with very fast startup (less than 100ms) with low memory consumption (usually 5x less than its regular JVM equivalent) at the price of lower throughput and various [limitations](https://github.com/oracle/graal/blob/master/substratevm/LIMITATIONS.md). [Reflection](https://github.com/oracle/graal/blob/master/substratevm/LIMITATIONS.md#reflection) and [dynamic proxies](https://github.com/oracle/graal/blob/master/substratevm/LIMITATIONS.md#dynamic-proxy) are supported but need to be configured. It also allows to produce small container images.
 

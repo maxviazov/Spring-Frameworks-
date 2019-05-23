@@ -321,6 +321,10 @@ The following are additional general rules to apply when writing Javadoc:
 
 Each test class must end with a `Tests` suffix.
 
+### Assertions
+
+Use AssertJ for assertions.
+
 ### Mocking
 
 Use the BDD Mockito support.

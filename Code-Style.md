@@ -168,7 +168,9 @@ protected Object invoke(FooBarOperationContext context,
 }
 ```
 
-For inner-classes, extra blank lines around fields and constructors are not required.
+For inner-classes, extra blank lines around fields and constructors are typically not
+added as the inner class is already separated by 2 lines, unless the inner class is
+more substantial in which case the 2 extra lines could still help with readability.
 
 ## Class declaration
 

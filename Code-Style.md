@@ -168,6 +168,8 @@ protected Object invoke(FooBarOperationContext context,
 }
 ```
 
+For inner-classes, extra blank lines around fields and constructors are not required.
+
 ## Class declaration
 
 Try as much as possible to put the `implements`, `extends` section of a class declaration on the same line as the class itself. 

@@ -54,9 +54,9 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Testing
 
-* JUnit Jupiter 5.5 support.
+* JUnit Jupiter 5.5.1 support.
 * Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-test-execution-events).
-* `@TestPropertySource` can now be used as a [_repeatable annotation_](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#declaring-test-property-sources).
+* `@TestPropertySource` can now be used as a [repeatable annotation](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#declaring-test-property-sources).
 * Class-level and method-level `@Sql` declarations can now be [merged](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-executing-sql-declaratively-script-merging).
 * Enhancements to the `TestContext` API:
   * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.

@@ -19,7 +19,7 @@ _This document provides a summary of features and changes in Spring Framework [5
   * Optimized annotation introspection on configuration candidate classes.
   * `proxyBeanMethods` attribute for `@Configuration`-demarcated classes in lite mode, i.e. without CGLIB subclasses.
   * Support for annotation detection on factory methods with common `ListableBeanFactory` retrieval methods: `getBeanNamesForAnnotation`, `getBeansWithAnnotation`, `findAnnotationOnBean`.
-* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters.
+* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters.
 
 ### Transaction Management
 
@@ -38,11 +38,11 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 * New "WebMvc.fn" programming model, analogous to the existing "WebFlux.fn":
   * A functional alternative to annotated controllers built on the Servlet API.
-  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#router-dsl).
+  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#router-dsl).
 
 ### Spring WebFlux
 
-* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#coroutines).
+* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#coroutines).
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
 
 ### Spring Messaging
@@ -50,16 +50,16 @@ _This document provides a summary of features and changes in Spring Framework [5
 * [RSocket](http://rsocket.io/) support:
   * Response handling via annotated `@MessageMapping` methods.
   * Performing requests via `RSocketRequester` with encoding and decoding to and from higher-level objects.
-  * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#coroutines).
+  * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#coroutines).
 
 ### Testing
 
-* JUnit Jupiter 5.4 support.
-* Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/testing.html#testcontext-test-execution-events).
+* JUnit Jupiter 5.5 support.
+* Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-test-execution-events).
 * Enhancements to the `TestContext` API:
-  * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
-  * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.M1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
-* [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.M1/spring-framework-reference/languages.html#mockmvc-dsl)
+  * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
+  * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
+* [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#mockmvc-dsl)
 
 
 ## What's New in Version 5.1

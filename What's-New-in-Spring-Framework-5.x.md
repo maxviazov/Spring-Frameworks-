@@ -58,6 +58,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-test-execution-events).
 * `@TestPropertySource` can now be used as a [repeatable annotation](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#declaring-test-property-sources).
 * Class-level and method-level `@Sql` declarations can now be [merged](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-executing-sql-declaratively-script-merging).
+* `@SqlConfig` now supports [multiple comment prefixes](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/jdbc/SqlConfig.html#commentPrefixes--) for scripts configured via `@Sql`.
 * Enhancements to the `TestContext` API:
   * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
   * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.

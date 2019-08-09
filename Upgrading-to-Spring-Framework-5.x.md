@@ -1,8 +1,8 @@
 _This page provides guidance on upgrading to Spring Framework [5.0](#Upgrading-to-Version-5.0), [5.1](#Upgrading-to-Version-5.1), and [5.2](#Upgrading-to-Version-5.2). See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
 
-Currently active branches: Spring Framework 4.3.x and Spring Framework 5.1, with Spring Framework 5.0.x phased out in favor of 5.1 in the first half of 2019. Please upgrade to the latest 5.1.x or 4.3.x release at your earliest convenience!
+Currently active branches: Spring Framework 4.3.x and Spring Framework 5.1, with Spring Framework 5.0.x phased out in favor of 5.1 in the second half of 2019. Please upgrade to the latest 5.1.x or 4.3.x release at your earliest convenience!
 
-Next up, Spring Framework 5.2 is expected to go GA in July 2019.
+Next up, Spring Framework 5.2 is expected to go GA in September 2019.
 
 
 ## Upgrading to Version 5.2

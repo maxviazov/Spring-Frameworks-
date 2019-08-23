@@ -64,7 +64,7 @@ _This document provides a summary of features and changes in Spring Framework [5
   * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
 * `MockMvcResultMatchers.jsonPath()` now supports a target type.
 * [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#mockmvc-dsl)
-
+* `ReflectionTestUtils` supports the invocation of `static` methods via new [`invokeMethod()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/util/ReflectionTestUtils.html) variants.
 
 ## What's New in Version 5.1
 

@@ -55,7 +55,7 @@ If you are building a previous version of the framework (for example, Spring Fra
 ./gradlew install -x javadoc
 ```
 
-### Import Into Your IDE
+### Import into your IDE
 
 Ensure JDK 8 is configured properly in the IDE.
 Follow instructions for [Eclipse](https://github.com/spring-projects/spring-framework/blob/master/import-into-eclipse.md) and [IntelliJ IDEA](https://github.com/spring-projects/spring-framework/blob/master/import-into-idea.md).

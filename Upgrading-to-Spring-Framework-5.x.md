@@ -122,7 +122,7 @@ The Java EE 7 API level is required in Spring's corresponding modules now, with 
 
 ### Libraries
 
-* Jackson 2.9+
+* Jackson 2.9.7+
 * EhCache 2.10+
 * Hibernate 5.0+
 * OkHttp 3.0+

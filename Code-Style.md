@@ -76,7 +76,9 @@ The import statements are structured as follow:
 * blank line
 * import static all other imports
 
-Also, static imports should not be used in production code. They should be used in test code, especially for things like `org.junit.Assert`.
+Static imports should not be used in production code. They should be used in test code, especially for things like `import static org.assertj.core.api.Assertions.assertThat;`.
+
+Wildcard imports such as `import java.util.*;` or `import static org.assertj.core.api.Assertions.*` are forbidden, even in test code.
 
 ### Java source file organization
 

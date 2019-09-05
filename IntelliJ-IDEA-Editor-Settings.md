@@ -42,6 +42,7 @@ These are the reported issues that we still discuss (or simply things that the f
 * Use **0** for _"Names count to use static imports with `*`"_ since static imports are only allowed in test sources where they can and should be aggregated, e.g. `import static org.junit.Assert.*;`.
 * Use the following import sequence order:
   * `java.*`
+  * `<blank line>`
   * `javax.*`
   * `<blank line>`
   * `all other imports`

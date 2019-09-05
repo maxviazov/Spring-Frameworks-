@@ -327,9 +327,15 @@ The following are additional general rules to apply when writing Javadoc:
 
 ## Tests
 
+### Testing Framework
+
+Tests must be written using JUnit Jupiter (a.k.a., JUnit 5).
+
+The only exceptions to the above rule are test classes in the `spring-test` module that specifically test Spring's integration with JUnit 4 and TestNG.
+
 ### Naming
 
-Each test class must end with a `Tests` suffix.
+Each test class name must end with a `Tests` suffix.
 
 ### Assertions
 

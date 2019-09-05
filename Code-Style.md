@@ -62,6 +62,7 @@ Then be sure to update it to 2019 accordingly:
 The import statements are structured as follow:
 
 * import `java.*`
+* blank line
 * import `javax.*`
 * blank line
 * import all other imports

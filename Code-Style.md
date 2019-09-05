@@ -32,6 +32,7 @@ Exactly one blank line separates each of the above sections.
 
 Each source file must specify the following license at the very top of the file:
 
+```java
 	/*
 	 * Copyright 2002-2019 the original author or authors.
 	 *
@@ -47,12 +48,16 @@ Each source file must specify the following license at the very top of the file:
 	 * See the License for the specific language governing permissions and
 	 * limitations under the License.
 	 */
+```
 
 Always check the date range in the license header. For example, if you've modified a file in 2019 whose header still reads:
-```   
+
+```
 * Copyright 2002-2013 the original author or authors.
 ```
+
 Then be sure to update it to 2019 accordingly:
+
 ```
 * Copyright 2002-2019 the original author or authors.
 ```
@@ -108,7 +113,7 @@ Braces mostly follow the _Kernighan and Ritchie style_ (a.k.a., "Egyptian bracke
 
 Example:
 
-```
+```java
 return new MyClass() {
 	@Override 
 	public void method() {
@@ -141,7 +146,7 @@ The one big exception to the above line wrapping rules is Javadoc where we aim t
 
 When wrapping a lengthy expression, 90 characters is the length at which we aim to wrap. Put the separator symbols at the end of the line rather on the next line (comma separated arguments, etc). For instance:
 
-```
+```java
 if (thisLengthyMethodCall(param1, param2) && anotherCheck() &&
         yetAnotherCheck()) {
 
@@ -189,7 +194,7 @@ Every constant is a `static final` field, but not all `static final` fields are 
 
 Example:
 
-```
+```java
 // Constants
 private static final Object NULL_HOLDER = new NullHolder();
 public static final int DEFAULT_PORT = -1;
@@ -199,7 +204,7 @@ private static final ThreadLocal<Executor> executorHolder = new ThreadLocal<Exec
 private static final Set<String> internalAnnotationAttributes = new HashSet<String>();
 ```
 
-### variable names
+### Variable names
 
 Avoid using single characters as variable names. For instance prefer `Method method` to `Method m`. 
 
@@ -227,7 +232,7 @@ Also make sure that the _not null_ condition comes first.
 
 Use the `org.springframework.util.Assert.notNull` static method to check that a method argument is not `null`. Format the exception message so that the name of the parameter comes first with its first character capitalized, followed by "_must not be null_". For instance
 
-```
+```java
 public void handle(Event event) {
     Assert.notNull(event, "Event must not be null");
     //...
@@ -247,7 +252,7 @@ Always add `@Override` on methods overriding or implementing a method declared i
 
 A class that is only a collection of static utility methods must be named with a `Utils` suffix, must have a `private` default constructor, and must be `abstract`. Making the class `abstract` and providing a `private` _default_ constructor prevent anyone from instantiating it. For example:
 
-```
+```java
 public abstract MyUtils {
 
     private MyUtils() {
@@ -268,7 +273,7 @@ A field of a class should *always* be referenced using `this`. A method of class
 
 The following template summarizes a typical use for the Javadoc of a method.
 
-```
+```java
 /**
  * Parse the specified {@link Element} and register the resulting
  * {@link BeanDefinition BeanDefinition(s)}.
@@ -293,7 +298,7 @@ In particular, please note:
 
 The Javadoc of a class has some extra rules that are illustrated by the sample below:
 
-```
+```java
 /*
  * Interface used by the {@link DefaultBeanDefinitionDocumentReader} to handle custom,
  * top-level (directly under {@code <beans/>}) tags.

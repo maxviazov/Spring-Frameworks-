@@ -10,7 +10,7 @@ for the build system.
 ### Before You Start
 
 To build you will need [Git](http://help.github.com/set-up-git-redirect) and
-[JDK 8 update 20 or later](http://www.oracle.com/technetwork/java/javase/downloads).
+[JDK 8 update 60 or later](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 Be sure that your `JAVA_HOME` environment variable points to the `jdk1.8.0` folder
 extracted from the JDK download.
 

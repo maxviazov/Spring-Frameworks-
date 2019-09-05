@@ -102,7 +102,7 @@ The built-in support for HTTP OPTIONS in `@RequestMapping` methods now consisten
 
 ### Baseline update
 
-Spring Framework 5.0 requires JDK 8 (Java SE 8) or above, since its entire codebase is now based on Java 8 source code level, and provides full compatibility with JDK 9 on the classpath as well as the module path (Jigsaw).
+Spring Framework 5.0 requires JDK 8 (Java SE 8), since its entire codebase is based on Java 8 source code level and provides full compatibility with JDK 9 on the classpath as well as the module path (Jigsaw). Java SE 8 update 60 is suggested as the minimum patch release for Java 8, but it is generally recommended to use a recent patch release.
 
 The Java EE 7 API level is required in Spring's corresponding modules now, with runtime support for the EE 8 level:
 

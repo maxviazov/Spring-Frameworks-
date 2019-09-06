@@ -1,11 +1,11 @@
 # Introduction
-The  'autorepo' process runs periodically (every 20 minutes), querying Artifactory for docs and schema zips and uploading them to the [autorepo](http://static.springsource.org/autorepo/) location. There are two related scripts that can automatically update the links to a project's documentation and/or schema. This document describes the different options available and how to set each of them up. Specifically it describes:
+The  'autorepo' process runs periodically (every 20 minutes), querying Artifactory for docs and schema zips and uploading them to the [autorepo](https://static.springsource.org/autorepo/) location. There are two related scripts that can automatically update the links to a project's documentation and/or schema. This document describes the different options available and how to set each of them up. Specifically it describes:
 
 * [autoln](autorepo-version-updating#autoln) - updates links to docs and schema folder versions
 * [autoschemaln](autorepo-version-updating#autoschemaln) - updates links to individual schema documents
 
 # autoln
-The autoln script keeps symbolic links to a project's docs and/or schemas to be kept up to date. For example, if the latest build of Spring Framework is [3.1.2.RELASE](http://static.springsource.org/spring-framework/docs/3.1.2.RELEASE/) it makes it easier for users to refer to the docs using a symlink of [current](http://static.springsource.org/spring-framework/docs/current/) and [3.1.x](http://static.springsource.org/spring-framework/docs/3.1.x/). When the Spring 3.1.3.RELEASE release is performed, the autoln script can ensure the links are automatically updated so users do not need to update bookmarks.
+The autoln script keeps symbolic links to a project's docs and/or schemas to be kept up to date. For example, if the latest build of Spring Framework is [3.1.2.RELASE](https://static.springsource.org/spring-framework/docs/3.1.2.RELEASE/) it makes it easier for users to refer to the docs using a symlink of [current](https://static.springsource.org/spring-framework/docs/current/) and [3.1.x](https://static.springsource.org/spring-framework/docs/3.1.x/). When the Spring 3.1.3.RELEASE release is performed, the autoln script can ensure the links are automatically updated so users do not need to update bookmarks.
 
 ## autoln generated links
 Below is a list of supported symbolic links that are generated when using autoln. The links can be enabled for a project's docs and/or schema.

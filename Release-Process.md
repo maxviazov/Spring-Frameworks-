@@ -4,7 +4,7 @@ The steps are simple, and almost everything is done via the Bamboo and Artifacto
 
 ## One-time setup
 
-Configure your CI build plan to use the [Artifactory Maven 3 or Artifactory Gradle tasks](http://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plug-in#BambooArtifactoryPlug-in-ConfiguringMaven3%2CGradleandIvyBuilders) as appropriate.  For "Deployer Username", use "buildmaster" (password on request).
+Configure your CI build plan to use the [Artifactory Maven 3 or Artifactory Gradle tasks](https://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plug-in#BambooArtifactoryPlug-in-ConfiguringMaven3%2CGradleandIvyBuilders) as appropriate.  For "Deployer Username", use "buildmaster" (password on request).
 
 ## Steps at a glance
 
@@ -18,7 +18,7 @@ Configure your CI build plan to use the [Artifactory Maven 3 or Artifactory Grad
 
 ###  1. Stage the release
 
-The Artifactory Bamboo plugin mentioned above also includes sophisticated [Release Management](http://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plugin+-+Release+Management) capabilities. This feature allows for publishing releases _directly from CI_, including creating a release branch and/or tag; incrementing the project version; and publishing to the libs-staging-local, libs-milestone-local or libs-release-local repositories as appropriate.
+The Artifactory Bamboo plugin mentioned above also includes sophisticated [Release Management](https://wiki.jfrog.org/confluence/display/RTF/Bamboo+Artifactory+Plugin+-+Release+Management) capabilities. This feature allows for publishing releases _directly from CI_, including creating a release branch and/or tag; incrementing the project version; and publishing to the libs-staging-local, libs-milestone-local or libs-release-local repositories as appropriate.
 
 To access this feature, click on the "[Default Job](https://build.springsource.org/browse/SPR-B32X-JOB1)" for the Spring 3.2.x build plan, where you'll see a link to "[Artifactory Release Management](https://build.springsource.org/build/release/viewVersions.action?buildKey=SPR-B32X-JOB1)".  Fill out the form fields there and click "Build and Release to Artifactory". Typical values -- in this case for a milestone release -- look something like the following:
 
@@ -48,7 +48,7 @@ Note that in the Artifactory tree view, you can easily drill into jars and zips 
 
 In the example above, clicking the 'Download' button will open the API javadocs in the browser -- a nice convenience.
 
-You may also wish to have internal team members 'smoke test' the release, e.g. change their sample projects and dependent framework builds to point to http://repo.spring.io/libs-staging-local and compile/test/run against the staged artifacts.
+You may also wish to have internal team members 'smoke test' the release, e.g. change their sample projects and dependent framework builds to point to https://repo.spring.io/libs-staging-local and compile/test/run against the staged artifacts.
 
 ### 3. Promote the release
 
@@ -73,11 +73,11 @@ At this point, the release is complete and successful, so the release branch sho
 
 ### 5. Announce the release!
 
-At this point, announcements may be made and users may consume the released artifacts by adding http://repo.spring.io/libs-milestone-local to their build scripts.
+At this point, announcements may be made and users may consume the released artifacts by adding https://repo.spring.io/libs-milestone-local to their build scripts.
 
 # What about publishing artifacts to Maven Central?
 
-GA releases of Spring Framework are published not only to http://repo.spring.io/libs-release-local, but also to Maven Central at http://repo1.maven.org.  This allows for maximum convenience for the majority of Spring users, given that most users have Maven-based builds and Maven resolves artifacts by default from Maven Central.
+GA releases of Spring Framework are published not only to https://repo.spring.io/libs-release-local, but also to Maven Central at https://repo1.maven.org.  This allows for maximum convenience for the majority of Spring users, given that most users have Maven-based builds and Maven resolves artifacts by default from Maven Central.
 
 The preferred way of releasing artifacts to Maven Central is via Sonatype's Nexus server at oss.sonatype.org (OSO). This is explained in detail in [Sonatype's OSS usage guide](https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide).
 
@@ -93,9 +93,9 @@ Choosing this option means that the build will first be published into a staging
 
 Note that with regard to requirements for OSO onboarding, Artifactory automatically generates sha1 and md5 checksums for all artifacts, so you don't need to worry about this. Furthermore, a [custom plugin](https://github.com/JFrogDev/artifactory-user-plugins/blob/master/pgp-sign/pgpSign.groovy) has been developed for repo.spring.io that adds PGP signatures (.asc files) on the fly during upload using the buildmaster@springframework.org PGP key.  You simply need to make sure that your build produces jars (including -sources and -javadoc jars) and well-formed poms.  Any zip files such as distribution or doc zips are excluded from the promotion process to OSO.
 
-When the promotion process is complete, i.e. closing the staging repository at OSO succeeds, there is one additional step - you must log into http://oss.sonatype.org with the 'springsource' account and manually 'release' to Maven Central.
+When the promotion process is complete, i.e. closing the staging repository at OSO succeeds, there is one additional step - you must log into https://oss.sonatype.org with the 'springsource' account and manually 'release' to Maven Central.
 
-1. Go to http://oss.sonatype.org and click 'log in'
+1. Go to https://oss.sonatype.org and click 'log in'
 1. username: springsource; password: [on request](mailto:buildmaster@springframework.org)
 1. Click on "Staging Repositories".
 1. You will see your closed staging repository there; click to select it.
@@ -107,19 +107,19 @@ When you're prompted for a description, you can leave it blank.
 
 Pressing the release button means that your artifacts will be published into Maven Central, but beware -- there's no going back after this point!
 
-**Synchronization to Maven Central should be complete within three hours of pressing the 'release' button**.  In practice, it is usually two hours or less, but with just the right timing (or _wrong_ timing as the case may be), you may need to wait the full three.  If your artifacts do not show up at http://search.maven.org within four hours, email buildmaster@springframework.org and ask about escalation to Sonatype.
+**Synchronization to Maven Central should be complete within three hours of pressing the 'release' button**.  In practice, it is usually two hours or less, but with just the right timing (or _wrong_ timing as the case may be), you may need to wait the full three.  If your artifacts do not show up at https://search.maven.org within four hours, email buildmaster@springframework.org and ask about escalation to Sonatype.
 
 # How are docs and schemas and distribution zips published?
 First, you'll find three important tasks in the root build.gradle script: `docsZip`, `schemaZip`, and `distZip`.  As you might guess, these create zip files containing docs and schemas in the case of _docsZip_ and _schemaZip_ respectively; _distZip_ aggregates the contents of the first two and adds in all classes jars, -sources jars and -javadoc jars.
 
-As described in the release process documentation above, all artifacts produced by the Spring Framework build are published into Artifactory, including these zip archives.  This provides a consistent storage mechanism, but ultimately the docs and schema zips need to be published and unpacked at http://static.springframework.org/spring-framework/docs and http://www.springframework.org/schema, respectively.  For example:
+As described in the release process documentation above, all artifacts produced by the Spring Framework build are published into Artifactory, including these zip archives.  This provides a consistent storage mechanism, but ultimately the docs and schema zips need to be published and unpacked at https://static.springframework.org/spring-framework/docs and https://www.springframework.org/schema, respectively.  For example:
 
-* http://static.springsource.org/spring-framework/docs/3.1.0.RELEASE (changelog, api javadocs, reference docs)
-* http://www.springframework.org/schema/context (xsd files for spring-context)
+* https://static.springsource.org/spring-framework/docs/3.1.0.RELEASE (changelog, api javadocs, reference docs)
+* https://www.springframework.org/schema/context (xsd files for spring-context)
 
 Performing these uploads directly from the build script is problematic.  It requires the build to use SSH libraries in order to SCP and unpack the zip files, which is already complex, but worse it requires that the operator of the build script has the correct SSH key authentication configured on the remote servers, and that they are within the VMware VPN.
 
-To avoid this complexity, a separate process called 'autorepo' runs periodically (every 20 minutes), querying Artifactory for these for docs and schema zips.  When new ones are found, the autorepo process does the heavy SSH lifting to upload and unpack them at the sites mentioned above.  This script is currently under development, but you can see the results of the prototype effort at http://static.springsource.org/autorepo/.
+To avoid this complexity, a separate process called 'autorepo' runs periodically (every 20 minutes), querying Artifactory for these for docs and schema zips.  When new ones are found, the autorepo process does the heavy SSH lifting to upload and unpack them at the sites mentioned above.  This script is currently under development, but you can see the results of the prototype effort at https://static.springsource.org/autorepo/.
 
 In order for autorepo to work properly, these artifacts must be annotated in Artifactory with custom metadata.  This metadata is attached to the artifacts on upload by the Artifactory Bamboo plugin.  Here's the configuration in the Spring Framework 3.2.x build plan:
 
@@ -134,7 +134,7 @@ archives *:*:*:dist@zip zip.type:dist
 archives *:*:*:schema@zip zip.type:schema
 ```
 
-_Note: Full documentation for this feature can be found in the [Artifactory Gradle plugin documentation](http://wiki.jfrog.org/confluence/display/RTF/Gradle+Artifactory+Plugin#GradleArtifactoryPlugin-ThePropertiesClosureDSL)._
+_Note: Full documentation for this feature can be found in the [Artifactory Gradle plugin documentation](https://wiki.jfrog.org/confluence/display/RTF/Gradle+Artifactory+Plugin#GradleArtifactoryPlugin-ThePropertiesClosureDSL)._
 
 The `zip.type` property tells autorepo that the artifact is a 'docs', 'schema', or 'dist'.  The `zip.deployed` property tells autorepo whether it has already uploaded and unpacked this artifact.  When autorepo detects a new docs or schema zip (zip.deployed == false), it performs the uploading and unpacking, and then sets the `zip.deployed` property to `true`.
 

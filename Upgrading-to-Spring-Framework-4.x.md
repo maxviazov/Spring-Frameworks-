@@ -1,9 +1,9 @@
-**If you are still on an older 4.x branch (even 4.2.x reached its end of support in the meantime), we strongly recommend an upgrade to the latest Spring Framework 4.3.x release for continued production support:** http://projects.spring.io/spring-framework/
+**If you are still on an older 4.x branch (even 4.2.x reached its end of support in the meantime), we strongly recommend an upgrade to the [latest Spring Framework 4.3.x release](https://spring.io/projects/spring-framework) for continued production support.**
 
 The 4.3.x line will enjoy an extended support life until 2020, within the general Spring Framework 4 system requirements (JDK 6+, Servlet 2.5+) but with a focus on recent servers such as Tomcat 8.5+ and WebSphere 8.5+ on JDK 7 and 8. If you can deploy to a Servlet 3.1+ baseline on JDK 8, you may also consider an upgrade straight to Spring Framework 5.
 
 ## Upgrading to Version 4.3
-For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.3](http://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#new-in-4.3) in the reference documentation.
+For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.3](https://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#new-in-4.3) in the reference documentation.
 
 ### Third-party dependencies
 Spring 4.3 supports all current versions of its optionally integrated libraries, including _Hibernate ORM 5.2_ and _Jackson 2.8/2.9_ as well as _OkHttp 3.x_. Furthermore, it embeds the updated _ASM 5.2_ and _Objenesis 2.6_.
@@ -17,7 +17,7 @@ As of 4.3, Spring MVC processes HEAD and OPTIONS requests by default if there ar
 Spring 4.3 refines autowiring support for beans which are declared as a Collection, Map or array type, matching them by type against injection points of a compatible type directly. This support lives side by side with Spring's existing support for finding beans by the element/value type of a declared Collection, Map or array injection point. There might be subtle side effects if custom application context arrangements rely on Collection/Map beans not matching directly.
 
 ## Upgrading to Version 4.2
-For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](http://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
+For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
 
 ### Third-party dependencies
 Spring's Reactor support is based on _Reactor 2.0_ now. Spring 4.2 also introduces support for _Hibernate ORM 5.0_ next to the existing support for Hibernate ORM 3.6 and 4.2 / 4.3. Note that support for Apache Tiles 2.2 is deprecated in the meantime, in favor of Tiles 3.0.
@@ -27,7 +27,7 @@ All other dependency ranges in 4.2 remain the same as with Spring Framework 4.1.
 ### Modern web interaction defaults
 
 Note that Spring Framework 4.2 comes with revised HTTP cache header processing for resource handling; for common use cases, HTTP caching
-related headers now have new defaults which do not involve HTTP 1.0 headers such as `"Expires"` or `"Pragma"`. See [WebContentGenerator.setCacheSeconds](http://docs.spring.io/spring-framework/docs/4.2.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/web/servlet/support/WebContentGenerator.html#setCacheSeconds-int-) and the [new CacheControl class](http://docs.spring.io/spring-framework/docs/4.2.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/http/CacheControl.html) for more details. 
+related headers now have new defaults which do not involve HTTP 1.0 headers such as `"Expires"` or `"Pragma"`. See [WebContentGenerator.setCacheSeconds](https://docs.spring.io/spring-framework/docs/4.2.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/web/servlet/support/WebContentGenerator.html#setCacheSeconds-int-) and the [new CacheControl class](https://docs.spring.io/spring-framework/docs/4.2.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/http/CacheControl.html) for more details. 
 
 Also, Spring Framework now enforces a different default mode for HTML escaping: namely, taking the response encoding into account and therefore reducing the effort to basic XML character escaping in case of UTF-* encodings (since all other characters can be natively represented in UTF anyway). This can be overridden through setting the "responseEncodedHtmlEscape" context-param to "false", restoring the previous default behavior of full HTML character escaping in any case.
 
@@ -35,7 +35,7 @@ Also, Spring Framework now enforces a different default mode for HTML escaping: 
 Spring Framework 4.2 comes with significant fine-tuning in configuration class processing. There may be subtle differences in the order of registration compared to 4.1; however, those are considered fixes of behavior that wasn't well-defined previously. If you are relying on a specific order, e.g. for overriding beans by name, please consider using 4.2's new facilities, in particular @Order annotations on config classes.
 
 ## Upgrading to Version 4.1
-For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.1](http://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.1) in the reference documentation.
+For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.1](https://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/htmlsingle/#new-in-4.1) in the reference documentation.
 
 In general, there are no special migration steps from 4.0 to 4.1. Make sure that you satisfy all of 4.0's requirements as stated in the 4.0 section below. 4.1 will then just be a minor upgrade, with the most noticeable part being the enforcement of several optional dependency versions...
 
@@ -45,7 +45,7 @@ As of Spring Framework 4.1, several optional dependencies are required to be wit
 Note that as of Spring Framework 4.1.4, Apache HttpComponents HttpClient needs to be 4.3+ across the framework. The previous partial tolerance of old HttpClient versions had to be dropped in order to fix several configuration issues when running against 4.3+.
 
 ## Upgrading to Version 4.0
-For a general overview of new features, refer to [New Features and Enhancements in Spring Framework 4.0](http://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#new-in-4.0) in the reference documentation.
+For a general overview of new features, refer to [New Features and Enhancements in Spring Framework 4.0](https://docs.spring.io/spring-framework/docs/4.0.x/spring-framework-reference/htmlsingle/#new-in-4.0) in the reference documentation.
 
 ### JDK 6
 Spring Framework 4.0 requires Java SE 6 or above: specifically, a minimum API level equivalent to JDK 6 update 18, a.k.a. 1.6.0_18, as released in January 2010. You have to update to a recent version of JDK 6 at least: From a known bug-fix level, we require a minimum of JDK 6 update 21, and we suggest JDK 6 update 25 or higher from a support perspective. Java 7 and 8 are recommended for use with Spring Framework 4.0, with Java 8 supported in production since Oracle's JDK 8 launch in March 2014.

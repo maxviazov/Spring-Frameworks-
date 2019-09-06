@@ -46,7 +46,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Spring Messaging
 
-* [RSocket](http://rsocket.io/) support:
+* [RSocket](https://rsocket.io/) support:
   * Response handling via annotated `@MessageMapping` methods.
   * Performing requests via `RSocketRequester` with encoding and decoding to and from higher-level objects.
   * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#coroutines).
@@ -243,7 +243,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * Support for Jackson 2.9.
 * Support for Protobuf 3.
 * Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 as return values from Spring MVC controller methods targeting use of the new reactive `WebClient` (see below) or Spring Data Reactive repositories in Spring MVC controllers.
-* New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](http://docs.spring.io/spring/docs/5.0.0.RELEASE/javadoc-api/org/springframework/web/util/pattern/PathPattern.html).
+* New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](https://docs.spring.io/spring/docs/5.0.0.RELEASE/javadoc-api/org/springframework/web/util/pattern/PathPattern.html).
 * `@ExceptionHandler` methods allow `RedirectAttributes` arguments (and therefore flash attributes).
 * Support for `ResponseStatusException` as a programmatic alternative to `@ResponseStatus`.
 * Support script engines that do not implement `Invocable` via direct rendering of the script provided using `ScriptEngine#eval(String, Bindings)`, and also i18n and nested templates in `ScriptTemplateView` via the new `RenderingContext` parameter.
@@ -272,7 +272,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Testing Improvements
 
-* Complete support for [JUnit 5](http://junit.org/junit5/)'s _Jupiter_ programming and extension models in the Spring TestContext Framework.
+* Complete support for [JUnit 5](https://junit.org/junit5/)'s _Jupiter_ programming and extension models in the Spring TestContext Framework.
   * [`SpringExtension`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-junit-jupiter-extension): an implementation of multiple extension APIs from JUnit Jupiter that provides full support for the existing feature set of the Spring TestContext Framework. This support is enabled via `@ExtendWith(SpringExtension.class)`.
   * [`@SpringJUnitConfig`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#springjunitconfig): a composed annotation that combines `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` from the Spring TestContext Framework.
   * [`@SpringJUnitWebConfig`](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#springjunitwebconfig): a composed annotation that combines `@ExtendWith(SpringExtension.class)` from JUnit Jupiter with `@ContextConfiguration` and `@WebAppConfiguration` from the Spring TestContext Framework.

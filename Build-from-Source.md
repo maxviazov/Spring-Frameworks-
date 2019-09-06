@@ -2,14 +2,14 @@ _This document describes how to build the Spring Framework from the command line
 and how to import the Spring Framework projects into an IDE. You may also be
 interested to see [[Code Style]] and [[IntelliJ IDEA Editor Settings]]._
 
-The Spring Framework uses a [Gradle](http://gradle.org) build. The instructions below
-use the [Gradle Wrapper](http://vimeo.com/34436402) from the root of the source tree.
+The Spring Framework uses a [Gradle](https://gradle.org) build. The instructions below
+use the [Gradle Wrapper](https://vimeo.com/34436402) from the root of the source tree.
 The wrapper script serves as a cross-platform, self-contained bootstrap mechanism
 for the build system.
 
 ### Before You Start
 
-To build you will need [Git](http://help.github.com/set-up-git-redirect) and
+To build you will need [Git](https://help.github.com/set-up-git-redirect) and
 [JDK 8 update 60 or later](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 Be sure that your `JAVA_HOME` environment variable points to the `jdk1.8.0` folder
 extracted from the JDK download.

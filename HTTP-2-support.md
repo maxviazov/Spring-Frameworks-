@@ -15,9 +15,9 @@ TLS 1.2 isn't natively supported by JDK8, but it is in JDK9; also, alternative T
 As of version 8.5, Tomcat supports HTTP/2 with both JDK8 (using Tomcat Native) and JDK9 (with native JSSE).
 Servlet 4.0 is supported as of Tomcat 9.
 
-If you'd like to use native bindings (Tomcat Native and OpenSSL), please follow [Tomcat's installation instructions](http://tomcat.apache.org/tomcat-8.5-doc/apr.html#Installation) or use you favorite package manager to install those libraries. Note that you should make sure to use the right Tomcat Native and OpenSSL versions, compatible with the version of your Tomcat server.
+If you'd like to use native bindings (Tomcat Native and OpenSSL), please follow [Tomcat's installation instructions](https://tomcat.apache.org/tomcat-8.5-doc/apr.html#Installation) or use you favorite package manager to install those libraries. Note that you should make sure to use the right Tomcat Native and OpenSSL versions, compatible with the version of your Tomcat server.
 
-Then you need to configure your [Tomcat Connector accordingly](http://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html) (using the `Http11NioProtocol` and `JSSEImplementation` should work in most cases) and [configure HTTP/2 as an upgrade protocol](https://tomcat.apache.org/tomcat-8.5-doc/config/http2.html).
+Then you need to configure your [Tomcat Connector accordingly](https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html) (using the `Http11NioProtocol` and `JSSEImplementation` should work in most cases) and [configure HTTP/2 as an upgrade protocol](https://tomcat.apache.org/tomcat-8.5-doc/config/http2.html).
 
 ### Eclipse Jetty
 
@@ -31,7 +31,7 @@ If you're using Jetty as an embedded server, the [samples folder in Jetty's repo
 
 ### Undertow
 
-With Undertow 1.3, developers needed to use [Jetty's ALPN Agent](https://github.com/jetty-project/jetty-alpn-agent) to run their server with ALPN support. As of Undertow 1.4, you can enable HTTP/2 support with a single option (see [reference documentation](http://undertow.io/undertow-docs/undertow-docs-1.4.0/index.html#http2-listener)).
+With Undertow 1.3, developers needed to use [Jetty's ALPN Agent](https://github.com/jetty-project/jetty-alpn-agent) to run their server with ALPN support. As of Undertow 1.4, you can enable HTTP/2 support with a single option (see [reference documentation](https://undertow.io/undertow-docs/undertow-docs-1.4.0/index.html#http2-listener)).
 
 ### Reactor Netty
 
@@ -40,4 +40,4 @@ JDK9+ deployments will support that protocol without specific infrastructure cha
 
 For JDK 8 environments, or for optimal runtime performance, this server also supports HTTP/2 with native libraries. To enable that, your application needs to have an additional dependency.
 
-Spring Boot manages the version for the `io.netty:netty-tcnative-boringssl-static` "uber jar", containing native libraries for all platforms. Developers can choose to import only the required dependendencies using a classifier (see the [Netty official documentation](http://netty.io/wiki/forked-tomcat-native.html)).
+Spring Boot manages the version for the `io.netty:netty-tcnative-boringssl-static` "uber jar", containing native libraries for all platforms. Developers can choose to import only the required dependendencies using a classifier (see the [Netty official documentation](https://netty.io/wiki/forked-tomcat-native.html)).

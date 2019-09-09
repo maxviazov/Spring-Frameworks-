@@ -53,7 +53,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 ### Testing
 
-* JUnit Jupiter 5.5.1 support.
+* JUnit Jupiter 5.5.2 support.
 * New `@TestConstructor` annotation and `spring.test.constructor.autowire.mode` JVM system property for configuring the [autowiring mode for test constructors](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#integration-testing-annotations-testconstructor) when using JUnit Jupiter.
 * Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-test-execution-events).
 * `@TestPropertySource` can now be used as a [repeatable annotation](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#declaring-test-property-sources).

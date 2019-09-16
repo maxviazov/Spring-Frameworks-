@@ -23,6 +23,7 @@ The [spring-graal-feature](https://github.com/spring-projects-experimental/sprin
 ## Known GraalVM issues impacting Spring
 
  * [#1196](https://github.com/oracle/graal/issues/1196) Having to delete a class from my project - delay or allow-incomplete-cp options not helping
+ * [#1683](https://github.com/oracle/graal/issues/1683) Class path resources have invalid content length
 
 # Support in integrated technologies
 

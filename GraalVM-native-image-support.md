@@ -24,6 +24,7 @@ The [spring-graal-feature](https://github.com/spring-projects-experimental/sprin
 
  * [#1196](https://github.com/oracle/graal/issues/1196) Having to delete a class from my project - delay or allow-incomplete-cp options not helping
  * [#1683](https://github.com/oracle/graal/issues/1683) Class path resources have invalid content length
+ * [#1108](https://github.com/oracle/graal/issues/1108) Class path resources can't resolve to directories - affects classpath scanning in Spring, Flyway, Webjars and probably others.
 
 # Support in integrated technologies
 

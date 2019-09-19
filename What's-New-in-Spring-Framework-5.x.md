@@ -18,7 +18,7 @@ _This document provides a summary of features and changes in Spring Framework [5
   * Optimized annotation introspection on configuration candidate classes.
   * `proxyBeanMethods` attribute for `@Configuration`-demarcated classes in lite mode, i.e. without CGLIB subclasses.
   * Support for annotation detection on factory methods with common `ListableBeanFactory` retrieval methods: `getBeanNamesForAnnotation`, `getBeansWithAnnotation`, `findAnnotationOnBean`.
-* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters.
+* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters.
 
 ### Transaction Management
 
@@ -37,11 +37,11 @@ _This document provides a summary of features and changes in Spring Framework [5
 
 * New "WebMvc.fn" programming model, analogous to the existing "WebFlux.fn":
   * A functional alternative to annotated controllers built on the Servlet API.
-  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#router-dsl).
+  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#router-dsl).
 
 ### Spring WebFlux
 
-* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#coroutines).
+* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#coroutines).
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
 
 ### Spring Messaging
@@ -49,26 +49,26 @@ _This document provides a summary of features and changes in Spring Framework [5
 * [RSocket](https://rsocket.io/) support:
   * Response handling via annotated `@MessageMapping` methods.
   * Performing requests via `RSocketRequester` with encoding and decoding to and from higher-level objects.
-  * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#coroutines).
+  * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#coroutines).
 
 ### Testing
 
 * JUnit Jupiter 5.5.2 support.
 * New `@TestConstructor` annotation and `spring.test.constructor.autowire.mode` JVM system property for configuring the [autowiring mode for test constructors](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#integration-testing-annotations-testconstructor) when using JUnit Jupiter.
 * Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-test-execution-events).
-* `@TestPropertySource` can now be used as a [repeatable annotation](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#declaring-test-property-sources).
-* Class-level and method-level `@Sql` declarations can now be [merged](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-executing-sql-declaratively-script-merging).
-* `@SqlConfig` now supports [multiple comment prefixes](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/jdbc/SqlConfig.html#commentPrefixes--) for scripts configured via `@Sql`.
+* `@TestPropertySource` can now be used as a [repeatable annotation](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/testing.html#declaring-test-property-sources).
+* Class-level and method-level `@Sql` declarations can now be [merged](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/testing.html#testcontext-executing-sql-declaratively-script-merging).
+* `@SqlConfig` now supports [multiple comment prefixes](https://docs.spring.io/spring/docs/5.2.0.RC2/javadoc-api/org/springframework/test/context/jdbc/SqlConfig.html#commentPrefixes--) for scripts configured via `@Sql`.
 * Enhancements to the `TestContext` API:
-  * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
-  * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.RC1/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
+  * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.RC2/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
+  * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.RC2/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
 * `MockMvcResultMatchers.jsonPath()` now supports a target type.
-* [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#mockmvc-dsl)
-* `ReflectionTestUtils` supports the invocation of `static` methods via new [`invokeMethod()`](https://docs.spring.io/spring/docs/5.2.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/test/util/ReflectionTestUtils.html#invokeMethod-java.lang.Class-java.lang.String-java.lang.Object...-) variants.
+* [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#mockmvc-dsl)
+* `ReflectionTestUtils` supports the invocation of `static` methods via new [`invokeMethod()`](https://docs.spring.io/spring/docs/5.2.0.RC2/javadoc-api/org/springframework/test/util/ReflectionTestUtils.html#invokeMethod-java.lang.Class-java.lang.String-java.lang.Object...-) variants.
 
 ### Documentation
 
-* Code samples in the reference documentation are now provided in Kotlin in addition to Java
+* Code samples in the [reference documentation](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference) are now provided in Kotlin in addition to Java
 
 ## What's New in Version 5.1
 

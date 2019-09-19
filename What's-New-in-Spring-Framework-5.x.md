@@ -66,6 +66,10 @@ _This document provides a summary of features and changes in Spring Framework [5
 * [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/languages.html#mockmvc-dsl)
 * `ReflectionTestUtils` supports the invocation of `static` methods via new [`invokeMethod()`](https://docs.spring.io/spring/docs/5.2.0.BUILD-SNAPSHOT/javadoc-api/org/springframework/test/util/ReflectionTestUtils.html#invokeMethod-java.lang.Class-java.lang.String-java.lang.Object...-) variants.
 
+### Documentation
+
+* Code samples in the reference documentation are now provided in Kotlin in addition to Java
+
 ## What's New in Version 5.1
 
 ### General Core Revision

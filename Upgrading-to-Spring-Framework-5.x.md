@@ -9,7 +9,7 @@ Next up, Spring Framework 5.2 is expected to go GA in September 2019.
 
 ### Libraries
 
-Spring Framework 5.2 now requires Jackson Jackson 2.9.7+, see [[gh-23522]](https://github.com/spring-projects/spring-framework/issues/23522).
+Spring Framework 5.2 now requires Jackson 2.9.7+, see [[gh-23522]](https://github.com/spring-projects/spring-framework/issues/23522).
 
 
 ### Core Container

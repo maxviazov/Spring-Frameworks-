@@ -17,7 +17,7 @@ We recommend upgrading to the latest Spring Framework 5.2.x or 5.1.x release fro
 - Spring Framework 5.0.x: JDK 8-10
 - Spring Framework 4.3.x: JDK 6-8
 
-We fully test and support Spring on Long-Term Support (LTS) releases of the JDK, i.e. currently JDK 8 and 11 (both with a lifetime until 2023). Additionally, there is support for intermediate releases such as JDK 9/10 or the upcoming JDK 12 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
+We fully test and support Spring on Long-Term Support (LTS) releases of the JDK, i.e. currently JDK 8 and 11 (both with a lifetime until 2023). Additionally, there is support for intermediate releases such as JDK 9/10/12/13 or the upcoming JDK 14 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
 
 _Please upgrade to Spring Framework 5.1+ (and the corresponding Spring Boot 2.1+) for JDK 11+ support, as the common Long-Term Support migration path from JDK 8. No earlier Spring versions are officially supported on JDK 11, in particular not with JDK 11 bytecode level. Note that third-party components might not fully support JDK 11 yet, so you are likely to be limited in your full-stack options._
 

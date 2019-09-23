@@ -2,22 +2,24 @@ _This document describes new features, noteworthy changes, and provides guidance
 
 # Supported Versions
 
-- 5.1.x is the latest and recommended line, supported until Q1 2020 (to be superseded by 5.2.x in Q3 2019).
-- 5.0.x has been superseded by 5.1.x already and entered its EOL phase as of Q2 2019. As a courtesy to 5.0.x users, further maintenance releases may be provided until Q1 2020 (if necessary).
+- 5.2.x is the latest production line (generally available as of the end of September 2019).
+- 5.1.x is the current mainstream line (since September 2018), supported until Q1 2020.
+- 5.0.x entered its EOL phase as of Q2 2019. As a courtesy to 5.0.x users, further maintenance releases will be provided until Q1 2020.
 - 4.3.x is the last feature branch of the 4th generation. It comes with extended maintenance until Q1 2020 and security patches even beyond that point, so you may migrate your applications to 5.x at your own pace.
 - _3.2.x is EOL (reached its end of life) as of December 31st, 2016. No further maintenance releases and security patches are planned in that line. Please migrate to 4.3 or 5.x at your earliest convenience!_
 
-We recommend upgrading to the latest Spring Framework 5.1.x or 4.3.x release from Maven Central.
+We recommend upgrading to the latest Spring Framework 5.2.x or 5.1.x release from Maven Central.
 
 # JDK Version Range
 
+- Spring Framework 5.2.x: JDK 8-14
 - Spring Framework 5.1.x: JDK 8-12
 - Spring Framework 5.0.x: JDK 8-10
 - Spring Framework 4.3.x: JDK 6-8
 
 We fully test and support Spring on Long-Term Support (LTS) releases of the JDK, i.e. currently JDK 8 and 11 (both with a lifetime until 2023). Additionally, there is support for intermediate releases such as JDK 9/10 or the upcoming JDK 12 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
 
-_Please upgrade to Spring Framework 5.1 (and the corresponding Spring Boot 2.1) for JDK 11 support, as the common Long-Term Support migration path from JDK 8. No earlier Spring versions are officially supported on JDK 11, in particular not with JDK 11 bytecode level. Note that third-party components might not fully support JDK 11 yet, so you are likely to be limited in your full-stack options._
+_Please upgrade to Spring Framework 5.1+ (and the corresponding Spring Boot 2.1+) for JDK 11+ support, as the common Long-Term Support migration path from JDK 8. No earlier Spring versions are officially supported on JDK 11, in particular not with JDK 11 bytecode level. Note that third-party components might not fully support JDK 11 yet, so you are likely to be limited in your full-stack options._
 
 # What's New
 

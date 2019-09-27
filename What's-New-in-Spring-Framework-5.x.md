@@ -32,6 +32,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * Complete set of `java.time` based setters on `HttpHeaders`, `CacheControl`, `CorsConfiguration`.
 * `@RequestMapping` has enhanced `produces` condition support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
 * CORS revision that adds `Vary` header for non CORS requests on CORS enabled endpoints and avoid considering same-origin requests with an `Origin` header as a CORS request.
+* Upgrade to Jackson 2.10 
 
 ### Spring Web MVC
 

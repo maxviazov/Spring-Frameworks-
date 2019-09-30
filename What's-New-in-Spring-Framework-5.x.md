@@ -82,6 +82,15 @@ support such that if a media type is declared with a specific parameter, and the
 
 * Code samples in the [reference documentation](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference) are now provided in Kotlin in addition to Java
 
+To see all changes, please check the release notes for
+[5.2 GA](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.RELEASE),
+[RC2](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.RC2),
+[RC1](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.RC1),
+[M3](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.M1),
+[M2](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.M1), and
+[M1](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.M1).
+
+
 ## What's New in Version 5.1
 
 ### General Core Revision

@@ -86,8 +86,8 @@ To see all changes, please check the release notes for
 [5.2 GA](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.RELEASE),
 [RC2](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.RC2),
 [RC1](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.RC1),
-[M3](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.M1),
-[M2](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.M1), and
+[M3](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.M3),
+[M2](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.M2), and
 [M1](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.M1).
 
 

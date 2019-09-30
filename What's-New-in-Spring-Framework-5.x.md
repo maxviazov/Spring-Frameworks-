@@ -74,8 +74,10 @@ support such that if a media type is declared with a specific parameter, and the
 * Enhancements to the `TestContext` API:
   * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
   * New [`publishEvent()`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
+* Improved support for setting cookie headers in `MockHttpServletResponse`.
 * `MockMvcResultMatchers.jsonPath()` now supports a target type.
 * [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#mockmvc-dsl)
+* New `headerDoesNotExist()` method in `MockRestServiceServer` to verify that a header does not exist.
 * `ReflectionTestUtils` supports the invocation of `static` methods via new [`invokeMethod()`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/util/ReflectionTestUtils.html#invokeMethod-java.lang.Class-java.lang.String-java.lang.Object...-) variants.
 
 ### Documentation

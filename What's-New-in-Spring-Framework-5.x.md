@@ -46,10 +46,15 @@ support such that if a media type is declared with a specific parameter, and the
 
 ### Spring WebFlux
 
+* Refinements to `WebClient` API to ensure to make the `retrieve()` method useful for most common cases, specifically adding the ability to retrieve status and headers and addition to the body. The `exchange()` method is only for genuinely advanced cases, and when using it, applications can now rely on `ClientResponse#createException` to simplify selective handling of exceptions.
 * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#coroutines).
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
 * Request mapping performance optimizations through pre-computing frequently used data in `RequestCondition` implementations.
 * Improved, compact logging of request mappings on startup.
+* Add `ServerWebExchangeContextFilter` to expose the
+[Reactor Context](https://projectreactor.io/docs/core/release/reference/#context) as an exchange attribute.
+* Add FreeMarker macros support.
+* `MultipartBodyBuilder` improvements to allow `Publisher` and `Part` as input along with option to specify the filename to use for a part.
 
 ### Spring Messaging
 

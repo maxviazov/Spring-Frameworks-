@@ -30,7 +30,9 @@ _This document provides a summary of features and changes in Spring Framework [5
 ### General Web Revision
 
 * Complete set of `java.time` based setters on `HttpHeaders`, `CacheControl`, `CorsConfiguration`.
-* `@RequestMapping` has enhanced `produces` condition support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
+* `@RequestMapping` has enhanced
+[produces condition](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html#produces--)
+support such that if a media type is declared with a specific parameter, and the requested media types (e.g. from "Accept" header) also has that parameter, the parameter values must match. This can be used for example to differentiate methods producing ATOM feeds `"application/atom+xml;type=feed"` vs ATOM entries `"application/atom+xml;type=entry"`.
 * CORS revision that adds `Vary` header for non CORS requests on CORS enabled endpoints and avoid considering same-origin requests with an `Origin` header as a CORS request.
 * Upgrade to Jackson 2.10 
 
@@ -39,11 +41,15 @@ _This document provides a summary of features and changes in Spring Framework [5
 * New "WebMvc.fn" programming model, analogous to the existing "WebFlux.fn":
   * A functional alternative to annotated controllers built on the Servlet API.
   * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#router-dsl).
+* Request mapping performance optimizations through caching of the lookup path per `HandlerMapping`, and pre-computing frequently used data in `RequestCondition` implementations.
+* Improved, compact logging of request mappings on startup.
 
 ### Spring WebFlux
 
 * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#coroutines).
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
+* Request mapping performance optimizations through pre-computing frequently used data in `RequestCondition` implementations.
+* Improved, compact logging of request mappings on startup.
 
 ### Spring Messaging
 

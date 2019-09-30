@@ -18,7 +18,7 @@ _This document provides a summary of features and changes in Spring Framework [5
   * Optimized annotation introspection on configuration candidate classes.
   * `proxyBeanMethods` attribute for `@Configuration`-demarcated classes in lite mode, i.e. without CGLIB subclasses.
   * Support for annotation detection on factory methods with common `ListableBeanFactory` retrieval methods: `getBeanNamesForAnnotation`, `getBeansWithAnnotation`, `findAnnotationOnBean`.
-* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters.
+* [Bean registration with Kotlin DSL](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#kotlin-bean-definition-dsl) using callable reference with autowired parameters.
 
 ### Transaction Management
 
@@ -40,14 +40,14 @@ support such that if a media type is declared with a specific parameter, and the
 
 * New "WebMvc.fn" programming model, analogous to the existing "WebFlux.fn":
   * A functional alternative to annotated controllers built on the Servlet API.
-  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#router-dsl).
+  * [WebMvc.fn Kotlin DSL](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#router-dsl).
 * Request mapping performance optimizations through caching of the lookup path per `HandlerMapping`, and pre-computing frequently used data in `RequestCondition` implementations.
 * Improved, compact logging of request mappings on startup.
 
 ### Spring WebFlux
 
 * Refinements to `WebClient` API to make the `retrieve()` method useful for most common cases, specifically adding the ability to retrieve status and headers and addition to the body. The `exchange()` method is only for genuinely advanced cases, and when using it, applications can now rely on `ClientResponse#createException` to simplify selective handling of exceptions.
-* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#coroutines).
+* [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#coroutines).
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed, or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
 * Request mapping performance optimizations through pre-computing frequently used data in `RequestCondition` implementations.
 * Improved, compact logging of request mappings on startup.
@@ -61,26 +61,26 @@ support such that if a media type is declared with a specific parameter, and the
 * [RSocket](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#rsocket) support:
   * Response handling via annotated `@MessageMapping` methods.
   * Performing requests via `RSocketRequester` with encoding and decoding to and from higher-level objects.
-  * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#coroutines).
+  * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#coroutines).
 
 ### Testing
 
 * JUnit Jupiter 5.5.2 support.
-* New `@TestConstructor` annotation and `spring.test.constructor.autowire.mode` JVM system property for configuring the [autowiring mode for test constructors](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#integration-testing-annotations-testconstructor) when using JUnit Jupiter.
-* Support for built-in [test execution events](https://docs.spring.io/spring/docs/5.2.0.RC1/spring-framework-reference/testing.html#testcontext-test-execution-events).
-* `@TestPropertySource` can now be used as a [repeatable annotation](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/testing.html#declaring-test-property-sources).
-* Class-level and method-level `@Sql` declarations can now be [merged](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/testing.html#testcontext-executing-sql-declaratively-script-merging).
-* `@SqlConfig` now supports [multiple comment prefixes](https://docs.spring.io/spring/docs/5.2.0.RC2/javadoc-api/org/springframework/test/context/jdbc/SqlConfig.html#commentPrefixes--) for scripts configured via `@Sql`.
+* New `@TestConstructor` annotation and `spring.test.constructor.autowire.mode` JVM system property for configuring the [autowiring mode for test constructors](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#integration-testing-annotations-testconstructor) when using JUnit Jupiter.
+* Support for built-in [test execution events](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-test-execution-events).
+* `@TestPropertySource` can now be used as a [repeatable annotation](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#declaring-test-property-sources).
+* Class-level and method-level `@Sql` declarations can now be [merged](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#testcontext-executing-sql-declaratively-script-merging).
+* `@SqlConfig` now supports [multiple comment prefixes](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/context/jdbc/SqlConfig.html#commentPrefixes--) for scripts configured via `@Sql`.
 * Enhancements to the `TestContext` API:
-  * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/5.2.0.RC2/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
-  * New [`publishEvent()`](https://docs.spring.io/spring/docs/5.2.0.RC2/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
+  * New [`hasApplicationContext()`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/context/TestContext.html#hasApplicationContext--) method to determine if the application context for the current test is known to be available.
+  * New [`publishEvent()`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/context/TestContext.html#publishEvent-java.util.function.Function-) method for simplified `ApplicationEvent` publication.
 * `MockMvcResultMatchers.jsonPath()` now supports a target type.
-* [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference/languages.html#mockmvc-dsl)
-* `ReflectionTestUtils` supports the invocation of `static` methods via new [`invokeMethod()`](https://docs.spring.io/spring/docs/5.2.0.RC2/javadoc-api/org/springframework/test/util/ReflectionTestUtils.html#invokeMethod-java.lang.Class-java.lang.String-java.lang.Object...-) variants.
+* [MockMvc Kotlin DSL](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#mockmvc-dsl)
+* `ReflectionTestUtils` supports the invocation of `static` methods via new [`invokeMethod()`](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/util/ReflectionTestUtils.html#invokeMethod-java.lang.Class-java.lang.String-java.lang.Object...-) variants.
 
 ### Documentation
 
-* Code samples in the [reference documentation](https://docs.spring.io/spring/docs/5.2.0.RC2/spring-framework-reference) are now provided in Kotlin in addition to Java
+* Code samples in the [reference documentation](https://docs.spring.io/spring/docs/current/spring-framework-reference) are now provided in Kotlin in addition to Java
 
 To see all changes, please check the release notes for
 [5.2 GA](https://github.com/spring-projects/spring-framework/releases/tag/v5.2.0.RELEASE),
@@ -126,9 +126,9 @@ To see all changes, please check the release notes for
 * Controller parameter annotations get detected on interfaces as well:
   * Allowing for complete mapping contracts in controller interfaces.
 * Support for stricter encoding of URI variables in `UriComponentsBuilder`:
-  * See updated ["URI Encoding"](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#web-uri-encoding) in the reference.
+  * See updated ["URI Encoding"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#web-uri-encoding) in the reference.
 * Servlet requests params with HTTP PUT, PATCH, and DELETE:
-  * See ["Form Data"](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#filters-http-put).
+  * See ["Form Data"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#filters-http-put).
 
 ### Spring Web MVC
 
@@ -141,7 +141,7 @@ To see all changes, please check the release notes for
   * CookieLocaleResolver sends RFC6265-compliant timezone cookies.
 * Specific MVC exceptions for missing header, cookie, path variable:
   * Allowing for differentiated exception handling and status codes.
-* [Externally configured](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-config-path-matching) base path for sets of annotated controllers.
+* [Externally configured](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-config-path-matching) base path for sets of annotated controllers.
 * Centralized handling of "forwarded" type headers via `ForwardedHeaderFilter`:
   * Please see important [upgrade note](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-5.x#forwarded-headers).
 * Support for serving Brotli, in addition to GZip, pre-encoded static resources.
@@ -159,22 +159,22 @@ To see all changes, please check the release notes for
 * DSL enhancements:
   * DSL-style builder for `RouterFunction` without static imports ([sample](https://github.com/spring-projects/spring-framework/blob/91e96d8084acb7d92a1a2f086f30cd3381b26440/spring-webflux/src/test/java/org/springframework/web/reactive/function/server/RouterFunctionBuilderTests.java#L157-L179)).
   * Refined Kotlin router DSL.
-* [Externally configured](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web-reactive.html#webflux-config-path-matching) base path for sets of annotated controllers.
+* [Externally configured](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-config-path-matching) base path for sets of annotated controllers.
 * Third-party integration:
   * Support for Protobuf serialization, including [message streaming](https://developers.google.com/protocol-buffers/docs/techniques).
   * `WebClient` connector for the Jetty reactive [HTTP Client](https://webtide.com/jetty-reactivestreams-http-client/).
 * WebSocket:
   * Support for `WebSocketSession` attributes.
-  * Improve docs on reactive [WebSocket API](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web-reactive.html#webflux-websocket-server) handling.
+  * Improve docs on reactive [WebSocket API](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#webflux-websocket-server) handling.
 * Support for serving Brotli, in addition to GZip, pre-encoded static resources.
 
 ### Spring Messaging
 
 * Support for reactive clients in @MessageMapping methods:
   * Out-of-the-box support for Reactor and RxJava return values.
-* [Option to preserve](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#websocket-stomp-ordered-messages) publication order of messages by STOMP broker.
-* `@SendTo` and `@SendToUser` can [both be used](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#websocket-stomp-message-mapping) on controller method.
-* Improved docs on [handling](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#websocket-stomp-handle-annotations) of messages and [subscriptions](https://docs.spring.io/spring/docs/5.1.0.BUILD-SNAPSHOT/spring-framework-reference/web.html#websocket-stomp-subscribe-mapping).
+* [Option to preserve](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket-stomp-ordered-messages) publication order of messages by STOMP broker.
+* `@SendTo` and `@SendToUser` can [both be used](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket-stomp-message-mapping) on controller method.
+* Improved docs on [handling](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket-stomp-handle-annotations) of messages and [subscriptions](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#websocket-stomp-subscribe-mapping).
 
 ### Spring ORM
 
@@ -268,7 +268,7 @@ To see all changes, please check the release notes for
 * Support for Jackson 2.9.
 * Support for Protobuf 3.
 * Support for Reactor 3.1 `Flux` and `Mono` as well as RxJava 1.3 and 2.1 as return values from Spring MVC controller methods targeting use of the new reactive `WebClient` (see below) or Spring Data Reactive repositories in Spring MVC controllers.
-* New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](https://docs.spring.io/spring/docs/5.0.0.RELEASE/javadoc-api/org/springframework/web/util/pattern/PathPattern.html).
+* New `ParsingPathMatcher` alternative to `AntPathMatcher` with more efficient parsing and [extended syntax](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/util/pattern/PathPattern.html).
 * `@ExceptionHandler` methods allow `RedirectAttributes` arguments (and therefore flash attributes).
 * Support for `ResponseStatusException` as a programmatic alternative to `@ResponseStatus`.
 * Support script engines that do not implement `Invocable` via direct rendering of the script provided using `ScriptEngine#eval(String, Bindings)`, and also i18n and nested templates in `ScriptTemplateView` via the new `RenderingContext` parameter.

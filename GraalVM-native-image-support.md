@@ -18,15 +18,15 @@ Support at tooling level is also likely to be required to make it usable by end 
 
 ## Experimental support
 
-The [spring-graal-feature](https://github.com/spring-projects-experimental/spring-graal-feature) experimental project, created by Andy Clement, shows how it is possible to run a Spring Boot application out of the box as a GraalVM native image. It could be used as a basis for a potential upcoming official support.
+The [spring-graal-native-image](https://github.com/spring-projects-experimental/spring-graal-native-image) experimental project, created by Andy Clement, shows how it is possible to run a Spring Boot application out of the box as a GraalVM native image. It could be used as a basis for a potential upcoming official support.
 
 ## Known GraalVM issues impacting Spring
 
- * [#1196](https://github.com/oracle/graal/issues/1196) Having to delete a class from my project - delay or allow-incomplete-cp options not helping
- * [#1683](https://github.com/oracle/graal/issues/1683) Class path resources have invalid content length
  * [#1108](https://github.com/oracle/graal/issues/1108) Class path resources can't resolve to directories - affects classpath scanning in Spring, Flyway, Webjars and probably others.
- * [#1685](https://github.com/oracle/graal/issues/1685) Affects Hibernate Validator (so Spring Web form processing, amongst other things).
+ * [#1421](https://github.com/oracle/graal/issues/1421) Built native-image for spring-boot app failing with 'caught signal 11'
+ * [#1495](https://github.com/oracle/graal/issues/1495)  Static field or an object referenced from a static field changed during native image generation
 
 # Support in integrated technologies
 
  * Netty supports GraalVM native image via [builtin substitution classes](https://github.com/netty/netty/issues/8959)
+ * Tomcat supports GraalVM native image via adaptive code paths

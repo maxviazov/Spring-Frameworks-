@@ -24,7 +24,8 @@ The [spring-graal-native-image](https://github.com/spring-projects-experimental/
 
  * [#1108](https://github.com/oracle/graal/issues/1108) Class path resources can't resolve to directories - affects classpath scanning in Spring, Flyway, Webjars and probably others.
  * [#1421](https://github.com/oracle/graal/issues/1421) Built native-image for spring-boot app failing with 'caught signal 11'
- * [#1495](https://github.com/oracle/graal/issues/1495)  Static field or an object referenced from a static field changed during native image generation
+ * [#1495](https://github.com/oracle/graal/issues/1495) Static field or an object referenced from a static field changed during native image generation
+ * [#366](https://github.com/oracle/graal/issues/366) Classes with loops inside Kotlin coroutines fail to generate native code
 
 # Support in integrated technologies
 

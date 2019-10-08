@@ -18,7 +18,7 @@ Support at tooling level is also likely to be required to make it usable by end 
 
 ## Experimental support
 
-The [spring-graal-native-image](https://github.com/spring-projects-experimental/spring-graal-native-image) experimental project, created by Andy Clement, shows how it is possible to run a Spring Boot application out of the box as a GraalVM native image. It could be used as a basis for a potential upcoming official support.
+The [spring-graal-native](https://github.com/spring-projects-experimental/spring-graal-native) experimental project, created by Andy Clement, shows how it is possible to run a Spring Boot application out of the box as a GraalVM native image. It could be used as a basis for a potential upcoming official support.
 
 ## Known GraalVM issues impacting Spring
 

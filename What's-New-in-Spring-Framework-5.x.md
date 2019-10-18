@@ -159,6 +159,7 @@ To see all changes, please check the release notes for individual milestones:
     * via `CodecConfigurer#defaultCodecs`
 * Session cookies now have `SameSite=Lax` to protect against CSRF attacks:
   * See [OWASP page](https://www.owasp.org/index.php/SameSite) and [this article](https://scotthelme.co.uk/csrf-is-dead/).
+* Cookies are no longer adapted to cookie objects from the underlying server API, and are instead written to the `Set-Cookie` header directly because most servers don't support `sameSite`. This change includes validations to cookie attribute values that may differ slightly from similar validations previously applied by the server. The validations however do conform to the syntax from RFC 6265, section 4.1. See [#23693](https://github.com/spring-projects/spring-framework/issues/23693).
 * DSL enhancements:
   * DSL-style builder for `RouterFunction` without static imports ([sample](https://github.com/spring-projects/spring-framework/blob/91e96d8084acb7d92a1a2f086f30cd3381b26440/spring-webflux/src/test/java/org/springframework/web/reactive/function/server/RouterFunctionBuilderTests.java#L157-L179)).
   * Refined Kotlin router DSL.

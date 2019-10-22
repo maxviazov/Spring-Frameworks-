@@ -105,7 +105,7 @@ For these elements the `AnnotationTypeMapping.annotationValueMappings` and `Anno
 
 In the example above, the `AnnotationTypeMapping` for `@RequestMapping` would point to the `@PostMapping` source and the `method` attribute. The value would be directly read from the declared meta-annotation:
 
-```
+```java
 @RequestMapping(method = RequestMethod.POST)
 @interface PostMapping {
 

@@ -14,7 +14,6 @@ As much as possible the use-facing API for `MergedAnnotations` is limited to jus
 The implementations are intentionally kept package-private and are not available to the user.
 Access is always via static methods on the interfaces.
 
-
 # Type caching
 Calculating the way that annotation attributes are merged can be expensive so as much as possible cache friendly structures are used.
 The two main caches used are in `AttributeMethods` and `AnnotationTypeMappings`.
@@ -59,9 +58,9 @@ For example, suppose we have the following:
 ```
 
 The `AnnotationTypeMapping` for `Bar` (in the context of `Foo`) knows that the "name" attribute is aliased to "barName" on the root annotation.
-When we actually declare an annotation, for example `@Foo(barName="Spring")`, we can very quickly tell that calling `name()` on the `@Bar` meta-annotation (index `0`) just go to `barName` on the root annotation (index `0`).
+When we actually declare an annotation, for example `@Foo(barName="Spring")`, we can very quickly tell that calling `name()` on the `@Bar` meta-annotation (index `0`) just goes to `barName` on the root annotation (index `0`).
 
-The mapping logic supports multi-level meta-annotation. For example, a `@MetaFoo` annotation would also maintain mappings.
+This mapping logic also supports multi-level meta-annotation. For example, a `@MetaFoo` annotation would also maintain mappings.
 
 ### Convention Mappings
 For back-compatibility, convention based mappings are also tracked.
@@ -114,16 +113,16 @@ In its simplest form, it looks like this:
 @interface Foo {
 
 	@AlaisFor("value")
-	String name() default ""
+	String name() default "";
 
 	@AlaisFor("name")
-	String value() default ""
+	String value() default "";
 
 }
 ```
 
 The `AnnotationTypeMapping` class refers to these as "mirror" attributes.
-Mirror attributes can also be declared when two or more attributes declared an `@AliasFor` on the same meta-annotation attribute.
+Mirror attributes can also be declared when two or more attributes declare an `@AliasFor` on the same meta-annotation attribute.
 
 Although it's possible to detect mirror attributes from the type mapping, we can't actually tell which one to use until we have attribute values.
 We also can't fully verify that the user has not made an error.
@@ -135,7 +134,7 @@ It returns an array that maps to real attribute, or it throws an exception if th
 
 Give the examples above, calling `resolve` for `@Foo("spring")` would return `[1,1]`. For `@Foo(name = "spring")` it would return `[0,0]`.
 The index into the array is the attribute being requested, the value is the attribute to use.
-For for `@Foo("spring")` calling `Foo.name()` is a lookup at index `0`, returning `1` and `Foo.value()` is a lookup at index `1`, returning `1`.
+For `@Foo("spring")` calling `Foo.name()` is a lookup at index `0`, returning `1` and `Foo.value()` is a lookup at index `1`, returning `1`.
 In other words, the `value` attribute is always the source of truth in this case.
 
 As with the other elements, the design goal is to provide as much pre-computation as possible.
@@ -170,7 +169,7 @@ Since the `AnnotationsProcessor` is a package-private class, neither of these qu
 ## `TypeMappedAnnotation`
 The `TypeMappedAnnotation` class provides a `MergedAnnotation` implementation by combining an `AnnotationTypeMapping` with an actual annotation source.
 The source can be an actual declared Java annotation or a value read using ASM.
-The `valueExtractor` function provides the level of redirection needed to support both type.
+The `valueExtractor` function provides the level of indirection needed to support both.
 For a real annotation, `ReflectionUtils::invokeMethod` can be used.
 
 Most of the `TypeMappedAnnotation` implementation is fairly straightforward and there's nothing too unusual with the class.

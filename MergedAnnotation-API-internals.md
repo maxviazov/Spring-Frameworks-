@@ -61,7 +61,7 @@ For example, suppose we have the following:
 @Bar
 @interface Foo {
 
-	@AlaisFor(annotation=Bar.class, attribute="name")
+	@AliasFor(annotation=Bar.class, attribute="name")
 	String barName() default "";
 
 }
@@ -122,10 +122,10 @@ In its simplest form, it looks like this:
 ```java
 @interface Foo {
 
-	@AlaisFor("value")
+	@AliasFor("value")
 	String name() default "";
 
-	@AlaisFor("name")
+	@AliasFor("name")
 	String value() default "";
 
 }

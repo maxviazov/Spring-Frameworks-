@@ -17,6 +17,8 @@ intended to aid developers (both end users of Spring as well as developers of
 the Spring Framework and Spring portfolio projects) in the development and use
 of annotations with Spring.
 
+See also: [MergedAnnotation API internals](https://github.com/spring-projects/spring-framework/wiki/MergedAnnotation-API-internals)
+
 ## Goals of this Document
 
 The primary goals of this document include explanations of the following:

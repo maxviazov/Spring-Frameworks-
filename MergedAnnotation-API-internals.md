@@ -2,6 +2,8 @@
 
 This page attempts to document some of the design decisions taken for the internals of the `MergedAnnotations` API.
 
+See also: [Spring Annotation Programming Model](https://github.com/spring-projects/spring-framework/wiki/Spring-Annotation-Programming-Model)
+
 # High-level Overview
 
 The `MergedAnnotations` interface is designed to work with both Java reflection types and ASM bytecode reading.

@@ -47,6 +47,7 @@ support such that if a media type is declared with a specific parameter, and the
 ### Spring WebFlux
 
 * Refinements to `WebClient` API to make the `retrieve()` method useful for most common cases, specifically adding the ability to retrieve status and headers and addition to the body. The `exchange()` method is only for genuinely advanced cases, and when using it, applications can now rely on `ClientResponse#createException` to simplify selective handling of exceptions.
+* Configurable limits on input stream processing in all `Decoder` and `HttpMessageReader` implementations, with `maxInMemorySize` set to 256K by default. See WebFlux reference for details.
 * [Support for Kotlin Coroutines](https://docs.spring.io/spring/docs/current/spring-framework-reference/languages.html#coroutines).
 * Server and client now use Reactor [checkpoints](https://projectreactor.io/docs/core/release/reference/#_the_checkpoint_alternative) to insert information about the request URL being processed,sce or the handler used, that is then inserted into exceptions and logged below the exception stacktrace.
 * Request mapping performance optimizations through pre-computing frequently used data in `RequestCondition` implementations.
@@ -157,6 +158,7 @@ To see all changes, please check the release notes for individual milestones:
   * Correlated log messages for HTTP requests and WebSocket sessions.
   * Control over DEBUG logging of potentially sensitive data.
     * via `CodecConfigurer#defaultCodecs`
+* Configurable limits on input stream processing in all `Decoder` and `HttpMessageReader` implementations, which by default are not set in 5.1 with the exception of `FormHttpMessageReader` which does limit input to 256K. Note that in 5.2 `maxInMemorySize` property for all codecs is set to 256K.
 * Session cookies now have `SameSite=Lax` to protect against CSRF attacks:
   * See [OWASP page](https://www.owasp.org/index.php/SameSite) and [this article](https://scotthelme.co.uk/csrf-is-dead/).
 * Cookies are no longer adapted to cookie objects from the underlying server API, and are instead written to the `Set-Cookie` header directly because most servers don't support `sameSite`. This change includes validations to cookie attribute values that may differ slightly from similar validations previously applied by the server. The validations however do conform to the syntax from RFC 6265, section 4.1. See [#23693](https://github.com/spring-projects/spring-framework/issues/23693).

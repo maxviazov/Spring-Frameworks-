@@ -7,14 +7,14 @@ Currently active branches: Spring Framework 4.3.x and Spring Framework 5.2, with
 
 ### Libraries
 
-Spring Framework 5.2 now requires Jackson 2.9.7+ and explictly supports the recently released Jackson 2.10 GA, see [[gh-23522]](https://github.com/spring-projects/spring-framework/issues/23522).
+Spring Framework 5.2 now requires Jackson 2.9.7+ and explicitly supports the recently released Jackson 2.10 GA. See [[gh-23522]](https://github.com/spring-projects/spring-framework/issues/23522).
 
 In Reactor Core 3.3, the Kotlin extensions are deprecated and replaced by a dedicated [reactor-kotlin-extensions](https://github.com/reactor/reactor-kotlin-extensions/) project/repo. You may have to add `io.projectreactor.kotlin:reactor-kotlin-extensions` dependency to your project and update related packages to use the non-deprecated variants.
 
 
 ### Core Container
 
-Spring's annotation retrieval algorithms have been completely revised for efficiency and consistency, as well as for potential optimizations through annotation presence hints (e.g. from a compile-time index). This may have side effects, e.g. finding annotations in places where they haven't been found before or not finding annotations anymore where they have previously been found accidentally. While we don't expect common Spring applications to be affected, annotation declaration accidents in application code may get uncovered when you upgrade to 5.2. [e.g. [gh-22766]](https://github.com/spring-projects/spring-framework/issues/22766)
+Spring's annotation retrieval algorithms have been completely revised for efficiency and consistency, as well as for potential optimizations through annotation presence hints (e.g. from a compile-time index). This may have side effects -- for example, finding annotations in places where they haven't been found before or not finding annotations anymore where they have previously been found accidentally. While we don't expect common Spring applications to be affected, annotation declaration accidents in application code may get uncovered when you upgrade to 5.2. For example, all annotations must now be annotated with `@Retention(RetentionPolicy.RUNTIME)` in order for Spring to find them. See [[gh-23901]](https://github.com/spring-projects/spring-framework/issues/23901), [[gh-22886]](https://github.com/spring-projects/spring-framework/issues/22886), and [[gh-22766]](https://github.com/spring-projects/spring-framework/issues/22766).
 
 ### Web Applications
 

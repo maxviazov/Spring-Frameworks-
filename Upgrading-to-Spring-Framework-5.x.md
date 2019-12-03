@@ -1,6 +1,6 @@
 _This page provides guidance on upgrading to Spring Framework [5.0](#upgrading-to-version-50), [5.1](#upgrading-to-version-51), and [5.2](#upgrading-to-version-52). See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
 
-Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reaches its EOL cut-off on December 31st, 2020, along with the 5.0.x and 5.1.x lines. Please upgrade to the Spring Framework 5.2.x at your earliest convenience!
+Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reaches its EOL cut-off on December 31st, 2020, along with the 5.0.x and 5.1.x lines. Please upgrade to Spring Framework 5.2.x at your earliest convenience!
 
 
 ## Upgrading to Version 5.2

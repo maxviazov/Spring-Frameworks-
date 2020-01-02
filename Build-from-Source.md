@@ -43,10 +43,10 @@ The Gradle daemon eliminates startup overhead. It's enabled by default, but some
 
 To install all Spring Framework jars in your local Maven repository, use the following.
 
-Note that `-x javadoc` skips Javadoc generation.
+Note that the `-x ...` arguments skip the generation of documentation and the full distribution zip file.
 
 ```shell
-./gradlew publishToMavenLocal -x javadoc
+./gradlew publishToMavenLocal -x api -x javadoc -x asciidoctor -x dokka -x distZip
 ```
 
 If you are building a previous version of the framework (for example, Spring Framework 5.1.x), use:

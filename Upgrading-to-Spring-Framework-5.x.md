@@ -7,24 +7,24 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 
 ### Libraries
 
-Spring Framework 5.2 now requires Jackson 2.9.7+ and explicitly supports the recently released Jackson 2.10 GA. See [[gh-23522]](https://github.com/spring-projects/spring-framework/issues/23522).
+Spring Framework 5.2 now requires Jackson 2.9.7+ and explicitly supports the recently released Jackson 2.10 GA. See [gh-23522](https://github.com/spring-projects/spring-framework/issues/23522).
 
 In Reactor Core 3.3, the Kotlin extensions are deprecated and replaced by a dedicated [reactor-kotlin-extensions](https://github.com/reactor/reactor-kotlin-extensions/) project/repo. You may have to add `io.projectreactor.kotlin:reactor-kotlin-extensions` dependency to your project and update related packages to use the non-deprecated variants.
 
 
 ### Core Container
 
-Spring's annotation retrieval algorithms have been completely revised for efficiency and consistency, as well as for potential optimizations through annotation presence hints (e.g. from a compile-time index). This may have side effects -- for example, finding annotations in places where they haven't been found before or not finding annotations anymore where they have previously been found accidentally. While we don't expect common Spring applications to be affected, annotation declaration accidents in application code may get uncovered when you upgrade to 5.2. For example, all annotations must now be annotated with `@Retention(RetentionPolicy.RUNTIME)` in order for Spring to find them. See [[gh-23901]](https://github.com/spring-projects/spring-framework/issues/23901), [[gh-22886]](https://github.com/spring-projects/spring-framework/issues/22886), and [[gh-22766]](https://github.com/spring-projects/spring-framework/issues/22766).
+Spring's annotation retrieval algorithms have been completely revised for efficiency and consistency, as well as for potential optimizations through annotation presence hints (e.g. from a compile-time index). This may have side effects -- for example, finding annotations in places where they haven't been found before or not finding annotations anymore where they have previously been found accidentally. While we don't expect common Spring applications to be affected, annotation declaration accidents in application code may get uncovered when you upgrade to 5.2. For example, all annotations must now be annotated with `@Retention(RetentionPolicy.RUNTIME)` in order for Spring to find them. See [gh-23901](https://github.com/spring-projects/spring-framework/issues/23901), [gh-22886](https://github.com/spring-projects/spring-framework/issues/22886), and [gh-22766](https://github.com/spring-projects/spring-framework/issues/22766).
 
 ### Web Applications
 
 #### `@RequestMapping` without path attribute
 
-`@RequestMapping()` and meta-annotated variants `@GetMapping()`, `PostMapping()`, etc., without explicitly declared `path` patterns are now equivalent to `RequestMapping("")` and match only to URLs with no path. In the absence of declared patterns previously the path was not checked thereby matching to any path. If you would like to match to all paths, please use `"/**"` as the pattern. [[gh-22543]](https://github.com/spring-projects/spring-framework/issues/22543)
+`@RequestMapping()` and meta-annotated variants `@GetMapping()`, `PostMapping()`, etc., without explicitly declared `path` patterns are now equivalent to `RequestMapping("")` and match only to URLs with no path. In the absence of declared patterns previously the path was not checked thereby matching to any path. If you would like to match to all paths, please use `"/**"` as the pattern. [gh-22543](https://github.com/spring-projects/spring-framework/issues/22543)
  
 #### `@EnableWebMvc` and `@EnableWebFlux` Infrastructure
 
-`@Bean` methods in `Web**ConfigurationSupport` now declare bean dependencies as method arguments rather than use method calls to make it possible to avoid creating proxies for bean methods via `@Configuration(proxyBeanMethods=false)` which Spring Boot 2.2 now does. This should not affect existing applications but if sub-classing `Web**ConfigurationSupport` (or `DelegatingWeb**Configuration`) and using `proxyBeanMethods=false` be sure to also to declare dependent beans as method arguments rather than using method calls. [[gh-22596]](https://github.com/spring-projects/spring-framework/pull/22596)
+`@Bean` methods in `Web**ConfigurationSupport` now declare bean dependencies as method arguments rather than use method calls to make it possible to avoid creating proxies for bean methods via `@Configuration(proxyBeanMethods=false)` which Spring Boot 2.2 now does. This should not affect existing applications but if sub-classing `Web**ConfigurationSupport` (or `DelegatingWeb**Configuration`) and using `proxyBeanMethods=false` be sure to also to declare dependent beans as method arguments rather than using method calls. See [gh-22596](https://github.com/spring-projects/spring-framework/pull/22596)
 
 #### Deprecation of `MediaType.APPLICATION_JSON_UTF8` and `MediaType.APPLICATION_PROBLEM_JSON_UTF8`
 
@@ -38,6 +38,11 @@ CORS handling has been [significantly updated](https://github.com/spring-project
  - Vary headers are added for non-CORS requests on CORS endpoints
 
 These changes introduce an `AbstractHandlerMapping#hasCorsConfigurationSource` method (in both Spring MVC and WebFlux) in order to be able to check CORS endpoints efficiently. When upgrading to Spring Framework 5.2, handler mapping extending `AbstractHandlerMapping` and supporting CORS should override `hasCorsConfigurationSource` with their custom logic.
+
+#### Use of Path Extensions Deprecated in Spring MVC
+
+Config options for suffix pattern matching in `RequestMappingHandlerMapping` have been deprecated, and likewise config options to resolve acceptable media types from the extension of a request path in `ContentNegotiationManagerFactoryBean` have also been deprecated. This is aligned with defaults in Spring Boot auto configuration and Spring WebFlux does not offer such options. See [gh-24179](https://github.com/spring-projects/spring-framework/issues/24179) and related issues for details and further plans towards 5.3.
+
 
 ### Testing
 

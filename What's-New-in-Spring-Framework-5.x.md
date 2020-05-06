@@ -3,9 +3,18 @@ _This document provides a summary of features and changes in Spring Framework [5
 ## What's New in Version 5.3
 _(currently under development)_
 
+### General Web Revision
+
+`RequestEntity` supports URI templates with variables.
+
 ### Spring WebFlux
 
 Netty `ByteBuf` encoding and decoding support.
+
+### Testing
+
+HtmlUnit integration for MockMvc supports file upload parameters.
+
 
 ## What's New in Version 5.2
 

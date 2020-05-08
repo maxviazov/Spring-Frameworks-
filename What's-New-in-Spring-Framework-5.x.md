@@ -5,15 +5,16 @@ _(currently under development)_
 
 ### General Web Revision
 
-`RequestEntity` supports URI templates with variables.
+* `RequestEntity` supports URI templates with variables.
 
 ### Spring WebFlux
 
-Netty `ByteBuf` encoding and decoding support.
+* `PartHttpMessageWriter` to write the `Flux<Part>` received from a client to a remote service.
+* `Encoder` and `Decoder` for Netty `ByteBuf`.
 
 ### Testing
 
-HtmlUnit integration for MockMvc supports file upload parameters.
+* HtmlUnit integration for MockMvc supports file upload parameters.
 
 
 ## What's New in Version 5.2

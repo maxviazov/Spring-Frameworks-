@@ -3,12 +3,17 @@ _This document provides a summary of features and changes in Spring Framework [5
 ## What's New in Version 5.3
 _(currently under development)_
 
+### Core Container
+
+* Support for RxJava 3 in `ReactiveAdapteRegistry while support for RxJava 1.x is deprecated.
+
 ### General Web Revision
 
 * `RequestEntity` supports URI templates with variables.
 
 ### Spring WebFlux
 
+* `ClientResponse` performance optimizations and a `mutate()` to make efficient changes through a `WebClient` filter or response status handler, see [#24680](https://github.com/spring-projects/spring-framework/issues/24680).
 * `PartHttpMessageWriter` to write the `Flux<Part>` received from a client to a remote service.
 * `Encoder` and `Decoder` for Netty `ByteBuf`.
 

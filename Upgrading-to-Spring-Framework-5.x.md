@@ -5,9 +5,15 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 
 ## Upgrading to Version 5.3
 
+### Libraries
+
+Support for RxJava 1.x is deprecated.
+
+
 ### Web Applications
 
 Spring MVC no longer performs `.*` suffix pattern matching by default and likewise path extensions are no loner used by default to interpret the requested content type (e.g. `/person.pdf`, `/person.xml`, etc). Please, see the ["Suffix Match"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-suffix-pattern-match) section of the reference documentation.
+
 
 ## Upgrading to Version 5.2
 

@@ -9,6 +9,9 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 
 Support for RxJava 1.x is deprecated.
 
+### Core Container
+
+`BeanNameAutoProxyCreator` now honors the configured `beanNames` list when applying a custom `TargetSourceCreator`. Consequently, a `BeanNameAutoProxyCreator` no longer proxies beans whose names do not match the configured `beanNames` list. See [gh-24915](https://github.com/spring-projects/spring-framework/issues/24915).
 
 ### Web Applications
 
@@ -22,7 +25,6 @@ Spring MVC no longer performs `.*` suffix pattern matching by default, and likew
 Spring Framework 5.2 now requires Jackson 2.9.7+ and explicitly supports the recently released Jackson 2.10 GA. See [gh-23522](https://github.com/spring-projects/spring-framework/issues/23522).
 
 In Reactor Core 3.3, the Kotlin extensions are deprecated and replaced by a dedicated [reactor-kotlin-extensions](https://github.com/reactor/reactor-kotlin-extensions/) project/repo. You may have to add `io.projectreactor.kotlin:reactor-kotlin-extensions` dependency to your project and update related packages to use the non-deprecated variants.
-
 
 ### Core Container
 

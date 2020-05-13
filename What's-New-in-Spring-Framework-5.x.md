@@ -10,6 +10,11 @@ _(currently under development)_
 ### General Web Revision
 
 * `RequestEntity` supports URI templates with variables.
+* `Jackson2ObjectMapperBuilder` exposes `Consumer<ObjectMapper>` option for advanced customizations.
+
+### Spring MVC
+
+* `@ExceptionHandler` methods can target exception causes at any level of nesting.
 
 ### Spring WebFlux
 
@@ -19,6 +24,7 @@ _(currently under development)_
 
 ### Testing
 
+* `WebTestClient` has improved support for asserting all values of a header.
 * HtmlUnit integration for MockMvc supports file upload parameters.
 
 

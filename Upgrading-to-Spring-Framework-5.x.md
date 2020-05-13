@@ -17,6 +17,8 @@ Support for RxJava 1.x is deprecated.
 
 Spring MVC no longer performs `.*` suffix pattern matching by default, and likewise path extensions are no longer used by default to interpret the requested content type (e.g. `/person.pdf`, `/person.xml`, etc). Please, see the ["Suffix Match"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-suffix-pattern-match) section of the reference documentation.
 
+`@ExceptionHandler` methods now check all exception causes when looking for a match.
+
 
 ## Upgrading to Version 5.2
 

@@ -7,10 +7,15 @@ _(currently under development)_
 
 * Support for RxJava 3 in `ReactiveAdapteRegistry while support for RxJava 1.x is deprecated.
 
+### Spring Messaging
+
+* `RSocketRequester` supports metadataPush interactions.
+
 ### General Web Revision
 
 * `RequestEntity` supports URI templates with variables.
 * `Jackson2ObjectMapperBuilder` exposes `Consumer<ObjectMapper>` option for advanced customizations.
+* `DataBinder` can alternate between direct field and bean property access during initialization, e.g set to use direct field access globally and switched locally to bean property access.
 
 ### Spring MVC
 
@@ -20,6 +25,7 @@ _(currently under development)_
 
 * `ClientResponse` performance optimizations and a `mutate()` to make efficient changes through a `WebClient` filter or response status handler, see [#24680](https://github.com/spring-projects/spring-framework/issues/24680).
 * `PartHttpMessageWriter` to write the `Flux<Part>` received from a client to a remote service.
+* `WebSocketSession` provides access to the `CloseStatus`.
 * `Encoder` and `Decoder` for Netty `ByteBuf`.
 
 ### Testing

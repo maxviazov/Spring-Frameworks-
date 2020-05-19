@@ -18,7 +18,8 @@ _(currently under development)_
 * `DataBinder` can alternate between direct field and bean property access during initialization, e.g set to use direct field access globally and switched locally to bean property access.
 
 ### Spring MVC
-
+ 
+* `UrlPathHelper` checks the `HttpServletMapping` (Servlet 4.0) for a more efficient determination of the application path, see [#25100](https://github.com/spring-projects/spring-framework/issues/25100).
 * `@ExceptionHandler` methods can target exception causes at any level of nesting.
 
 ### Spring WebFlux

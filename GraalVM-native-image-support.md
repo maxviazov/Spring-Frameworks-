@@ -18,14 +18,7 @@ Support at tooling level is also likely to be required to make it usable by end 
 
 ## Experimental support
 
-The [spring-graal-native](https://github.com/spring-projects-experimental/spring-graal-native) experimental project, created by Andy Clement, shows how it is possible to run a Spring Boot application out of the box as a GraalVM native image. It could be used as a basis for a potential upcoming official support.
-
-## Known GraalVM issues impacting Spring
-
- * [#1108](https://github.com/oracle/graal/issues/1108) Class path resources can't resolve to directories - affects classpath scanning in Spring, Flyway, Webjars and probably others.
- * [#1421](https://github.com/oracle/graal/issues/1421) Built native-image for spring-boot app failing with 'caught signal 11'
- * [#1495](https://github.com/oracle/graal/issues/1495) Static field or an object referenced from a static field changed during native image generation
- * [#366](https://github.com/oracle/graal/issues/366) Classes with loops inside Kotlin coroutines fail to generate native code
+The [spring-graalvm-native](https://github.com/spring-projects-experimental/spring-graalvm-native) experimental project, created by Andy Clement, shows how it is possible to run a Spring Boot application out of the box as a GraalVM native image. It could be used as a basis for a potential upcoming official support.
 
 # Support in integrated technologies
 

@@ -15,7 +15,7 @@ _(currently under development)_
 
 * `RequestEntity` supports URI templates with variables.
 * `Jackson2ObjectMapperBuilder` exposes `Consumer<ObjectMapper>` option for advanced customizations.
-* `DataBinder` can alternate between direct field and bean property access during initialization, e.g set to use direct field access globally and switched locally to bean property access.
+* `DataBinder` allows switching between direct field and bean property access during initialization. An example scenario is an `@ControllerAdvice` configuring direct field access by default globally with some controllers overriding that locally, via `@InitBinder` method, to bean property access.
 
 ### Spring MVC
  

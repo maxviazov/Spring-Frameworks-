@@ -144,7 +144,7 @@ public class MimeTypeBenchmark {
   }
 
   @Benchmark
-  public void parseMimeTypes(BenchmarkData data, Blackhole, bh) {
+  public void parseMimeTypes(BenchmarkData data, Blackhole bh) {
     for(String type : data.mimeTypes) {
       bh.consume(MimeTypeUtils.parseMimeType(type));
     }
@@ -172,7 +172,7 @@ public class MimeTypeBenchmark {
   }
 
   @Benchmark
-  public void baseline(BenchmarkData data, Blackhole, bh) {
+  public void baseline(BenchmarkData data, Blackhole bh) {
     for(String type : data.mimeTypes) {
       bh.consume(type);
     }
@@ -180,7 +180,7 @@ public class MimeTypeBenchmark {
 
 
   @Benchmark
-  public void parseMimeTypes(BenchmarkData data, Blackhole, bh) {
+  public void parseMimeTypes(BenchmarkData data, Blackhole bh) {
     for(String type : data.mimeTypes) {
       bh.consume(MimeTypeUtils.parseMimeType(type));
     }

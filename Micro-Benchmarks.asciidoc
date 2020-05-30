@@ -1,4 +1,5 @@
 This document describes the strategy for performance micro-benchmarks in Spring Framework.
+
 Micro-benchmarks are designed for optimizing code in the Framework, when hot code paths and usage profiles are known.
 This approach does not replace profilers and full performance benchmarks (complete applications, with I/O and network latency).
 
@@ -107,7 +108,7 @@ We can extract this data into a http://hg.openjdk.java.net/code-tools/jmh/file/t
 public class MimeTypeBenchmark {
 
   @State(Scope.Benchmark)
-	public static class BenchmarkData {
+  public static class BenchmarkData {
     public List<String> mimeTypes;
 
     public BenchmarkData() {
@@ -134,7 +135,7 @@ We're going to use http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-sample
 public class MimeTypeBenchmark {
 
   @State(Scope.Benchmark)
-	public static class BenchmarkData {
+  public static class BenchmarkData {
     public List<String> mimeTypes;
 
     public BenchmarkData() {
@@ -162,7 +163,7 @@ We can also create a baseline method to compare with/without the parsing executi
 public class MimeTypeBenchmark {
 
   @State(Scope.Benchmark)
-	public static class BenchmarkData {
+  public static class BenchmarkData {
     public List<String> mimeTypes;
 
     public BenchmarkData() {
@@ -188,5 +189,6 @@ public class MimeTypeBenchmark {
 ----
 
 
-In all cases, it's a good idea to try different approaches, check out data provided by JMH profilers and discuss the benchmark with colleagues!
-This sample benchmark is quite simple and other problem spaces (like controlling concurrency) can be dealt with http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/[other features showcased in the samples].
+In all cases, it's a good idea to try different approaches, check out data provided by JMH profilers, and discuss the benchmark with colleagues!
+
+This sample benchmark is quite simple, and other problem spaces (like controlling concurrency) can be dealt with by using http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/[other features showcased in the samples].

@@ -13,11 +13,11 @@ When looking at the Spring Framework repository, we can find several branches:
 
 For this example, we'll use the following as the current state of the repository:
 
-* the `master` branch is dedicated to the upcoming `5.2.0.RELEASE` minor version
-* the current branch is `5.1.x`
-* there are two active maintenance branches, `5.0.x` and `4.3.x`
+* the `master` branch is dedicated to the upcoming `5.3.0.RELEASE` minor version
+* the current branch is `5.2.x`
+* there are two active maintenance branches, `5.1.x` and `5.0.x`
 
-Let's consider the issue `#1234`, which is the bugfix we're working on.
+Let's consider the issue `#1234`, which is the bug fix we're working on.
 
 ### Forward merges
 
@@ -25,15 +25,15 @@ First, we need to fix the bug and merge it forward if necessary. If the current 
 
 ```bash
 $ # checkout the maintenance branch and update it
-$ git checkout 5.1.x && git pull
+$ git checkout 5.2.x && git pull
 $ # work on a fix and commit it to the current branch
 $ git add . && git commit
 $ # push the changes to the current branch
-$ git push origin 5.1.x
+$ git push origin 5.2.x
 $ # checkout the master branch and update it
 $ git checkout master && git pull
 $ # merge the changes forward, resolving conflicts if necessary
-$ git merge --no-ff 5.1.x
+$ git merge --no-ff 5.2.x
 ```
 
 ### Backports
@@ -41,16 +41,14 @@ $ git merge --no-ff 5.1.x
 If the fix is meant to be applied to other maintenance versions, you need to backport the commit to maintenance branches.
 The Spring Framework team is using the [backport-bot](https://github.com/spring-io/backport-bot) for that.
 
-To backport the fix for the issue `#1234`, we can directly cherry-pick the commit and push it to the branch. Doing so will automatically create a backport issue against the next 5.0.x release.
+To backport the fix for the issue `#1234`, we can directly cherry-pick the commit and push it to the branch. Doing so will automatically create a backport issue against the next 5.1.x release.
 
 ```bash
-$ git checkout 5.1.x && git log
+$ git checkout 5.2.x && git log
 $ # the commit sha for the fix is c0ffee456
-$ git checkout 5.0.x
+$ git checkout 5.1.x
 $ git cherry-pick c0ffee456
-$ git push origin 5.0.x
+$ git push origin 5.1.x
 ```
 
-If you wish to create the backport issue beforehand, you can always tag the main issue with the `for: backport-to-5.0.x` GitHub issue label; the backport-bot will create an issue accordingly. Pushing the cherry-picked commit will close the backport issue, even if the commit message refers to the original issue.
-
-
+If you wish to create the backport issue beforehand, you can always tag the main issue with the `for: backport-to-5.1.x` GitHub issue label; the backport-bot will create an issue accordingly. Pushing the cherry-picked commit will close the backport issue, even if the commit message refers to the original issue.

@@ -32,7 +32,8 @@ _(currently under development)_
 ### Testing
 
 * `WebTestClient` has improved support for asserting all values of a header.
-* HtmlUnit integration for MockMvc supports file upload parameters.
+* Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.
+* HtmlUnit integration for Spring MVC Test supports file upload parameters.
 
 
 ## What's New in Version 5.2

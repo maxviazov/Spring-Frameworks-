@@ -19,7 +19,7 @@ _(currently under development)_
 
 ### Spring MVC
  
-* Efficient URL matching with parsed `PathPattern`'s in Spring MVC. See [URI Patterns](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-uri-templates).
+* Efficient URL matching with parsed `PathPattern`'s in Spring MVC, see [URI Patterns](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-uri-templates).
 * `UrlPathHelper` checks the `HttpServletMapping` (Servlet 4.0) for a more efficient determination of the application path, see [#25100](https://github.com/spring-projects/spring-framework/issues/25100).
 * `@ExceptionHandler` methods can target exception causes at any level of nesting.
 

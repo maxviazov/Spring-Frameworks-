@@ -7,7 +7,7 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 
 ### Libraries
 
-Support for RxJava 1.x is deprecated.
+Support for RxJava 1.x is deprecated - RxJava 2.x is the new baseline and 3.x is now supported.
 
 ### Core Container
 

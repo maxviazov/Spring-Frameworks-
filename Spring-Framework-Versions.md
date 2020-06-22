@@ -30,5 +30,5 @@ _Please upgrade to Spring Framework 5.1+ (and the corresponding Spring Boot 2.1+
 
 # Upgrade Considerations
 
-- [[Upgrading to Spring Framework 5.0, 5.1, 5.2|Upgrading to Spring Framework 5.x]]
+- [[Upgrading to Spring Framework 5.0, 5.1, 5.2 and 5.3|Upgrading to Spring Framework 5.x]]
 - [[Upgrading to Spring Framework 4.3|Upgrading to Spring-Framework 4.x]]

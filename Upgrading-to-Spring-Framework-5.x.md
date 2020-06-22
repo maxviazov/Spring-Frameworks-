@@ -21,7 +21,7 @@ Spring MVC no longer performs `.*` suffix pattern matching by default, and likew
 
 ### Spring WebFlux
 
-`@RequestPart` with `List<T>` now converts the 1st part to `List<T>` consistent with Spring MVC and with how it works for `T[]`. Previously each part was converted to `T`.
+`@RequestPart` with `List<T>` now converts the 1st part to `List<T>` consistent with Spring MVC and with how it works for `T[]`. Previously each part was converted to `T`, see [22973](https://github.com/spring-projects/spring-framework/issues/22973).
 
 
 ## Upgrading to Version 5.2

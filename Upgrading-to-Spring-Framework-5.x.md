@@ -19,6 +19,10 @@ Spring MVC no longer performs `.*` suffix pattern matching by default, and likew
 
 `@ExceptionHandler` methods now check all exception causes when looking for a match. Previously, going back to 4.3 only the first cause was checked. 
 
+### Spring WebFlux
+
+`@RequestPart` with `List<T>` now converts the 1st part to `List<T>` consistent with Spring MVC and with how it works for `T[]`. Previously each part was converted to `T`.
+
 
 ## Upgrading to Version 5.2
 

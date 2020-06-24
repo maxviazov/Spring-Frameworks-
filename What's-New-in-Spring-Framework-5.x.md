@@ -5,6 +5,7 @@ _(currently under development)_
 
 ### Core Container
 
+* Upgrade to ASM 8.1 (pre-release).
 * Support for RxJava 3 in `ReactiveAdapterRegistry` while support for RxJava 1.x is deprecated.
 * `ObjectProvider.ifAvailable/ifUnique` explicitly ignores beans from currently inactive scopes.
 

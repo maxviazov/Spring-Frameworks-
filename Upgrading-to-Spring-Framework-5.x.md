@@ -21,6 +21,12 @@ The properties-based bean definition format and all support classes based on it 
 
 `BeanNameAutoProxyCreator` now honors the configured `beanNames` list when applying a custom `TargetSourceCreator`. Consequently, a `BeanNameAutoProxyCreator` no longer proxies beans whose names do not match the configured `beanNames` list. See [gh-24915](https://github.com/spring-projects/spring-framework/issues/24915).
 
+### Data Access and Transactions
+
+Several `JdbcTemplate` signatures with `Object[]` arguments are deprecated, in favor of their existing varargs equivalents.
+
+Reactive transactions consistently roll back on a Reactive Streams cancel signal now, preventing partial commits for common datastore transactions.
+
 ### Web Applications
 
 Spring MVC no longer performs `.*` suffix pattern matching by default, and likewise path extensions are no longer used by default to interpret the requested content type (e.g. `/person.pdf`, `/person.xml`, etc). Please, see the ["Suffix Match"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-suffix-pattern-match) section of the reference documentation.

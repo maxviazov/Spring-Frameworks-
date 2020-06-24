@@ -45,6 +45,9 @@ _(currently under development)_
 * `WebSocketSession` provides access to the `CloseStatus`.
 * `Encoder` and `Decoder` for Netty `ByteBuf`.
 * `ForwardedHeaderTransformer` updates the remote address/port from "Forwarded For" headers.
+* `WebClient` connector for [Apache Http Components](https://hc.apache.org/httpcomponents-client-5.0.x/).
+* `DefaultPartHttpMessageReader` provides a fully reactive message reader that converts a buffer stream into a `Flux<Part>`
+
 
 ### Testing
 

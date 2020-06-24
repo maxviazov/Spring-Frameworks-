@@ -16,8 +16,9 @@ _(currently under development)_
 * New `spring-r2dbc` support module, moving core R2DBC support and the reactive `R2dbcTransactionManager` into the Spring Framework umbrella.
 * New `JdbcTransactionManager` subclass of `DataSourceTransactionManager`, adding data access exception translation on commit.
 * Support for `queryForStream` on `JdbcTemplate`, allowing for lazy iteration over a closeable `java.util.stream.Stream`.
-* Support for timeout values with `${...}` placeholders in transaction definitions.
+* Configurable EntityManager/Session initializers on `Jpa/HibernateTransactionManager` and `AbstractEntityManagerFactoryBean`.
 * Transaction definitions may declare custom labels now (for use in custom transaction managers).
+* Support for timeout values with `${...}` placeholders in transaction definitions.
 
 ### Spring Messaging
 

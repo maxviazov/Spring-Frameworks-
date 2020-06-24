@@ -7,7 +7,10 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 
 ### Third-Party APIs and Libraries
 
+Groovy 3.0 is the officially supported version now, with Groovy 2.x support getting phased out.
+
 Support for RxJava 1.x is deprecated - RxJava 2.x is the new baseline and 3.x is now supported.
+
 JCA CCI support is deprecated, in favor of specific data access APIs (or native CCI usage if there is no alternative).
 
 ### Core Container

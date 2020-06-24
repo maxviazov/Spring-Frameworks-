@@ -5,7 +5,16 @@ _(currently under development)_
 
 ### Core Container
 
-* Support for RxJava 3 in `ReactiveAdapteRegistry while support for RxJava 1.x is deprecated.
+* Support for RxJava 3 in `ReactiveAdapterRegistry` while support for RxJava 1.x is deprecated.
+* `ObjectProvider.ifAvailable/ifUnique` explicitly ignores beans from currently inactive scopes.
+
+### Data Access and Transactions
+
+* New `spring-r2dbc` support module, moving core R2DBC support and the reactive `R2dbcTransactionManager` into the Spring Framework umbrella.
+* New `JdbcTransactionManager` subclass of `DataSourceTransactionManager`, adding data access exception translation on commit.
+* Support for `queryForStream` on `JdbcTemplate`, allowing for lazy iteration over a closeable `java.util.stream.Stream`.
+* Support for timeout values with `${...}` placeholders in transaction definitions.
+* Transaction definitions may declare custom labels now (for use in custom transaction managers).
 
 ### Spring Messaging
 

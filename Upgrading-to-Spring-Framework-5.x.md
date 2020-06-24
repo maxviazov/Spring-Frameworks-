@@ -5,11 +5,16 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 
 ## Upgrading to Version 5.3
 
-### Libraries
+### Third-Party APIs and Libraries
 
 Support for RxJava 1.x is deprecated - RxJava 2.x is the new baseline and 3.x is now supported.
+JCA CCI support is deprecated, in favor of specific data access APIs (or native CCI usage if there is no alternative).
 
 ### Core Container
+
+The properties-based bean definition format and all support classes based on it (such as `PropertiesBeanDefinitionReader`, `JdbcBeanDefinitionReader` and `ResourceBundleViewResolver`) are deprecated now, in favor of Spring's common bean definition formats and/or custom reader implementations.
+
+`InstantiationAwareBeanPostProcessorAdapter` is deprecated now, in favor of the existing default methods in `(Smart)InstanatiationAwareBeanPostProcessor`.
 
 `BeanNameAutoProxyCreator` now honors the configured `beanNames` list when applying a custom `TargetSourceCreator`. Consequently, a `BeanNameAutoProxyCreator` no longer proxies beans whose names do not match the configured `beanNames` list. See [gh-24915](https://github.com/spring-projects/spring-framework/issues/24915).
 

@@ -29,6 +29,8 @@ Reactive transactions consistently roll back on a Reactive Streams cancel signal
 
 ### Web Applications
 
+CORS configuration where `allowCredentials` is set to true now requires an explicit declaration of specific domains to allow via `allowedOrigins` or use of the newly added `allowedOriginPatterns`.
+
 Spring MVC no longer performs `.*` suffix pattern matching by default, and likewise path extensions are no longer used by default to interpret the requested content type (e.g. `/person.pdf`, `/person.xml`, etc). Please, see the ["Suffix Match"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-suffix-pattern-match) section of the reference documentation.
 
 When using the `PathPatternParser` for request mapping, patterns with double-wildards in the middle of the pattern, such as `"/path/**/other"`, are now rejected. This parser is used by default in WebFlux applications and can be used as an opt-in for MVC applications as of Spring Framework 5.3. See [gh-24952](https://github.com/spring-projects/spring-framework/issues/24952).

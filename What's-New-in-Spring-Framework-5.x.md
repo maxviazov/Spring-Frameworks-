@@ -26,15 +26,16 @@ _(currently under development)_
 
 ### General Web Revision
 
-* Introduce a `spring.xml.ignore` property to remove XML support for applications not using it, including related converters and codecs.
 * `RequestEntity` supports URI templates with variables.
 * `Jackson2ObjectMapperBuilder` exposes `Consumer<ObjectMapper>` option for advanced customizations.
 * `DataBinder` allows switching between direct field and bean property access during initialization. An example scenario is an `@ControllerAdvice` configuring direct field access by default globally with some controllers overriding that locally, via `@InitBinder` method, to bean property access.
+* Introduce a `spring.xml.ignore` property to remove XML support for applications not using it, including related converters and codecs.
 
 ### Spring MVC
  
 * Efficient URL matching with parsed `PathPattern`'s in Spring MVC; see "URI Patterns" in the "Web Servlet" section of the documentation.
 * `UrlPathHelper` checks the `HttpServletMapping` (Servlet 4.0) for a more efficient determination of the application path, see [#25100](https://github.com/spring-projects/spring-framework/issues/25100).
+* CORS configuration now exposes an `allowedOriginPatterns` property for declaring a dynamic range of domains via wildcard patterns.
 * `@ExceptionHandler` methods can target exception causes at any level of nesting.
 * `ForwardedHeaderFilter` updates the remote address/port from "Forwarded For" headers.
 * Add missing beans to `WebMvcConfigurationSupport` in order to make `DispatcherServlet.properties` (which is now lazily parsed) not used for most use cases.

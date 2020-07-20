@@ -16,6 +16,11 @@ As of 4.3, Spring MVC processes HEAD and OPTIONS requests by default if there ar
 ### Injection points declared as Collection, Map or array
 Spring 4.3 refines autowiring support for beans which are declared as a Collection, Map or array type, matching them by type against injection points of a compatible type directly. This support lives side by side with Spring's existing support for finding beans by the element/value type of a declared Collection, Map or array injection point. There might be subtle side effects if custom application context arrangements rely on Collection/Map beans not matching directly.
 
+### CORS with Credentials
+
+The `allowCredentials` flag has been changed from `true` to `false` by default to align with similar behavior change previously made in the 5.x branch. This can be re-enabled by setting it explicitly, e.g. via `@CrossOrigin` annotations.
+
+
 ## Upgrading to Version 4.2
 For an overview of new features, refer to [New Features and Enhancements in Spring Framework 4.2](https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/htmlsingle/#new-in-4.2) in the reference documentation.
 

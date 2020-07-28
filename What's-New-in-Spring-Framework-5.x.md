@@ -36,7 +36,7 @@ _(currently under development)_
  
 * Efficient URL matching with parsed `PathPattern`'s in Spring MVC; see "URI Patterns" in the "Web Servlet" section of the documentation.
 * `UrlPathHelper` checks the `HttpServletMapping` (Servlet 4.0) for a more efficient determination of the application path, see [#25100](https://github.com/spring-projects/spring-framework/issues/25100).
-* `@ControllerAdvice` can handle exceptions from any handler type, i.e. besides `@Controller`, that matches the handler mappings of `ExceptionHandlerExceptionResolver`. 
+* `@ControllerAdvice` can handle exceptions from any handler type (i.e. not just `@Controller` but others like `HttpRequestHandler`, `HandlerFunction`, etc) as long as it matches the handler mappings set on `ExceptionHandlerExceptionResolver`. 
 * `@ExceptionHandler` can target exception causes at any level of nesting.
 * `ForwardedHeaderFilter` updates the remote address/port from "Forwarded For" headers.
 * Add missing beans to `WebMvcConfigurationSupport` in order to make `DispatcherServlet.properties` (which is now lazily parsed) not used for most use cases.

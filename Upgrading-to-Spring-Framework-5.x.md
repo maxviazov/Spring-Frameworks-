@@ -41,6 +41,8 @@ When using the `PathPatternParser` for request mapping, patterns with double-wil
 
 The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux) have been enhanced and now support multiple values in `X-Forwarded-Prefix` and the new `X-Forwarded-For` / `Forwarded: for=` HTTP request headers. See [gh-25254](https://github.com/spring-projects/spring-framework/issues/25254) and [gh-23582](https://github.com/spring-projects/spring-framework/pull/23582).
 
+Custom implementations of `Encoder` must implement the new [encodeValue](https://github.com/spring-projects/spring-framework/blob/13183c89ce1eb178793e542753cd78f3d9908164/spring-core/src/main/java/org/springframework/core/codec/Encoder.java#L85) which is invoked from `ServerSentEventHttpMessageWriter` and would fail at runtime otherwise.
+
 ### Spring WebFlux
 
 `@RequestPart` with `List<T>` now converts the 1st part to `List<T>` consistent with Spring MVC and with how it works for `T[]`. Previously each part was converted to `T`, see [gh-22973](https://github.com/spring-projects/spring-framework/issues/22973).

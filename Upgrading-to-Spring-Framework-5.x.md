@@ -41,8 +41,6 @@ When using the `PathPatternParser` for request mapping, patterns with double-wil
 
 The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux) have been enhanced and now support multiple values in `X-Forwarded-Prefix` and the new `X-Forwarded-For` / `Forwarded: for=` HTTP request headers. See [gh-25254](https://github.com/spring-projects/spring-framework/issues/25254) and [gh-23582](https://github.com/spring-projects/spring-framework/pull/23582).
 
-Custom implementations of `Encoder` must implement the new [encodeValue](https://github.com/spring-projects/spring-framework/blob/13183c89ce1eb178793e542753cd78f3d9908164/spring-core/src/main/java/org/springframework/core/codec/Encoder.java#L85) which is invoked from `ServerSentEventHttpMessageWriter` and would fail at runtime otherwise.
-
 ### Spring WebFlux
 
 `@RequestPart` with `List<T>` now converts the 1st part to `List<T>` consistent with Spring MVC and with how it works for `T[]`. Previously each part was converted to `T`, see [gh-22973](https://github.com/spring-projects/spring-framework/issues/22973).
@@ -86,6 +84,10 @@ These changes introduce an `AbstractHandlerMapping#hasCorsConfigurationSource` m
 #### Use of Path Extensions Deprecated in Spring MVC
 
 Config options for suffix pattern matching in `RequestMappingHandlerMapping` have been deprecated, and likewise config options to resolve acceptable media types from the extension of a request path in `ContentNegotiationManagerFactoryBean` have also been deprecated. This is aligned with defaults in Spring Boot auto configuration and Spring WebFlux does not offer such options. See [gh-24179](https://github.com/spring-projects/spring-framework/issues/24179) and related issues for details and further plans towards 5.3.
+
+#### Updated to `Encoder` Contract
+
+Custom implementations of `Encoder` must implement the new [encodeValue](https://github.com/spring-projects/spring-framework/blob/13183c89ce1eb178793e542753cd78f3d9908164/spring-core/src/main/java/org/springframework/core/codec/Encoder.java#L85) which is invoked from `ServerSentEventHttpMessageWriter` or otherwise that would fail at runtime.
 
 
 ### Testing

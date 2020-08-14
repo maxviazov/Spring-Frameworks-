@@ -85,7 +85,7 @@ These changes introduce an `AbstractHandlerMapping#hasCorsConfigurationSource` m
 
 Config options for suffix pattern matching in `RequestMappingHandlerMapping` have been deprecated, and likewise config options to resolve acceptable media types from the extension of a request path in `ContentNegotiationManagerFactoryBean` have also been deprecated. This is aligned with defaults in Spring Boot auto configuration and Spring WebFlux does not offer such options. See [gh-24179](https://github.com/spring-projects/spring-framework/issues/24179) and related issues for details and further plans towards 5.3.
 
-#### Updates to `Encoder` Contract
+#### `Encoder` Contract
 
 Custom implementations of `Encoder` must implement the new [encodeValue](https://github.com/spring-projects/spring-framework/blob/13183c89ce1eb178793e542753cd78f3d9908164/spring-core/src/main/java/org/springframework/core/codec/Encoder.java#L85) which is invoked from `ServerSentEventHttpMessageWriter` or otherwise that would fail at runtime.
 

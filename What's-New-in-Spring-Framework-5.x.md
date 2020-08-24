@@ -10,6 +10,9 @@ _(currently under development)_
 * `ObjectProvider.ifAvailable/ifUnique` explicitly ignores beans from currently inactive scopes.
 * Improve GraalVM native support by removing unsupported features from native images.
 * Introduce a `spring.spel.ignore` property to remove SpEL support for applications not using it.
+* Support for Quartz extensions in `CronExpression`:
+    * the day-of-month field can use `L` to express the last day of the month, `nL` to express the nth-to-last day of the month, or `nW` to express the nearest weekday to day-of-month n.
+    * the day-of-week field can use `DDDL` to express the last day-of-week DDD in the month, or `DDD#n` to express the nth day-of-week DDD.
 
 ### Data Access and Transactions
 

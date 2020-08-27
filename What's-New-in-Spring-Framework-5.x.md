@@ -46,17 +46,22 @@ _(currently under development)_
 
 ### Spring WebFlux
 
-* `ClientResponse` performance optimizations and a `mutate()` to make efficient changes through a `WebClient` filter or response status handler, see [#24680](https://github.com/spring-projects/spring-framework/issues/24680).
-* `PartHttpMessageWriter` to write the `Flux<Part>` received from a client to a remote service.
-* `WebSocketSession` provides access to the `CloseStatus`.
-* `Encoder` and `Decoder` for Netty `ByteBuf`.
+* New `DefaultPartHttpMessageReader` provides a fully reactive message reader that converts a buffer stream into a `Flux<Part>`
+* New `PartHttpMessageWriter` to write the `Flux<Part>` received from a client to a remote service.
+* New `WebClient` connector for [Apache Http Components](https://hc.apache.org/httpcomponents-client-5.0.x/).
+* `WebClient` and `ClientRequest` provide access to the `ClientHttpRequest` and the native client library request. This is useful for setting per-request options specific to the HTTP library.
+* `RSocketRequester` support for the new `RSocketClient` as a result of which an `RSocketRequester` can be obtained as an instance, i.e. without a `Mono` wrapper or the need to connect first. A connection is transparently obtained as requests are made including support for reconnecting.
+* `Encoder` and `Decoder` implementations for Netty `ByteBuf`.
 * `ForwardedHeaderTransformer` updates the remote address/port from "Forwarded For" headers.
-* `WebClient` connector for [Apache Http Components](https://hc.apache.org/httpcomponents-client-5.0.x/).
-* `DefaultPartHttpMessageReader` provides a fully reactive message reader that converts a buffer stream into a `Flux<Part>`
+* `WebSocketSession` provides access to the `CloseStatus`.
+* `WebHttpHandlerBuilder` option to decorate the entire `WebFilter` chain at the level of the `HttpHandler`. 
+* More efficient direct path lookups for `@RequestMapping` methods that don't have any patterns or URI variables.
+* `ClientResponse` performance optimizations and `mutate()` method for efficient changes through a client filter or `onStatus` handler, see [#24680](https://github.com/spring-projects/spring-framework/issues/24680).
 
 
 ### Testing
 
+* New `MockMvcTestClient` with static factory methods to create a `WebTestClient` for performing requests handled with `MockMvc`. This provides a single test client API for writing `MockMvc` tests and real HTTP tests with a live server.
 * `WebTestClient` has improved support for asserting all values of a header.
 * Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.
 * HtmlUnit integration for Spring MVC Test supports file upload parameters.

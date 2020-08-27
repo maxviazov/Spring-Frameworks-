@@ -61,7 +61,7 @@ _(currently under development)_
 
 ### Testing
 
-* New `MockMvcTestClient` with static factory methods to create a `WebTestClient` for performing requests handled with `MockMvc`. This provides a single test client API for writing `MockMvc` tests and real HTTP tests with a live server.
+* New `MockMvcTestClient` with static factory methods to create a `WebTestClient` for performing requests handled with `MockMvc`. This provides a single test client API for Spring MVC applications for test with `MockMvc` or with a live server.
 * `WebTestClient` has improved support for asserting all values of a header.
 * Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.
 * HtmlUnit integration for Spring MVC Test supports file upload parameters.

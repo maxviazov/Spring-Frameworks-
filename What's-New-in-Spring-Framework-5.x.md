@@ -25,7 +25,9 @@ _(currently under development)_
 
 ### Spring Messaging
 
+* `RSocketRequester` support for the new `RSocketClient` as a result of which an `RSocketRequester` can be obtained as an instance, i.e. without a `Mono` wrapper or the need to connect first. A connection is transparently obtained as requests are made including support for reconnecting.
 * `RSocketRequester` supports metadataPush interactions.
+* Improved throughput for STOMP over WebSocket applications that enable the `preservePublishOrder` property to ensure messages within a session are sent in the same order in which they were published by the broker.
 
 ### General Web Revision
 
@@ -50,7 +52,6 @@ _(currently under development)_
 * New `PartHttpMessageWriter` to write the `Flux<Part>` received from a client to a remote service.
 * New `WebClient` connector for [Apache Http Components](https://hc.apache.org/httpcomponents-client-5.0.x/).
 * `WebClient` and `ClientRequest` provide access to the `ClientHttpRequest` and the native client library request. This is useful for setting per-request options specific to the HTTP library.
-* `RSocketRequester` support for the new `RSocketClient` as a result of which an `RSocketRequester` can be obtained as an instance, i.e. without a `Mono` wrapper or the need to connect first. A connection is transparently obtained as requests are made including support for reconnecting.
 * `Encoder` and `Decoder` implementations for Netty `ByteBuf`.
 * `ForwardedHeaderTransformer` updates the remote address/port from "Forwarded For" headers.
 * `WebSocketSession` provides access to the `CloseStatus`.

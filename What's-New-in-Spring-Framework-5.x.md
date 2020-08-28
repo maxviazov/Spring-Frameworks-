@@ -5,9 +5,9 @@ _(currently under development)_
 
 ### Core Container
 
-* Upgrade to ASM 8.1 (pre-release).
+* Upgrade to ASM 9.0 and Kotlin 1.4.
 * Support for RxJava 3 in `ReactiveAdapterRegistry` while support for RxJava 1.x is deprecated.
-* Data binding support for Java 14/15 record classes and similarly styled constructors/accessors.
+* Binding support for Java 14/15 record classes and similarly styled constructors/accessors.
 * `ObjectProvider.ifAvailable/ifUnique` explicitly ignores beans from currently inactive scopes.
 * Optimized use of pre-sized `HashMap`, `ArrayList` and `ArrayDeque` instances.
 * Improve GraalVM native support by removing unsupported features from native images.
@@ -61,7 +61,6 @@ _(currently under development)_
 * `WebHttpHandlerBuilder` option to decorate the entire `WebFilter` chain at the level of the `HttpHandler`. 
 * More efficient direct path lookups for `@RequestMapping` methods that don't have any patterns or URI variables.
 * `ClientResponse` performance optimizations and `mutate()` method for efficient changes through a client filter or `onStatus` handler, see [#24680](https://github.com/spring-projects/spring-framework/issues/24680).
-
 
 ### Testing
 

@@ -7,7 +7,9 @@ _(currently under development)_
 
 * Upgrade to ASM 8.1 (pre-release).
 * Support for RxJava 3 in `ReactiveAdapterRegistry` while support for RxJava 1.x is deprecated.
+* Data binding support for Java 14/15 record classes and similarly styled constructors/accessors.
 * `ObjectProvider.ifAvailable/ifUnique` explicitly ignores beans from currently inactive scopes.
+* Optimized use of pre-sized `HashMap`, `ArrayList` and `ArrayDeque` instances.
 * Improve GraalVM native support by removing unsupported features from native images.
 * Introduce a `spring.spel.ignore` property to remove SpEL support for applications not using it.
 * Support for Quartz extensions in `CronExpression`:
@@ -19,6 +21,7 @@ _(currently under development)_
 * New `spring-r2dbc` support module, moving core R2DBC support and the reactive `R2dbcTransactionManager` into the Spring Framework umbrella.
 * New `JdbcTransactionManager` subclass of `DataSourceTransactionManager`, adding data access exception translation on commit.
 * Support for `queryForStream` on `JdbcTemplate`, allowing for lazy iteration over a closeable `java.util.stream.Stream`.
+* `DataClassRowMapper` for constructor-based binding support, including Java 14/15 record classes.
 * Configurable EntityManager/Session initializers on `Jpa/HibernateTransactionManager` and `AbstractEntityManagerFactoryBean`.
 * Transaction definitions may declare custom labels now (for use in custom transaction managers).
 * Support for timeout values with `${...}` placeholders in transaction definitions.

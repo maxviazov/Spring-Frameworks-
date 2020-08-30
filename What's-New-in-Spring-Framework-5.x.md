@@ -11,7 +11,7 @@ _(currently under development)_
 * `ObjectProvider.ifAvailable/ifUnique` explicitly ignores beans from currently inactive scopes.
 * Optimized use of pre-sized `HashMap`, `ArrayList` and `ArrayDeque` instances.
 * Improve GraalVM native support by removing unsupported features from native images.
-* Introduce a `spring.spel.ignore` property to remove SpEL support for applications not using it.
+* A `spring.spel.ignore` property to remove SpEL support for applications not using it.
 * Support for Quartz extensions in `CronExpression`:
     * the day-of-month field can use `L` to express the last day of the month, `nL` to express the nth-to-last day of the month, or `nW` to express the nearest weekday to day-of-month n.
     * the day-of-week field can use `DDDL` to express the last day-of-week DDD in the month, or `DDD#n` to express the nth day-of-week DDD.
@@ -20,9 +20,9 @@ _(currently under development)_
 
 * New `spring-r2dbc` support module, moving core R2DBC support and the reactive `R2dbcTransactionManager` into the Spring Framework umbrella.
 * New `JdbcTransactionManager` subclass of `DataSourceTransactionManager`, adding data access exception translation on commit.
+* New `DataClassRowMapper` for constructor-based binding support, including Kotlin/Lombok data classes and Java 14/15 record classes.
 * Support for `queryForStream` on `JdbcTemplate`, allowing for lazy iteration over a closeable `java.util.stream.Stream`.
-* `DataClassRowMapper` for constructor-based binding support, including Java 14/15 record classes.
-* Configurable EntityManager/Session initializers on `Jpa/HibernateTransactionManager` and `AbstractEntityManagerFactoryBean`.
+* Configurable EntityManager/Session initializers on `Jpa/HibernateTransactionManager` and `Local(Container)EntityManagerFactoryBean`.
 * Transaction definitions may declare custom labels now (for use in custom transaction managers).
 * Support for timeout values with `${...}` placeholders in transaction definitions.
 
@@ -38,7 +38,7 @@ _(currently under development)_
 * `RequestEntity` supports URI templates with variables.
 * `Jackson2ObjectMapperBuilder` exposes `Consumer<ObjectMapper>` option for advanced customizations.
 * `DataBinder` allows switching between direct field and bean property access during initialization. An example scenario is an `@ControllerAdvice` configuring direct field access by default globally with some controllers overriding that locally, via `@InitBinder` method, to bean property access.
-* Introduce a `spring.xml.ignore` property to remove XML support for applications not using it, including related converters and codecs.
+* A `spring.xml.ignore` property to remove XML support for applications not using it, including related converters and codecs.
 
 ### Spring MVC
  
@@ -47,7 +47,7 @@ _(currently under development)_
 * `@ControllerAdvice` can handle exceptions from any handler type (i.e. not just `@Controller` but others like `HttpRequestHandler`, `HandlerFunction`, etc) as long as it matches the handler mappings set on `ExceptionHandlerExceptionResolver`. 
 * `@ExceptionHandler` can target exception causes at any level of nesting.
 * `ForwardedHeaderFilter` updates the remote address/port from "Forwarded For" headers.
-* Add missing beans to `WebMvcConfigurationSupport` in order to make `DispatcherServlet.properties` (which is now lazily parsed) not used for most use cases.
+* Add missing beans to `WebMvcConfigurationSupport` in order to make `DispatcherServlet.properties` (now lazily parsed) not needed for most use cases.
 
 ### Spring WebFlux
 

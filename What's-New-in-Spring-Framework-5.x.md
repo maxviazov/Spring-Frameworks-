@@ -60,6 +60,7 @@ _(currently under development)_
 * `WebClient` and `ClientRequest` provide access to the `ClientHttpRequest` and the native request. This is useful for customizing per-request options specific to the HTTP library.
 * `Encoder` and `Decoder` implementations for Netty `ByteBuf`.
 * `ForwardedHeaderTransformer` updates the remote address/port from "Forwarded For" headers.
+* `@EnableWebFlux` enables support for handlers of type `WebSocketHandler`.
 * `WebSocketSession` provides access to the `CloseStatus`.
 * `WebHttpHandlerBuilder` option to decorate the entire `WebFilter` chain at the level of the `HttpHandler`. 
 * More efficient direct path lookups for `@RequestMapping` methods that don't have any patterns or URI variables.
@@ -67,7 +68,7 @@ _(currently under development)_
 
 ### Testing
 
-* New `MockMvcTestClient` with static factory methods to create a `WebTestClient` for performing requests handled with `MockMvc`. This provides a single test client API for Spring MVC applications for test with `MockMvc` or with a live server.
+* `WebTestClient` support for performing requests against `MockMvc`. This enables the possibility to use the same API for MockMvc tests and for full HTTP tests. See the updated section on testing in the reference documentation.
 * `WebTestClient` has improved support for asserting all values of a header.
 * Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.
 * HtmlUnit integration for Spring MVC Test supports file upload parameters.

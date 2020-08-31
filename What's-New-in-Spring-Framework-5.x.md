@@ -3,15 +3,18 @@ _This document provides a summary of features and changes in Spring Framework [5
 ## What's New in Version 5.3
 _(currently under development)_
 
-### Core Container
+### General Core Revision
 
 * Upgrade to ASM 9.0 and Kotlin 1.4.
 * Support for RxJava 3 in `ReactiveAdapterRegistry` while support for RxJava 1.x is deprecated.
+* Improve GraalVM native support by removing unsupported features from native images.
+* A `spring.spel.ignore` property to remove SpEL support for applications not using it.
+
+### Core Container
+
 * Binding support for Java 14/15 record classes and similarly styled constructors/accessors.
 * `ObjectProvider.ifAvailable/ifUnique` explicitly ignores beans from currently inactive scopes.
 * Optimized use of pre-sized `HashMap`, `ArrayList` and `ArrayDeque` instances.
-* Improve GraalVM native support by removing unsupported features from native images.
-* A `spring.spel.ignore` property to remove SpEL support for applications not using it.
 * Support for Quartz extensions in `CronExpression`:
     * the day-of-month field can use `L` to express the last day of the month, `nL` to express the nth-to-last day of the month, or `nW` to express the nearest weekday to day-of-month n.
     * the day-of-week field can use `DDDL` to express the last day-of-week DDD in the month, or `DDD#n` to express the nth day-of-week DDD.

@@ -45,6 +45,8 @@ The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux)
 
 `@RequestPart` with `List<T>` now converts the 1st part to `List<T>` consistent with Spring MVC and with how it works for `T[]`. Previously each part was converted to `T`, see [gh-22973](https://github.com/spring-projects/spring-framework/issues/22973).
 
+`@EnableWebFlux` now includes a declaration of a `WebSocketHandlerAdapter` bean. It should not interfere with any declared by the application due to a lower priority but if you have one, you can remove it.
+
 
 ## Upgrading to Version 5.2
 

@@ -33,7 +33,7 @@ _(currently under development)_
 
 * `RSocketRequester` support for the new `RSocketClient` as a result of which an `RSocketRequester` can be obtained as an instance, i.e. without a `Mono` wrapper or the need to connect first. A connection is transparently obtained as requests are made including support for reconnecting.
 * `RSocketRequester` support for the new `LoadbalanceRSocketClient`.
-* `RSocketRequester` supports metadataPush interactions.
+* `RSocketRequester` support for metadataPush interactions.
 * The `preservePublishOrder` option for STOMP/WebSocket applications now works in combination with send buffer size and time limits.
 
 ### General Web Revision

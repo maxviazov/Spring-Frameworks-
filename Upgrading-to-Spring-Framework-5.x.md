@@ -15,11 +15,13 @@ JCA CCI support is deprecated, in favor of specific data access APIs (or native 
 
 Some of the remoting technologies support have been deprecated with no replacement (Hessian, RMI, HTTPInvoker and JMS remoting).
 
+`MimeMessageHelper` has been aligned with JavaMail 1.5+, not explicitly encoding attachment filenames by default anymore.
+
 ### Core Container
 
 The properties-based bean definition format and all support classes based on it (such as `PropertiesBeanDefinitionReader`, `JdbcBeanDefinitionReader` and `ResourceBundleViewResolver`) are deprecated now, in favor of Spring's common bean definition formats and/or custom reader implementations.
 
-`InstantiationAwareBeanPostProcessorAdapter` is deprecated now, in favor of the existing default methods in `(Smart)InstanatiationAwareBeanPostProcessor`.
+`InstantiationAwareBeanPostProcessorAdapter` is deprecated now, in favor of the existing default methods in `(Smart)InstantiationAwareBeanPostProcessor`.
 
 `BeanNameAutoProxyCreator` now honors the configured `beanNames` list when applying a custom `TargetSourceCreator`. Consequently, a `BeanNameAutoProxyCreator` no longer proxies beans whose names do not match the configured `beanNames` list. See [gh-24915](https://github.com/spring-projects/spring-framework/issues/24915).
 

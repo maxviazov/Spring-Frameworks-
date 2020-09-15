@@ -52,6 +52,7 @@ _(currently under development)_
 * `@ExceptionHandler` can target exception causes at any level of nesting.
 * `ForwardedHeaderFilter` updates the remote address/port from "Forwarded For" headers.
 * Add missing beans to `WebMvcConfigurationSupport` in order to make `DispatcherServlet.properties` (now lazily parsed) not needed for most use cases.
+* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
 
 ### Spring WebFlux
 

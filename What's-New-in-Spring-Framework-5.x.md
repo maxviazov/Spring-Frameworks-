@@ -70,7 +70,8 @@ _(currently under development)_
 
 ### Testing
 
-* `WebTestClient` support for performing requests against `MockMvc`. This enables the possibility to use the same API for MockMvc tests and for full HTTP tests. See the updated section on testing in the reference documentation.
+* JUnit Jupiter 5.7 support.
+* `WebTestClient` support for performing requests against `MockMvc`. This enables the possibility to use the same API for `MockMvc` tests and for full HTTP tests. See the updated section on testing in the reference documentation.
 * `WebTestClient` has improved support for asserting all values of a header.
 * Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.
 * HtmlUnit integration for Spring MVC Test supports file upload parameters.

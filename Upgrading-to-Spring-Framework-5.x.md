@@ -49,6 +49,8 @@ The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux)
 
 `@EnableWebFlux` now includes a declaration of a `WebSocketHandlerAdapter` bean. It should not interfere with any declared by the application due to a lower priority but if you have one, you can remove it.
 
+WebClient now wraps emitted exceptions in either a `WebClientWebClientRequestExceptionRequestException`, or a `WebClientResponseException`. `CodecExceptions` are not wrapped. See [gh-23842](https://github.com/spring-projects/spring-framework/issues/23842).
+
 
 ## Upgrading to Version 5.2
 

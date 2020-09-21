@@ -10,9 +10,11 @@ for the build system.
 ### Before You Start
 
 To build you will need [Git](https://help.github.com/set-up-git-redirect) and
-[JDK 8 update 262 or later](https://adoptopenjdk.net/).
-Be sure that your `JAVA_HOME` environment variable points to the `jdk1.8.0` folder
-extracted from the JDK download.
+[JDK 8 update 262 or later](https://adoptopenjdk.net/). Update 262 or later is
+required due to the dependency on Java Flight Recorder (JFR) types. Note, however,
+that Oracle JDKs do not include the JFR types. Thus, we recommend an AdoptOpenJDK
+distribution or similar that includes the JFR types. Be sure that your `JAVA_HOME`
+environment variable points to the `jdk1.8.0` folder extracted from the JDK download.
 
 ### Get the Source Code
 

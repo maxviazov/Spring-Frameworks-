@@ -9,7 +9,9 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 
 Groovy 3.0 is the officially supported version now, with Groovy 2.x support getting phased out.
 
-Support for RxJava 1.x is deprecated - RxJava 2.x is the new baseline and 3.x is now supported.
+Support for RxJava 1.x is deprecated; RxJava 2.x is the new baseline and 3.x is now supported.
+
+Jackson support covers Jackson 2.9 to 2.12 now; older versions are not officially supported anymore.
 
 JCA CCI support is deprecated, in favor of specific data access APIs (or native CCI usage if there is no alternative).
 
@@ -35,13 +37,19 @@ Reactive transactions consistently roll back on a Reactive Streams cancel signal
 
 CORS configuration where `allowCredentials` is set to true now requires an explicit declaration of specific domains to allow via `allowedOrigins` or use of the newly added `allowedOriginPatterns`.
 
-Spring MVC no longer performs `.*` suffix pattern matching by default, and likewise path extensions are no longer used by default to interpret the requested content type (e.g. `/person.pdf`, `/person.xml`, etc). Please, see the ["Suffix Match"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-suffix-pattern-match) section of the reference documentation.
-
 When using the `PathPatternParser` for request mapping, patterns with double-wildards in the middle of the pattern, such as `"/path/**/other"`, are now rejected. This parser is used by default in WebFlux applications and can be used as an opt-in for MVC applications as of Spring Framework 5.3. See [gh-24952](https://github.com/spring-projects/spring-framework/issues/24952).
+
+The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux) have been enhanced and now support multiple values in `X-Forwarded-Prefix` and the new `X-Forwarded-For` / `Forwarded: for=` HTTP request headers. See [gh-25254](https://github.com/spring-projects/spring-framework/issues/25254) and [gh-23582](https://github.com/spring-projects/spring-framework/pull/23582).
 
 `@ExceptionHandler` methods now check all exception causes when looking for a match. Previously, going back to 4.3 only the first cause was checked.`
 
-The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux) have been enhanced and now support multiple values in `X-Forwarded-Prefix` and the new `X-Forwarded-For` / `Forwarded: for=` HTTP request headers. See [gh-25254](https://github.com/spring-projects/spring-framework/issues/25254) and [gh-23582](https://github.com/spring-projects/spring-framework/pull/23582).
+Handler method arguments with a conversion-based type such as `UUID` detect a `null` conversion result now, treating it as a missing value. For accepting e.g. an empty String as a `null` `UUID` argument, explicitly mark the argument as optional (e.g. through `required=false` on `@RequestHeader` and co).
+
+### Spring MVC
+
+`@RequestParam` and `@RequestPart` enforce at least one element in a `MultipartFile` and Servlet `Part` collection/array when the argument is required (i.e. not explicitly marked as optional), consistent with individual `MultipartFile`/`Part` declarations, resolving the argument to `null` otherwise.
+
+Spring MVC no longer performs `.*` suffix pattern matching by default, and likewise path extensions are no longer used by default to interpret the requested content type (e.g. `/person.pdf`, `/person.xml`, etc). Please, see the ["Suffix Match"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-suffix-pattern-match) section of the reference documentation.
 
 ### Spring WebFlux
 

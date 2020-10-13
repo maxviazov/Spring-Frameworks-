@@ -11,6 +11,8 @@ Groovy 3.0 is the officially supported version now, with Groovy 2.x support gett
 
 Support for RxJava 1.x is deprecated; RxJava 2.x is the new baseline and 3.x is now supported.
 
+Hibernate support has been upgraded to a Hibernate ORM 5.2+ baseline, with a focus on ORM 5.4.x.
+
 Jackson support covers Jackson 2.9 to 2.12 now; older versions are not officially supported anymore.
 
 JCA CCI support is deprecated, in favor of specific data access APIs (or native CCI usage if there is no alternative).
@@ -30,6 +32,8 @@ The properties-based bean definition format and all support classes based on it 
 ### Data Access and Transactions
 
 Several `JdbcTemplate` signatures with `Object[]` arguments are deprecated, in favor of their existing varargs equivalents.
+
+`HibernateJpaVendorAdapter` exposes `Session(Factory)` as `EntityManager(Factory)` extension interface by default (following Hibernate ORM 5.2+).
 
 Reactive transactions consistently roll back on a Reactive Streams cancel signal now, preventing partial commits for common datastore transactions.
 

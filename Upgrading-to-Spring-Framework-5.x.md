@@ -13,11 +13,11 @@ Support for RxJava 1.x is deprecated; RxJava 2.x is the new baseline and 3.x is 
 
 Hibernate support has been upgraded to a Hibernate ORM 5.2+ baseline, with a focus on ORM 5.4.x.
 
-Jackson support covers Jackson 2.9 to 2.12 now; older versions are not officially supported anymore.
+Jackson support covers Jackson 2.9 to 2.12 now, generally with the latest releases in each branch.
 
 JCA CCI support is deprecated, in favor of specific data access APIs (or native CCI usage if there is no alternative).
 
-Some of the remoting technologies support have been deprecated with no replacement (Hessian, RMI, HTTPInvoker and JMS remoting).
+Several remoting technologies have been deprecated with no direct replacement (Hessian, RMI, HTTP Invoker, JMS Invoker).
 
 `MimeMessageHelper` has been aligned with JavaMail 1.5+, not explicitly encoding attachment filenames by default anymore.
 

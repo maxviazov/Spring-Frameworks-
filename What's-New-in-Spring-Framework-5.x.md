@@ -70,7 +70,10 @@ _(currently under development)_
 
 ### Testing
 
-* JUnit Jupiter 5.7 support.
+* The _Spring TestContext Framework_ is now built and tested against JUnit Jupiter 5.7, JUnit 4.13.1, and TestNG 7.3.0.
+* A `PlatformTransactionManager` configured via the `TransactionManagementConfigurer` API now takes precedence over any transaction manager configured as a bean in the `ApplicationContext` unless `@Transactional` is configured with a qualifier for the explicit transaction manager to use in tests.
+* The `spring.test.constructor.autowire.mode` property can now be set via a JUnit Platform configuration parameter to change the default `@TestConstructor` autowiring mode — for example, via the
+`junit-platform.properties` file.
 * `WebTestClient` support for performing requests against `MockMvc`. This enables the possibility to use the same API for `MockMvc` tests and for full HTTP tests. See the updated section on testing in the reference documentation.
 * `WebTestClient` has improved support for asserting all values of a header.
 * Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.

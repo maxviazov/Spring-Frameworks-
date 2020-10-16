@@ -71,13 +71,17 @@ _(currently under development)_
 ### Testing
 
 * The _Spring TestContext Framework_ is now built and tested against JUnit Jupiter 5.7, JUnit 4.13.1, and TestNG 7.3.0.
-* A `PlatformTransactionManager` configured via the `TransactionManagementConfigurer` API now takes precedence over any transaction manager configured as a bean in the `ApplicationContext` unless `@Transactional` is configured with a qualifier for the explicit transaction manager to use in tests.
+* Test-related annotations on enclosing classes are now _inherited_ by default for JUnit Jupiter `@Nested` test classes.
+  * This is a potentially breaking change, but the behavior can be reverted to _override_ configuration from enclosing classes via the `@NestedTestConfiguration` annotation, a JVM system property, or an entry in a `spring.properties` in the root of the classpath.
+  * Consult the [Javadoc for `@NestedTestConfiguration`](https://docs.spring.io/spring-framework/docs/5.3.0-SNAPSHOT/javadoc-api/org/springframework/test/context/NestedTestConfiguration.html) and the [reference manual](https://docs.spring.io/spring-framework/docs/5.3.0-SNAPSHOT/reference/html/testing.html#testcontext-junit-jupiter-nested-test-configuration) for details.
 * The `spring.test.constructor.autowire.mode` property can now be set via a JUnit Platform configuration parameter to change the default `@TestConstructor` autowiring mode — for example, via the
 `junit-platform.properties` file.
+* A `PlatformTransactionManager` configured via the `TransactionManagementConfigurer` API now takes precedence over any transaction manager configured as a bean in the `ApplicationContext` unless `@Transactional` is configured with a qualifier for the explicit transaction manager to use in tests.
 * `WebTestClient` support for performing requests against `MockMvc`. This enables the possibility to use the same API for `MockMvc` tests and for full HTTP tests. See the updated section on testing in the reference documentation.
 * `WebTestClient` has improved support for asserting all values of a header.
 * Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.
 * HtmlUnit integration for Spring MVC Test supports file upload parameters.
+* Minor enhancements to `MockHttpServletResponse` regarding character encoding and multiple `Content-Language` header values.
 
 
 ## What's New in Version 5.2

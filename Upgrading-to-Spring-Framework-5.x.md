@@ -29,6 +29,8 @@ The properties-based bean definition format and all support classes based on it 
 
 `BeanNameAutoProxyCreator` now honors the configured `beanNames` list when applying a custom `TargetSourceCreator`. Consequently, a `BeanNameAutoProxyCreator` no longer proxies beans whose names do not match the configured `beanNames` list. See [gh-24915](https://github.com/spring-projects/spring-framework/issues/24915).
 
+`@EventListener` methods use an implicit order value of `Ordered.LOWEST_PRECEDENCE` now, in alignment with transaction synchronizations and `@TransactionalEventListener` methods. If custom ordering is needed, please consistently declare `@Order` values on all listener methods.
+
 ### Data Access and Transactions
 
 Several `JdbcTemplate` signatures with `Object[]` arguments are deprecated, in favor of their existing varargs equivalents.

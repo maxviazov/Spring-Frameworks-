@@ -14,7 +14,6 @@ _(currently under development)_
 
 * Binding support for Java 14/15 record classes and similarly styled constructors/accessors.
 * `ObjectProvider.ifAvailable/ifUnique` explicitly ignores beans from currently inactive scopes.
-* Optimized use of pre-sized `HashMap`, `ArrayList` and `ArrayDeque` instances.
 * `ApplicationListener.forPayload(Consumer)` method for convenient programmatic `PayloadApplicationEvent` handling.
 * Support for Quartz extensions in `CronExpression`:
     * the day-of-month field can use `L` to express the last day of the month, `nL` to express the nth-to-last day of the month, or `nW` to express the nearest weekday to day-of-month n.
@@ -27,6 +26,7 @@ _(currently under development)_
 * New `DataClassRowMapper` for constructor-based binding support, including Kotlin/Lombok data classes and Java 14/15 record classes.
 * Support for `queryForStream` on `JdbcTemplate`, allowing for lazy iteration over a closeable `java.util.stream.Stream`.
 * Configurable EntityManager/Session initializers on `Jpa/HibernateTransactionManager` and `Local(Container)EntityManagerFactoryBean`.
+* `HibernateJpaVendorAdapter` exposes Hibernate ORM 5.2+ conventions by default (e.g. `SessionFactory` as EMF vendor interface).
 * Transaction definitions may declare custom labels now (for use in custom transaction managers).
 * Support for timeout values with `${...}` placeholders in transaction definitions.
 * `TransactionalApplicationListener` interface with `forPayload` factory methods, callback support, and adapter classes for programmatic registration (as an alternative to `@TransactionalEventListener` annotated methods).

@@ -30,6 +30,7 @@ _(currently under development)_
 * Transaction definitions may declare custom labels now (for use in custom transaction managers).
 * Support for timeout values with `${...}` placeholders in transaction definitions.
 * `TransactionalApplicationListener` interface with `forPayload` factory methods, callback support, and adapter classes for programmatic registration (as an alternative to `@TransactionalEventListener` annotated methods).
+* Support for `@Transactional` suspending functions (Kotlin Coroutines)
 
 ### Spring Messaging
 
@@ -37,6 +38,7 @@ _(currently under development)_
 * `RSocketRequester` support for the new `LoadbalanceRSocketClient`.
 * `RSocketRequester` support for metadataPush interactions.
 * The `preservePublishOrder` option for STOMP/WebSocket applications now works in combination with send buffer size and time limits.
+* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
 
 ### General Web Revision
 
@@ -69,6 +71,7 @@ _(currently under development)_
 * `WebHttpHandlerBuilder` option to decorate the entire `WebFilter` chain at the level of the `HttpHandler`. 
 * More efficient direct path lookups for `@RequestMapping` methods that don't have any patterns or URI variables.
 * `ClientResponse` performance optimizations and `mutate()` method for efficient changes through a client filter or `onStatus` handler, see [#24680](https://github.com/spring-projects/spring-framework/issues/24680).
+* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
 
 ### Testing
 
@@ -85,6 +88,7 @@ _(currently under development)_
 * Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.
 * HtmlUnit integration for Spring MVC Test supports file upload parameters.
 * Minor enhancements to `MockHttpServletResponse` regarding character encoding and multiple `Content-Language` header values.
+* Major revision of MockMVC Kotlin DSL to support multiple matchers
 
 
 ## What's New in Version 5.2

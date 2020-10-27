@@ -30,7 +30,7 @@ _(currently under development)_
 * Transaction definitions may declare custom labels now (for use in custom transaction managers).
 * Support for timeout values with `${...}` placeholders in transaction definitions.
 * `TransactionalApplicationListener` interface with `forPayload` factory methods, callback support, and adapter classes for programmatic registration (as an alternative to `@TransactionalEventListener` annotated methods).
-* Support for `@Transactional` suspending functions (Kotlin Coroutines).
+* Support for `@Transactional` suspending functions (Kotlin Coroutines)
 
 ### Spring Messaging
 
@@ -38,7 +38,8 @@ _(currently under development)_
 * `RSocketRequester` support for the new `LoadbalanceRSocketClient`.
 * `RSocketRequester` support for metadataPush interactions.
 * The `preservePublishOrder` option for STOMP/WebSocket applications now works in combination with send buffer size and time limits.
-* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now).
+* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
+* `StompBrokerRelayMessageHandler` can be configured with a `Taskscheduler` in order to send heartbeats to the broker in lieu of messages with a non-broker destination. This can help for clients that send heartbeats only when no other messages are sent.
 
 ### General Web Revision
 
@@ -56,13 +57,13 @@ _(currently under development)_
 * `@ExceptionHandler` can target exception causes at any level of nesting.
 * `ForwardedHeaderFilter` updates the remote address/port from "Forwarded For" headers.
 * Add missing beans to `WebMvcConfigurationSupport` in order to make `DispatcherServlet.properties` (now lazily parsed) not needed for most use cases.
-* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now).
+* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
 
 ### Spring WebFlux
 
 * New `DefaultPartHttpMessageReader` provides a fully reactive message reader that converts a buffer stream into a `Flux<Part>`
 * New `PartHttpMessageWriter` to write the `Flux<Part>` received from a client to a remote service.
-* New `WebClient` connector for [Apache Http Components 5](https://hc.apache.org/httpcomponents-client-5.0.x/).
+* New `WebClient` connector for [Apache Http Components](https://hc.apache.org/httpcomponents-client-5.0.x/).
 * `WebClient` and `ClientRequest` provide access to the `ClientHttpRequest` and the native request. This is useful for customizing per-request options specific to the HTTP library.
 * `Encoder` and `Decoder` implementations for Netty `ByteBuf`.
 * `ForwardedHeaderTransformer` updates the remote address/port from "Forwarded For" headers.
@@ -71,7 +72,7 @@ _(currently under development)_
 * `WebHttpHandlerBuilder` option to decorate the entire `WebFilter` chain at the level of the `HttpHandler`. 
 * More efficient direct path lookups for `@RequestMapping` methods that don't have any patterns or URI variables.
 * `ClientResponse` performance optimizations and `mutate()` method for efficient changes through a client filter or `onStatus` handler, see [#24680](https://github.com/spring-projects/spring-framework/issues/24680).
-* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now).
+* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
 
 ### Testing
 
@@ -88,7 +89,7 @@ _(currently under development)_
 * Multipart data matchers in the [client-side REST test](https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#spring-mvc-test-client) support for the `RestTemplate`.
 * HtmlUnit integration for Spring MVC Test supports file upload parameters.
 * Minor enhancements to `MockHttpServletResponse` regarding character encoding and multiple `Content-Language` header values.
-* Major revision of MockMVC Kotlin DSL to support multiple matchers.
+* Major revision of MockMVC Kotlin DSL to support multiple matchers
 
 
 ## What's New in Version 5.2

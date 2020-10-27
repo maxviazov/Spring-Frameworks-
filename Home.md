@@ -1,4 +1,4 @@
-This Wiki complements the [Spring Framework reference](https://docs.spring.io/spring/docs/current/spring-framework-reference/) with concepts (vs providing a reference) and documents that are independent of release cadence or provide a summary across multiple versions.
+This Wiki complements the [Spring Framework reference](https://docs.spring.io/spring-framework/docs/current/reference/html/) with concepts (vs providing a reference) and documents that are independent of release cadence or provide a summary across multiple versions.
 
 Choose a topic from menu on the right, or expand the list of all Pages.
 

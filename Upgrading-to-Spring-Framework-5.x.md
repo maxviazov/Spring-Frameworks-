@@ -73,6 +73,8 @@ The _Spring TestContext Framework_ now provides first-class support for inheriti
 
 Consult the [Javadoc for `@NestedTestConfiguration`](https://docs.spring.io/spring-framework/docs/5.3.0-SNAPSHOT/javadoc-api/org/springframework/test/context/NestedTestConfiguration.html) and the [reference manual](https://docs.spring.io/spring-framework/docs/5.3.0-SNAPSHOT/reference/html/testing.html#testcontext-junit-jupiter-nested-test-configuration) for details.
 
+Users of `MockMvc` Kotlin DSL could experience some breakages when using property syntax like `isOk`, `isOk()` should be used instead. There maybe be some other slight variations due to the improved Kotlin DSL, see [this commit](https://github.com/spring-projects/spring-framework/commit/d04c5f8b2cb274b8f44c47b3783e5d29f3e21b43) for more details.
+
 
 ## Upgrading to Version 5.2
 

@@ -10,7 +10,7 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 For Kotlin:
 * Kotlin support has been upgraded to Kotlin 1.4 and is still compatible with Kotlin 1.3.
 * Kotlin Coroutines 1.4 (which requires Kotlin 1.4 or above) or above is now required.
-* For users of Kotlin scripting, notice that Kotlin 1.4 users should use `kotlin-scripting-jsr223` instead of `kotlin-scripting-jsr223-embeddable`.
+* For users of Kotlin scripting, notice that Kotlin 1.4 users should use `kotlin-scripting-jsr223` dependency instead of `kotlin-scripting-jsr223-embeddable`.
 
 Groovy 3.0 is the officially supported version now, with Groovy 2.x support getting phased out.
 

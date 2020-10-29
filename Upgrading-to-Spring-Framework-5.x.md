@@ -53,6 +53,20 @@ Handler method arguments with a conversion-based type such as `UUID` detect a `n
 
 ### Spring MVC
 
+`LocaleResolver`, `ThemeResolver`, `FlashMapManager` and `RequestToViewNameTranslator` beans are now declared at `WebMvcConfigurationSupport` level with `@Bean` annotations for improved consistency with other Spring MVC default beans and to improve GraalVM compatibility by reducing reflection done otherwise in `DispatcherServlet`. Spring Boot or XML application context based projects shouldn't be impacted, but non Spring Boot projects using Javaconfig overriding one of those default beans may require an update since the bean declaration should now happen in the configuration class annotated with `@EnableWebMvc` (still using their [well-known names](https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/org/springframework/web/servlet/DispatcherServlet.html#FLASH_MAP_MANAGER_BEAN_NAME), for example for the `LocaleResolver`:
+```
+@EnableWebMvc
+@ComponentScan(basePackages="org.springframework.issues")
+@Configuration
+public class WebConfig {
+
+	@Bean
+	public LocaleResolver localeRsesolver() {
+		return new FixedLocaleResolver(new Locale("fr", "FR"));
+	}
+}
+```
+
 `@RequestParam` and `@RequestPart` enforce at least one element in a `MultipartFile` and Servlet `Part` collection/array when the argument is required (i.e. not explicitly marked as optional), consistent with individual `MultipartFile`/`Part` declarations, resolving the argument to `null` otherwise.
 
 Spring MVC no longer performs `.*` suffix pattern matching by default, and likewise path extensions are no longer used by default to interpret the requested content type (e.g. `/person.pdf`, `/person.xml`, etc). Please, see the ["Suffix Match"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-suffix-pattern-match) section of the reference documentation.

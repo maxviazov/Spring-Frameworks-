@@ -60,7 +60,7 @@ Handler method arguments with a conversion-based type such as `UUID` detect a `n
 public class WebConfig {
 
 	@Bean
-	public LocaleResolver localeRsesolver() {
+	public LocaleResolver localeResolver() {
 		return new FixedLocaleResolver(new Locale("fr", "FR"));
 	}
 }

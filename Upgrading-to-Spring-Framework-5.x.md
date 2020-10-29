@@ -7,6 +7,11 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 
 ### Third-Party APIs and Libraries
 
+For Kotlin:
+* Kotlin support has been upgraded to Kotlin 1.4 and is still compatible with Kotlin 1.3.
+* Kotlin Coroutines 1.4 (which requires Kotlin 1.4 or above) or above is now required.
+* For users of Kotlin scripting, notice that Kotlin 1.4 users should use `kotlin-scripting-jsr223` instead of `kotlin-scripting-jsr223-embeddable`.
+
 Groovy 3.0 is the officially supported version now, with Groovy 2.x support getting phased out.
 
 Support for RxJava 1.x is deprecated; RxJava 2.x is the new baseline and 3.x is now supported.
@@ -20,11 +25,6 @@ JCA CCI support is deprecated, in favor of specific data access APIs (or native 
 Several remoting technologies have been deprecated with no direct replacement (Hessian, RMI, HTTP Invoker, JMS Invoker).
 
 `MimeMessageHelper` has been aligned with JavaMail 1.5+, not explicitly encoding attachment filenames by default anymore.
-
-For Kotlin:
-* Kotlin support has been upgraded to Kotlin 1.4 and is still compatible with Kotlin 1.3.
-* Kotlin Coroutines 1.4 (which requires Kotlin 1.4 or above) or above is now required.
-* For users of Kotlin scripting, notice that Kotlin 1.4 users should use `kotlin-scripting-jsr223` instead of `kotlin-scripting-jsr223-embeddable`.
 
 ### Core Container
 

@@ -21,6 +21,11 @@ Several remoting technologies have been deprecated with no direct replacement (H
 
 `MimeMessageHelper` has been aligned with JavaMail 1.5+, not explicitly encoding attachment filenames by default anymore.
 
+For Kotlin:
+* Kotlin support has been upgraded to Kotlin 1.4 and is still compatible with Kotlin 1.3.
+* Kotlin Coroutines 1.4 (which requires Kotlin 1.4 or above) or above is now required.
+* For users of Kotlin scripting, notice that Kotlin 1.4 users should use `kotlin-scripting-jsr223` instead of `kotlin-scripting-jsr223-embeddable`.
+
 ### Core Container
 
 The properties-based bean definition format and all support classes based on it (such as `PropertiesBeanDefinitionReader`, `JdbcBeanDefinitionReader` and `ResourceBundleViewResolver`) are deprecated now, in favor of Spring's common bean definition formats and/or custom reader implementations.

@@ -85,6 +85,8 @@ WebClient now wraps emitted exceptions in either a `WebClientRequestException`, 
 
 A `UriComponentsBuilder` argument injected into an `@Controller` method is now application relative (i.e. it includes the contextPath) where previously it contained no path at all.
 
+`org.synchronoss.cloud:nio-multipart-parser` is no longer a required dependency for multipart support in WebFlux. Instead, there is now the `DefaultPartHttpMessageReader` with no dependencies, see [gh-21659](https://github.com/spring-projects/spring-framework/issues/21659)
+
 ### Testing
 
 The _Spring TestContext Framework_ now provides first-class support for inheriting and overriding test-related annotations from enclosing classes. This improves the programming model for using JUnit Jupiter `@Nested` test classes with Spring's testing support. Note, however, that annotations from enclosing classes will now be inherited by default. This is a change in behavior that may cause some of your `@Nested` test classes to fail after upgrading to Spring Framework 5.3. To revert to the behavior present in Spring Framework 5.0 - 5.2.x, you can annotate top-level, enclosing classes for your `@Nested` test classes with `@NestedTestConfiguration(OVERRIDE)`. To switch to `OVERRIDE` mode for an entire project, you can configure `spring.test.enclosing.configuration=override` via a JVM system property or an entry in a `spring.properties` file in the root of the classpath (for example, in `src/test/resources/spring.properties`).

@@ -37,7 +37,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * `RSocketRequester` support for the new `LoadbalanceRSocketClient`.
 * `RSocketRequester` support for metadataPush interactions.
 * The `preservePublishOrder` option for STOMP/WebSocket applications now works in combination with send buffer size and time limits.
-* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
+* Support for [Kotlin multiplatform serialization](https://docs.spring.io/spring-framework/docs/current/reference/html/languages.html#kotlin-multiplatform-serialization) (JSON only for now)
 * `StompBrokerRelayMessageHandler` can be configured with a `Taskscheduler` in order to send heartbeats to the broker in lieu of messages with a non-broker destination. This can help for clients that send heartbeats only when no other messages are sent.
 
 ### General Web Revision
@@ -56,7 +56,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * `@ExceptionHandler` can target exception causes at any level of nesting.
 * `ForwardedHeaderFilter` updates the remote address/port from "Forwarded For" headers.
 * Add missing beans to `WebMvcConfigurationSupport` in order to make `DispatcherServlet.properties` (now lazily parsed) not needed for most use cases.
-* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
+* Support for [Kotlin multiplatform serialization](https://docs.spring.io/spring-framework/docs/current/reference/html/languages.html#kotlin-multiplatform-serialization) (JSON only for now)
 
 ### Spring WebFlux
 
@@ -71,7 +71,7 @@ _This document provides a summary of features and changes in Spring Framework [5
 * `WebHttpHandlerBuilder` option to decorate the entire `WebFilter` chain at the level of the `HttpHandler`. 
 * More efficient direct path lookups for `@RequestMapping` methods that don't have any patterns or URI variables.
 * `ClientResponse` performance optimizations and `mutate()` method for efficient changes through a client filter or `onStatus` handler, see [#24680](https://github.com/spring-projects/spring-framework/issues/24680).
-* Support for [Kotlin multiplatform serialization](https://github.com/Kotlin/kotlinx.serialization) (JSON only for now)
+* Support for [Kotlin multiplatform serialization](https://docs.spring.io/spring-framework/docs/current/reference/html/languages.html#kotlin-multiplatform-serialization) (JSON only for now)
 
 ### Testing
 

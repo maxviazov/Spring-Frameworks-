@@ -12,13 +12,14 @@ For Kotlin:
 * Kotlin Coroutines 1.4 (which requires Kotlin 1.4 or above) or above is now required.
 * For users of Kotlin scripting, notice that Kotlin 1.4 users should use `kotlin-scripting-jsr223` dependency instead of `kotlin-scripting-jsr223-embeddable`.
 
+Hibernate support has been upgraded to a Hibernate ORM 5.2+ baseline, with a focus on ORM 5.4.x.
+Please note that Hibernate Search needs to be upgradded to 5.11 for Spring 5.3 JPA compatibility.
+
+Jackson support covers Jackson 2.9 to 2.12 now, generally with the latest releases in each branch.
+
 Groovy 3.0 is the officially supported version now, with Groovy 2.x support getting phased out.
 
 Support for RxJava 1.x is deprecated; RxJava 2.x is the new baseline and 3.x is now supported.
-
-Hibernate support has been upgraded to a Hibernate ORM 5.2+ baseline, with a focus on ORM 5.4.x.
-
-Jackson support covers Jackson 2.9 to 2.12 now, generally with the latest releases in each branch.
 
 JCA CCI support is deprecated, in favor of specific data access APIs (or native CCI usage if there is no alternative).
 

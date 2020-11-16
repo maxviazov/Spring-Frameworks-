@@ -10,10 +10,9 @@ Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reache
 For Kotlin:
 * Kotlin support has been upgraded to Kotlin 1.4 and is still compatible with Kotlin 1.3.
 * Kotlin Coroutines 1.4 (which requires Kotlin 1.4 or above) or above is now required.
-* For users of Kotlin scripting, notice that Kotlin 1.4 users should use `kotlin-scripting-jsr223` dependency instead of `kotlin-scripting-jsr223-embeddable`.
+* For Kotlin scripting, Kotlin 1.4 users should use the `kotlin-scripting-jsr223` dependency instead of `kotlin-scripting-jsr223-embeddable`.
 
-Hibernate support has been upgraded to a Hibernate ORM 5.2+ baseline, with a focus on ORM 5.4.x.
-Please note that Hibernate Search needs to be upgradded to 5.11 for Spring 5.3 JPA compatibility.
+Hibernate support has been upgraded to a Hibernate ORM 5.2+ baseline, with a focus on ORM 5.4.x. Please note that Hibernate Search needs to be upgraded to 5.11.6 for Spring Framework 5.3 JPA compatibility (see https://hibernate.atlassian.net/browse/HSEARCH-4107).
 
 Jackson support covers Jackson 2.9 to 2.12 now, generally with the latest releases in each branch.
 

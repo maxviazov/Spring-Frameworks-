@@ -54,7 +54,9 @@ The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux)
 
 `@ExceptionHandler` methods now check all exception causes when looking for a match. Previously, going back to 4.3 only the first cause was checked.`
 
-Handler method arguments with a conversion-based type such as `UUID` detect a `null` conversion result now, treating it as a missing value. For accepting e.g. an empty String as a `null` `UUID` argument, explicitly mark the argument as optional (e.g. through `required=false` on `@RequestHeader` and co).
+Handler method arguments with a conversion-based type such as `UUID`, `Long`, and others detect a `null` conversion result now, treating it as a missing value. In order to allow an empty String to be injected as a `null` argument, either set `required=false` on the argument annotation, e.g. `@RequestHeader(required=false)` or declared the argument as `@Nullable`.
+
+
 
 ### Spring MVC
 

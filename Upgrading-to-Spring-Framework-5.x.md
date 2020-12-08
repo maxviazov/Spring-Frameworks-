@@ -52,7 +52,7 @@ When using the `PathPatternParser` for request mapping, patterns with double-wil
 
 The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux) have been enhanced and now support multiple values in `X-Forwarded-Prefix` and the new `X-Forwarded-For` / `Forwarded: for=` HTTP request headers. See [gh-25254](https://github.com/spring-projects/spring-framework/issues/25254) and [gh-23582](https://github.com/spring-projects/spring-framework/pull/23582).
 
-`@ExceptionHandler` methods now check all exception causes when looking for a match. Previously, going back to 4.3 only the first cause was checked.`
+`@ExceptionHandler` methods now check all exception causes when looking for a match. Previously, going back to 4.3 only the first cause was checked.
 
 Handler method arguments with a conversion-based type such as `UUID`, `Long`, and others detect a `null` conversion result now, treating it as a missing value. In order to allow an empty String to be injected as a `null` argument, either set `required=false` on the argument annotation, e.g. `@RequestHeader(required=false)` or declared the argument as `@Nullable`.
 
@@ -76,6 +76,8 @@ public class WebConfig {
 `@RequestParam` and `@RequestPart` enforce at least one element in a `MultipartFile` and Servlet `Part` collection/array when the argument is required (i.e. not explicitly marked as optional), consistent with individual `MultipartFile`/`Part` declarations, resolving the argument to `null` otherwise.
 
 Spring MVC no longer performs `.*` suffix pattern matching by default, and likewise path extensions are no longer used by default to interpret the requested content type (e.g. `/person.pdf`, `/person.xml`, etc). Please, see the ["Suffix Match"](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc-ann-requestmapping-suffix-pattern-match) section of the reference documentation.
+
+In case of JSON serialization errors while writing to the HTTP response, the JSON `HttpMessageConverter` will still flush to the response and clean up resources. If you were previously relying on the response not being written to, note that this was not an intended behavior and that we can't guarantee error handling for this case. See [gh-26246](https://github.com/spring-projects/spring-framework/issues/26246) for an example of that.
 
 ### Spring WebFlux
 

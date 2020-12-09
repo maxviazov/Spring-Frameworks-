@@ -38,8 +38,6 @@ _This document provides a summary of features and changes in Spring Framework [5
 * `RSocketRequester` support for metadataPush interactions.
 * The `preservePublishOrder` option for STOMP/WebSocket applications now works in combination with send buffer size and time limits.
 * Support for [Kotlin multiplatform serialization](https://docs.spring.io/spring-framework/docs/current/reference/html/languages.html#kotlin-multiplatform-serialization) (JSON only for now)
-* `StompBrokerRelayMessageHandler` can be configured with a `Taskscheduler` in order to send heartbeats to the broker in lieu of messages with a non-broker destination. This can help for clients that send heartbeats only when no other messages are sent.
-* `WebSocketMessageBrokerConfigurationSupport` has been refactored to not require CGLIB proxies, see [related commit](https://github.com/spring-projects/spring-framework/commit/017242463502f451c6c71a823b9c5232276dd78e).
 
 ### General Web Revision
 
@@ -48,7 +46,6 @@ _This document provides a summary of features and changes in Spring Framework [5
 * `Jackson2ObjectMapperBuilder` exposes `Consumer<ObjectMapper>` option for advanced customizations.
 * `DataBinder` allows switching between direct field and bean property access during initialization. An example scenario is an `@ControllerAdvice` configuring direct field access by default globally with some controllers overriding that locally, via `@InitBinder` method, to bean property access.
 * A `spring.xml.ignore` property to remove XML support for applications not using it, including related converters and codecs.
-* `WebSocketConfigurationSupport` has been refactored to not require CGLIB proxies, see [related commit](https://github.com/spring-projects/spring-framework/commit/017242463502f451c6c71a823b9c5232276dd78e).
 
 ### Spring MVC
  

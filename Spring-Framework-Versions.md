@@ -5,8 +5,8 @@ _This document describes new features, noteworthy changes, and provides guidance
 - 5.3.x is the final feature branch of the 5th generation and the latest production line (GA as of October 2020), with long-term support to be provided (on JDK 8, JDK 11, and the upcoming JDK 17 LTS release expected in September 2021).
 - 5.2.x is the previous production line (GA as of September 2019), to be actively supported until the end of 2021.
 - 5.1.x and 5.0.x are not actively supported anymore, superseded by 5.2.x and 5.3.x as of December 2020.
-- 4.3.x is the last feature branch of the 4th generation. _4.3.x reaches its official EOL (end-of-life) on December 31st, 2020._
-- _3.2.x is EOL (end-of-life) as of December 31st, 2016. No further maintenance and security patches are planned in that line._
+- _4.3.x reached its official EOL (end-of-life) on December 31st, 2020. No further maintenance and security patches are planned in that line._
+- _3.2.x reached its official EOL (end-of-life) on December 31st, 2016. No further maintenance and security patches are planned in that line._
 
 At this point, we recommend upgrading to the latest Spring Framework 5.3.x release from Maven Central.
 

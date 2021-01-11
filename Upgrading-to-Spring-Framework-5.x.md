@@ -1,6 +1,6 @@
 _This page provides guidance on upgrading to Spring Framework [5.0](#upgrading-to-version-50), [5.1](#upgrading-to-version-51), [5.2](#upgrading-to-version-52), and [5.3](#upgrading-to-version-53). See also the [[Spring-Framework-5-FAQ]] and [[What's New in Spring Framework 5.x]]._
 
-Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reaches its EOL cut-off on December 31st, 2020, along with the 5.0.x and 5.1.x lines. Please upgrade to Spring Framework 5.2.x at your earliest convenience!
+Note that Spring Framework 4.3.x and therefore Spring Framework 4 overall reached its EOL cut-off on December 31st, 2020, along with the 5.0.x and 5.1.x lines. Please upgrade to Spring Framework 5.2+ at your earliest convenience!
 
 
 ## Upgrading to Version 5.3
@@ -11,6 +11,8 @@ For Kotlin:
 * Kotlin support has been upgraded to Kotlin 1.4 and is still compatible with Kotlin 1.3+.
 * Kotlin Coroutines 1.4 (which builds on Kotlin 1.4) or above is now required for coroutines support.
 * For Kotlin scripting, Kotlin 1.4 users should declare the `kotlin-scripting-jsr223` dependency instead of `kotlin-scripting-jsr223-embeddable`.
+
+Spring Framework 5.3 ships with a WildFly manifest that makes Objenesis work on JDK 9+. This is known to cause an incompatibility with WildFly 9; please upgrade to a more recent version of WildFly - or patch your copy of `spring-core.jar` to drop the `Dependencies` manifest entry.
 
 Hibernate support has been upgraded to a Hibernate ORM 5.2+ baseline, with a focus on ORM 5.4.x. Please note that Hibernate Search needs to be upgraded to 5.11.6 for Spring Framework 5.3 JPA compatibility; see [Hibernate JIRA](https://hibernate.atlassian.net/browse/HSEARCH-4107).
 

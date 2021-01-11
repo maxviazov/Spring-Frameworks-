@@ -38,6 +38,8 @@ The properties-based bean definition format and all support classes based on it 
 
 `@EventListener` methods use an implicit order value of `Ordered.LOWEST_PRECEDENCE` now, in alignment with transaction synchronizations and `@TransactionalEventListener` methods. If custom ordering is needed, please consistently declare `@Order` values on all listener methods.
 
+Caching within the core container is consistently optimized for bean definitions with stable bean types per bean name, even for prototype beans. This is partially also the case for the 5.2.x line. Performance regressions might require some bean definition redesign; see e.g. [gh-26369](https://github.com/spring-projects/spring-framework/issues/26369).
+
 ### Data Access and Transactions
 
 Several `JdbcTemplate` signatures with `Object[]` arguments are deprecated, in favor of their existing varargs equivalents.

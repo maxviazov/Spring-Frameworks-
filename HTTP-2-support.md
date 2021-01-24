@@ -4,7 +4,7 @@ The HTTP/2 spec and the browser implementations bring new security constraints c
 
 * TLS 1.2, SNI and ALPN, all required to upgrade to HTT/2 protocol
 * a secure server certificate - usually with a strong signature algorithm and a key 2048+ bits key
-* all the [TLS requirements listed in the HTTP/2 specification](https://http2.github.io/http2-spec/#rfc.section.9.2)
+* all the [TLS requirements listed in the HTTP/2 specification](https://httpwg.org/specs/rfc7540.html#TLSUsage)
 
 TLS 1.2 isn't natively supported by JDK8, but it is in JDK8u252+ and JDK9; also, alternative TLS implementations (including native bindings) are popular because they can offer performance gains compared to the JDK stack. This part explains why containers offer various deployment options and each has its pros/cons.
 

@@ -48,7 +48,7 @@ To install all Spring Framework jars in your local Maven repository, use the fol
 Note that the `-x ...` arguments skip the generation of documentation.
 
 ```shell
-./gradlew publishToMavenLocal -x javadoc -x dokka -x asciidoctor
+./gradlew publishToMavenLocal -x javadoc -x dokka -x asciidoctor -x asciidoctorPdf
 ```
 
 If you are building a previous version of the framework (for example, Spring Framework 5.1.x), use:

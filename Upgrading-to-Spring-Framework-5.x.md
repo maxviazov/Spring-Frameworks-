@@ -58,7 +58,7 @@ The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux)
 
 `@ExceptionHandler` methods now check all exception causes when looking for a match. Previously, going back to 4.3 only the first cause was checked.
 
-Handler method arguments with a conversion-based type such as `UUID`, `Long`, and others detect a `null` conversion result now, treating it as a missing value. In order to allow an empty String to be injected as a `null` argument, either set `required=false` on the argument annotation, e.g. `@RequestHeader(required=false)` or declared the argument as `@Nullable`.
+`@RequestParam`, `@RequestHeader`, and other controller method argument annotations that depend on type conversion from String values to other types such as `UUID`, `Long`, and others, now detect a `null` conversion result value and treat as missing. For example, a query parameter with an empty value is now treated as missing if it requires type conversion and the conversion results in `null`. In order to allow an empty value to be injected as a `null` argument, either set `required=false` on the argument annotation, e.g. `@RequestParam(required=false)`, or declare the argument as `@Nullable`.
 
 `WebSocketConfigurationSupport` and `WebSocketMessageBrokerConfigurationSupport` have been refactored to not require CGLIB proxies, see [related commit](https://github.com/spring-projects/spring-framework/commit/017242463502f451c6c71a823b9c5232276dd78e).
 

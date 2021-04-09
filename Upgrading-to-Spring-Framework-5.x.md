@@ -66,13 +66,13 @@ The `ForwardedHeaderFilter` (Servlet) and `ForwardedHeaderTransformer` (WebFlux)
 
 ### Spring MVC
 
-`LocaleResolver`, `ThemeResolver`, `FlashMapManager` and `RequestToViewNameTranslator` beans are now declared at `WebMvcConfigurationSupport` level with `@Bean` annotations for improved consistency with other Spring MVC default beans and to improve GraalVM compatibility by reducing reflection done otherwise in `DispatcherServlet`. Spring Boot or XML application context based projects shouldn't be impacted, but non Spring Boot projects using Javaconfig overriding one of those default beans may require an update since the bean declaration should now happen in the configuration class annotated with `@EnableWebMvc` (still using their [well-known names](https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/constant-values.html#org.springframework.web.servlet.DispatcherServlet.FLASH_MAP_MANAGER_BEAN_NAME)), for example for the `LocaleResolver`:
+`LocaleResolver`, `ThemeResolver`, `FlashMapManager` and `RequestToViewNameTranslator` beans are now declared at `WebMvcConfigurationSupport` and `DelegatingWebMvcConfiguration` level with `@Bean` annotations for improved consistency with other Spring MVC default beans and to improve GraalVM compatibility by reducing reflection done otherwise in `DispatcherServlet`. Spring Boot or XML application context based projects shouldn't be impacted, but non Spring Boot projects using JavaConfig overriding one of those default beans may require an update since the bean declaration should now happen in the configuration class annotated with `@EnableWebMvc` (still using their [well-known names](https://docs.spring.io/spring-framework/docs/5.3.x/javadoc-api/constant-values.html#org.springframework.web.servlet.DispatcherServlet.FLASH_MAP_MANAGER_BEAN_NAME)), for example for the `LocaleResolver`:
 ```
-@EnableWebMvc
 @Configuration
-public class WebConfig {
+public class WebConfig extends DelegatingWebMvcConfiguration {
 
 	@Bean
+	@Override
 	public LocaleResolver localeResolver() {
 		return new FixedLocaleResolver(new Locale("fr", "FR"));
 	}

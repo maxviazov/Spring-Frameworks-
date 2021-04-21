@@ -85,6 +85,8 @@ Spring MVC no longer performs `.*` suffix pattern matching by default, and likew
 
 In case of JSON serialization errors while writing to the HTTP response, the JSON `HttpMessageConverter` will still flush to the response and clean up resources. If you were previously relying on the response not being written to, note that this was not an intended behavior and that we can't guarantee error handling for this case. See [gh-26246](https://github.com/spring-projects/spring-framework/issues/26246) for an example of that.
 
+A `java.security.Principal` argument is no longer resolved eagerly, if it is annotated in some way such as `@AuthenticationPrincipal`, thus allowing a custom resolver to resolve it first, before using default resolution resolution via `HttpServletRequest#getUserPrincipal`. This can cause issues for existing applications that are trying to inject the Spring Security `Authentication` but also have it annotated with `@AuthenticationPrincipal` which now results in the injection of `Authentication#getPrincipal` as per the intent for the annotation. Removing `@AuthenticationPrincipal` results in the injection of the top level `Authentication` object which is also a `Principal` and would be resolved via `HttpServletRequest#getUserPrincipal` after the change.
+
 ### Spring WebFlux
 
 `@RequestPart` with `List<T>` now converts the 1st part to `List<T>` consistent with Spring MVC and with how it works for `T[]`. Previously each part was converted to `T`, see [gh-22973](https://github.com/spring-projects/spring-framework/issues/22973).

@@ -46,6 +46,8 @@ Several `JdbcTemplate` signatures with `Object[]` arguments are deprecated, in f
 
 `HibernateJpaVendorAdapter` exposes `Session(Factory)` as `EntityManager(Factory)` extension interface by default (following Hibernate ORM 5.2+).
 
+`TransactionSynchronization` extends the `Ordered` interface by default now, as a replacement for the deprecated `TransactionSynchronizationAdapter`. As a consequence, `@Order` annotations on synchronization instances - which were not officially supported despite effectively working since 4.2 - do not work anymore. Synchronization objects are low-level callback objects, please express any attached order with a programmatic `getOrder` implementation.
+
 Reactive transactions consistently roll back on a Reactive Streams cancel signal now, preventing partial commits for common datastore transactions.
 
 ### Web Applications

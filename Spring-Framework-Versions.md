@@ -12,13 +12,13 @@ At this point, we recommend upgrading to the latest Spring Framework 5.3.x relea
 
 # JDK Version Range
 
-- Spring Framework 5.3.x: JDK 8-17 (expected)
+- Spring Framework 5.3.x: JDK 8-19 (expected)
 - Spring Framework 5.2.x: JDK 8-15
 - Spring Framework 5.1.x: JDK 8-12
 - Spring Framework 5.0.x: JDK 8-10
 - Spring Framework 4.3.x: JDK 6-8
 
-We fully test and support Spring on Long-Term Support (LTS) releases of the JDK, i.e. currently JDK 8 and 11 (both with a lifetime until 2023) and expecting JDK 17 (to be released in late 2021). Additionally, there is support for intermediate releases such as JDK 9/10/12/13/14/15/16 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
+We fully test and support Spring on Long-Term Support (LTS) releases of the JDK, i.e. currently JDK 8 and JDK 11 and soon expecting JDK 17 (to be released in late 2021). Additionally, there is support for intermediate releases such as JDK 9/10/12/13/14/15/16/18 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
 
 # What's New
 

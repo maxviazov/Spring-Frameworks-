@@ -52,7 +52,7 @@ Add the following to resolve snapshot versions – for example, `5.3.10-SNAPSHOT
 
 ### Milestones and Release Candidates
 
-Add the following to resolve milestone and RC versions, e.g. `5.3.0-M1` or `5.3.0-RC1`:
+Add the following to resolve milestone and RC versions – for example, `5.3.0-M1` or `5.3.0-RC1`:
 
 ```xml
 <repository>

@@ -3,11 +3,11 @@ _This document describes how to access Spring Framework artifacts. For snippets 
 The Spring Framework is modular and publishes 20+ different jars:
 
 ````
-spring-aop           spring-context-indexer  spring-instrument  spring-orm   spring-webflux  
-spring-aspects       spring-context-support  spring-jcl         spring-oxm   spring-webmvc  
-spring-beans         spring-core             spring-jdbc        spring-test  spring-websocket  
-                     spring-expression       spring-jms         spring-tx  
-spring-context                               spring-messaging   spring-web  
+spring-aop      spring-context-indexer  spring-instrument  spring-orm    spring-web
+spring-aspects  spring-context-support  spring-jcl         spring-oxm    spring-webflux
+spring-beans    spring-core             spring-jdbc        spring-r2dbc  spring-webmvc
+spring-context  spring-expression       spring-jms         spring-test   spring-websocket
+                                        spring-messaging   spring-tx  
 ````
 
 Some modules are interdependent. For example `spring-context` depends on `spring-beans` which in turn depends on `spring-core`. There are no required external dependencies although each module has optional dependencies and some of those may be required depending on what functionality the application needs.

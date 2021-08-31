@@ -247,6 +247,7 @@ The Java EE 7 API level is required in Spring's corresponding modules now, with 
 * Hibernate 5.0+
 * OkHttp 3.0+
 * XmlUnit 2.0+
+* XStream 1.4.7+
 
 ### Removed Packages, Classes and Methods
 

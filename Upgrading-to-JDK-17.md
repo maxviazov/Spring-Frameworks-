@@ -1,0 +1,1 @@
+This page describes the experience of the Spring Framework team while upgrading the project build from a JDK 8 to JDK 17 baseline. 

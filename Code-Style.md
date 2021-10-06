@@ -319,7 +319,8 @@ The Javadoc of a class has some extra rules that are illustrated by the sample b
 ```
 
 * Each class must have a `@since` tag with the version in which the class was introduced.
-* The order of tags for class-level Javadoc is `@author`, `@since` and `@see`.
+* The order of tags for class-level Javadoc is: `@author`, `@since`, `@param`, `@see`, `@deprecated`.
+* The order of tags for method-level Javadoc is: `@param`, `@return`, `@throws`, `@since`, `@see`, `@deprecated`.
 * In contrast to method-level Javadoc, the paragraphs of a class description *are* separated by blank lines.
 
 The following are additional general rules to apply when writing Javadoc:

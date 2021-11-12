@@ -36,7 +36,7 @@ For example, we can run the `MimeTypeBenchmark.cachedParserSomeMimeTypes` benchm
 
 [source,bash]
 ----
-java -jar spring-core/build/libs/spring-core-5.3.0-SNAPSHOT-jmh.jar -f1 -prof gc -p customTypesCount=10,20 MimeTypeBenchmark.cachedParserSomeMimeTypes
+java -jar spring-core/build/libs/spring-core-5.3.0-SNAPSHOT-jmh.jar -f2 -prof gc -p customTypesCount=10,20 MimeTypeBenchmark.cachedParserSomeMimeTypes
 ----
 
 The benchmark options are really important, as the specific parameters are part of the benchmark design;

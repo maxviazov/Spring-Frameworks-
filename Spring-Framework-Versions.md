@@ -2,7 +2,7 @@ _This document describes new features, noteworthy changes, and provides guidance
 
 # Supported Versions
 
-- 5.3.x is the final feature branch of the 5th generation and the latest production line (GA as of October 2020), with long-term support to be provided on JDK 8, JDK 11, JDK 17.
+- 5.3.x is the final feature branch of the 5th generation and the latest production line (GA as of October 2020), with long-term support provided on JDK 8, JDK 11, JDK 17.
 - 5.2.x is the previous production line (GA as of September 2019), to be actively supported until the end of 2021.
 - 5.1.x and 5.0.x are not actively supported anymore, superseded by 5.2.x and 5.3.x as of December 2020.
 - _4.3.x reached its official EOL (end-of-life) on December 31st, 2020. No further maintenance and security patches are planned in that line._
@@ -18,7 +18,7 @@ At this point, we recommend upgrading to the latest Spring Framework 5.3.x relea
 - Spring Framework 5.0.x: JDK 8-10
 - Spring Framework 4.3.x: JDK 6-8
 
-We fully test and support Spring on Long-Term Support (LTS) releases of the JDK, i.e. currently JDK 8 and JDK 11 and soon expecting JDK 17 (to be released in late 2021). Additionally, there is support for intermediate releases such as JDK 9/10/12/13/14/15/16/18 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
+We fully test and support Spring on Long-Term Support (LTS) releases of the JDK, i.e. currently JDK 8, JDK 11 and JDK 17. Additionally, there is support for intermediate releases such as JDK 9/10/12/13/14/15/16/18 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
 
 # What's New
 

@@ -27,5 +27,6 @@ We fully test and support Spring on Long-Term Support (LTS) releases of the JDK,
 
 # Upgrade Considerations
 
+- [[Upgrading to Spring Framework 6.0|Upgrading to Spring Framework 6.x]]
 - [[Upgrading to Spring Framework 5.0, 5.1, 5.2 and 5.3|Upgrading to Spring Framework 5.x]]
 - [[Upgrading to Spring Framework 4.3|Upgrading to Spring-Framework 4.x]]

@@ -6,7 +6,7 @@ _This page provides guidance on upgrading to Spring Framework 6.0._
 
 The JSR-330 based `@Inject` annotation is to be found in `jakarta.inject` now. The corresponding JSR-250 based
 annotations `@PostConstruct` and `@PreDestroy` are to be found in `jakarta.annotation`. For the time being,
-Spring keeps detecting their `javax` equivalent as well, covering common use in pre-compiled binaries.
+Spring keeps detecting their `javax` equivalents as well, covering common use in pre-compiled binaries.
 
 ### Data Access and Transactions
 
@@ -18,6 +18,10 @@ Hibernate Validator generation is 7.0.x, based on `jakarta.validation`.
 
 Due to the Jakarta EE migration, make sure to upgrade to Tomcat 10, Jetty 11, or Undertow 2.2.14 with the
 `undertow-servlet-jakarta` artifact, alongside switching your `javax.servlet` imports to `jakarta.servlet`.
+
+Several outdated Servlet-based integrations have been dropped: e.g. Commons FileUpload and Tiles, as well
+as FreeMarker JSP support. We recommend `StandardServletMultipartResolver` for multipart file uploads
+and regular FreeMarker template views if needed, and a general focus on REST-oriented web architectures.
 
 Spring MVC and Spring WebFlux no longer detect controllers based solely on a type-level `@RequestMapping`
 annotation. That means interfaced based AOP proxying for web controllers may no longer work. Please,

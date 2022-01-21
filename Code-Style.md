@@ -269,6 +269,10 @@ public abstract MyUtils {
 
 A field of a class should *always* be referenced using `this`. A method of class, however, should never be referenced using `this`.
 
+### Local variable type inference
+
+The use of `var` for variable declarations (_local variable type inference_) is not permitted. Instead, declare variables using the concrete type or interface (where applicable).
+
 ## Javadoc
 
 ### Javadoc formatting

@@ -34,7 +34,7 @@ Each source file must specify the following license at the very top of the file:
 
 ```java
 /*
- * Copyright 2002-2019 the original author or authors.
+ * Copyright 2002-2022 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,16 +50,16 @@ Each source file must specify the following license at the very top of the file:
  */
 ```
 
-Always check the date range in the license header. For example, if you've modified a file in 2019 whose header still reads:
+Always check the date range in the license header. For example, if you've modified a file in 2022 whose header still reads:
 
 ```
-* Copyright 2002-2013 the original author or authors.
+* Copyright 2002-2018 the original author or authors.
 ```
 
-Then be sure to update it to 2019 accordingly:
+Then be sure to update it to 2022 accordingly:
 
 ```
-* Copyright 2002-2019 the original author or authors.
+* Copyright 2002-2022 the original author or authors.
 ```
 
 ### Import statements

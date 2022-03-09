@@ -22,7 +22,7 @@ The Spring Framework publishes GA (general availability) versions to [Maven Cent
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>5.3.9</version>
+    <version>5.3.16</version>
 </dependency>
 ```
 
@@ -32,7 +32,7 @@ Snapshot, milestone, and release candidate versions are published to an [Artifac
 
 ### Snapshots
 
-Add the following to resolve snapshot versions – for example, `5.3.10-SNAPSHOT`:
+Add the following to resolve snapshot versions – for example, `5.3.17-SNAPSHOT`:
 
 ```xml
 <repository>
@@ -46,13 +46,13 @@ Add the following to resolve snapshot versions – for example, `5.3.10-SNAPSHOT
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>5.3.10-SNAPSHOT</version>
+    <version>5.3.17-SNAPSHOT</version>
 </dependency>
 ```
 
 ### Milestones and Release Candidates
 
-Add the following to resolve milestone and RC versions – for example, `5.3.0-M1` or `5.3.0-RC1`:
+Add the following to resolve milestone and RC versions – for example, `6.0.0-M2` or `6.0.0-RC1`:
 
 ```xml
 <repository>
@@ -66,7 +66,7 @@ Add the following to resolve milestone and RC versions – for example, `5.3.0-M
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>5.3.0-M1</version>
+    <version>6.0.0-M2</version>
 </dependency>
 ```
 

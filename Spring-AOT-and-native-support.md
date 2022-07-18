@@ -1,6 +1,6 @@
 Support for compiling Spring applications to native executables via Ahead-Of-Time transformations and [GraalVM](https://www.graalvm.org/) native image compiler will be shipped as part of Spring Framework 6+ and is documented in this page. 
 
-# Build-time evaluation
+# Build-time initialization
 
 In order to obtain an optimized image size and memory footprint, GraalVM native image compiler performs a static analysis of the code of applications from the provided entry points (main + reflection entries configured) in order to identify reachable code paths which are then compiled to native code.
 
@@ -11,7 +11,7 @@ This mechanism has a significant drawback : build-time class initialization is a
 
 That’s why in Spring Framework 6+ and related Spring portfolio projects, the goal is to reduce as much as possible build-time class initialization which should be limited to classes that do not compile yet to native image (often due to GraalVM bugs like [this one](https://github.com/oracle/graal/issues/4673)). If and only if there is no other way, it is possible to add a `META-INF/native-image/<groupId>/<artifactIdId>/native-image.properties` resource file to specify classes to initialize at build-time. Examples of such classes in Spring Framework can be found listed in [spring-core](https://github.com/spring-projects/spring-framework/blob/main/spring-core/src/main/resources/META-INF/native-image/org.springframework/spring-core/native-image.properties) or [spring-web](https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/resources/META-INF/native-image/org.springframework/spring-web/native-image.properties).
 
-## Build-time fields evaluation for classpath checks
+## Build-time fields initialization for classpath checks
 
 For the frequent use case of classpath checks via static boolean fields like in [WebMvcConfigurationSupport](https://github.com/spring-projects/spring-framework/blob/f2d31b7a20c1e561bf63be1b019f63fc127f18c4/spring-webmvc/src/main/java/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java#L201-L233) where there is a possibility to perform build-time code removal, 
 Spring Framework provides [a GraalVM feature](https://github.com/spring-projects/spring-framework/tree/main/spring-core/graalvm) that initializes those boolean static fields at build-time without having to use build-time class initialization. The following patterns are used to detect those fields:

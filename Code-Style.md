@@ -69,6 +69,7 @@ The import statements are structured as follow:
 * import `java.*`
 * blank line
 * import `javax.*`
+* import `jakarta.*`
 * blank line
 * import all other imports
 * blank line

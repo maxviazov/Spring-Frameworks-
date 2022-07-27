@@ -8,6 +8,10 @@ The JSR-330 based `@Inject` annotation is to be found in `jakarta.inject` now. T
 annotations `@PostConstruct` and `@PreDestroy` are to be found in `jakarta.annotation`. For the time being,
 Spring keeps detecting their `javax` equivalents as well, covering common use in pre-compiled binaries.
 
+`ListenableFuture` has been deprecated in favor of `CompletableFuture`. 
+See [27780](https://github.com/spring-projects/spring-framework/issues/27780).
+
+
 ### Data Access and Transactions
 
 Due to the Jakarta EE migration, make sure to upgrade to Hibernate ORM 5.6.x with the `hibernate-core-jakarta`

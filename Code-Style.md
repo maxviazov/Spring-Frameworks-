@@ -2,7 +2,7 @@
 
 This document defines the coding standards for source files in the Spring Framework. It is primarily intended for the Spring Framework team but can be used as a reference by contributors.
 
-The structure of this document is based on the [Google Java Style](https://google.github.io/styleguide/javaguide.html) reference and is _work in progress_.
+The structure of this document is based on the [Google Java Style](https://google.github.io/styleguide/javaguide.html) reference and is a _work in progress_.
 
 ## Source File Basics
 
@@ -77,9 +77,14 @@ The import statements are structured as follow:
 * blank line
 * import static all other imports
 
-Static imports should not be used in production code. They should be used in test code, especially for things like `import static org.assertj.core.api.Assertions.assertThat;`.
+Static imports should not be used in production code, but they should be used in test code, especially for things like `import static org.assertj.core.api.Assertions.assertThat;`.
 
-Wildcard imports such as `import java.util.*;` or `import static org.assertj.core.api.Assertions.*` are forbidden, even in test code.
+Although static imports are generally forbidden in production code, the following are use cases for which static imports are permissible.
+
+- constants (including enum constants): such as those in `java.nio.charset.StandardCharsets` or `org.springframework.core.annotation.MergedAnnotations.SearchStrategy`
+- static factory methods for third-party DSLs: such as the methods in `org.junit.platform.engine.discovery.DiscoverySelectors` when used with the JUnit Platform `Launcher` API
+
+Wildcard imports such as `import java.util.*` or `import static org.assertj.core.api.Assertions.*` are forbidden, even in test code.
 
 ### Java source file organization
 

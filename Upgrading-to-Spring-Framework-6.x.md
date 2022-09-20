@@ -41,3 +41,5 @@ The Kotlin extension function to `WebTestClient.ResponseSpec::expectBody` now re
 type, and no longer uses the workaround type `KotlinBodySpec`.Spring 6.0 uses Kotlin 1.6, which fixed the
 bug that needed this workaround ([KT-5464](https://youtrack.jetbrains.com/issue/KT-5464)).
 This means that `consumeWith` is not longer available.
+
+`RestTemplate`, or rather the `HttpComponentsClientHttpRequestFactory`, now requires Apache HttpClient 5.

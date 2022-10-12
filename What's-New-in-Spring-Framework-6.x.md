@@ -4,9 +4,8 @@
 
 * Entire framework codebase based on Java 17 source code level now.
 * Migration from "javax" to "jakarta" namespace for Servlet, JPA, etc.
-* Compatible with latest web container generation: Tomcat 10, Jetty 11.
-* Early compatibility with Jakarta EE 10 based providers (e.g. Jetty 12).
-* Early compatibility with [virtual threads]((https://spring.io/blog/2022/10/11/embracing-virtual-threads)) (in preview as of JDK 19).
+* Compatible with latest web container generation: [Tomcat 10](https://tomcat.apache.org/whichversion.html), [Jetty 11](https://www.eclipse.org/jetty/download.php).
+* Early compatibility with [virtual threads](https://spring.io/blog/2022/10/11/embracing-virtual-threads) (in preview as of JDK 19).
 
 ### General Core Revision
 

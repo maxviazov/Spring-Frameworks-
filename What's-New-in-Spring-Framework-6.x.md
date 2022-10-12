@@ -44,6 +44,7 @@
 ### Spring MVC
 
 * PathPatternParser by default (with the ability to opt into PathMatcher).
+* Integration with Micrometer [Context Propagation](https://github.com/micrometer-metrics/context-propagation#context-propagation-library) for `Flux` and `Mono` return values from controller methods.
 * Removal of outdated Tiles and FreeMarker JSP support.
  
 ### Spring WebFlux
@@ -51,6 +52,9 @@
 * Revised reactive multipart processing.
 * JDK HttpClient integration with WebClient.
 * Micrometer-based observability for WebClient.
+* `ResponseEntityExceptionHandler` available to customize WebFlux exceptions and RFC 7807 responses, see [Error Responses](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#webflux-ann-rest-exceptions)
+* `Flux` return values, for non-streaming media types, no longer collects to List
+* Early support for Reactor Netty 2 (based on Netty 5).
 
 ### Testing
 

@@ -13,7 +13,6 @@
 * Complete CGLIB fork with support for capturing CGLIB-generated classes.
 * Comprehensive foundation for [Ahead-Of-Time transformations](https://spring.io/blog/2022/03/22/initial-aot-support-in-spring-framework-6-0-0-m3).
 * First-class support for [GraalVM](https://www.graalvm.org/) native images (see [related Spring Boot 3 blog post](https://spring.io/blog/2022/09/26/native-support-in-spring-boot-3-0-0-m5)).
-* Early support for [Netty 5](https://netty.io/wiki/new-and-noteworthy-in-5.0.html) (alpha) in parallel to Netty 4.1.84+.
 
 ### Core Container
 
@@ -32,7 +31,7 @@
 ### Spring Messaging
 
 * [RSocket interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#rsocket-interface) based on `@RSocketExchange` service interfaces.
-* Early support for Reactor Netty 2 (based on Netty 5).
+* Early support for Reactor Netty 2 based on [Netty 5](https://netty.io/wiki/new-and-noteworthy-in-5.0.html) alpha.
 
 ### General Web Revision
 
@@ -50,12 +49,11 @@
 ### Spring WebFlux
 
 * Introduce [`PartEvent`](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#partevent) to stream multipart form uploads, both on client and server.
-* JDK `HttpClient` integrated with `WebClient`.
-* Micrometer-based observability for WebClient.
 * Addition of `ResponseEntityExceptionHandler` to customize WebFlux exceptions and render RFC 7807 [error responses](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#webflux-ann-rest-exceptions).
 * `Flux` return values for non-streaming media types, no longer collected to List before written.
-* Early support for Reactor Netty 2 (based on Netty 5).
-* 
+* Early support for Reactor Netty 2 based on [Netty 5](https://netty.io/wiki/new-and-noteworthy-in-5.0.html) alpha.
+* JDK `HttpClient` integrated with `WebClient`.
+* Micrometer-based observability for `WebClient`.
 
 ### Testing
 

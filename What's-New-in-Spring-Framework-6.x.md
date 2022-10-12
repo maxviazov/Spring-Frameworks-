@@ -49,12 +49,13 @@
  
 ### Spring WebFlux
 
-* Revised reactive multipart processing.
+* Introduce [`PartEvent`](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#partevent) to stream multipart form uploads, both on client and server.
 * JDK `HttpClient` integrated with `WebClient`.
 * Micrometer-based observability for WebClient.
 * Addition of `ResponseEntityExceptionHandler` to customize WebFlux exceptions and render RFC 7807 [error responses](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#webflux-ann-rest-exceptions).
 * `Flux` return values for non-streaming media types, no longer collected to List before written.
 * Early support for Reactor Netty 2 (based on Netty 5).
+* 
 
 ### Testing
 

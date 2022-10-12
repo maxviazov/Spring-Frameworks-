@@ -52,8 +52,8 @@
 * Revised reactive multipart processing.
 * JDK HttpClient integration with WebClient.
 * Micrometer-based observability for WebClient.
-* `ResponseEntityExceptionHandler` available to customize WebFlux exceptions and RFC 7807 responses, see [Error Responses](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#webflux-ann-rest-exceptions)
-* `Flux` return values, for non-streaming media types, no longer collects to List
+* Addition of `ResponseEntityExceptionHandler` to customize WebFlux exceptions and render RFC 7807 [error responses](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#webflux-ann-rest-exceptions).
+* `Flux` return values, for non-streaming media types, no longer collects to List.
 * Early support for Reactor Netty 2 (based on Netty 5).
 
 ### Testing

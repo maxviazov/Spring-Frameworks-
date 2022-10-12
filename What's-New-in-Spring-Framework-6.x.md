@@ -11,11 +11,11 @@
 ### General Core Revision
 
 * Upgrade to ASM 9.4 and Kotlin 1.7.
-* Full CGLIB fork with support for capturing CGLIB-generated classes.
+* Complete CGLIB fork with support for capturing CGLIB-generated classes.
 * Support for [Ahead-Of-Time transformations](https://spring.io/blog/2022/03/22/initial-aot-support-in-spring-framework-6-0-0-m3).
 * First-class support for [GraalVM](https://www.graalvm.org/) native images (see [related Spring Boot 3 blog post](https://spring.io/blog/2022/09/26/native-support-in-spring-boot-3-0-0-m5)).
 * PathMatchingResourcePatternResolver uses NIO and module path APIs for scanning.
-* Early support for Netty 5 (alpha).
+* Early support for Netty 5 (alpha) in parallel to Netty 4.1.84+.
 
 ### Core Container
 

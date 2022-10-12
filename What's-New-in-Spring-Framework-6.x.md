@@ -12,12 +12,14 @@
 * Full CGLIB fork with support for capturing CGLIB-generated classes.
 * Support for [Ahead-Of-Time transformations](https://spring.io/blog/2022/03/22/initial-aot-support-in-spring-framework-6-0-0-m3).
 * First-class support for [GraalVM](https://www.graalvm.org/) native images (see [related Spring Boot 3 blog post](https://spring.io/blog/2022/09/26/native-support-in-spring-boot-3-0-0-m5)).
+* PathMatchingResourcePatternResolver uses NIO and module path APIs for scanning.
 * Early support for Netty 5 (alpha).
 
 ### Core Container
 
-* AOT processing for GenericApplicationContext.
-* Support for early proxy class determination.
+* AOT processing support in GenericApplicationContext ("refreshForAotProcessing").
+* Bean definition transformation based on pre-resolved constructors and factory methods.
+* Support for early proxy class determination for AOP proxies and configuration classes.
 
 ### Data Access and Transactions
 
@@ -35,6 +37,7 @@
 * HTTP interface clients based on @HttpExchange service interfaces.
 * Support for RFC 7807 problem details.
 * Unified HTTP status code handling.
+* Micrometer-based observability for RestTemplate.
 
 ### Spring MVC
 
@@ -44,6 +47,7 @@
 
 * Revised reactive multipart processing.
 * JDK HttpClient integration with WebClient.
+* Micrometer-based observability for WebClient.
 
 ### Testing
 

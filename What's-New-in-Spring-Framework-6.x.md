@@ -6,7 +6,7 @@
 * Migration from "javax" to "jakarta" namespace for Servlet, JPA, etc.
 * Compatible with latest web container generation: Tomcat 10, Jetty 11.
 * Early compatibility with Jakarta EE 10 based providers (e.g. Jetty 12).
-* Early compatibility with virtual threads (in preview as of JDK 19).
+* Early compatibility with [virtual threads]((https://spring.io/blog/2022/10/11/embracing-virtual-threads)) (in preview as of JDK 19).
 
 ### General Core Revision
 
@@ -14,7 +14,7 @@
 * Complete CGLIB fork with support for capturing CGLIB-generated classes.
 * Comprehensive foundation for [Ahead-Of-Time transformations](https://spring.io/blog/2022/03/22/initial-aot-support-in-spring-framework-6-0-0-m3).
 * First-class support for [GraalVM](https://www.graalvm.org/) native images (see [related Spring Boot 3 blog post](https://spring.io/blog/2022/09/26/native-support-in-spring-boot-3-0-0-m5)).
-* Early support for Netty 5 (alpha) in parallel to Netty 4.1.84+.
+* Early support for [Netty 5](https://netty.io/wiki/new-and-noteworthy-in-5.0.html) (alpha) in parallel to Netty 4.1.84+.
 
 ### Core Container
 
@@ -28,6 +28,7 @@
 * Support for pre-determining JPA managed types (for inclusion in AOT processing).
 * JPA support for Hibernate ORM 6 (retaining compatibility with Hibernate ORM 5.6).
 * Upgrade to R2DBC 1.0 (including R2DBC transaction definitions).
+* Removal of JCA CCI support.
 
 ### Spring Messaging
 
@@ -55,3 +56,4 @@
 ### Testing
 
 * Support for testing AOT-processed application contexts.
+* Integration with HtmlUnit 2.64 request parameter handling.

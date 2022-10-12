@@ -23,6 +23,7 @@ We fully test and support Spring on Long-Term Support (LTS) releases of the JDK,
 
 # What's New
 
+- [[6th generation|What's New in Spring Framework 6.x]]
 - [[5th generation|What's New in Spring Framework 5.x]] and [[Spring Framework 5 FAQ]]
 - [4th generation](https://docs.spring.io/spring-framework/docs/4.3.x/spring-framework-reference/htmlsingle/#spring-whats-new) (4.3.x reference)
 

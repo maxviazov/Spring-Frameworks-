@@ -31,12 +31,12 @@
 
 ### Spring Messaging
 
-* Support for RSocket interface clients.
+* [RSocket interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#rsocket-interface) based on `RSocketExchange` service interfaces.
 * Early support for Reactor Netty 2 (based on Netty 5).
 
 ### General Web Revision
 
-* [HTTP interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/integration.html#rest-http-interface) based on @HttpExchange service interfaces.
+* [HTTP interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/integration.html#rest-http-interface) based on `@HttpExchange` service interfaces.
 * Support for [RFC 7807 problem details](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web.html#mvc-ann-rest-exceptions).
 * Unified HTTP status code handling.
 * Micrometer-based observability for RestTemplate.

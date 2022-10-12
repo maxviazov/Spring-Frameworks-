@@ -3,7 +3,7 @@
 ### JDK 17+ and Jakarta EE 9+ Baseline
 
 * Entire framework codebase based on Java 17 source code level now.
-* Migrated from "javax" to "jakarta" namespace for Servlet, JPA, etc.
+* Migration from "javax" to "jakarta" namespace for Servlet, JPA, etc.
 * Compatible with latest web container generation: Tomcat 10, Jetty 11.
 * Early compatibility with Jakarta EE 10 based providers (e.g. Jetty 12).
 * Early compatibility with virtual threads (in preview as of JDK 19).
@@ -12,9 +12,8 @@
 
 * Upgrade to ASM 9.4 and Kotlin 1.7.
 * Complete CGLIB fork with support for capturing CGLIB-generated classes.
-* Support for [Ahead-Of-Time transformations](https://spring.io/blog/2022/03/22/initial-aot-support-in-spring-framework-6-0-0-m3).
+* Comprehensive foundation for [Ahead-Of-Time transformations](https://spring.io/blog/2022/03/22/initial-aot-support-in-spring-framework-6-0-0-m3).
 * First-class support for [GraalVM](https://www.graalvm.org/) native images (see [related Spring Boot 3 blog post](https://spring.io/blog/2022/09/26/native-support-in-spring-boot-3-0-0-m5)).
-* PathMatchingResourcePatternResolver uses NIO and module path APIs for scanning.
 * Early support for Netty 5 (alpha) in parallel to Netty 4.1.84+.
 
 ### Core Container
@@ -22,6 +21,7 @@
 * AOT processing support in GenericApplicationContext ("refreshForAotProcessing").
 * Bean definition transformation based on pre-resolved constructors and factory methods.
 * Support for early proxy class determination for AOP proxies and configuration classes.
+* PathMatchingResourcePatternResolver uses NIO and module path APIs for scanning.
 
 ### Data Access and Transactions
 
@@ -44,6 +44,7 @@
 ### Spring MVC
 
 * PathPatternParser by default (with the ability to opt into PathMatcher).
+* Removal of outdated Tiles and FreeMarker JSP support.
  
 ### Spring WebFlux
 

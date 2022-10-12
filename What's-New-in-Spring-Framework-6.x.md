@@ -31,7 +31,7 @@
 
 ### Spring Messaging
 
-* [RSocket interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#rsocket-interface) based on `RSocketExchange` service interfaces.
+* [RSocket interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#rsocket-interface) based on `@RSocketExchange` service interfaces.
 * Early support for Reactor Netty 2 (based on Netty 5).
 
 ### General Web Revision

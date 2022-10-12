@@ -37,8 +37,8 @@
 
 ### General Web Revision
 
-* HTTP interface clients based on @HttpExchange service interfaces.
-* Support for RFC 7807 problem details.
+* [HTTP interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/integration.html#rest-http-interface) based on @HttpExchange service interfaces.
+* Support for [RFC 7807 problem details](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web.html#mvc-ann-rest-exceptions).
 * Unified HTTP status code handling.
 * Micrometer-based observability for RestTemplate.
 

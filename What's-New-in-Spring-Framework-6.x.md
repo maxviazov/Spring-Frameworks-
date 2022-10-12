@@ -39,11 +39,11 @@
 * [HTTP interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/integration.html#rest-http-interface) based on `@HttpExchange` service interfaces.
 * Support for [RFC 7807 problem details](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web.html#mvc-ann-rest-exceptions).
 * Unified HTTP status code handling.
-* Micrometer-based observability for RestTemplate.
+* Micrometer-based observability for `RestTemplate`.
 
 ### Spring MVC
 
-* PathPatternParser by default (with the ability to opt into PathMatcher).
+* `PathPatternParser` used by default (with the ability to opt into `PathMatcher`).
 * Integration with Micrometer [Context Propagation](https://github.com/micrometer-metrics/context-propagation#context-propagation-library) for `Flux` and `Mono` return values from controller methods.
 * Removal of outdated Tiles and FreeMarker JSP support.
  

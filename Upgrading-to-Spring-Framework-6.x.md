@@ -8,15 +8,25 @@ The JSR-330 based `@Inject` annotation is to be found in `jakarta.inject` now. T
 annotations `@PostConstruct` and `@PreDestroy` are to be found in `jakarta.annotation`. For the time being,
 Spring keeps detecting their `javax` equivalents as well, covering common use in pre-compiled binaries.
 
+The core container performs basic bean property determination without `java.beans.Introspector` by default.
+For full backwards compatibility with 5.3.x in case of sophisticated JavaBeans usage, specify the following
+content in a `META-INF/spring.factories` file which enables 5.3-style full `java.beans.Introspector` usage:
+`org.springframework.beans.BeanInfoFactory=org.springframework.beans.ExtendedBeanInfoFactory`
+When staying on 5.3.x for the time being, you may also ensure forward compatibility with 6.0-style basic
+property determination through the following entry in a `META-INF/spring.factories` file:
+`org.springframework.beans.BeanInfoFactory=org.springframework.beans.SimpleBeanInfoFactory`
+
 `ListenableFuture` has been deprecated in favor of `CompletableFuture`. 
 See [27780](https://github.com/spring-projects/spring-framework/issues/27780).
-
 
 ### Data Access and Transactions
 
 Due to the Jakarta EE migration, make sure to upgrade to Hibernate ORM 5.6.x with the `hibernate-core-jakarta`
-artifact, alongside switching your `javax.persistence` imports to `jakarta.persistence`. The corresponding
-Hibernate Validator generation is 7.0.x, based on `jakarta.validation`.
+artifact, alongside switching your `javax.persistence` imports to `jakarta.persistence`. Alternatively,
+consider migrating to Hibernate ORM 6.1 right away (which is exclusively based on `jakarta.persistence`).
+
+The corresponding Hibernate Validator generation is 7.0.x, based on `jakarta.validation` (Jakarta EE 9).
+You may also choose to upgrade to Hibernate Validator 8.0 right away (based on Jakarta EE 10).
 
 ### Web Applications
 

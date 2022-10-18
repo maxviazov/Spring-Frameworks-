@@ -20,6 +20,8 @@ determination (and better introspection performance!) through a custom `META-INF
 `ListenableFuture` has been deprecated in favor of `CompletableFuture`. 
 See [27780](https://github.com/spring-projects/spring-framework/issues/27780).
 
+`SimpleEvaluationContext` disables array allocations now, aligned with regular constructor resolution.
+
 ### Data Access and Transactions
 
 Due to the Jakarta EE migration, make sure to upgrade to Hibernate ORM 5.6.x with the `hibernate-core-jakarta`

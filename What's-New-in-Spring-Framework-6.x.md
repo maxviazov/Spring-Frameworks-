@@ -16,10 +16,12 @@
 
 ### Core Container
 
+* Basic bean property determination without `java.beans.Introspector` by default.
 * AOT processing support in GenericApplicationContext ("refreshForAotProcessing").
 * Bean definition transformation based on pre-resolved constructors and factory methods.
 * Support for early proxy class determination for AOP proxies and configuration classes.
 * PathMatchingResourcePatternResolver uses NIO and module path APIs for scanning.
+* DefaultFormattingConversionService supports ISO-based default `java.time` type parsing.
 
 ### Data Access and Transactions
 

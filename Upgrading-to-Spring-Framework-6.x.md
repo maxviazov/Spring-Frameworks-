@@ -25,13 +25,15 @@ See [27780](https://github.com/spring-projects/spring-framework/issues/27780).
 ### Data Access and Transactions
 
 Due to the Jakarta EE migration, make sure to upgrade to Hibernate ORM 5.6.x with the `hibernate-core-jakarta`
-artifact, alongside switching your `javax.persistence` imports to `jakarta.persistence`.
-
-Alternatively, consider migrating to Hibernate ORM 6.1 right away (exclusively based on `jakarta.persistence`)
-which is the Hibernate version that Spring Boot 3.0 comes with.
+artifact, alongside switching your `javax.persistence` imports to `jakarta.persistence` (Jakarta EE 9).
+Alternatively, consider migrating to Hibernate ORM 6.1 right away (exclusively based on `jakarta.persistence`,
+compatible with EE 9 as well as EE 10) which is the Hibernate version that Spring Boot 3.0 comes with.
 
 The corresponding Hibernate Validator generation is 7.0.x, based on `jakarta.validation` (Jakarta EE 9).
 You may also choose to upgrade to Hibernate Validator 8.0 right away (based on Jakarta EE 10).
+
+With EclipseLink, the reference version is 3.0.x (Jakarta EE 9), with EclipseLink 4.0 as the most recent
+supported version (Jakarta EE 10).
 
 ### Web Applications
 

@@ -40,12 +40,10 @@
 * [HTTP interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/integration.html#rest-http-interface) based on `@HttpExchange` service interfaces.
 * Support for [RFC 7807 problem details](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web.html#mvc-ann-rest-exceptions).
 * Unified HTTP status code handling.
-* Micrometer-based observability for `RestTemplate`.
 
 ### Spring MVC
 
 * `PathPatternParser` used by default (with the ability to opt into `PathMatcher`).
-* Integration with Micrometer [Context Propagation](https://github.com/micrometer-metrics/context-propagation#context-propagation-library) for `Flux` and `Mono` return values from controller methods.
 * Removal of outdated Tiles and FreeMarker JSP support.
  
 ### Spring WebFlux
@@ -55,7 +53,16 @@
 * `Flux` return values for non-streaming media types (no longer collected to List before written).
 * Early support for Reactor Netty 2 based on [Netty 5](https://netty.io/wiki/new-and-noteworthy-in-5.0.html) alpha.
 * JDK `HttpClient` integrated with `WebClient`.
-* Micrometer-based observability for `WebClient`.
+
+### Observability
+
+Direct Observability instrumentation with [Micrometer Observation](https://micrometer.io/docs/observation) in several parts of the Spring Framework. The "spring-web" module now requires "io.micrometer:micrometer-observation:1.10+" as a compile depedency.
+
+* `RestTemplate` and `WebClient` are instrumented to produce HTTP client request observations
+* Spring MVC can be instrumented for HTTP server observations using the new `org.springframework.web.filter.ServerHttpObservationFilter`
+* Spring WebFlux can be instrumented for HTTP server observations using the new `org.springframework.web.filter.reactive.ServerHttpObservationFilter`
+* Integration with Micrometer [Context Propagation](https://github.com/micrometer-metrics/context-propagation#context-propagation-library) for `Flux` and `Mono` return values from controller methods. 
+
 
 ### Testing
 

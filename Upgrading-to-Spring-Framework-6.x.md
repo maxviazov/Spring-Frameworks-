@@ -30,7 +30,7 @@ Alternatively, consider migrating to Hibernate ORM 6.1 right away (exclusively b
 compatible with EE 9 as well as EE 10) which is the Hibernate version that Spring Boot 3.0 comes with.
 
 The corresponding Hibernate Validator generation is 7.0.x, based on `jakarta.validation` (Jakarta EE 9).
-You may also choose to upgrade to Hibernate Validator 8.0 right away (based on Jakarta EE 10).
+You may also choose to upgrade to Hibernate Validator 8.0 right away (aligned with Jakarta EE 10).
 
 For EclipseLink as the persistence provider of choice, the reference version is 3.0.x (Jakarta EE 9),
 with EclipseLink 4.0 as the most recent supported version (Jakarta EE 10).
@@ -39,7 +39,7 @@ with EclipseLink 4.0 as the most recent supported version (Jakarta EE 10).
 
 Due to the Jakarta EE migration, make sure to upgrade to Tomcat 10, Jetty 11, or Undertow 2.2.19 with the
 `undertow-servlet-jakarta` artifact, alongside switching your `javax.servlet` imports to `jakarta.servlet`
-(Jakarta EE 9). For the latest server generations, consider Tomcat 10.1 and Jetty 12 (Jakarta EE 10).
+(Jakarta EE 9). For the latest server generations, consider Tomcat 10.1 and Undertow 2.3 (Jakarta EE 10).
 
 Several outdated Servlet-based integrations have been dropped: e.g. Commons FileUpload and Tiles, as well
 as FreeMarker JSP support. We recommend `StandardServletMultipartResolver` for multipart file uploads

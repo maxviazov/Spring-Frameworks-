@@ -4,7 +4,7 @@
 
 * Entire framework codebase based on Java 17 source code level now.
 * Migration from `javax` to `jakarta` namespace for Servlet, JPA, etc.
-* Compatible with latest web container generation: [Tomcat 10](https://tomcat.apache.org/whichversion.html), [Jetty 11](https://www.eclipse.org/jetty/download.php).
+* Compatible with latest web servers: [Tomcat 10.1](https://tomcat.apache.org/whichversion.html), [Jetty 11](https://www.eclipse.org/jetty/download.php), [Undertow 2.3](https://github.com/undertow-io/undertow).
 * Early compatibility with [virtual threads](https://spring.io/blog/2022/10/11/embracing-virtual-threads) (in preview as of JDK 19).
 
 ### General Core Revision
@@ -34,12 +34,14 @@
 
 * [RSocket interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web-reactive.html#rsocket-interface) based on `@RSocketExchange` service interfaces.
 * Early support for Reactor Netty 2 based on [Netty 5](https://netty.io/wiki/new-and-noteworthy-in-5.0.html) alpha.
+* Support for Jakarta WebSocket 2.1 and its standard WebSocket protocol upgrade mechanism.
 
 ### General Web Revision
 
 * [HTTP interface client](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/integration.html#rest-http-interface) based on `@HttpExchange` service interfaces.
 * Support for [RFC 7807 problem details](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web.html#mvc-ann-rest-exceptions).
 * Unified HTTP status code handling.
+* Support for Jackson 2.14.
 
 ### Spring MVC
 

@@ -4,6 +4,7 @@
 
 * Entire framework codebase based on Java 17 source code level now.
 * Migration from `javax` to `jakarta` namespace for Servlet, JPA, etc.
+* Runtime compatibility with Jakarta EE 9 as well as Jakarta EE 10 APIs.
 * Compatible with latest web servers: [Tomcat 10.1](https://tomcat.apache.org/whichversion.html), [Jetty 11](https://www.eclipse.org/jetty/download.php), [Undertow 2.3](https://github.com/undertow-io/undertow).
 * Early compatibility with [virtual threads](https://spring.io/blog/2022/10/11/embracing-virtual-threads) (in preview as of JDK 19).
 
@@ -42,6 +43,7 @@
 * Support for [RFC 7807 problem details](https://docs.spring.io/spring-framework/docs/6.0.0-RC1/reference/html/web.html#mvc-ann-rest-exceptions).
 * Unified HTTP status code handling.
 * Support for Jackson 2.14.
+* Alignment with Servlet 6.0 (while retaining runtime compatibility with Servlet 5.0).
 
 ### Spring MVC
 

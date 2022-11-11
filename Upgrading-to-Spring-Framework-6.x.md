@@ -61,3 +61,9 @@ bug that needed this workaround ([KT-5464](https://youtrack.jetbrains.com/issue/
 This means that `consumeWith` is not longer available.
 
 `RestTemplate`, or rather the `HttpComponentsClientHttpRequestFactory`, now requires Apache HttpClient 5.
+
+The Spring-provided Servlet mocks (`MockHttpServletRequest`, `MockHttpSession`) require Servlet 6.0 now,
+due to a breaking change between the Servlet 5.0 and 6.0 API jars. They can be used for testing Servlet
+5.0 based code but need to run against the Servlet 6.0 API (or newer) on the test classpath. Note that
+your production code may still compile against Servlet 5.0 and get integration-tested with Servlet 5.0
+based containers; just mock-based tests need to run against the Servlet 6.0 API jar.

@@ -68,4 +68,5 @@ Direct Observability instrumentation with [Micrometer Observation](https://micro
 ### Testing
 
 * Support for testing AOT-processed application contexts on the JVM or within a GraalVM native image.
-* Integration with HtmlUnit 2.64 request parameter handling.
+* Integration with HtmlUnit 2.64+ request parameter handling.
+* Servlet mocks (`MockHttpServletRequest`, `MockHttpSession`) are based on Servlet API 6.0 now.

@@ -2,13 +2,16 @@ _This document describes new features, noteworthy changes, and provides guidance
 
 # Supported Versions
 
+- 6.0.x is the current feature branch and the main production line as of November 2022. This new generation requires a JDK 17 baseline.
 - 5.3.x is the final feature branch of the 5th generation and the latest production line (GA as of October 2020), with long-term support provided on JDK 8, JDK 11, JDK 17.
 - 5.2.x is the previous production line (GA as of September 2019), to be actively supported until the end of 2021.
 - 5.1.x and 5.0.x are not actively supported anymore, superseded by 5.2.x and 5.3.x as of December 2020.
 - _4.3.x reached its official EOL (end-of-life) on December 31st, 2020. No further maintenance and security patches are planned in that line._
 - _3.2.x reached its official EOL (end-of-life) on December 31st, 2016. No further maintenance and security patches are planned in that line._
 
-At this point, we recommend upgrading to the latest Spring Framework 5.3.x release from Maven Central.
+At this point, we recommend upgrading to the latest Spring Framework 6.0.x release from Maven Central when possible.
+
+You'll find more [information on official support dates on spring.io](https://spring.io/projects/spring-framework#support).
 
 # JDK Version Range
 

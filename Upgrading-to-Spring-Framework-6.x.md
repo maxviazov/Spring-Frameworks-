@@ -67,3 +67,9 @@ due to a breaking change between the Servlet 5.0 and 6.0 API jars. They can be u
 5.0 based code but need to run against the Servlet 6.0 API (or newer) on the test classpath. Note that
 your production code may still compile against Servlet 5.0 and get integration-tested with Servlet 5.0
 based containers; just mock-based tests need to run against the Servlet 6.0 API jar.
+
+`SourceHttpMessageConverter` is not configured by default anymore in Spring MVC and `RestTemplate`.
+As a consequence, Spring web applications using `javax.xml.transform.Source` now needs to configure
+`SourceHttpMessageConverter` explicitly. Note that the order of converter registration is important,
+and `SourceHttpMessageConverter` should typically be registered before "catch-all" converters like
+`MappingJackson2HttpMessageConverter` for example.

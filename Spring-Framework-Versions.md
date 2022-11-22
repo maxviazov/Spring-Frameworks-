@@ -3,7 +3,7 @@ _This document describes new features, noteworthy changes, and provides guidance
 # Supported Versions
 
 - 6.0.x is the main production line as of November 2022. This new generation of the framework comes with a JDK 17 and Jakarta EE 9 baseline.
-- 5.3.x is the final feature branch of the 5th generation (GA as of October 2020), with long-term support provided on JDK 8, JDK 11, JDK 17.
+- 5.3.x is the final feature branch of the 5th generation, with long-term support provided on JDK 8, JDK 11, JDK 17 and the Java EE 8 level.
 - _4.3.x reached its official EOL (end-of-life) on December 31st, 2020. No further maintenance and security patches are planned in that line._
 - _3.2.x reached its official EOL (end-of-life) on December 31st, 2016. No further maintenance and security patches are planned in that line._
 
@@ -15,9 +15,6 @@ You'll find more [information on official support dates on spring.io](https://sp
 
 - Spring Framework 6.0.x: JDK 17-21 (for native images: JDK 17-19)
 - Spring Framework 5.3.x: JDK 8-19
-- Spring Framework 5.2.x: JDK 8-15
-- Spring Framework 5.1.x: JDK 8-12
-- Spring Framework 5.0.x: JDK 8-10
 - Spring Framework 4.3.x: JDK 6-8
 
 We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11 and JDK 17. Additionally, there is support for intermediate releases such as JDK 18 and 19 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.

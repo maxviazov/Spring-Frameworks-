@@ -2,27 +2,27 @@ _This document describes new features, noteworthy changes, and provides guidance
 
 # Supported Versions
 
-- 6.0.x is the current feature branch and the main production line as of November 2022. This new generation requires a JDK 17 baseline.
-- 5.3.x is the final feature branch of the 5th generation and the latest production line (GA as of October 2020), with long-term support provided on JDK 8, JDK 11, JDK 17.
-- 5.2.x is the previous production line (GA as of September 2019), to be actively supported until the end of 2021.
-- 5.1.x and 5.0.x are not actively supported anymore, superseded by 5.2.x and 5.3.x as of December 2020.
+- 6.0.x is the main production line as of November 2022. This new generation of the framework comes with a JDK 17 and Jakarta EE 9 baseline.
+- 5.3.x is the final feature branch of the 5th generation (GA as of October 2020), with long-term support provided on JDK 8, JDK 11, JDK 17.
 - _4.3.x reached its official EOL (end-of-life) on December 31st, 2020. No further maintenance and security patches are planned in that line._
 - _3.2.x reached its official EOL (end-of-life) on December 31st, 2016. No further maintenance and security patches are planned in that line._
 
-At this point, we recommend upgrading to the latest Spring Framework 6.0.x release from Maven Central when possible.
+At this point, we recommend upgrading to the latest Spring Framework 6.0.x / 5.3.x release from Maven Central when possible.
 
 You'll find more [information on official support dates on spring.io](https://spring.io/projects/spring-framework#support).
 
 # JDK Version Range
 
 - Spring Framework 6.0.x: JDK 17-21 (expected)
-- Spring Framework 5.3.x: JDK 8-19 (expected)
+- Spring Framework 5.3.x: JDK 8-19
 - Spring Framework 5.2.x: JDK 8-15
 - Spring Framework 5.1.x: JDK 8-12
 - Spring Framework 5.0.x: JDK 8-10
 - Spring Framework 4.3.x: JDK 6-8
 
-We fully test and support Spring on Long-Term Support (LTS) releases of the JDK, i.e. currently JDK 8, JDK 11 and JDK 17. Additionally, there is support for intermediate releases such as JDK 9/10/12/13/14/15/16/18 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
+We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11 and JDK 17. Additionally, there is support for intermediate releases such as JDK 18 and 19 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
+
+The GraalVM version supported by Spring Framework 6.0.x for native images is GraalVM 22.3, currently based on JDK 17-19. Please note that GraalVM is aligning with the OpenJDK release model as of 2023, with only the latest Java level to be supported in each GraalVM release. As a consequence, Spring Framework 6.x feature releases may have to require new GraalVM versions with a higher JDK baseline in the future, e.g. based on JDK 21 as the next LTS.
 
 # What's New
 

@@ -38,6 +38,11 @@ You may also choose to upgrade to Hibernate Validator 8.0 right away (aligned wi
 For EclipseLink as the persistence provider of choice, the reference version is 3.0.x (Jakarta EE 9),
 with EclipseLink 4.0 as the most recent supported version (Jakarta EE 10).
 
+Spring's default JDBC exception translator is the JDBC 4 based `SQLExceptionSubclassTranslator` now.
+`SQLErrorCodeSQLExceptionTranslator` kicks in for user-provided `sql-error-codes.xml files` still.
+It can pick up Spring's legacy default error code mappings as well when triggered by a (potentially empty)
+user-provided file in the root of the classpath, or by explicit `SQLErrorCodeSQLExceptionTranslator` setup.
+
 ### Web Applications
 
 Due to the Jakarta EE migration, make sure to upgrade to Tomcat 10, Jetty 11, or Undertow 2.2.19 with the

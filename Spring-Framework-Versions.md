@@ -15,9 +15,8 @@ You'll find more [information on official support dates on spring.io](https://sp
 
 - Spring Framework 6.0.x: JDK 17-21 (for native images: JDK 17-19)
 - Spring Framework 5.3.x: JDK 8-19
-- Spring Framework 4.3.x: JDK 6-8
 
-We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11 and JDK 17. Additionally, there is support for intermediate releases such as JDK 18 and 19 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees.
+We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11 and JDK 17. Additionally, there is support for intermediate releases such as JDK 18 and 19 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees. We currently recommend JDK 17 for use with Spring Framework 6.0.x as well as 5.3.x.
 
 The GraalVM version supported by Spring Framework 6.0.x for native images is GraalVM 22.3 based on JDK 17-19. Please note that GraalVM is aligning with the OpenJDK release model as of 2023, with only the latest Java level to be supported in each GraalVM release. As a consequence, Spring Framework 6.x feature releases may have to require new GraalVM versions with a higher JDK baseline in the future, e.g. based on JDK 21 as the next LTS.
 

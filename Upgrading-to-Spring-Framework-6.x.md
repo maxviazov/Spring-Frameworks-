@@ -17,6 +17,9 @@ When staying on 5.3.x for the time being, you may enforce forward compatibility 
 determination (and better introspection performance!) through a custom `META-INF/spring.factories` file:
 `org.springframework.beans.BeanInfoFactory=org.springframework.beans.SimpleBeanInfoFactory`
 
+`LocalVariableTableParameterNameDiscoverer` has been deprecated and is not registered by default anymore.
+Compile your Java sources with `-parameters` for parameter name retention (instead of relying on `-debug`).
+
 `ListenableFuture` has been deprecated in favor of `CompletableFuture`. 
 See [27780](https://github.com/spring-projects/spring-framework/issues/27780).
 

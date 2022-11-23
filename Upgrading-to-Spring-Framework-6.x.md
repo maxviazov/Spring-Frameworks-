@@ -41,7 +41,7 @@ For EclipseLink as the persistence provider of choice, the reference version is 
 with EclipseLink 4.0 as the most recent supported version (Jakarta EE 10).
 
 Spring's default JDBC exception translator is the JDBC 4 based `SQLExceptionSubclassTranslator` now.
-`SQLErrorCodeSQLExceptionTranslator` kicks in for user-provided `sql-error-codes.xml files` still.
+`SQLErrorCodeSQLExceptionTranslator` kicks in for user-provided `sql-error-codes.xml` files still.
 It can pick up Spring's legacy default error code mappings as well when triggered by a (potentially empty)
 user-provided file in the root of the classpath, or by explicit `SQLErrorCodeSQLExceptionTranslator` setup.
 
@@ -56,19 +56,19 @@ as FreeMarker JSP support. We recommend `StandardServletMultipartResolver` for m
 and regular FreeMarker template views if needed, and a general focus on REST-oriented web architectures.
 
 Spring MVC and Spring WebFlux no longer detect controllers based solely on a type-level `@RequestMapping`
-annotation. That means interfaced based AOP proxying for web controllers may no longer work. Please,
-enable class based proxying for such controllers or otherwise the interface must also have `@Controller`,
-see [22154](https://github.com/spring-projects/spring-framework/issues/22154).
+annotation. That means interface-based AOP proxying for web controllers may no longer work. Please,
+enable class-based proxying for such controllers; otherwise the interface must also be annotated with `@Controller`.
+See [22154](https://github.com/spring-projects/spring-framework/issues/22154).
 
-`HttpMethod` is a class and no longer an enum. Though the public API has been maintained, some 
+`HttpMethod` is now a class and no longer an enum. Though the public API has been maintained, some 
 migration might be necessary (i.e. change from `EnumSet<HttpMethod>` to `Set<HttpMethod>`, use `if 
 else` instead of `switch`). For the rationale behind this decision, see 
 [27697](https://github.com/spring-projects/spring-framework/issues/27697).
 
 The Kotlin extension function to `WebTestClient.ResponseSpec::expectBody` now returns the Java `BodySpec`
-type, and no longer uses the workaround type `KotlinBodySpec`.Spring 6.0 uses Kotlin 1.6, which fixed the
+type and no longer uses the workaround type `KotlinBodySpec`. Spring 6.0 uses Kotlin 1.6, which fixed the
 bug that needed this workaround ([KT-5464](https://youtrack.jetbrains.com/issue/KT-5464)).
-This means that `consumeWith` is not longer available.
+This means that `consumeWith` is no longer available.
 
 `RestTemplate`, or rather the `HttpComponentsClientHttpRequestFactory`, now requires Apache HttpClient 5.
 
@@ -79,7 +79,7 @@ your production code may still compile against Servlet 5.0 and get integration-t
 based containers; just mock-based tests need to run against the Servlet 6.0 API jar.
 
 `SourceHttpMessageConverter` is not configured by default anymore in Spring MVC and `RestTemplate`.
-As a consequence, Spring web applications using `javax.xml.transform.Source` now needs to configure
+As a consequence, Spring web applications using `javax.xml.transform.Source` now need to configure
 `SourceHttpMessageConverter` explicitly. Note that the order of converter registration is important,
 and `SourceHttpMessageConverter` should typically be registered before "catch-all" converters like
 `MappingJackson2HttpMessageConverter` for example.

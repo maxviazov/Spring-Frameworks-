@@ -24,7 +24,8 @@ of relying on the `-debug` compiler flag) in order to avoid that warning, or rep
 of the affected code.
 
 `LocalValidatorFactoryBean` relies on standard parameter name resolution in Bean Validation 3.0 now,
-just configuring additional Kotlin reflection if Kotlin is present.
+just configuring additional Kotlin reflection if Kotlin is present. If you refer to parameter names in
+your Bean Validation setup, make sure to compile your Java sources with the Java 8+ `-parameters` flag.
 
 `ListenableFuture` has been deprecated in favor of `CompletableFuture`. 
 See [27780](https://github.com/spring-projects/spring-framework/issues/27780).

@@ -21,7 +21,7 @@ determination (and better introspection performance!) through a custom `META-INF
 resolution attempt (it only kicks in when `StandardReflectionParameterNameDiscoverer` has not found names).
 Compile your Java sources with the common Java 8+ `-parameters` flag for parameter name retention (instead
 of relying on the `-debug` compiler flag) in order to avoid that warning, or report it to the maintainers
-of the affected code.
+of the affected code. With the Kotlin compiler, we recommend the `-java-parameters` flag for completeness.
 
 `LocalValidatorFactoryBean` relies on standard parameter name resolution in Bean Validation 3.0 now,
 just configuring additional Kotlin reflection if Kotlin is present. If you refer to parameter names in

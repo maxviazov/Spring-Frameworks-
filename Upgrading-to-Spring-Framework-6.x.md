@@ -50,9 +50,10 @@ detecting JDBC driver subclasses as well as common SQL state indications (withou
 resolution at runtime). As of 6.0.3, this includes a common SQL state check for `DuplicateKeyException`,
 addressing a long-standing difference between SQL state mappings and legacy default error code mappings.
 
-`CannotSerializeTransactionException` and `DeadlockLoserDataAccessException` are deprecated now due
-to their inconsistent JDBC semantics, in favor of the `PessimisticLockingFailureException` base class
-and consistent semantics of its `CannotAcquireLockException` subclass (aligned with JPA/Hibernate).
+`CannotSerializeTransactionException` and `DeadlockLoserDataAccessException` are deprecated as of 6.0.3
+due to their inconsistent JDBC semantics, in favor of the `PessimisticLockingFailureException` base class
+and consistent semantics of its common `CannotAcquireLockException` subclass (aligned with JPA/Hibernate)
+in all default exception translation scenarios.
 
 For full backwards compatibility with database-specific error codes, consider re-enabling the legacy
 `SQLErrorCodeSQLExceptionTranslator`. This translator kicks in for user-provided `sql-error-codes.xml`

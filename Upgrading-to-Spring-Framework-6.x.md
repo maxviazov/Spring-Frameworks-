@@ -47,18 +47,17 @@ with EclipseLink 4.0 as the most recent supported version (Jakarta EE 10).
 
 Spring's default JDBC exception translator is the JDBC 4 based `SQLExceptionSubclassTranslator` now,
 detecting JDBC driver subclasses as well as common SQL state indications (without database product name
-resolution at runtime). As of 6.0.3, this includes the common SQL state 23505 for `DuplicateKeyException`,
-addressing a common regression from the legacy default error code mappings.
+resolution at runtime). As of 6.0.3, this includes a common SQL state check for `DuplicateKeyException`,
+addressing a long-standing difference between SQL state mappings and legacy default error code mappings.
+
+`CannotSerializeTransactionException` and `DeadlockLoserDataAccessException` are deprecated now due
+to their inconsistent JDBC semantics, in favor of the `PessimisticLockingFailureException` base class
+and consistent semantics of its `CannotAcquireLockException` subclass (aligned with JPA/Hibernate).
 
 For full backwards compatibility with database-specific error codes, consider re-enabling the legacy
-`SQLErrorCodeSQLExceptionTranslator` (see below). This may be necessary for `ConcurrencyFailureException`
-subclasses such as `CannotAcquireLockException` and `DeadlockLoserDataAccessException`. We generally
-recommend catching the highest meaningful exception type, e.g. `ConcurrencyFailureException` itself. 
-
-`SQLErrorCodeSQLExceptionTranslator` kicks in for user-provided `sql-error-codes.xml` files still.
-It can pick up Spring's legacy default error code mappings as well when triggered by a (potentially empty)
-user-provided file in the root of the classpath, or by explicit `SQLErrorCodeSQLExceptionTranslator` setup
-with your `JdbcTemplate` and `JdbcTransactionManager` instances.
+`SQLErrorCodeSQLExceptionTranslator`. This translator kicks in for user-provided `sql-error-codes.xml`
+files. It can simply pick up Spring's legacy default error code mappings as well when triggered by an
+empty user-provided file in the root of the classpath.
 
 ### Web Applications
 

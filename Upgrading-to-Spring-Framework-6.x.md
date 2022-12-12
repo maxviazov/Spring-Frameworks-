@@ -45,10 +45,20 @@ You may also choose to upgrade to Hibernate Validator 8.0 right away (aligned wi
 For EclipseLink as the persistence provider of choice, the reference version is 3.0.x (Jakarta EE 9),
 with EclipseLink 4.0 as the most recent supported version (Jakarta EE 10).
 
-Spring's default JDBC exception translator is the JDBC 4 based `SQLExceptionSubclassTranslator` now.
+Spring's default JDBC exception translator is the JDBC 4 based `SQLExceptionSubclassTranslator` now,
+detecting JDBC driver subclasses as well as common SQL state indications (without database product name
+resolution at runtime). As of 6.0.3, this includes the common SQL state 23505 for `DuplicateKeyException`,
+addressing a common regression from the legacy default error code mappings.
+
+For full backwards compatibility with database-specific error codes, consider re-enabling the legacy
+`SQLErrorCodeSQLExceptionTranslator` (see below). This may be necessary for `ConcurrencyFailureException`
+subclasses such as `CannotAcquireLockException` and `DeadlockLoserDataAccessException`. We generally
+recommend catching the highest meaningful exception type, e.g. `ConcurrencyFailureException` itself. 
+
 `SQLErrorCodeSQLExceptionTranslator` kicks in for user-provided `sql-error-codes.xml` files still.
 It can pick up Spring's legacy default error code mappings as well when triggered by a (potentially empty)
-user-provided file in the root of the classpath, or by explicit `SQLErrorCodeSQLExceptionTranslator` setup.
+user-provided file in the root of the classpath, or by explicit `SQLErrorCodeSQLExceptionTranslator` setup
+with your `JdbcTemplate` and `JdbcTransactionManager` instances.
 
 ### Web Applications
 

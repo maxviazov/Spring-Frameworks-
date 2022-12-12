@@ -29,6 +29,7 @@
 * Support for predetermining JPA managed types (for inclusion in AOT processing).
 * JPA support for [Hibernate ORM 6.1](https://hibernate.org/orm/releases/6.1/) (retaining compatibility with Hibernate ORM 5.6).
 * Upgrade to [R2DBC 1.0](https://r2dbc.io/) (including R2DBC transaction definitions).
+* Aligned data access exception translation between JDBC, R2DBC, JPA and Hibernate.
 * Removal of JCA CCI support.
 
 ### Spring Messaging

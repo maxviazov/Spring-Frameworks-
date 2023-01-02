@@ -66,7 +66,7 @@ Due to the Jakarta EE migration, make sure to upgrade to Tomcat 10, Jetty 11, or
 `undertow-servlet-jakarta` artifact, alongside switching your `javax.servlet` imports to `jakarta.servlet`
 (Jakarta EE 9). For the latest server generations, consider Tomcat 10.1 and Undertow 2.3 (Jakarta EE 10).
 
-Several outdated Servlet-based integrations have been dropped: e.g. Apache Commons FileUpload (`org.springframework.web.multipart.commons.CommonsMultipartyResolver`), and Apache Tiles as well as
+Several outdated Servlet-based integrations have been dropped: e.g. Apache Commons FileUpload (`org.springframework.web.multipart.commons.CommonsMultipartResolver`), and Apache Tiles as well as
 FreeMarker JSP support in the corresponding `org.springframework.web.servlet.view` subpackages. We recommend
 `org.springframework.web.multipart.support.StandardServletMultipartResolver` for multipart file uploads
 and regular FreeMarker template views if needed, and a general focus on REST-oriented web architectures.

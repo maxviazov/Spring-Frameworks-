@@ -13,7 +13,7 @@ When looking at the Spring Framework repository, we can find several branches:
 
 For this example, we'll use the following as the hypothetical current state of the repository:
 
-* the `main` branch is dedicated an upcoming `6.1.0` minor version
+* the `main` branch is dedicated to an upcoming `6.1.0` minor version
 * the current branch is `6.0.x`
 * there is one active maintenance branch, `5.3.x`
 
@@ -53,13 +53,13 @@ $ # the commit sha for the #1234 fix is c0ffee456
 $ git checkout 5.3.x
 $ git cherry-pick c0ffee456 --edit
 $ # ideally add a reference to the backport issue and original issue in the cherry-pick commit message like so:
-$ # Relates to gh-1234
+$ # See gh-1234
 $ # Closes gh-3456
 $ git push origin 5.3.x
 ```
 
 Note that simply cherry-picking without the `--edit` and pushing a cherry-pick commit with the original `Closes gh-1234` mention in the message should still trigger the bot to close the backport issue.
 
-Another option is to directly cherry-pick the original commit and pushing it to the maintenance branch, in which case the bot should automatically create and close the backport issue.
+Another option is to directly cherry-pick the original commit and push it to the maintenance branch, in which case the bot should automatically create and close the backport issue.
 
 In the two later approaches, the drawback is that the backport issue wouldn't display a link to the commit in GitHub's UI so it would be up to you or a maintainer to make that explicit.

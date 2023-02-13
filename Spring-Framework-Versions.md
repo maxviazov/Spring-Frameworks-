@@ -14,7 +14,7 @@ You'll find more [information on official support dates on spring.io](https://sp
 # JDK Version Range
 
 - Spring Framework 6.0.x: JDK 17-21
-- Spring Framework 5.3.x: JDK 8-19
+- Spring Framework 5.3.x: JDK 8-21 (as of 5.3.26)
 
 We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11 and JDK 17. Additionally, there is support for intermediate releases such as JDK 18 and 19 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees. We currently recommend JDK 17 for use with Spring Framework 6.0.x as well as 5.3.x.
 

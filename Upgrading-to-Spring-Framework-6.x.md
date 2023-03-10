@@ -30,8 +30,9 @@ your Bean Validation setup, make sure to compile your Java sources with the Java
 `ListenableFuture` has been deprecated in favor of `CompletableFuture`. 
 See [27780](https://github.com/spring-projects/spring-framework/issues/27780).
 
-Methods annotated with `@Async` must return either `Future` or `void`. These have long been documented as the supported return types, but the return type is now also actively checked and an exception is thrown for any other return type.
-See [27734](https://github.com/spring-projects/spring-framework/issues/27734)
+Methods annotated with `@Async` must return either `Future` or `void`. This has long been documented
+but it is now also actively checked and enforced, with an exception thrown for a different return type.
+See [27734](https://github.com/spring-projects/spring-framework/issues/27734).
 
 `SimpleEvaluationContext` disables array allocations now, aligned with regular constructor resolution.
 

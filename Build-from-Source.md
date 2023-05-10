@@ -10,10 +10,11 @@ for the build system.
 ### Before You Start
 
 To build you will need [Git](https://help.github.com/set-up-git-redirect) and
-[JDK 17](https://adoptium.net/). Be sure that your `JAVA_HOME`
-environment variable points to the `jdk17` folder extracted from the JDK download.
+[JDK 17](https://adoptium.net/) and [JDK 21](https://jdk.java.net/21/) . Be sure
+that your `JAVA_HOME` environment variable points to the `jdk17` folder extracted
+from the JDK download.
 
-For users of SDKMAN, Spring Framework provides `.sdkmanrc` files that set up your JDK correctly.
+For users of SDKMAN, Spring Framework provides `.sdkmanrc` files that set up JDK 17 correctly.
 Simply use `sdk env` to do so.
 This command is also available in the 5.3 branch, which uses JDK 8.
 

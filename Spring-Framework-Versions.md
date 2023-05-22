@@ -18,9 +18,9 @@ You'll find more [information on official support dates on spring.io](https://sp
 - Spring Framework 6.0.x: JDK 17-21
 - Spring Framework 5.3.x: JDK 8-21 (as of 5.3.26)
 
-We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11 and JDK 17. Additionally, there is support for intermediate releases such as JDK 18 and 19 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees. We currently recommend JDK 17 for use with Spring Framework 6.0.x as well as 5.3.x.
+We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11 and JDK 17, as well as the upcoming JDK 21. Additionally, there is support for intermediate releases such as JDK 18/19/20 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees. We currently recommend JDK 17 for use with Spring Framework 6.0.x as well as 5.3.x.
 
-The GraalVM version supported by Spring Framework 6.0.x for native images is GraalVM 22.3 based on JDK 17-19. Please note that GraalVM is aligning with the OpenJDK release model as of 2023, with only the latest Java level to be supported in each new GraalVM release. As a consequence, Spring Framework 6.x feature releases may have to require new GraalVM versions with a higher JDK baseline in the future, e.g. based on JDK 21 as the next LTS.
+The GraalVM version supported by Spring Framework 6.0.x for native images is GraalVM 22.3 based on JDK 17-19. Please note that GraalVM is aligning with the OpenJDK release model as of 2023, with only recent Java levels to be supported in each new GraalVM release. As a consequence, Spring Framework 6.x feature releases may have to require new GraalVM versions with a higher JDK baseline in the future, e.g. based on JDK 21 as the next LTS.
 
 # Java/Jakarta EE Versions
 
@@ -28,7 +28,7 @@ The GraalVM version supported by Spring Framework 6.0.x for native images is Gra
 - Spring Framework 6.0.x: Jakarta EE 9-10 (jakarta namespace)
 - Spring Framework 5.3.x: Java EE 7-8 (javax namespace)
 
-The last specification version supported by Spring Framework 5.3.x is the javax-based Java EE 8 (Servlet 4.0, JPA 2.2, Bean Validation 2.0). As of Spring Framework 6.0, the minimum is Jakarta EE 9 (Servlet 5.0, JPA 3.0, Bean Validation 3.0), with the latest Jakarta EE 10 (Servlet 6.0, JPA 3.1) recommended.
+The last specification version supported by Spring Framework 5.3.x is the javax-based Java EE 8 (Servlet 4.0, JPA 2.2, Bean Validation 2.0). As of Spring Framework 6.0, the minimum is Jakarta EE 9 (Servlet 5.0, JPA 3.0, Bean Validation 3.0), with the latest Jakarta EE 10 (Servlet 6.0, JPA 3.1) recommended. The upcoming Jakarta EE 11 (scheduled for early 2024) will be supported on a best-effort basis in Spring Framework 6.1.x, in particular for corresponding servers such as Tomcat 11.
 
 # What's New
 

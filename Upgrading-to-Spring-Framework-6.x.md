@@ -2,6 +2,12 @@ _This page provides guidance on upgrading to Spring Framework 6.x._
 
 ## Upgrading to Version 6.1
 
+### Baseline upgrades
+
+Spring Framework 6.1 raises its minimum requirements with the following libraries:
+
+* SnakeYAML 2.0
+
 ### Core Container
 
 Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is consistently
@@ -18,6 +24,7 @@ we recommend the `-java-parameters` flag.
 `AutowireCapableBeanFactory.createBean(Class, int, boolean)` is deprecated now, in favor of the
 convention-based `createBean(Class)`. The latter is also consistently used internally in 6.1,
 e.g. in `SpringBeanJobFactory` for Quartz and `SpringBeanContainer` for Hibernate.
+
 
 ## Upgrading to Version 6.0
 

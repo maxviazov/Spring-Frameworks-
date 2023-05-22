@@ -1,3 +1,17 @@
+## What's New in Version 6.1
+
+### Core Container
+
+* First-class configuration options for virtual threads on JDK 21.
+* Lifecycle integration with Project CRaC for JVM checkpoint restore.
+* Support for resolving `SequencedCollection/Set/Map` at injection points.
+* Support for registering a `MethodHandle` as a SpEL function.
+* `Validator` factory methods for programmatic validator implementations.
+
+### Data Access and Transactions
+
+* Failed `CompletableFuture` triggers rollback for async transactional method.
+
 ## What's New in Version 6.0
 
 ### JDK 17+ and Jakarta EE 9+ Baseline

@@ -1,4 +1,23 @@
-_This page provides guidance on upgrading to Spring Framework 6.0._
+_This page provides guidance on upgrading to Spring Framework 6.x._
+
+## Upgrading to Version 6.1
+
+### Core Container
+
+Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is consistently
+performed via `URI` now, including handling of relative paths. This includes behavioral changes for
+uncommon cases such as when specifying a full URL as a relative path.
+See [29481](https://github.com/spring-projects/spring-framework/issues/29481) and
+[28522](https://github.com/spring-projects/spring-framework/issues/28522).
+
+`LocalVariableTableParameterNameDiscoverer` has been removed in 6.1. Compile your Java sources with the
+common Java 8+ `-parameters` flag for parameter name retention (instead of relying on the `-debug` compiler
+flag) in order to be compatible with `StandardReflectionParameterNameDiscoverer`. With the Kotlin compiler,
+we recommend the `-java-parameters` flag.
+
+`AutowireCapableBeanFactory.createBean(Class, int, boolean)` is deprecated now, in favor of the
+convention-based `createBean(Class)`. The latter is also consistently used internally in 6.1,
+e.g. in `SpringBeanJobFactory` for Quartz and `SpringBeanContainer` for Hibernate.
 
 ## Upgrading to Version 6.0
 

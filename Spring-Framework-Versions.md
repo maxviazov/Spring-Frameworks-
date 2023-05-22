@@ -2,6 +2,7 @@ _This document describes new features, noteworthy changes, and provides guidance
 
 # Supported Versions
 
+- 6.1.x is the upcoming feature branch (November 2023).
 - 6.0.x is the main production line as of November 2022. This new generation of the framework comes with a JDK 17 and Jakarta EE 9 baseline.
 - 5.3.x is the final feature branch of the 5th generation, with long-term support provided on JDK 8, JDK 11, JDK 17 and the Java EE 8 level.
 - _4.3.x reached its official EOL (end-of-life) on December 31st, 2020. No further maintenance and security patches are planned in that line._
@@ -13,6 +14,7 @@ You'll find more [information on official support dates on spring.io](https://sp
 
 # JDK Version Range
 
+- Spring Framework 6.1.x: JDK 17-23
 - Spring Framework 6.0.x: JDK 17-21
 - Spring Framework 5.3.x: JDK 8-21 (as of 5.3.26)
 
@@ -22,6 +24,7 @@ The GraalVM version supported by Spring Framework 6.0.x for native images is Gra
 
 # Java/Jakarta EE Versions
 
+- Spring Framework 6.1.x: Jakarta EE 9-11 (jakarta namespace)
 - Spring Framework 6.0.x: Jakarta EE 9-10 (jakarta namespace)
 - Spring Framework 5.3.x: Java EE 7-8 (javax namespace)
 
@@ -35,6 +38,6 @@ The last specification version supported by Spring Framework 5.3.x is the javax-
 
 # Upgrade Considerations
 
-- [[Upgrading to Spring Framework 6.0|Upgrading to Spring Framework 6.x]]
+- [[Upgrading to Spring Framework 6.0 and 6.1|Upgrading to Spring Framework 6.x]]
 - [[Upgrading to Spring Framework 5.0, 5.1, 5.2 and 5.3|Upgrading to Spring Framework 5.x]]
 - [[Upgrading to Spring Framework 4.3|Upgrading to Spring-Framework 4.x]]

@@ -62,6 +62,10 @@ See [27734](https://github.com/spring-projects/spring-framework/issues/27734).
 
 `SimpleEvaluationContext` disables array allocations now, aligned with regular constructor resolution.
 
+### Caching
+
+The `org.springframework.cache.ehcache` package has been removed as it was providing support for ehcache 2.x - with this version, `net.sf.ehcache` is using JavaEE APIs and [is about to be End Of Life'd](https://github.com/ehcache/ehcache2). Ehcache3 is the direct replacement. You should revisit your dependency management to use `org.ehcache:ehcache` (with the `jakarta` classifier) instead and look [into the official migration guide or reach out to the ehcache community for assistance](https://www.ehcache.org/documentation/3.10/migration-guide.html). We did not replace `org.springframework.cache.ehcache` with an updated version, as using ehcache through the JCache API or its new native API is preferred.
+
 ### Data Access and Transactions
 
 Due to the Jakarta EE migration, make sure to upgrade to Hibernate ORM 5.6.x with the `hibernate-core-jakarta`

@@ -7,10 +7,16 @@
 * Support for resolving `SequencedCollection/Set/Map` at injection points.
 * Support for registering a `MethodHandle` as a SpEL function.
 * `Validator` factory methods for programmatic validator implementations.
+* `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
 
 ### Data Access and Transactions
 
 * Failed `CompletableFuture` triggers rollback for async transactional method.
+
+### Web Applications
+
+Spring MVC and WebFlux now have built-in method validation support for controller method parameters with `@Constraint` annotations. That means you no longer need `@Validated` at the controller class level to enable method validation via AOP proxy. Built-in method validation is layered on top of the existing argument validation for model attribute and request body arguments. The two are more tightly integrated and coordinated, e.g. avoiding cases with double validation. See [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#web-applications) for migration details, [29825](https://github.com/spring-projects/spring-framework/issues/29825) for more on the built-in support in M1, and the umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645) for related tasks and feedback.
+
 
 ## What's New in Version 6.0
 

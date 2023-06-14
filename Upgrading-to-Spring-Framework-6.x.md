@@ -19,7 +19,7 @@ See [29481](https://github.com/spring-projects/spring-framework/issues/29481) an
 
 `AutowireCapableBeanFactory.createBean(Class, int, boolean)` is deprecated now, in favor of the convention-based `createBean(Class)`. The latter is also consistently used internally in 6.1, e.g. in `SpringBeanJobFactory` for Quartz and `SpringBeanContainer` for Hibernate.
 
-When building a native image, the verbose logging about pre-computed fields has been removed by default, and can be restored by passing `-Dspring.aot.precompute=verbose` as a `native-image` compiler build argument to display related detailed logs.
+When building a native image, the verbose logging about pre-computed fields has been removed by default, and can be restored by passing `-Dspring.native.precompute.log=verbose` as a `native-image` compiler build argument to display related detailed logs.
 
 ### Data Access
 

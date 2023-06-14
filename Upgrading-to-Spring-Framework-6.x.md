@@ -7,6 +7,8 @@ _This page provides guidance on upgrading to Spring Framework 6.x._
 Spring Framework 6.1 raises its minimum requirements with the following libraries:
 
 * SnakeYAML 2.0
+* Kotlin Coroutines 1.7
+* Kotlin Serialization 1.5 
 
 ### Core Container
 

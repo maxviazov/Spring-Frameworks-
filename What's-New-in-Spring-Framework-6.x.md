@@ -3,7 +3,7 @@
 ### Core Container
 
 * First-class configuration options for virtual threads on JDK 21.
-* Lifecycle integration with Project CRaC for JVM checkpoint restore.
+* Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/integration/checkpoint-restore.html)).
 * Support for resolving `SequencedCollection/Set/Map` at injection points.
 * Support for registering a `MethodHandle` as a SpEL function.
 * `Validator` factory methods for programmatic validator implementations.

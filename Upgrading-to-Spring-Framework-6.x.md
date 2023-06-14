@@ -33,7 +33,7 @@ The format for `MethodArgumentNotValidException` and `WebExchangeBindException` 
 
 The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
-The default order of mappings has been refined to be more consistent by changing `RouterFunctionMapping` order from 3 to -1 in Spring MVC. That means `RouterFunctionMapping` are now always ordered before `RequestMappingHandlerMapping` in both Spring MVC and Spring WebFlux. See [30278](https://github.com/spring-projects/spring-framework/issues/30278) for more details.
+The default order of mappings has been refined to be more consistent by changing `RouterFunctionMapping` order from 3 to -1 in Spring MVC. That means `RouterFunctionMapping` is now always ordered before `RequestMappingHandlerMapping` in both Spring MVC and Spring WebFlux. See [30278](https://github.com/spring-projects/spring-framework/issues/30278) for more details.
 
 ### Messaging Applications
 

@@ -4,15 +4,18 @@
 
 * First-class configuration options for virtual threads on JDK 21.
 * Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/integration/checkpoint-restore.html)).
-* Support for async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`).
-* Support for resolving `SequencedCollection/Set/Map` at injection points.
+* Support for resolving JDK 21 `SequencedCollection/Set/Map` at injection points.
+* Revised `Instant` and `Duration` parsing (aligned with Spring Boot).
 * Support for registering a `MethodHandle` as a SpEL function.
+* Support for async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`).
+* Support for reactive `@Scheduled` methods (including Kotlin coroutines).
 * `Validator` factory methods for programmatic validator implementations.
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
 
 ### Data Access and Transactions
 
 * Failed `CompletableFuture` triggers rollback for async transactional method.
+* `BeanPropertyRowMapper` and `DataClassRowMapper` available for R2DBC as well.
 
 ### Web Applications
 

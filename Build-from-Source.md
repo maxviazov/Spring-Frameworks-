@@ -10,7 +10,7 @@ for the build system.
 ### Before You Start
 
 To build you will need [Git](https://help.github.com/set-up-git-redirect) and
-[JDK 17](https://adoptium.net/) and [JDK 21](https://jdk.java.net/21/) . Be sure
+[JDK 17](https://adoptium.net/) and [JDK 21](https://jdk.java.net/21/) in a [location detected by Gradle toolchain support](https://docs.gradle.org/current/userguide/toolchains.html#sec:auto_detection). Be sure
 that your `JAVA_HOME` environment variable points to the `jdk17` folder extracted
 from the JDK download.
 

@@ -25,6 +25,14 @@ we recommend the `-java-parameters` flag.
 convention-based `createBean(Class)`. The latter is also consistently used internally in 6.1,
 e.g. in `SpringBeanJobFactory` for Quartz and `SpringBeanContainer` for Hibernate.
 
+### Web Applications
+
+The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature. In effect, deferring to default timeout and configuration of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
+
+### Messaging Applications
+
+The [RSocket interface client](https://docs.spring.io/spring-framework/reference/rsocket.html#rsocket-interface) no longer enforces a 5 second default timeout on methods with a blocking signature. In effect, deferring to default timeout and configuration of RSocket and of the underlying RSocket transport. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
+
 
 ## Upgrading to Version 6.0
 

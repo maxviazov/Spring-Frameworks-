@@ -27,11 +27,13 @@ e.g. in `SpringBeanJobFactory` for Quartz and `SpringBeanContainer` for Hibernat
 
 ### Web Applications
 
-The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature. In effect, deferring to default timeout and configuration of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
+The format for `MethodArgumentNotValidException` and `WebExchangeBindException` message arguments has changed. Errors are now joined with `", and "`, without single quotes and list brackets. Field errors are resolved through the `MessageSource` with nothing further such as the field name added. This gives applications full control over the error format by customizing individual error codes. See [30198](https://github.com/spring-projects/spring-framework/issues/30198) and also planned documentation improvement [30653](https://github.com/spring-projects/spring-framework/issues/30653).
+
+The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
 ### Messaging Applications
 
-The [RSocket interface client](https://docs.spring.io/spring-framework/reference/rsocket.html#rsocket-interface) no longer enforces a 5 second default timeout on methods with a blocking signature. In effect, deferring to default timeout and configuration of RSocket and of the underlying RSocket transport. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
+The [RSocket interface client](https://docs.spring.io/spring-framework/reference/rsocket.html#rsocket-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the RSocket client, and the underlying RSocket transport. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
 
 ## Upgrading to Version 6.0

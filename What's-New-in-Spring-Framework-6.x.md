@@ -7,8 +7,8 @@
 * Support for resolving JDK 21 `SequencedCollection/Set/Map` at injection points.
 * Revised `Instant` and `Duration` parsing (aligned with Spring Boot).
 * Support for registering a `MethodHandle` as a SpEL function.
-* Support for async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`).
-* Support for reactive `@Scheduled` methods (including Kotlin coroutines).
+* Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`).
+* Reactive `@Scheduled` methods (including Kotlin coroutines).
 * `Validator` factory methods for programmatic validator implementations.
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
 

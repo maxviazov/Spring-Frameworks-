@@ -10,6 +10,10 @@ Spring Framework 6.1 raises its minimum requirements with the following librarie
 * Kotlin Coroutines 1.7
 * Kotlin Serialization 1.5 
 
+### Removed APIs
+
+Several deprecated classes, constructors, and methods have been removed across the code base. See [29449](https://github.com/spring-projects/spring-framework/issues/29449) and [30604](https://github.com/spring-projects/spring-framework/issues/30604).
+
 ### Core Container
 
 Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is now consistently performed via `URI`, including handling of relative paths. This includes behavioral changes for uncommon cases such as when specifying a full URL as a relative path.

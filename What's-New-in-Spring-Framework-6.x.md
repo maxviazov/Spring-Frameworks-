@@ -9,7 +9,7 @@
 * Support for registering a `MethodHandle` as a SpEL function.
 * Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`).
 * Reactive `@Scheduled` methods (including Kotlin coroutines).
-* `Validator` factory methods for programmatic validator implementations. See [29890](https://github.com/spring-projects/spring-framework/pull/29890)
+* `Validator` factory methods for programmatic validator implementations. See [29890](https://github.com/spring-projects/spring-framework/pull/29890).
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
 
 ### Data Access and Transactions

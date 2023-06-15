@@ -5,11 +5,11 @@
 * Configuration options for virtual threads on JDK 21: a dedicated [VirtualThreadTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/VirtualThreadTaskExecutor.html) and [a flag on SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html#setVirtualThreads(boolean)) (also see the [related GitHub issue](https://github.com/spring-projects/spring-framework/issues/23443) about general compatibility with virtual threads)
 * Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/integration/checkpoint-restore.html)).
 * Support for resolving JDK 21 `SequencedCollection/Set/Map` at injection points, see [30239](https://github.com/spring-projects/spring-framework/issues/30239).
-* Revised `Instant` and `Duration` parsing (aligned with Spring Boot).
-* Support for registering a `MethodHandle` as a SpEL function.
-* Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`).
-* Reactive `@Scheduled` methods (including Kotlin coroutines).
-* `Validator` factory methods for programmatic validator implementations. See [29890](https://github.com/spring-projects/spring-framework/pull/29890).
+* Revised `Instant` and `Duration` parsing (aligned with Spring Boot), see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
+* Support for registering a `MethodHandle` as a SpEL function, see [30045](https://github.com/spring-projects/spring-framework/pull/30045).
+* Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`), see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
+* Reactive `@Scheduled` methods (including Kotlin coroutines), see [22924](https://github.com/spring-projects/spring-framework/pull/29924).
+* `Validator` factory methods for programmatic validator implementations, see [29890](https://github.com/spring-projects/spring-framework/pull/29890).
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
 
 ### Data Access and Transactions

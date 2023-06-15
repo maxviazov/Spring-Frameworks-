@@ -43,6 +43,8 @@ The default order of mappings has been refined to be more consistent by changing
 
 The [RSocket interface client](https://docs.spring.io/spring-framework/reference/rsocket.html#rsocket-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the RSocket client, and the underlying RSocket transport. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
+In an effort to reduce the potential for security vulnerabilities in the Spring Expression Language (SpEL) to adversely affect Spring applications, the team has decided to disable support for evaluating SpEL expressions from untrusted sources by default. Within the core Spring Framework, this applies to the SpEL-based `selector` header support in WebSocket messaging, specifically in the `DefaultSubscriptionRegistry`. The `selector` header support will remain in place but will have to be explicitly enabled beginning with Spring Framework 6.1. See [30550](https://github.com/spring-projects/spring-framework/issues/30550).
+
 
 ## Upgrading to Version 6.0
 

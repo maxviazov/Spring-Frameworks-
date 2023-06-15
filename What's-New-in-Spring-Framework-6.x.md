@@ -4,26 +4,26 @@
 
 * Configuration options for virtual threads on JDK 21: a dedicated [VirtualThreadTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/VirtualThreadTaskExecutor.html) and [a flag on SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html#setVirtualThreads(boolean)) (also see the [related GitHub issue](https://github.com/spring-projects/spring-framework/issues/23443) about general compatibility with virtual threads)
 * Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/integration/checkpoint-restore.html)).
-* Support for resolving JDK 21 `SequencedCollection/Set/Map` at injection points, see [30239](https://github.com/spring-projects/spring-framework/issues/30239).
-* Revised `Instant` and `Duration` parsing (aligned with Spring Boot), see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
-* Support for letters other an A-Z in property, field, and variable names in SpEL expressions, see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
+* Support for resolving JDK 21 `SequencedCollection/Set/Map` at injection points; see [30239](https://github.com/spring-projects/spring-framework/issues/30239).
+* Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
+* Support for letters other an A-Z in property, field, and variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
 * Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/core/expressions/language-ref/functions.html)).
-* Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`), see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
-* Reactive `@Scheduled` methods (including Kotlin coroutines), see [22924](https://github.com/spring-projects/spring-framework/pull/29924).
-* `Validator` factory methods for programmatic validator implementations, see [29890](https://github.com/spring-projects/spring-framework/pull/29890).
+* Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`); see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
+* Reactive `@Scheduled` methods (including Kotlin coroutines); see [22924](https://github.com/spring-projects/spring-framework/pull/29924).
+* `Validator` factory methods for programmatic validator implementations; see [29890](https://github.com/spring-projects/spring-framework/pull/29890).
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
 
 ### Data Access and Transactions
 
-* Failed `CompletableFuture` triggers rollback for async transactional method, see [30018](https://github.com/spring-projects/spring-framework/issues/30018).
-* `BeanPropertyRowMapper` and `DataClassRowMapper` available for R2DBC as well, see [30530](https://github.com/spring-projects/spring-framework/pull/30530).
+* Failed `CompletableFuture` triggers rollback for async transactional method; see [30018](https://github.com/spring-projects/spring-framework/issues/30018).
+* `BeanPropertyRowMapper` and `DataClassRowMapper` available for R2DBC as well; see [30530](https://github.com/spring-projects/spring-framework/pull/30530).
 
 ### Web Applications
 
 * Spring MVC and WebFlux now have built-in method validation support for controller method parameters with `@Constraint` annotations. That means you no longer need `@Validated` at the controller class level to enable method validation via AOP proxy. Built-in method validation is layered on top of the existing argument validation for model attribute and request body arguments. The two are more tightly integrated and coordinated, e.g. avoiding cases with double validation. See [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#web-applications) for migration details, [29825](https://github.com/spring-projects/spring-framework/issues/29825) for more on the built-in support in M1, and the umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645) for related tasks and feedback.
 * [ErrorResponse](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/web/ErrorResponse.html) allows [customization](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/web/webmvc/mvc-ann-rest-exceptions.html#mvc-ann-rest-exceptions-i18n) of `ProblemDetail` type via `MessageSource` and use of custom `ProblemDetail` through its builder.
-* Jetty-based `ClientHttpRequestFactory` for use with RestTemplate, see [30564](https://github.com/spring-projects/spring-framework/issues/30564).
-* Improved buffering in various `ClientHttpRequestFactory` implementations, see [30557](https://github.com/spring-projects/spring-framework/issues/30557).
+* Jetty-based `ClientHttpRequestFactory` for use with RestTemplate; see [30564](https://github.com/spring-projects/spring-framework/issues/30564).
+* Improved buffering in various `ClientHttpRequestFactory` implementations; see [30557](https://github.com/spring-projects/spring-framework/issues/30557).
 
 ## What's New in Version 6.0
 

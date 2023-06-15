@@ -25,6 +25,11 @@
 * Jetty-based `ClientHttpRequestFactory` for use with RestTemplate; see [30564](https://github.com/spring-projects/spring-framework/issues/30564).
 * Improved buffering in various `ClientHttpRequestFactory` implementations; see [30557](https://github.com/spring-projects/spring-framework/issues/30557).
 
+### Testing
+
+* `ApplicationContext` failure threshold support: avoids repeated attempts to load a failing `ApplicationContext` in the TestContext framework, based on a failure threshold which defaults to 1 but can be configured via a system property (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/testing/testcontext-framework/ctx-management/failure-threshold.html)).
+
+
 ## What's New in Version 6.0
 
 ### JDK 17+ and Jakarta EE 9+ Baseline

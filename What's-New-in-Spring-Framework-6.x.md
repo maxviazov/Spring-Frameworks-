@@ -6,7 +6,7 @@
 * Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/integration/checkpoint-restore.html)).
 * Support for resolving JDK 21 `SequencedCollection/Set/Map` at injection points, see [30239](https://github.com/spring-projects/spring-framework/issues/30239).
 * Revised `Instant` and `Duration` parsing (aligned with Spring Boot), see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
-* Support for registering a `MethodHandle` as a SpEL function, see [30045](https://github.com/spring-projects/spring-framework/pull/30045).
+* Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/core/expressions/language-ref/functions.html)).
 * Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`), see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
 * Reactive `@Scheduled` methods (including Kotlin coroutines), see [22924](https://github.com/spring-projects/spring-framework/pull/29924).
 * `Validator` factory methods for programmatic validator implementations, see [29890](https://github.com/spring-projects/spring-framework/pull/29890).

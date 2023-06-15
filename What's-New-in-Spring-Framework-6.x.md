@@ -20,6 +20,7 @@
 ### Web Applications
 
 * Spring MVC and WebFlux now have built-in method validation support for controller method parameters with `@Constraint` annotations. That means you no longer need `@Validated` at the controller class level to enable method validation via AOP proxy. Built-in method validation is layered on top of the existing argument validation for model attribute and request body arguments. The two are more tightly integrated and coordinated, e.g. avoiding cases with double validation. See [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#web-applications) for migration details, [29825](https://github.com/spring-projects/spring-framework/issues/29825) for more on the built-in support in M1, and the umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645) for related tasks and feedback.
+* [ErrorResponse](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/web/ErrorResponse.html) allows [customization](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/web/webmvc/mvc-ann-rest-exceptions.html#mvc-ann-rest-exceptions-i18n) of `ProblemDetail` type via `MessageSource` and use of custom `ProblemDetail` through its builder.
 * Jetty-based ClientHttpRequestFactory, for use with RestTemplate.
 
 

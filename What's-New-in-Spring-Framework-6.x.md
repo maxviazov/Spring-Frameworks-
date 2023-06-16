@@ -32,6 +32,10 @@
 ### Testing
 
 * `ApplicationContext` failure threshold support: avoids repeated attempts to load a failing `ApplicationContext` in the TestContext framework, based on a failure threshold which defaults to 1 but can be configured via a system property (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/testing/testcontext-framework/ctx-management/failure-threshold.html)).
+* Support for recording asynchronous events with `@RecordApplicationEvents`. See [30020](https://github.com/spring-projects/spring-framework/pull/30020).
+  * Record events from threads other than the main test thread.
+  * Assert events from a separate thread – for example with Awaitility.
+* Support for `null` in `MockHttpServletResponse.setCharacterEncoding()`. See [30341](https://github.com/spring-projects/spring-framework/issues/30341).
 
 
 ## What's New in Version 6.0
@@ -109,3 +113,4 @@ Direct Observability instrumentation with [Micrometer Observation](https://micro
 * Support for testing AOT-processed application contexts on the JVM or within a GraalVM native image.
 * Integration with HtmlUnit 2.64+ request parameter handling.
 * Servlet mocks (`MockHttpServletRequest`, `MockHttpSession`) are based on Servlet API 6.0 now.
+* New `MockHttpServletRequestBuilder.setRemoteAddress()` method.

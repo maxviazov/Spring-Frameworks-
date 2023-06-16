@@ -114,3 +114,5 @@ Direct Observability instrumentation with [Micrometer Observation](https://micro
 * Integration with HtmlUnit 2.64+ request parameter handling.
 * Servlet mocks (`MockHttpServletRequest`, `MockHttpSession`) are based on Servlet API 6.0 now.
 * New `MockHttpServletRequestBuilder.setRemoteAddress()` method.
+* The four abstract base test classes for JUnit 4 and TestNG no longer declare listeners via `@TestExecutionListeners` and
+instead now rely on registration of default listeners.

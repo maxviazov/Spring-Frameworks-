@@ -35,9 +35,11 @@ Spring MVC and WebFlux now have built-in method validation support for controlle
 
 The format for `MethodArgumentNotValidException` and `WebExchangeBindException` message arguments has changed. Errors are now joined with `", and "`, without single quotes and brackets. Field errors are resolved through the `MessageSource` with nothing further such as the field name added. This gives applications full control over the error format by customizing individual error codes. See [30198](https://github.com/spring-projects/spring-framework/issues/30198) and also planned documentation improvement [30653](https://github.com/spring-projects/spring-framework/issues/30653).
 
-The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
-
 The default order of mappings has been refined to be more consistent by changing `RouterFunctionMapping` order from `3` to `-1` in Spring MVC. That means `RouterFunctionMapping` is now always ordered before `RequestMappingHandlerMapping` in both Spring MVC and Spring WebFlux. See [30278](https://github.com/spring-projects/spring-framework/issues/30278) for more details.
+
+The `throwExceptionIfNoHandlerFound` property of `DispatcherHandler` is now set to `true` by default and is deprecated. See [29491](https://github.com/spring-projects/spring-framework/issues/29491).
+
+The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
 ### Messaging Applications
 

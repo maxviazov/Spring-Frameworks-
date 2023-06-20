@@ -39,6 +39,8 @@ The default order of mappings has been refined to be more consistent by changing
 
 The `throwExceptionIfNoHandlerFound` property of `DispatcherHandler` is now set to `true` by default and is deprecated. The resulting exception is handled by default as a 404 error so it should result in the same outcome. Likewise, `ResourceHttpRequestHandler` now raises `NoResourceFoundException`, which is also handled by default as a 404, and should have the same outcome for most applications. See [29491](https://github.com/spring-projects/spring-framework/issues/29491).
 
+`@RequestParam`, `@RequestHeader`, and other controller method argument annotations now use the defaultValue if the input is a non-empty String without text.
+
 The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
 ### Messaging Applications

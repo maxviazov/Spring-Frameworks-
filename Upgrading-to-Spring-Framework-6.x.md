@@ -37,7 +37,7 @@ The format for `MethodArgumentNotValidException` and `WebExchangeBindException` 
 
 The default order of mappings has been refined to be more consistent by changing `RouterFunctionMapping` order from `3` to `-1` in Spring MVC. That means `RouterFunctionMapping` is now always ordered before `RequestMappingHandlerMapping` in both Spring MVC and Spring WebFlux. See [30278](https://github.com/spring-projects/spring-framework/issues/30278) for more details.
 
-The `throwExceptionIfNoHandlerFound` property of `DispatcherHandler` is now set to `true` by default and is deprecated. See [29491](https://github.com/spring-projects/spring-framework/issues/29491).
+The `throwExceptionIfNoHandlerFound` property of `DispatcherHandler` is now set to `true` by default and is deprecated. The resulting exception is handled by default as a 404 error so it should result in the same outcome. Likewise, `ResourceHttpRequestHandler` now raises `NoResourceFoundException`, which is also handled by default as a 404, and should have the same outcome for most applications. See [29491](https://github.com/spring-projects/spring-framework/issues/29491).
 
 The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 

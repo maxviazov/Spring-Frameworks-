@@ -25,6 +25,7 @@
 * [ErrorResponse](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/web/ErrorResponse.html) allows [customization](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/web/webmvc/mvc-ann-rest-exceptions.html#mvc-ann-rest-exceptions-i18n) of `ProblemDetail` type via `MessageSource` and use of custom `ProblemDetail` through its builder.
 * Spring MVC throws `NoHandlerFoundException` or `NoResourceFoundException` (new in 6.1) to allow consistent handling of 404 errors, including with an RFC 7807 error response. See [29491](https://github.com/spring-projects/spring-framework/issues/29491).
 * Jetty-based `ClientHttpRequestFactory` for use with RestTemplate; see [30564](https://github.com/spring-projects/spring-framework/issues/30564).
+* JDK HttpClient-based `ClientHttpRequestFactory` for use with RestTemplate; see [30478](https://github.com/spring-projects/spring-framework/pull/30478).
 * Improved buffering in various `ClientHttpRequestFactory` implementations; see [30557](https://github.com/spring-projects/spring-framework/issues/30557).
 
 ### Messaging Applications

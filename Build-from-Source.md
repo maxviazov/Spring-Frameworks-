@@ -12,7 +12,9 @@ for the build system.
 To build you will need [Git](https://help.github.com/set-up-git-redirect) and
 [JDK 17](https://adoptium.net/) and [JDK 21](https://jdk.java.net/21/) in a [location detected by Gradle toolchain support](https://docs.gradle.org/current/userguide/toolchains.html#sec:auto_detection). Be sure
 that your `JAVA_HOME` environment variable points to the `jdk17` folder extracted
-from the JDK download.
+from the JDK download. You can check which Java installs are detected by gradle by running `./gradlew -q javaToolchains` in the project root. If your local install is not detected, you can declare it in your `$HOME/.gradle/gradle.properties` file by adding the following property: `org.gradle.java.installations.paths=/path/to/java21/,/path/to/other/java/install/` ([see Gradle documentation](https://docs.gradle.org/current/userguide/toolchains.html#sec:custom_loc)).
+
+
 
 For users of SDKMAN, Spring Framework provides `.sdkmanrc` files that set up JDK 17 correctly.
 Simply use `sdk env` to do so.
@@ -49,14 +51,9 @@ To install all Spring Framework jars in your local Maven repository, use the fol
 Note that the `-x ...` arguments skip the generation of documentation.
 
 ```shell
-./gradlew publishToMavenLocal -x api -x javadoc -x dokkaHtmlMultiModule -x asciidoctor -x asciidoctorPdf -x distZip
+./gradlew publishToMavenLocal
 ```
 
-If you are building a previous version of the framework (for example, Spring Framework 5.1.x), use:
-
-```shell
-./gradlew install -x javadoc
-```
 
 ### Import into your IDE
 

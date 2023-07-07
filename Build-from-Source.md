@@ -9,7 +9,7 @@ for the build system.
 
 ### Before You Start
 
-To build you will need [Git](https://help.github.com/set-up-git-redirect) and
+To build you will need [Git](https://docs.github.com/en/get-started/quickstart/set-up-git) and
 [JDK 17](https://adoptium.net/) and [JDK 21](https://jdk.java.net/21/) in a [location detected by Gradle toolchain support](https://docs.gradle.org/current/userguide/toolchains.html#sec:auto_detection). Be sure
 that your `JAVA_HOME` environment variable points to the `jdk17` folder extracted
 from the JDK download. You can check which Java installs are detected by gradle by running `./gradlew -q javaToolchains` in the project root. If your local install is not detected, you can declare it in your `$HOME/.gradle/gradle.properties` file by adding the following property: `org.gradle.java.installations.paths=/path/to/java21/,/path/to/other/java/install/` ([see Gradle documentation](https://docs.gradle.org/current/userguide/toolchains.html#sec:custom_loc)).

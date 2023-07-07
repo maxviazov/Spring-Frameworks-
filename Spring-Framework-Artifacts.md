@@ -16,7 +16,7 @@ There is no one "spring-all" jar that includes all sources.
 
 ## Maven Central
 
-The Spring Framework publishes GA (general availability) versions to [Maven Central](https://search.maven.org) which is automatically searched when using Maven, so just add the dependencies to your project's POM:
+The Spring Framework publishes GA (general availability) versions to [Maven Central](https://central.sonatype.com/) which is automatically searched when using Maven, so just add the dependencies to your project's POM:
 
 ```xml
 <dependency>

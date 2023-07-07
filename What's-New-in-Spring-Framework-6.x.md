@@ -4,6 +4,7 @@
 
 * Configuration options for virtual threads on JDK 21: a dedicated [VirtualThreadTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/VirtualThreadTaskExecutor.html) and [a flag on SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html#setVirtualThreads(boolean)) (also see the [related GitHub issue](https://github.com/spring-projects/spring-framework/issues/23443) about general compatibility with virtual threads)
 * Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/integration/checkpoint-restore.html)).
+* Lifecycle-integrated [pause/resume capability](https://github.com/spring-projects/spring-framework/issues/30831) and [parallel graceful shutdown] (https://github.com/spring-projects/spring-framework/issues/27090) for `ThreadPoolTaskExecutor` and `ThreadPoolTaskScheduler`.
 * Support for resolving JDK 21 `SequencedCollection/Set/Map` at injection points; see [30239](https://github.com/spring-projects/spring-framework/issues/30239).
 * Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
 * Support for letters other an A-Z in property, field, and variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
@@ -31,6 +32,7 @@
 
 ### Messaging Applications
 
+* Interface parameter annotations are detected for messaging handler methods as well (analogous to web handler methods).
 * The SpEL-based `selector` header support in WebSocket messaging is now disabled by default and must be explicitly enabled. See [30550](https://github.com/spring-projects/spring-framework/issues/30550) and [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#messaging-applications) for migration details.
 
 ### Testing

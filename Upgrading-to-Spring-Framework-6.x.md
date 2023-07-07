@@ -16,7 +16,7 @@ Several deprecated classes, constructors, and methods have been removed across t
 
 ### Core Container
 
-Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is now consistently performed via `URI`, including handling of relative paths. This includes behavioral changes for uncommon cases such as when specifying a full URL as a relative path.
+Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is now consistently performed via `URI`, including the handling of relative paths. This includes behavioral changes for uncommon cases such as when specifying a full URL as a relative path.
 See [29481](https://github.com/spring-projects/spring-framework/issues/29481) and [28522](https://github.com/spring-projects/spring-framework/issues/28522).
 
 `LocalVariableTableParameterNameDiscoverer` has been removed in 6.1. Compile your Java sources with the common Java 8+ `-parameters` flag for parameter name retention (instead of relying on the `-debug` compiler flag) in order to be compatible with `StandardReflectionParameterNameDiscoverer`. With the Kotlin compiler, we recommend the `-java-parameters` flag.
@@ -25,7 +25,7 @@ See [29481](https://github.com/spring-projects/spring-framework/issues/29481) an
 
 Array-to-collection conversion prefers a `List` result rather than a `Set` for a declared target type of `Collection`.
 
-`ThreadPoolTaskExecutor` and `ThreadPoolTaskScheduler` enter a graceful shutdown phase when the application context starts to close. As a consequence, further task submissions are not accepted during stop or destroy callbacks in other components anymore. If the latter is necessary, switch the executor/scheduler's `acceptTasksAfterContextClose` flag to `true`.
+`ThreadPoolTaskExecutor` and `ThreadPoolTaskScheduler` enter a graceful shutdown phase when the application context starts to close. As a consequence, further task submissions are not accepted during stop or destroy callbacks in other components anymore. If the latter is necessary, switch the executor/scheduler's `acceptTasksAfterContextClose` flag to `true`, at the expense of a longer shutdown phase.
 
 When building a native image, the verbose logging about pre-computed fields has been removed by default, and can be restored by passing `-Dspring.native.precompute.log=verbose` as a `native-image` compiler build argument to display related detailed logs.
 
@@ -33,7 +33,7 @@ When building a native image, the verbose logging about pre-computed fields has 
 
 JPA bootstrapping now fails in case of an incomplete Hibernate Validator setup (e.g. without an EL provider), making such a scenario easier to debug.
 
-`@TransactionalEventListener` rejects invalid `@Transactional` usage on the same method: only allowed as ´REQUIRES_NEW` or in combination with `@Async`.
+`@TransactionalEventListener` rejects invalid `@Transactional` usage on the same method: only allowed as `REQUIRES_NEW` or in combination with `@Async`.
 
 ### Web Applications
 

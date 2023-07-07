@@ -12,18 +12,26 @@ spring-context  spring-expression       spring-jms         spring-test   spring-
 
 Some modules are interdependent. For example `spring-context` depends on `spring-beans` which in turn depends on `spring-core`. There are no required external dependencies although each module has optional dependencies and some of those may be required depending on what functionality the application needs.
 
-There is no one "spring-all" jar that includes all sources.
+There is no single "spring-all" jar that includes all modules.
 
 ## Maven Central
 
-The Spring Framework publishes GA (general availability) versions to [Maven Central](https://central.sonatype.com/) which is automatically searched when using Maven, so just add the dependencies to your project's POM:
+The Spring Framework publishes GA (general availability) versions to [Maven Central](https://central.sonatype.com/) which is automatically searched when using Maven or Gradle, so just add the dependencies to your project's build script:
+
+### Maven
 
 ```xml
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>5.3.16</version>
+    <version>6.0.10</version>
 </dependency>
+```
+
+### Gradle
+
+```groovy
+implementation 'org.springframework:spring-context:6.0.10'
 ```
 
 ## Spring Repositories
@@ -32,7 +40,9 @@ Snapshot, milestone, and release candidate versions are published to an [Artifac
 
 ### Snapshots
 
-Add the following to resolve snapshot versions – for example, `5.3.17-SNAPSHOT`:
+Add the following to resolve snapshot versions – for example, `6.1.0-SNAPSHOT`:
+
+#### Maven
 
 ```xml
 <repository>
@@ -46,13 +56,32 @@ Add the following to resolve snapshot versions – for example, `5.3.17-SNAPSHOT
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>5.3.17-SNAPSHOT</version>
+    <version>6.1.0-SNAPSHOT</version>
 </dependency>
+```
+
+#### Gradle
+
+```groovy
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.spring.io/snapshot"
+    }
+}
+
+...
+
+dependencies {
+    implementation 'org.springframework:spring-context:6.1.0-SNAPSHOT'
+}
 ```
 
 ### Milestones and Release Candidates
 
-Add the following to resolve milestone and RC versions – for example, `6.0.0-M2` or `6.0.0-RC1`:
+Add the following to resolve milestone and RC versions – for example, `6.1.0-M2` or `6.1.0-RC1`:
+
+#### Maven
 
 ```xml
 <repository>
@@ -66,13 +95,30 @@ Add the following to resolve milestone and RC versions – for example, `6.0.0-M
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
-    <version>6.0.0-M2</version>
+    <version>6.1.0-M2</version>
 </dependency>
 ```
 
-### Releases
+#### Gradle
 
-You can also resolve GA versions of Spring Framework artifacts against `https://repo.spring.io/release`.
+```groovy
+repositories {
+    mavenCentral()
+    maven {
+        url "https://repo.spring.io/milestone"
+    }
+}
+
+...
+
+dependencies {
+    implementation 'org.springframework:spring-context:6.1.0-M2'
+}
+```
+
+### GA Releases
+
+You can also obtain GA versions of Spring Framework artifacts from https://repo.spring.io/release.
 
 For more in-depth information about Spring repositories, see the [[Spring Artifactory]] page.
 

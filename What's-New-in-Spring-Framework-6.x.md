@@ -9,6 +9,7 @@
 * Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
 * Support for letters other an A-Z in property, field, and variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
 * Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/core/expressions/language-ref/functions.html)).
+* Support for `Iterable` and `MultiValueMap` binding in `BeanWrapper` and `DirectFieldAccessor`; see [907](https://github.com/spring-projects/spring-framework/pull/907) and [26297](https://github.com/spring-projects/spring-framework/issues/26297).
 * Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`); see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
 * Reactive `@Scheduled` methods (including Kotlin coroutines); see [22924](https://github.com/spring-projects/spring-framework/pull/29924).
 * Observation instrumentation of `@Scheduled` methods; see [29883](https://github.com/spring-projects/spring-framework/issues/29883).

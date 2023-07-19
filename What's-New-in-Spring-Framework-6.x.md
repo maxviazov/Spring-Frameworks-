@@ -15,6 +15,7 @@
 * Observation instrumentation of `@Scheduled` methods; see [29883](https://github.com/spring-projects/spring-framework/issues/29883).
 * Selecting a specific target scheduler for each `@Scheduled` method; see [20818](https://github.com/spring-projects/spring-framework/issues/20818).
 * `Validator` factory methods for programmatic validator implementations; see [29890](https://github.com/spring-projects/spring-framework/pull/29890).
+* `Validator.validateObject(Object)` with returned `Errors` and `Errors.failOnError` method for flexible programmatic usage; see [19877](https://github.com/spring-projects/spring-framework/issues/19877).
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
 
 ### Data Access and Transactions

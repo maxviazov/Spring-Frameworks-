@@ -21,6 +21,8 @@
 ### Data Access and Transactions
 
 * Failed `CompletableFuture` triggers rollback for async transactional method; see [30018](https://github.com/spring-projects/spring-framework/issues/30018).
+* `DataAccessUtils` provides various `optionalResult` methods with a `java.util.Optional` return type; see [27735](https://github.com/spring-projects/spring-framework/pull/27735).
+* `SQLExceptionSubclassTranslator` can be configured with an overriding `customTranslator`; see [24634](https://github.com/spring-projects/spring-framework/issues/24634).
 * `BeanPropertyRowMapper` and `DataClassRowMapper` available for R2DBC as well; see [30530](https://github.com/spring-projects/spring-framework/pull/30530).
 
 ### Web Applications

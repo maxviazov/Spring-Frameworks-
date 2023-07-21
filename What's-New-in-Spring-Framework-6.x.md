@@ -11,6 +11,7 @@
 * Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/core/expressions/language-ref/functions.html)).
 * Support for `Iterable` and `MultiValueMap` binding in `BeanWrapper` and `DirectFieldAccessor`; see [907](https://github.com/spring-projects/spring-framework/pull/907) and [26297](https://github.com/spring-projects/spring-framework/issues/26297).
 * Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`); see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
+* Async/reactive cacheable methods, including corresponding support in the `Cache` interface and in `CaffeineCacheManager`; see [17559](https://github.com/spring-projects/spring-framework/issues/17559) and [17920](https://github.com/spring-projects/spring-framework/issues/17920).
 * Reactive `@Scheduled` methods (including Kotlin coroutines); see [22924](https://github.com/spring-projects/spring-framework/pull/29924).
 * Observation instrumentation of `@Scheduled` methods; see [29883](https://github.com/spring-projects/spring-framework/issues/29883).
 * Selecting a specific target scheduler for each `@Scheduled` method; see [20818](https://github.com/spring-projects/spring-framework/issues/20818).

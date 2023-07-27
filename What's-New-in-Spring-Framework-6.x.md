@@ -16,7 +16,7 @@
 * `Validator` factory methods for programmatic validator implementations; see [29890](https://github.com/spring-projects/spring-framework/pull/29890).
 * `Validator.validateObject(Object)` with returned `Errors` and `Errors.failOnError` method for flexible programmatic usage; see [19877](https://github.com/spring-projects/spring-framework/issues/19877).
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
-* Support for letters other an A-Z in property, field, and variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
+* Support for letters other than A-Z in property/field/variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
 * Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/core/expressions/language-ref/functions.html)).
 * Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
 
@@ -24,7 +24,7 @@
 
 * Failed `CompletableFuture` triggers rollback for async transactional method; see [30018](https://github.com/spring-projects/spring-framework/issues/30018).
 * `DataAccessUtils` provides various `optionalResult` methods with a `java.util.Optional` return type; see [27735](https://github.com/spring-projects/spring-framework/pull/27735).
-* The new `JdbcClient` provides a unified facade for `JdbcTemplate` and `NamedParameterJdbcTemplate` with flexible parameter options as well as flexible result retrieval options; see [30931](https://github.com/spring-projects/spring-framework/issues/30931). 
+* The new `JdbcClient` provides a unified facade for query/update statements on top of `JdbcTemplate` and `NamedParameterJdbcTemplate`, with flexible parameter options as well as flexible result retrieval options; see [30931](https://github.com/spring-projects/spring-framework/issues/30931). 
 * `SQLExceptionSubclassTranslator` can be configured with an overriding `customTranslator`; see [24634](https://github.com/spring-projects/spring-framework/issues/24634).
 * `BeanPropertyRowMapper` and `DataClassRowMapper` available for R2DBC as well; see [30530](https://github.com/spring-projects/spring-framework/pull/30530).
 
@@ -33,7 +33,7 @@
 * Spring MVC and WebFlux now have built-in method validation support for controller method parameters with `@Constraint` annotations. That means you no longer need `@Validated` at the controller class level to enable method validation via AOP proxy. Built-in method validation is layered on top of the existing argument validation for model attribute and request body arguments. The two are more tightly integrated and coordinated, e.g. avoiding cases with double validation. See [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#web-applications) for migration details, [29825](https://github.com/spring-projects/spring-framework/issues/29825) for more on the built-in support in M1, and the umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645) for related tasks and feedback.
 * [ErrorResponse](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/web/ErrorResponse.html) allows [customization](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/web/webmvc/mvc-ann-rest-exceptions.html#mvc-ann-rest-exceptions-i18n) of `ProblemDetail` type via `MessageSource` and use of custom `ProblemDetail` through its builder.
 * Spring MVC throws `NoHandlerFoundException` or `NoResourceFoundException` (new in 6.1) to allow consistent handling of 404 errors, including with an RFC 7807 error response. See [29491](https://github.com/spring-projects/spring-framework/issues/29491).
-* The new `RestClient` is a synchronous HTTP client that offers an API similar to `WebClient`, using the same infrastructure  as `RestTemplate`. See [29552](https://github.com/spring-projects/spring-framework/issues/29552).
+* The new `RestClient` is a synchronous HTTP client that offers an API similar to `WebClient`, using the same infrastructure as `RestTemplate`. See [29552](https://github.com/spring-projects/spring-framework/issues/29552).
 * Jetty-based `ClientHttpRequestFactory` for use with RestTemplate and RestClient; see [30564](https://github.com/spring-projects/spring-framework/issues/30564).
 * JDK HttpClient-based `ClientHttpRequestFactory` for use with RestTemplate and RestClient; see [30478](https://github.com/spring-projects/spring-framework/pull/30478).
 * Improved buffering in various `ClientHttpRequestFactory` implementations; see [30557](https://github.com/spring-projects/spring-framework/issues/30557).

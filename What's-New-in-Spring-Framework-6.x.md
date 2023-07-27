@@ -2,13 +2,11 @@
 
 ### Core Container
 
-* Configuration options for virtual threads on JDK 21: a dedicated [VirtualThreadTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/VirtualThreadTaskExecutor.html) and [a flag on SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html#setVirtualThreads(boolean)) (also see the [related GitHub issue](https://github.com/spring-projects/spring-framework/issues/23443) about general compatibility with virtual threads)
+* [General compatibility with virtual threads](https://github.com/spring-projects/spring-framework/issues/23443) and JDK 21 overall.
+* Configuration options for virtual threads: a dedicated [VirtualThreadTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/VirtualThreadTaskExecutor.html) and a [virtual threads mode on SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html#setVirtualThreads(boolean)), plus an analogous [SimpleAsyncTaskScheduler](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/scheduling/concurrent/SimpleAsyncTaskScheduler.html) with a new-thread-per-task strategy and a virtual threads mode.
 * Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/integration/checkpoint-restore.html)).
 * Lifecycle integrated [pause/resume capability](https://github.com/spring-projects/spring-framework/issues/30831) and [parallel graceful shutdown](https://github.com/spring-projects/spring-framework/issues/27090) for `ThreadPoolTaskExecutor` and `ThreadPoolTaskScheduler`.
 * Support for resolving JDK 21 `SequencedCollection/Set/Map` at injection points; see [30239](https://github.com/spring-projects/spring-framework/issues/30239).
-* Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
-* Support for letters other an A-Z in property, field, and variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
-* Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/core/expressions/language-ref/functions.html)).
 * Support for `Iterable` and `MultiValueMap` binding in `BeanWrapper` and `DirectFieldAccessor`; see [907](https://github.com/spring-projects/spring-framework/pull/907) and [26297](https://github.com/spring-projects/spring-framework/issues/26297).
 * Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`); see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
 * Async/reactive cacheable methods, including corresponding support in the `Cache` interface and in `CaffeineCacheManager`; see [17559](https://github.com/spring-projects/spring-framework/issues/17559) and [17920](https://github.com/spring-projects/spring-framework/issues/17920).
@@ -18,6 +16,9 @@
 * `Validator` factory methods for programmatic validator implementations; see [29890](https://github.com/spring-projects/spring-framework/pull/29890).
 * `Validator.validateObject(Object)` with returned `Errors` and `Errors.failOnError` method for flexible programmatic usage; see [19877](https://github.com/spring-projects/spring-framework/issues/19877).
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
+* Support for letters other an A-Z in property, field, and variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
+* Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/core/expressions/language-ref/functions.html)).
+* Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
 
 ### Data Access and Transactions
 

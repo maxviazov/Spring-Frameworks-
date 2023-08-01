@@ -22,6 +22,8 @@
 
 ### Data Access and Transactions
 
+* `@TransactionalEventListener` and `TransactionalApplicationListener` always run in original thread; see [30244](https://github.com/spring-projects/spring-framework/issues/30244).
+* `@TransactionalEventListener` and `TransactionalApplicationListener` can participate in reactive transactions when event gets published with transaction context; see [27515](https://github.com/spring-projects/spring-framework/issues/27515).
 * Failed `CompletableFuture` triggers rollback for async transactional method; see [30018](https://github.com/spring-projects/spring-framework/issues/30018).
 * `DataAccessUtils` provides various `optionalResult` methods with a `java.util.Optional` return type; see [27735](https://github.com/spring-projects/spring-framework/pull/27735).
 * The new `JdbcClient` provides a unified facade for query/update statements on top of `JdbcTemplate` and `NamedParameterJdbcTemplate`, with flexible parameter options as well as flexible result retrieval options; see [30931](https://github.com/spring-projects/spring-framework/issues/30931). 

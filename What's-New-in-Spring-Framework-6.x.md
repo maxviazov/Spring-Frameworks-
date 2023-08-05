@@ -22,6 +22,7 @@
 
 ### Data Access and Transactions
 
+* Common `TransactionListener` contract with before/afterBegin, before/afterCommit and before/afterRollback callbacks triggered by the transaction manager (for thread-bound as well as reactive transactions); see [27479](https://github.com/spring-projects/spring-framework/issues/27479).
 * `@TransactionalEventListener` and `TransactionalApplicationListener` always run in original thread; see [30244](https://github.com/spring-projects/spring-framework/issues/30244).
 * `@TransactionalEventListener` and `TransactionalApplicationListener` can participate in reactive transactions when event gets published with transaction context; see [27515](https://github.com/spring-projects/spring-framework/issues/27515).
 * Failed `CompletableFuture` triggers rollback for async transactional method; see [30018](https://github.com/spring-projects/spring-framework/issues/30018).

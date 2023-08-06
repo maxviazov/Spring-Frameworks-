@@ -22,10 +22,10 @@
 
 ### Data Access and Transactions
 
-* Common `TransactionListener` contract with before/afterBegin, before/afterCommit and before/afterRollback callbacks triggered by the transaction manager (for thread-bound as well as reactive transactions); see [27479](https://github.com/spring-projects/spring-framework/issues/27479).
+* Common `TransactionExecutionListener` contract with before/afterBegin, before/afterCommit and before/afterRollback callbacks triggered by the transaction manager (for thread-bound as well as reactive transactions); see [27479](https://github.com/spring-projects/spring-framework/issues/27479).
 * `@TransactionalEventListener` and `TransactionalApplicationListener` always run in the original thread, independent from an async multicaster setup; see [30244](https://github.com/spring-projects/spring-framework/issues/30244).
 * `@TransactionalEventListener` and `TransactionalApplicationListener` can participate in reactive transactions when the `ApplicationEvent` gets published with the transaction context as its event source; see [27515](https://github.com/spring-projects/spring-framework/issues/27515).
-* Failed `CompletableFuture` triggers rollback for async transactional method; see [30018](https://github.com/spring-projects/spring-framework/issues/30018).
+* A failed `CompletableFuture` triggers a rollback for an async transactional method; see [30018](https://github.com/spring-projects/spring-framework/issues/30018).
 * `DataAccessUtils` provides various `optionalResult` methods with a `java.util.Optional` return type; see [27735](https://github.com/spring-projects/spring-framework/pull/27735).
 * The new `JdbcClient` provides a unified facade for query/update statements on top of `JdbcTemplate` and `NamedParameterJdbcTemplate`, with flexible parameter options as well as flexible result retrieval options; see [30931](https://github.com/spring-projects/spring-framework/issues/30931). 
 * `SQLExceptionSubclassTranslator` can be configured with an overriding `customTranslator`; see [24634](https://github.com/spring-projects/spring-framework/issues/24634).

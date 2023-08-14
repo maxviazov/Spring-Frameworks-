@@ -14,6 +14,7 @@
 * `Validator` factory methods for programmatic validator implementations; see [29890](https://github.com/spring-projects/spring-framework/pull/29890).
 * `Validator.validateObject(Object)` with returned `Errors` and `Errors.failOnError` method for flexible programmatic usage; see [19877](https://github.com/spring-projects/spring-framework/issues/19877).
 * `MethodValidationInterceptor` throws `MethodValidationException` subclass of `ConstraintViolationException` with violations adapted to `MessageSource` resolvable codes, and to `Errors` instances for `@Valid` arguments with cascaded violations. See [29825](https://github.com/spring-projects/spring-framework/issues/29825), and umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645).
+* Support for resource patterns in `@PropertySource`; see [21325](https://github.com/spring-projects/spring-framework/issues/21325).
 * Support for `Iterable` and `MultiValueMap` binding in `BeanWrapper` and `DirectFieldAccessor`; see [907](https://github.com/spring-projects/spring-framework/pull/907) and [26297](https://github.com/spring-projects/spring-framework/issues/26297).
 * Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
 * Support for letters other than A-Z in property/field/variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 

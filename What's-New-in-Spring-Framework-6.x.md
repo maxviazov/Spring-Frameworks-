@@ -28,6 +28,7 @@
 * A failed `CompletableFuture` triggers a rollback for an async transactional method; see [30018](https://github.com/spring-projects/spring-framework/issues/30018).
 * `DataAccessUtils` provides various `optionalResult` methods with a `java.util.Optional` return type; see [27735](https://github.com/spring-projects/spring-framework/pull/27735).
 * The new `JdbcClient` provides a unified facade for query/update statements on top of `JdbcTemplate` and `NamedParameterJdbcTemplate`, with flexible parameter options as well as flexible result retrieval options; see [30931](https://github.com/spring-projects/spring-framework/issues/30931). 
+* `SimplePropertyRowMapper` and `SimplePropertySqlParameterSource` strategies for use with `JdbcTemplate`/`NamedParameterJdbcTemplate` as well as `JdbcClient`, providing flexible constructor/property/field mapping; see [26594](https://github.com/spring-projects/spring-framework/issues/26594).
 * `SQLExceptionSubclassTranslator` can be configured with an overriding `customTranslator`; see [24634](https://github.com/spring-projects/spring-framework/issues/24634).
 * `BeanPropertyRowMapper` and `DataClassRowMapper` available for R2DBC as well; see [30530](https://github.com/spring-projects/spring-framework/pull/30530).
 

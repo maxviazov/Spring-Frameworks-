@@ -4,7 +4,7 @@
 
 * [General compatibility with virtual threads](https://github.com/spring-projects/spring-framework/issues/23443) and JDK 21 overall.
 * Configuration options for virtual threads: a dedicated [VirtualThreadTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/VirtualThreadTaskExecutor.html) and a [virtual threads mode on SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html#setVirtualThreads(boolean)), plus an analogous [SimpleAsyncTaskScheduler](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/scheduling/concurrent/SimpleAsyncTaskScheduler.html) with a new-thread-per-task strategy and a virtual threads mode.
-* Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/integration/checkpoint-restore.html)).
+* Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1/integration/checkpoint-restore.html)).
 * Lifecycle integrated [pause/resume capability](https://github.com/spring-projects/spring-framework/issues/30831) and [parallel graceful shutdown](https://github.com/spring-projects/spring-framework/issues/27090) for `ThreadPoolTaskExecutor` and `ThreadPoolTaskScheduler` as well as `SimpleAsyncTaskScheduler`.
 * Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`); see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
 * Async/reactive cacheable methods, including corresponding support in the `Cache` interface and in `CaffeineCacheManager`; see [17559](https://github.com/spring-projects/spring-framework/issues/17559) and [17920](https://github.com/spring-projects/spring-framework/issues/17920).
@@ -18,7 +18,7 @@
 * Support for `Iterable` and `MultiValueMap` binding in `BeanWrapper` and `DirectFieldAccessor`; see [907](https://github.com/spring-projects/spring-framework/pull/907) and [26297](https://github.com/spring-projects/spring-framework/issues/26297).
 * Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
 * Support for letters other than A-Z in property/field/variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
-* Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/core/expressions/language-ref/functions.html)).
+* Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1/core/expressions/language-ref/functions.html)).
 
 ### Data Access and Transactions
 
@@ -35,7 +35,7 @@
 ### Web Applications
 
 * Spring MVC and WebFlux now have built-in method validation support for controller method parameters with `@Constraint` annotations. That means you no longer need `@Validated` at the controller class level to enable method validation via AOP proxy. Built-in method validation is layered on top of the existing argument validation for model attribute and request body arguments. The two are more tightly integrated and coordinated, e.g. avoiding cases with double validation. See [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#web-applications) for migration details, [29825](https://github.com/spring-projects/spring-framework/issues/29825) for more on the built-in support in M1, and the umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645) for related tasks and feedback.
-* [ErrorResponse](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/web/ErrorResponse.html) allows [customization](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/web/webmvc/mvc-ann-rest-exceptions.html#mvc-ann-rest-exceptions-i18n) of `ProblemDetail` type via `MessageSource` and use of custom `ProblemDetail` through its builder.
+* [ErrorResponse](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/web/ErrorResponse.html) allows [customization](https://docs.spring.io/spring-framework/reference/6.1/web/webmvc/mvc-ann-rest-exceptions.html#mvc-ann-rest-exceptions-i18n) of `ProblemDetail` type via `MessageSource` and use of custom `ProblemDetail` through its builder.
 * Spring MVC throws `NoHandlerFoundException` or `NoResourceFoundException` (new in 6.1) to allow consistent handling of 404 errors, including with an RFC 7807 error response. See [29491](https://github.com/spring-projects/spring-framework/issues/29491).
 * The new `RestClient` is a synchronous HTTP client that offers an API similar to `WebClient`, using the same infrastructure as `RestTemplate`. See [29552](https://github.com/spring-projects/spring-framework/issues/29552).
 * Jetty-based `ClientHttpRequestFactory` for use with RestTemplate and RestClient; see [30564](https://github.com/spring-projects/spring-framework/issues/30564).
@@ -49,7 +49,7 @@
 
 ### Testing
 
-* `ApplicationContext` failure threshold support: avoids repeated attempts to load a failing `ApplicationContext` in the TestContext framework, based on a failure threshold which defaults to 1 but can be configured via a system property (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/testing/testcontext-framework/ctx-management/failure-threshold.html)).
+* `ApplicationContext` failure threshold support: avoids repeated attempts to load a failing `ApplicationContext` in the TestContext framework, based on a failure threshold which defaults to 1 but can be configured via a system property (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1/testing/testcontext-framework/ctx-management/failure-threshold.html)).
 * Support for recording asynchronous events with `@RecordApplicationEvents`. See [30020](https://github.com/spring-projects/spring-framework/pull/30020).
   * Record events from threads other than the main test thread.
   * Assert events from a separate thread – for example with Awaitility.

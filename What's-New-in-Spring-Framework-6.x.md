@@ -30,7 +30,8 @@
 * The new `JdbcClient` provides a unified facade for query/update statements on top of `JdbcTemplate` and `NamedParameterJdbcTemplate`, with flexible parameter options as well as flexible result retrieval options; see [30931](https://github.com/spring-projects/spring-framework/issues/30931). 
 * `SimplePropertyRowMapper` and `SimplePropertySqlParameterSource` strategies for use with `JdbcTemplate`/`NamedParameterJdbcTemplate` as well as `JdbcClient`, providing flexible constructor/property/field mapping for result objects and named parameter holders; see [26594](https://github.com/spring-projects/spring-framework/issues/26594#issuecomment-1678725276).
 * `SQLExceptionSubclassTranslator` can be configured with an overriding `customTranslator`; see [24634](https://github.com/spring-projects/spring-framework/issues/24634).
-* The R2DBC `DatabaseClient` provides `bindProperties(Object)` and `mapProperties(Class)` for parameter objects and result objects based on bean properties or record components, as well as `mapValue(Class)` for plain database column values; see [27282](https://github.com/spring-projects/spring-framework/issues/27282) and [26021](https://github.com/spring-projects/spring-framework/issues/26021).
+* The R2DBC `DatabaseClient` provides `bindValues(Map)` for a pre-composed map of parameter values and `bindProperties(Object)` for parameter objects based on bean properties or record components, see [27282](https://github.com/spring-projects/spring-framework/issues/27282).
+* The R2DBC `DatabaseClient` provides `mapValue(Class)` for plain database column values and `mapProperties(Class)` for result objects based on bean properties or record components; see [26021](https://github.com/spring-projects/spring-framework/issues/26021).
 * `BeanPropertyRowMapper` and `DataClassRowMapper` available for R2DBC as well; see [30530](https://github.com/spring-projects/spring-framework/pull/30530).
 
 ### Web Applications

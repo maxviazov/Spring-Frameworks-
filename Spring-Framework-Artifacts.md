@@ -116,15 +116,3 @@ dependencies {
 }
 ```
 
-### GA Releases
-
-You can also obtain GA versions of Spring Framework artifacts from https://repo.spring.io/release.
-
-For more in-depth information about Spring repositories, see the [[Spring Artifactory]] page.
-
-
-## Downloading a Distribution
-
-If for whatever reason you are not using a build system with dependency management capabilities, you can download Spring Framework _distribution zips_ from the Spring repository at <https://repo.spring.io>. These distributions contain all source and binary jar files, as well as Javadoc and reference documentation, but _do not_ contain external dependencies! 
-
-To create a distribution with all dependencies locally you can build from source. See [[Build Zip with Dependencies]] for details.

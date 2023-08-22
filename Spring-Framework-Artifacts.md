@@ -45,12 +45,16 @@ Add the following to resolve snapshot versions – for example, `6.1.0-SNAPSHOT`
 #### Maven
 
 ```xml
-<repository>
-    <id>repository.spring.snapshot</id>
-    <name>Spring Snapshot Repository</name>
+<repositories>
+  <repository>
+    <id>spring-snapshots</id>
+    <name>Spring Snapshots</name>
     <url>https://repo.spring.io/snapshot</url>
-</repository>
-
+    <releases>
+      <enabled>false</enabled>
+    </releases>
+  </repository>
+</repositories>
 ...
 
 <dependency>
@@ -84,12 +88,16 @@ Add the following to resolve milestone and RC versions – for example, `6.1.0-M
 #### Maven
 
 ```xml
-<repository>
-    <id>repository.spring.milestone</id>
-    <name>Spring Milestone Repository</name>
+<repositories>
+  <repository>
+    <id>spring-milestones</id>
+    <name>Spring Milestones</name>
     <url>https://repo.spring.io/milestone</url>
-</repository>
-
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+</repositories>
 ...
 
 <dependency>

@@ -175,10 +175,10 @@ There are a few unusual aspects to the way the scanner has been implemented that
 One specifically worth mentioning is that the array passed to the `AnnotationsProcessor` callback can contain `null` elements.
 This was done as a performance optimization so that we don't need to copy the array simply to remove `null` elements.
 
-Another interesting aspect of the `Scanner` is that it the processor can trigger an early exit.
+Another interesting aspect of the `Scanner` is that an `AnnotationsProcessor` can trigger an early exit.
 This is another performance tweak that prevents the need to scan a full class hierarchy if a result has already been found.
 
-Since the `AnnotationsProcessor` is a package-private class, neither of these quirks are exposed to the end user.
+Since the `AnnotationsScanner` is a package-private class, neither of these quirks are exposed to the end user.
 
 ## `TypeMappedAnnotation`
 

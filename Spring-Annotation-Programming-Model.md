@@ -249,11 +249,15 @@ bit of geek humor and entertainment that further demonstrate the power of
 
 # FAQ
 
-## 1) Can `@AliasFor` be used with the `value` attributes for `@Component` and `@Qualifier`?
+## 1) Can `@AliasFor` be used to alias the `value` attribute in `@Qualifier`?
 
-The short answer is: no.
+No, the `value` attribute in `@Qualifier` _cannot_ be influenced by `@AliasFor`. The reason is that the special handling of the `value` attribute for qualifiers was in place years before `@AliasFor` was invented, and that special handling is still in place.
 
-The `value` attributes in `@Qualifier` and in _stereotype_ annotations (e.g., `@Component`, `@Repository`, `@Controller`, and any custom stereotype annotations) _cannot_ be influenced by `@AliasFor`. The reason is that the special handling of these `value` attributes was in place years before `@AliasFor` was invented. Consequently, due to backward compatibility issues it is simply not possible to use `@AliasFor` with such `value` attributes.
+## 2) Can `@AliasFor` be used to alias the `value` attribute for `@Component` and stereotype annotations?
+
+The short answer is: No, not until Spring Framework 6.1
+
+Prior to Spring Framework 6.1, the `value` attribute in _stereotype_ annotations (e.g., `@Component`, `@Repository`, `@Controller`, and any custom stereotype annotations) could not be influenced by `@AliasFor`. The rationale is analogous to the explanation given for `@Qualifier` above. However, Spring Framework 6.1 introduces full support for aliasing the `value` attribute in `@Component` via `@AliasFor`. For example, see the source declaration of the `name` attribute in `@ControllerAdvice`.
 
 # Topics yet to be Covered
 

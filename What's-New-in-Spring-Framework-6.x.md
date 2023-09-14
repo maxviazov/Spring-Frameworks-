@@ -45,6 +45,7 @@
 * Jetty-based `ClientHttpRequestFactory` for use with RestTemplate and RestClient; see [30564](https://github.com/spring-projects/spring-framework/issues/30564).
 * JDK HttpClient-based `ClientHttpRequestFactory` for use with RestTemplate and RestClient; see [30478](https://github.com/spring-projects/spring-framework/pull/30478).
 * Improved buffering in various `ClientHttpRequestFactory` implementations; see [30557](https://github.com/spring-projects/spring-framework/issues/30557).
+* General Coroutines support revision, which includes [`CoroutineContext` propagation in `CoWebFilter`](https://github.com/spring-projects/spring-framework/issues/27522), [`CoroutineContext` propagation in `coRouter` DSL with `filter`](https://github.com/spring-projects/spring-framework/issues/26977), [a new `context` function in `coRouter` DSL](https://github.com/spring-projects/spring-framework/issues/27010), [Support for `@ModelAttribute` with suspending function in WebFlux](https://github.com/spring-projects/spring-framework/issues/30894) and [consistent usage of the `Mono` variant of `awaitSingle()`](https://github.com/spring-projects/spring-framework/issues/31127).
 
 ### Messaging Applications
 

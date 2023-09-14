@@ -10,6 +10,7 @@
 * Async/reactive cacheable methods, including corresponding support in the `Cache` interface and in `CaffeineCacheManager`; see [17559](https://github.com/spring-projects/spring-framework/issues/17559) and [17920](https://github.com/spring-projects/spring-framework/issues/17920).
 * Reactive `@Scheduled` methods (including Kotlin coroutines); see [22924](https://github.com/spring-projects/spring-framework/pull/29924).
 * Observation instrumentation of `@Scheduled` methods; see [29883](https://github.com/spring-projects/spring-framework/issues/29883).
+* Spring Framework will not produce observations out-of-the-box for `@Async` or `@EventListener` annotated methods, but will help you with propagating context (e.g. MDC logging with the current trace id) for the execution of those methods. See the new `ContextPropagatingTaskDecorator`, the [relevant reference documentation section](https://docs.spring.io/spring-framework/reference/6.1/integration/observability.html#observability.application-events) and [issue 31130](https://github.com/spring-projects/spring-framework/issues/31130).
 * Selecting a specific target scheduler for each `@Scheduled` method; see [20818](https://github.com/spring-projects/spring-framework/issues/20818).
 * `@Scheduled` methods for one-time tasks (with just an initial delay); see [31211](https://github.com/spring-projects/spring-framework/issues/31211).
 * `Validator` factory methods for programmatic validator implementations; see [29890](https://github.com/spring-projects/spring-framework/pull/29890).

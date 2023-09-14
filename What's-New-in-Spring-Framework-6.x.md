@@ -20,6 +20,7 @@
 * Revised `Instant` and `Duration` parsing (aligned with Spring Boot); see [22013](https://github.com/spring-projects/spring-framework/issues/22013).
 * Support for letters other than A-Z in property/field/variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
 * Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1/core/expressions/language-ref/functions.html)).
+* Spring AOP now supports Coroutines; see [22462](https://github.com/spring-projects/spring-framework/issues/22462)
 
 ### Data Access and Transactions
 

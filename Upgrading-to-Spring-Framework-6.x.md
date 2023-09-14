@@ -49,6 +49,8 @@ The `throwExceptionIfNoHandlerFound` property of `DispatcherHandler` is now set 
 
 The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
+The HTTP server Observability instrumentation in WebFlux was limited and was not properly observing errors. As a result, the WebFlux `ServerHttpObservationFilter` is now deprecated in favor of direct instrumentation on the `WebHttpHandlerBuilder`. See [30013](https://github.com/spring-projects/spring-framework/issues/30013).
+
 ### Messaging Applications
 
 The [RSocket interface client](https://docs.spring.io/spring-framework/reference/rsocket.html#rsocket-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the RSocket client, and the underlying RSocket transport. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).

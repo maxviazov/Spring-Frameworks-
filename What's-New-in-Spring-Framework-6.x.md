@@ -51,6 +51,7 @@
 
 * Interface parameter annotations are detected for messaging handler methods as well (analogous to web handler methods).
 * The SpEL-based `selector` header support in WebSocket messaging is now disabled by default and must be explicitly enabled. See [30550](https://github.com/spring-projects/spring-framework/issues/30550) and [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#messaging-applications) for migration details.
+* Observability support for JMS. We now produce observations when publishing messages with `JmsTemplate` and when processing messages with `MessageListener` or `@JmsListener`. See [the reference docs section](ttps://docs.spring.io/spring-framework/reference/6.1/integration/observability.html#observability.jms) and issue [30335](https://github.com/spring-projects/spring-framework/issues/30335).
 
 ### Testing
 

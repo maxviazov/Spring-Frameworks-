@@ -51,7 +51,7 @@ If you need to publish Spring Framework artifacts locally for testing, you can d
 ./gradlew pTML -PskipDocs
 ```
 
-The `"skipDocs"` property will skip the "documentation" and "distribution" tasks (typically, the javadoc, kdoc and zip artifacts for docs in general). This can be useful for local iterations, but it is advised to run the full build before submitting a Pull Request.
+`pTML` is an abbreviation for the `publishToMavenLocal` task. The `skipDocs` property will skip the "documentation" and "distribution" tasks (typically, the javadoc, kdoc and zip artifacts for docs in general). This can be useful for local iterations, but it is advised to run the full build before submitting a Pull Request.
 
 To install all Spring Framework jars in your local Maven repository, use the following.
 

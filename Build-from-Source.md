@@ -42,6 +42,9 @@ Gradle has good incremental build support, so run without `clean` to keep things
 ./gradlew -a :spring-webmvc:test
 ```
 
+
+### Install in local Maven repository
+
 If you need to publish Spring Framework artifacts locally for testing, you can do the following:
 
 ```shell
@@ -49,8 +52,6 @@ If you need to publish Spring Framework artifacts locally for testing, you can d
 ```
 
 The `"skipDocs"` property will skip the "documentation" and "distribution" tasks (typically, the javadoc, kdoc and zip artifacts for docs in general). This can be useful for local iterations, but it is advised to run the full build before submitting a Pull Request.
-
-### Install in local Maven repository
 
 To install all Spring Framework jars in your local Maven repository, use the following.
 

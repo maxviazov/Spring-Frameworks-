@@ -27,6 +27,8 @@ Array-to-collection conversion prefers a `List` result rather than a `Set` for a
 
 `ThreadPoolTaskExecutor` and `ThreadPoolTaskScheduler` enter a graceful shutdown phase when the application context starts to close. As a consequence, further task submissions are not accepted during stop or destroy callbacks in other components anymore. If the latter is necessary, switch the executor/scheduler's `acceptTasksAfterContextClose` flag to `true`, at the expense of a longer shutdown phase.
 
+Message resolution through the `ApplicationContext` (accessing its internal `MessageSource`) is only allowed while the context is still active. After context close, `getMessage` attempts will throw an `IllegalStateException` now.
+
 When building a native image, the verbose logging about pre-computed fields has been removed by default, and can be restored by passing `-Dspring.native.precompute.log=verbose` as a `native-image` compiler build argument to display related detailed logs.
 
 ### Data Access

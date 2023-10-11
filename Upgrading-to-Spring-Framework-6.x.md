@@ -32,13 +32,13 @@ Message resolution through the `ApplicationContext` (accessing its internal `Mes
 
 When building a native image, the verbose logging about pre-computed fields has been removed by default, and can be restored by passing `-Dspring.native.precompute.log=verbose` as a `native-image` compiler build argument to display related detailed logs.
 
-### Data Access
+### Data Access and Transactions
+
+`@TransactionalEventListener` rejects invalid `@Transactional` usage on the same method: only allowed as `REQUIRES_NEW` or in combination with `@Async`.
 
 JPA bootstrapping now fails in case of an incomplete Hibernate Validator setup (e.g. without an EL provider), making such a scenario easier to debug.
 
-Since `JpaTransactionManager` translates commit/rollback exceptions to `DataAccessException` subclasses wherever possible, a commit exception formerly propagated as a generic `JpaSystemException` may show up as e.g. a `CannotAcquireLockException` now, aligned with the exception hierarchy thrown from persistence exception translation for repository operations. For a non-translatable fallback exception, `JpaSystemException` will be consistently thrown for commit as well as rollback now, instead of the former `TransactionSystemException` propagated from rollback in such a scenario.
-
-`@TransactionalEventListener` rejects invalid `@Transactional` usage on the same method: only allowed as `REQUIRES_NEW` or in combination with `@Async`.
+Since `JpaTransactionManager` with `HibernateJpaDialect` translates commit/rollback exceptions to `DataAccessException` subclasses wherever possible, a Hibernate transaction exception formerly propagated as a generic `JpaSystemException` may show up as e.g. `CannotAcquireLockException` now. For a non-translatable fallback exception, `JpaSystemException` will be consistently thrown for commit/rollback now, instead of the former `TransactionSystemException` propagated from rollback.
 
 ### Web Applications
 

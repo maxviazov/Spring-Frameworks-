@@ -36,6 +36,7 @@
 * The R2DBC `DatabaseClient` provides `bindValues(Map)` for a pre-composed map of parameter values and `bindProperties(Object)` for parameter objects based on bean properties or record components, see [27282](https://github.com/spring-projects/spring-framework/issues/27282).
 * The R2DBC `DatabaseClient` provides `mapValue(Class)` for plain database column values and `mapProperties(Class)` for result objects based on bean properties or record components; see [26021](https://github.com/spring-projects/spring-framework/issues/26021).
 * `BeanPropertyRowMapper` and `DataClassRowMapper` available for R2DBC as well; see [30530](https://github.com/spring-projects/spring-framework/pull/30530).
+* `JpaTransactionManager` with `HibernateJpaDialect` translates Hibernate commit/rollback exceptions to `DataAccessException` subclasses wherever possible, e.g. to `CannotAcquireLockException`, aligned with the exception hierarchy thrown from persistence exception translation for repository operations. See [31274](https://github.com/spring-projects/spring-framework/issues/31274) for the primary motivation: PostgreSQL serialization failures.
 
 ### Web Applications
 

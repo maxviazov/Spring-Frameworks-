@@ -9,6 +9,7 @@ Spring Framework 6.1 raises its minimum requirements with the following librarie
 * SnakeYAML 2.0
 * Kotlin Coroutines 1.7
 * Kotlin Serialization 1.5 
+* Jackson 2.14
 
 ### Removed APIs
 

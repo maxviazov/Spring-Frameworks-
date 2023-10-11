@@ -7,9 +7,9 @@ _This page provides guidance on upgrading to Spring Framework 6.x._
 Spring Framework 6.1 raises its minimum requirements with the following libraries:
 
 * SnakeYAML 2.0
+* Jackson 2.14
 * Kotlin Coroutines 1.7
 * Kotlin Serialization 1.5 
-* Jackson 2.14
 
 ### Removed APIs
 
@@ -53,6 +53,8 @@ The `throwExceptionIfNoHandlerFound` property of `DispatcherHandler` is now set 
 The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
 The HTTP server Observability instrumentation in WebFlux was limited and was not properly observing errors. As a result, the WebFlux `ServerHttpObservationFilter` is now deprecated in favor of direct instrumentation on the `WebHttpHandlerBuilder`. See [30013](https://github.com/spring-projects/spring-framework/issues/30013).
+
+`ReactorResourceFactory` class has been moved from the `org.springframework.http.client.reactive` package to the `org.springframework.http.client` one.
 
 ### Messaging Applications
 
@@ -116,5 +118,3 @@ The Kotlin extension function to `WebTestClient.ResponseSpec::expectBody` now re
 The Spring-provided Servlet mocks (`MockHttpServletRequest`, `MockHttpSession`) require Servlet 6.0 now, due to a breaking change between the Servlet 5.0 and 6.0 API jars. They can be used for testing Servlet 5.0 based code but need to run against the Servlet 6.0 API (or newer) on the test classpath. Note that your production code may still compile against Servlet 5.0 and get integration-tested with Servlet 5.0 based containers; just mock-based tests need to run against the Servlet 6.0 API jar.
 
 `SourceHttpMessageConverter` is not configured by default anymore in Spring MVC and `RestTemplate`. As a consequence, Spring web applications using `javax.xml.transform.Source` now need to configure `SourceHttpMessageConverter` explicitly. Note that the order of converter registration is important, and `SourceHttpMessageConverter` should typically be registered before "catch-all" converters like `MappingJackson2HttpMessageConverter` for example.
-
-`ReactorResourceFactory` class has been moved from the `org.springframework.http.client.reactive` package to the `org.springframework.http.client` one.

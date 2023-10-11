@@ -34,7 +34,7 @@ When building a native image, the verbose logging about pre-computed fields has 
 
 ### Data Access and Transactions
 
-`@TransactionalEventListener` rejects invalid `@Transactional` usage on the same method: only allowed as `REQUIRES_NEW` or in combination with `@Async`.
+`@TransactionalEventListener` rejects invalid `@Transactional` usage on the same method: only allowed as `REQUIRES_NEW` (possibly in combination with `@Async`).
 
 JPA bootstrapping now fails in case of an incomplete Hibernate Validator setup (e.g. without an EL provider), making such a scenario easier to debug.
 

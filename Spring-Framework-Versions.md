@@ -2,6 +2,7 @@ _This document describes new features, noteworthy changes, and provides guidance
 
 # Supported Versions
 
+- 6.2.x is the next planned feature branch (November 2024).
 - 6.1.x is the upcoming feature branch (November 2023).
 - 6.0.x is the main production line as of November 2022. This new generation of the framework comes with a JDK 17 and Jakarta EE 9 baseline.
 - 5.3.x is the final feature branch of the 5th generation, with long-term support provided on JDK 8, JDK 11, JDK 17 and the Java EE 8 level.
@@ -14,21 +15,21 @@ You'll find more [information on official support dates on spring.io](https://sp
 
 # JDK Version Range
 
+- Spring Framework 6.2.x: JDK 17-25 (expected)
 - Spring Framework 6.1.x: JDK 17-23
 - Spring Framework 6.0.x: JDK 17-21
 - Spring Framework 5.3.x: JDK 8-21 (as of 5.3.26)
 
-We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11 and JDK 17, as well as the upcoming JDK 21. Additionally, there is support for intermediate releases such as JDK 18/19/20 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees. We currently recommend JDK 17 for use with Spring Framework 6.0.x as well as 5.3.x.
-
-The GraalVM version supported by Spring Framework 6.0.x for native images is GraalVM 22.3 based on JDK 17-19. Please note that GraalVM is aligning with the OpenJDK release model as of 2023, with only recent Java levels to be supported in each new GraalVM release. As a consequence, Spring Framework 6.x feature releases may have to require new GraalVM versions with a higher JDK baseline in the future, e.g. based on JDK 21 as the next LTS.
+We fully test and support Spring on Long-Term Support (LTS) releases of the JDK: currently JDK 8, JDK 11, JDK 17, and JDK 21. Additionally, there is support for intermediate releases such as JDK 18/19/20 on a best-effort basis, meaning that we accept bug reports and will try to address them as far as technically possible but won't provide any service level guarantees. We recommend JDK 17 and 21 for production use with Spring Framework 6.x as well as 5.3.x.
 
 # Java/Jakarta EE Versions
 
-- Spring Framework 6.1.x: Jakarta EE 9-11 (jakarta namespace)
+- Spring Framework 6.2.x: Jakarta EE 9-11 (jakarta namespace)
+- Spring Framework 6.1.x: Jakarta EE 9-10 (jakarta namespace)
 - Spring Framework 6.0.x: Jakarta EE 9-10 (jakarta namespace)
 - Spring Framework 5.3.x: Java EE 7-8 (javax namespace)
 
-The last specification version supported by Spring Framework 5.3.x is the javax-based Java EE 8 (Servlet 4.0, JPA 2.2, Bean Validation 2.0). As of Spring Framework 6.0, the minimum is Jakarta EE 9 (Servlet 5.0, JPA 3.0, Bean Validation 3.0), with the latest Jakarta EE 10 (Servlet 6.0, JPA 3.1) recommended. The upcoming Jakarta EE 11 (scheduled for early 2024) will be supported on a best-effort basis in Spring Framework 6.1.x, in particular for corresponding servers such as Tomcat 11.
+The last specification version supported by Spring Framework 5.3.x is the javax-based Java EE 8 (Servlet 4.0, JPA 2.2, Bean Validation 2.0). As of Spring Framework 6.0, the minimum is Jakarta EE 9 (Servlet 5.0, JPA 3.0, Bean Validation 3.0), with the latest Jakarta EE 10 (Servlet 6.0, JPA 3.1) recommended. The upcoming Jakarta EE 11 (scheduled for mid 2024) will be supported on a best-effort basis in Spring Framework 6.2.x, in particular for corresponding servers such as Tomcat 11.
 
 # What's New
 

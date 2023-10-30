@@ -15,6 +15,8 @@ Spring Framework 6.1 raises its minimum requirements with the following librarie
 
 Several deprecated classes, constructors, and methods have been removed across the code base. See [29449](https://github.com/spring-projects/spring-framework/issues/29449) and [30604](https://github.com/spring-projects/spring-framework/issues/30604).
 
+RPC-style remoting that has been officially and/or effectively deprecated for several years have been removed. This impacts Hessian, HTTP Invoker, JMS Invoker, and JAX-WS support, see [27422](https://github.com/spring-projects/spring-framework/issues/27422).
+
 ### Core Container
 
 Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is now consistently performed via `URI`, including the handling of relative paths. This includes behavioral changes for uncommon cases such as when specifying a full URL as a relative path.

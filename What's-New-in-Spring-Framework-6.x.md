@@ -41,13 +41,15 @@
 ### Web Applications
 
 * Spring MVC and WebFlux now have built-in method validation support for controller method parameters with `@Constraint` annotations. That means you no longer need `@Validated` at the controller class level to enable method validation via AOP proxy. Built-in method validation is layered on top of the existing argument validation for model attribute and request body arguments. The two are more tightly integrated and coordinated, e.g. avoiding cases with double validation. See [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#web-applications) for migration details, [29825](https://github.com/spring-projects/spring-framework/issues/29825) for more on the built-in support in M1, and the umbrella issue [30645](https://github.com/spring-projects/spring-framework/issues/30645) for related tasks and feedback.
+* The `HandlerMethodValidationException` raised by the new built-in method validation exposes a `Visitor` API to process validation errors by controller method parameter type (e.g. `@RequestParameter`, `@PathVariable`, etc.) 
 * [ErrorResponse](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/web/ErrorResponse.html) allows [customization](https://docs.spring.io/spring-framework/reference/6.1/web/webmvc/mvc-ann-rest-exceptions.html#mvc-ann-rest-exceptions-i18n) of `ProblemDetail` type via `MessageSource` and use of custom `ProblemDetail` through its builder.
 * Spring MVC throws `NoHandlerFoundException` or `NoResourceFoundException` (new in 6.1) to allow consistent handling of 404 errors, including with an RFC 7807 error response. See [29491](https://github.com/spring-projects/spring-framework/issues/29491).
-* The new `RestClient` is a synchronous HTTP client that offers an API similar to `WebClient`, using the same infrastructure as `RestTemplate`. See [29552](https://github.com/spring-projects/spring-framework/issues/29552).
+* New `RestClient`, a synchronous HTTP client that offers an API similar to `WebClient`, but sharing infrastructure with the `RestTemplate`. See [29552](https://github.com/spring-projects/spring-framework/issues/29552).
 * Jetty-based `ClientHttpRequestFactory` for use with `RestTemplate` and `RestClient`; see [30564](https://github.com/spring-projects/spring-framework/issues/30564).
 * JDK HttpClient-based `ClientHttpRequestFactory` for use with `RestTemplate` and `RestClient`; see [30478](https://github.com/spring-projects/spring-framework/pull/30478).
 * Reactor Netty-based `ClientHttpRequestFactory` for use with `RestTemplate` and `RestClient`; see [30835](https://github.com/spring-projects/spring-framework/issues/30835).
 * Improved buffering in various `ClientHttpRequestFactory` implementations; see [30557](https://github.com/spring-projects/spring-framework/issues/30557).
+* [HTTP Interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) built-in adapters for the new `RestClient` and `RestTemplate` in addition to the reactive `WebClient`. 
 * JVM checkpoint restore support added to Reactor Netty-based `ClientHttpRequestFactory` for use with `RestTemplate` and `RestClient` and `ClientHttpConnector` for use with `WebClient`; see [31280](https://github.com/spring-projects/spring-framework/issues/31280), [31281](https://github.com/spring-projects/spring-framework/issues/31281) and [31180](https://github.com/spring-projects/spring-framework/issues/31180).
 * General Coroutines support revision in WebFlux, which includes [`CoroutineContext` propagation in `CoWebFilter`](https://github.com/spring-projects/spring-framework/issues/27522), [`CoroutineContext` propagation in `coRouter` DSL with `filter`](https://github.com/spring-projects/spring-framework/issues/26977), [a new `context` function in `coRouter` DSL](https://github.com/spring-projects/spring-framework/issues/27010), [Support for `@ModelAttribute` with suspending function in WebFlux](https://github.com/spring-projects/spring-framework/issues/30894) and [consistent usage of the `Mono` variant of `awaitSingle()`](https://github.com/spring-projects/spring-framework/issues/31127).
 
@@ -63,6 +65,7 @@
 * Support for recording asynchronous events with `@RecordApplicationEvents`. See [30020](https://github.com/spring-projects/spring-framework/pull/30020).
   * Record events from threads other than the main test thread.
   * Assert events from a separate thread – for example with Awaitility.
+* `MockRestServiceServer` supports the new `RestClient` in addition to the `RestTemplate`.
 * Support for `null` in `MockHttpServletResponse.setCharacterEncoding()`. See [30341](https://github.com/spring-projects/spring-framework/issues/30341).
 
 

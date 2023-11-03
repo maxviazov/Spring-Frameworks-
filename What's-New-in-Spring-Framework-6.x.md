@@ -63,6 +63,7 @@ Spring MVC and WebFlux now support data binding via constructors, including nest
 
 ### Messaging Applications
 
+* STOMP messaging supports a new `preserveReceiveOrder` config option for ordered processing of messages received from a given client. That's in addition to the existing `preservePublishOrder` flag for messages published to clients. See the [Order of Messages](https://docs.spring.io/spring-framework/reference/6.1/web/websocket/stomp/ordered-messages.html) section of the reference docs.
 * The `@RSocketExchange` annotation used on RSocket interface methods is now supported for responder side handling as an alternative to `@MessageMapping`, see [@RSocketExchange](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/rsocket.html#rsocket-annot-rsocketexchange) for more details and guidance.
 * Interface parameter annotations are detected for messaging handler methods as well (analogous to web handler methods).
 * The SpEL-based `selector` header support in WebSocket messaging is now disabled by default and must be explicitly enabled. See [30550](https://github.com/spring-projects/spring-framework/issues/30550) and [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#messaging-applications) for migration details.

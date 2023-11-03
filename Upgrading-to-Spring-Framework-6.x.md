@@ -54,6 +54,8 @@ The `throwExceptionIfNoHandlerFound` property of `DispatcherHandler` is now set 
 
 `@RequestParam`, `@RequestHeader`, and other controller method argument annotations now use the defaultValue if the input is a non-empty String without text.
 
+`ResponseBodyEmitter` now completes the response if the exception is not an `IOException`, see issue [30687](https://github.com/spring-projects/spring-framework/issues/30687).
+
 Preflight checks are now executed at the start of the `HandlerInteceptor` chain and not at the end.
 
 The [HTTP interface client](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html#rest-http-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the underlying HTTP client. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).

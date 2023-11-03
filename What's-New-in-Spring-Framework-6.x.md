@@ -75,6 +75,8 @@ Spring MVC and WebFlux now support data binding via constructors, including nest
 * Support for recording asynchronous events with `@RecordApplicationEvents`. See [30020](https://github.com/spring-projects/spring-framework/pull/30020).
   * Record events from threads other than the main test thread.
   * Assert events from a separate thread – for example with Awaitility.
+* MockMvc support initialization of filters with init parameters and mapping to specific dispatch types.
+* `MockMvcWebTestClient` now supports the `RequestPostProcessor` hook which can for example allow varying user identity across tests, see issue [31298](https://github.com/spring-projects/spring-framework/issues/31298).
 * `MockRestServiceServer` supports the new `RestClient` in addition to the `RestTemplate`.
 * Support for `null` in `MockHttpServletResponse.setCharacterEncoding()`. See [30341](https://github.com/spring-projects/spring-framework/issues/30341).
 

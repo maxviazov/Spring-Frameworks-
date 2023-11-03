@@ -59,6 +59,7 @@ Spring MVC and WebFlux now support data binding via constructors, including nest
 
 ### Messaging Applications
 
+* The `@RSocketExchange` annotation used on RSocket interface methods is now supported for responder side handling as an alternative to `@MessageMapping`, see [@RSocketExchange](https://docs.spring.io/spring-framework/reference/6.1-SNAPSHOT/rsocket.html#rsocket-annot-rsocketexchange) for more details and guidance.
 * Interface parameter annotations are detected for messaging handler methods as well (analogous to web handler methods).
 * The SpEL-based `selector` header support in WebSocket messaging is now disabled by default and must be explicitly enabled. See [30550](https://github.com/spring-projects/spring-framework/issues/30550) and [Upgrading to 6.1](https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#messaging-applications) for migration details.
 * Observability support for JMS. We now produce observations when publishing messages with `JmsTemplate` and when processing messages with `MessageListener` or `@JmsListener`. See [the reference docs section](ttps://docs.spring.io/spring-framework/reference/6.1/integration/observability.html#observability.jms) and issue [30335](https://github.com/spring-projects/spring-framework/issues/30335).

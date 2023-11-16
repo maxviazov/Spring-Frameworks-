@@ -4,8 +4,9 @@
 
 * [General compatibility with virtual threads](https://github.com/spring-projects/spring-framework/issues/23443) and JDK 21 overall.
 * Configuration options for virtual threads: a dedicated [VirtualThreadTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/VirtualThreadTaskExecutor.html) and a [virtual threads mode on SimpleAsyncTaskExecutor](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/core/task/SimpleAsyncTaskExecutor.html#setVirtualThreads(boolean)), plus an analogous [SimpleAsyncTaskScheduler](https://docs.spring.io/spring-framework/docs/6.1.0-SNAPSHOT/javadoc-api/org/springframework/scheduling/concurrent/SimpleAsyncTaskScheduler.html) with a new-thread-per-task strategy and a virtual threads mode.
-* Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1/integration/checkpoint-restore.html)).
+* Lifecycle integration with Project CRaC for JVM checkpoint restore (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1/integration/checkpoint-restore.html)), including a `-Dspring.context.checkpoint=onRefresh` option.
 * Lifecycle integrated [pause/resume capability](https://github.com/spring-projects/spring-framework/issues/30831) and [parallel graceful shutdown](https://github.com/spring-projects/spring-framework/issues/27090) for `ThreadPoolTaskExecutor` and `ThreadPoolTaskScheduler` as well as `SimpleAsyncTaskScheduler`.
+* A `-Dspring.context.exit=onRefresh` option is available with AppCDS training runs as the main use-case; see [31595](https://github.com/spring-projects/spring-framework/issues/31595).
 * Async/reactive destroy methods (e.g. on R2DBC `ConnectionFactory`); see [26691](https://github.com/spring-projects/spring-framework/issues/26991).
 * Async/reactive cacheable methods, including corresponding support in the `Cache` interface and in `CaffeineCacheManager`; see [17559](https://github.com/spring-projects/spring-framework/issues/17559) and [17920](https://github.com/spring-projects/spring-framework/issues/17920).
 * Reactive `@Scheduled` methods (including Kotlin coroutines); see [22924](https://github.com/spring-projects/spring-framework/pull/29924).
@@ -22,7 +23,6 @@
 * Support for letters other than A-Z in property/field/variable names in SpEL expressions; see [30580](https://github.com/spring-projects/spring-framework/issues/30580). 
 * Support for registering a `MethodHandle` as a SpEL function (see [related documentation](https://docs.spring.io/spring-framework/reference/6.1/core/expressions/language-ref/functions.html)).
 * Spring AOP now supports Coroutines; see [22462](https://github.com/spring-projects/spring-framework/issues/22462).
-* A `-Dspring.context.exit=onRefresh` property has been added with AppCDS training run as main use-case; see [31595](https://github.com/spring-projects/spring-framework/issues/31595).
 
 ### Data Access and Transactions
 

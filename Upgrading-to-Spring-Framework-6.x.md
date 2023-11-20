@@ -17,6 +17,8 @@ Several deprecated classes, constructors, and methods have been removed across t
 
 RPC-style remoting that has been officially and/or effectively deprecated for several years has been removed. This impacts Hessian, HTTP Invoker, JMS Invoker, and JAX-WS support, see [27422](https://github.com/spring-projects/spring-framework/issues/27422).
 
+EJB access has also been removed as part of this effort. If you need to lookup an EJB, use JNDI directly via `JndiObjectFactoryBean` or `<jee:jndi-lookup>`.
+
 ### Core Container
 
 Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is now consistently performed via `URI`, including the handling of relative paths. This includes behavioral changes for uncommon cases such as when specifying a full URL as a relative path.

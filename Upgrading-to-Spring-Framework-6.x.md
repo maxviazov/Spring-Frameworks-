@@ -21,7 +21,7 @@ EJB access has also been removed as part of this effort. If you need to lookup a
 
 ### Parameter Name Retention
 
-`LocalVariableTableParameterNameDiscoverer` has been removed in 6.1. Compile your Java sources with the common Java 8+ `-parameters` flag for parameter name retention (instead of relying on the `-debug` compiler flag) in order to be compatible with `StandardReflectionParameterNameDiscoverer`. With the Kotlin compiler, we recommend the `-java-parameters` flag.
+`LocalVariableTableParameterNameDiscoverer` has been removed in 6.1. Consequently, code within the Spring Framework and Spring portfolio frameworks no longer attempts to deduce parameter names by parsing bytecode. If you experience issues with dependency injection, property binding, SpEL expressions, or other use cases that depend on the names of parameters, you should compile your Java sources with the common Java 8+ `-parameters` flag for parameter name retention (instead of relying on the `-debug` compiler flag) in order to be compatible with `StandardReflectionParameterNameDiscoverer`. With the Kotlin compiler, we recommend the `-java-parameters` flag.
 
 Maven users need to configure the `maven-compiler-plugin`:
 

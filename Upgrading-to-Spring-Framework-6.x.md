@@ -19,12 +19,42 @@ RPC-style remoting that has been officially and/or effectively deprecated for se
 
 EJB access has also been removed as part of this effort. If you need to lookup an EJB, use JNDI directly via `JndiObjectFactoryBean` or `<jee:jndi-lookup>`.
 
+### Parameter Name Retention
+
+`LocalVariableTableParameterNameDiscoverer` has been removed in 6.1. Compile your Java sources with the common Java 8+ `-parameters` flag for parameter name retention (instead of relying on the `-debug` compiler flag) in order to be compatible with `StandardReflectionParameterNameDiscoverer`. With the Kotlin compiler, we recommend the `-java-parameters` flag.
+
+Maven users need to configure the `maven-compiler-plugin`:
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+        <parameters>true</parameters>
+</configuration>
+</plugin>
+```
+
+Gradle users need to configure the `JavaCompile` task, either with the Kotlin DSL:
+
+```kotlin
+tasks.withType<JavaCompile>(){
+    options.compilerArgs.add("-parameters")
+}
+```
+
+Or the Groovy DSL:
+
+```groovy
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add("-parameters")
+}
+```
+
 ### Core Container
 
 Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is now consistently performed via `URI`, including the handling of relative paths. This includes behavioral changes for uncommon cases such as when specifying a full URL as a relative path.
 See [29481](https://github.com/spring-projects/spring-framework/issues/29481) and [28522](https://github.com/spring-projects/spring-framework/issues/28522).
-
-`LocalVariableTableParameterNameDiscoverer` has been removed in 6.1. Compile your Java sources with the common Java 8+ `-parameters` flag for parameter name retention (instead of relying on the `-debug` compiler flag) in order to be compatible with `StandardReflectionParameterNameDiscoverer`. With the Kotlin compiler, we recommend the `-java-parameters` flag.
 
 `AutowireCapableBeanFactory.createBean(Class, int, boolean)` is deprecated now, in favor of the convention-based `createBean(Class)`. The latter is also consistently used internally in 6.1 – for example, in `SpringBeanJobFactory` for Quartz and `SpringBeanContainer` for Hibernate.
 

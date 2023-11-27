@@ -31,7 +31,7 @@ Maven users need to configure the `maven-compiler-plugin`:
     <artifactId>maven-compiler-plugin</artifactId>
     <configuration>
         <parameters>true</parameters>
-</configuration>
+    </configuration>
 </plugin>
 ```
 

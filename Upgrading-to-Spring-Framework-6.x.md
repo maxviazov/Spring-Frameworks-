@@ -51,6 +51,12 @@ tasks.withType(JavaCompile).configureEach {
 }
 ```
 
+Sometimes it is also necessary to manually configure your IDE.
+
+In IntelliJ IDEA, open `Settings` and add `-parameters` to the field: Build, Execution, Deployment &rarr; Compiler &rarr; Java Compiler &rarr; Additional command line parameters.
+
+In Eclipse IDE, open `Preferences` and activate the checkbox: Java &rarr; Compiler &rarr; Store information about method parameters (usable via reflection).
+
 ### Core Container
 
 Aligned with the deprecation of `java.net.URL` constructors in JDK 20, `URL` resolution is now consistently performed via `URI`, including the handling of relative paths. This includes behavioral changes for uncommon cases such as when specifying a full URL as a relative path.

@@ -150,7 +150,7 @@ Lines between 105-120 are allowed but discouraged and should be few.
 
 No lines should exceed 120 characters.
 
-The one big exception to the above line wrapping rules is Javadoc where we aim to wrap around 80 characters for maximum readability in all kinds of contexts, e.g. reading on Github, on your phone, etc.
+The one big exception to the above line wrapping rules is Javadoc where we aim to wrap around 80 characters for maximum readability in all kinds of contexts -- for example, reading on Github, on your phone, etc.
 
 When wrapping a lengthy expression, 90 characters is the length at which we aim to wrap. Put the separator symbols at the end of the line rather on the next line (comma separated arguments, etc). For instance:
 
@@ -220,19 +220,19 @@ Avoid using single characters as variable names. For instance prefer `Method met
 
 ### File history
 
-* A file should look like it was crafted by a single author, not like a history of changes
-* Don't artificially spread things out that belong together
+* A file should look like it was crafted by a single author, not like a history of changes.
+* Don't artificially spread things out that belong together.
 
 ### Organization of setter methods
 
 Choose wisely where to add a new setter method; it should not be simply added at the end of the list. Perhaps the setter is related to another setter or relates to a group. In that case it should be placed near related methods.
 
-* Setter order should reflect order of importance, not historical order
-* Ordering of _fields_ and _setters_ should be **consistent**
+* Setter order should reflect order of importance, not historical order.
+* Ordering of _fields_ and _setters_ should be **consistent**.
 
 ### Ternary Operator
 
-Wrap the ternary operator within parentheses, i.e. `return (foo != null ? foo : "default");`
+Wrap the ternary operator within parentheses -- for example, `return (foo != null ? foo : "default");`.
 
 Also make sure that the _not null_ condition comes first.
 
@@ -253,8 +253,8 @@ Always add `@Override` on methods overriding or implementing a method declared i
 
 ### Use of @since
 
-* `@since` should be added to every new class with the version of the framework in which it was introduced
-* `@since` should be added to any *new* **public** and **protected** methods of an existing class
+* `@since` should be added to every new class with the version of the framework in which it was introduced.
+* `@since` should be added to any *new* **public** and **protected** methods of an existing class.
 
 ### Utility classes
 
@@ -273,7 +273,7 @@ public abstract MyUtils {
 
 ### Field and method references
 
-A field of a class should *always* be referenced using `this`. A method of class, however, should never be referenced using `this`.
+A field of a class should *always* be referenced using `this`. A method of a class, however, should never be referenced using `this`.
 
 ### Local variable type inference
 
@@ -283,7 +283,7 @@ The use of `var` for variable declarations (_local variable type inference_) is 
 
 ### Javadoc formatting
 
-The following template summarizes a typical use for the Javadoc of a method.
+The following template summarizes typical Javadoc usage for a method.
 
 ```java
 /**

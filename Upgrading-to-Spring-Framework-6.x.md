@@ -106,6 +106,10 @@ The HTTP server Observability instrumentation in WebFlux was limited and was not
 
 `ReactorResourceFactory` class has been moved from the `org.springframework.http.client.reactive` package to the `org.springframework.http.client` one.
 
+To reduce memory usage in `RestClient` and `RestTemplate`, most `ClientHttpRequestFactory` implementations no longer buffer request bodies before sending them to the server.
+As a result, for certain content types such as JSON, the contents size is no longer known, and a `Content-Length` header is no longer set.
+If you would like to buffer request bodies like before, simply wrap the `ClientHttpRequestFactory` you are using in a `BufferingClientHttpRequestFactory`.
+
 ### Messaging Applications
 
 The [RSocket interface client](https://docs.spring.io/spring-framework/reference/rsocket.html#rsocket-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the RSocket client, and the underlying RSocket transport. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).

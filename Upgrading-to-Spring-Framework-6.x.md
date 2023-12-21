@@ -76,6 +76,10 @@ Message resolution through the `ApplicationContext` (accessing its internal `Mes
 
 When building a native image, the verbose logging about pre-computed fields has been removed by default, and can be restored by passing `-Dspring.native.precompute.log=verbose` as a `native-image` compiler build argument to display related detailed logs.
 
+### Caching
+
+Spring's declarative caching infrastructure detects reactive method signatures, e.g. returning a Reactor `Mono` or `Flux`, and specifically processes such methods for asynchronous caching of their produced values rather than trying to cache the returned Reactive Streams `Publisher` instances themselves. This requires support in the target cache provider, e.g. with `CaffeineCacheManager` being set to `setAsyncCacheMode(true)`. For existing applications which rely on synchronous caching of custom `Mono.cache()`/`Flux.cache()` results, we recommend revising this towards 6.1-style caching of produced values; if such a revision is not immediately possible/desirable, you may set the system property "spring.cache.reactivestreams.ignore=true" (or put a similar entry into a `spring.properties` file on the classpath).
+
 ### Data Access and Transactions
 
 `@TransactionalEventListener` rejects invalid `@Transactional` usage on the same method: only allowed as `REQUIRES_NEW` (possibly in combination with `@Async`).

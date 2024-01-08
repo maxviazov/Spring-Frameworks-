@@ -114,12 +114,13 @@ To reduce memory usage in `RestClient` and `RestTemplate`, most `ClientHttpReque
 As a result, for certain content types such as JSON, the contents size is no longer known, and a `Content-Length` header is no longer set.
 If you would like to buffer request bodies like before, simply wrap the `ClientHttpRequestFactory` you are using in a `BufferingClientHttpRequestFactory`.
 
+Jackson [`ParameterNamesModule`](https://github.com/FasterXML/jackson-modules-java8/tree/2.17/parameter-names) is now part of the well-known modules automatically registered by `Jackson2ObjectMapperBuilder` when present in the classpath. This can introduce changes of behavior in JSON serialization/deserialization as mentioned in the module documentation linked above. In such case, additional `@JsonCreator` or `@JsonProperty("propertyName")` annotations may be required. If you prefer avoid enabling such module, it is possible to use `Jackson2ObjectMapperBuilder#modules` in order to disable automatic module registration.
+
 ### Messaging Applications
 
 The [RSocket interface client](https://docs.spring.io/spring-framework/reference/rsocket.html#rsocket-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the RSocket client, and the underlying RSocket transport. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).
 
 In an effort to reduce the potential for security vulnerabilities in the Spring Expression Language (SpEL) to adversely affect Spring applications, the team has decided to disable support for evaluating SpEL expressions from untrusted sources by default. Within the core Spring Framework, this applies to the SpEL-based `selector` header support in WebSocket messaging, specifically in the `DefaultSubscriptionRegistry`. The `selector` header support will remain in place but will have to be explicitly enabled beginning with Spring Framework 6.1 (see [30550](https://github.com/spring-projects/spring-framework/issues/30550)). For example, a custom implementation of `WebSocketMessageBrokerConfigurer` can override the `configureMessageBroker()` method and configure the selector header name as follows: `registry.enableSimpleBroker().setSelectorHeaderName("selector");`.
-
 
 ## Upgrading to Version 6.0
 

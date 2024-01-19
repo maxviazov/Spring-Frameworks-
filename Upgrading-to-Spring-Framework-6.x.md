@@ -116,6 +116,8 @@ If you would like to buffer request bodies like before, simply wrap the `ClientH
 
 Jackson [`ParameterNamesModule`](https://github.com/FasterXML/jackson-modules-java8/tree/2.17/parameter-names) is now part of the well-known modules automatically registered by `Jackson2ObjectMapperBuilder` when present in the classpath. This can introduce changes of behavior in JSON serialization/deserialization as mentioned in the module documentation linked above. In such case, additional `@JsonCreator` or `@JsonProperty("propertyName")` annotations may be required. If you prefer avoid enabling such module, it is possible to use `Jackson2ObjectMapperBuilder#modules` in order to disable automatic module registration.
 
+`ReactorClientHttpConnector` now implements `SmartLifecycle` to provide lifecycle management capabilities. As a consequence, it now requires `spring-context` dependency.
+
 ### Messaging Applications
 
 The [RSocket interface client](https://docs.spring.io/spring-framework/reference/rsocket.html#rsocket-interface) no longer enforces a 5 second default timeout on methods with a blocking signature, instead relying on default timeout and configuration settings of the RSocket client, and the underlying RSocket transport. See [30248](https://github.com/spring-projects/spring-framework/issues/30248).

@@ -23,7 +23,7 @@ EJB access has also been removed as part of this effort. If you need to lookup a
 
 `LocalVariableTableParameterNameDiscoverer` has been removed in 6.1. Consequently, code within the Spring Framework and Spring portfolio frameworks no longer attempts to deduce parameter names by parsing bytecode. If you experience issues with dependency injection, property binding, SpEL expressions, or other use cases that depend on the names of parameters, you should compile your Java sources with the common Java 8+ `-parameters` flag for parameter name retention (instead of relying on the `-debug` compiler flag) in order to be compatible with `StandardReflectionParameterNameDiscoverer`. The Groovy compiler also supports a `-parameters` flag for the same purpose. With the Kotlin compiler, use the `-java-parameters` flag.
 
-Maven users need to configure the `maven-compiler-plugin`:
+Maven users need to configure the `maven-compiler-plugin` for Java source code:
 
 ```xml
 <plugin>
@@ -35,10 +35,10 @@ Maven users need to configure the `maven-compiler-plugin`:
 </plugin>
 ```
 
-Gradle users need to configure the `JavaCompile` task, either with the Kotlin DSL:
+Gradle users need to configure the `JavaCompile` task for Java source code, either with the Kotlin DSL:
 
 ```kotlin
-tasks.withType<JavaCompile>(){
+tasks.withType<JavaCompile>() {
     options.compilerArgs.add("-parameters")
 }
 ```
@@ -48,6 +48,22 @@ Or the Groovy DSL:
 ```groovy
 tasks.withType(JavaCompile).configureEach {
     options.compilerArgs.add("-parameters")
+}
+```
+
+Similarly, Gradle users need to configure the `GroovyCompile` task for Groovy source code, either with the Kotlin DSL:
+
+```kotlin
+tasks.withType<GroovyCompile>() {
+    groovyOptions.parameters = true
+}
+```
+
+Or the Groovy DSL:
+
+```groovy
+tasks.withType(GroovyCompile).configureEach {
+    groovyOptions.parameters = true
 }
 ```
 
